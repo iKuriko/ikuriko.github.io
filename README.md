@@ -1,2 +1,2 @@
-# kuriko-github.io
+# kuriko.github.io
 Gihub Pages
