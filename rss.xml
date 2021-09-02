@@ -23,10 +23,35 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 02 Sep 2021 16:42:02 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 02 Sep 2021 16:57:59 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Hello_world</title>
+                <link>https://ikuriko.github.io/posts/hello_world/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/hello_world/</guid>
+                <pubDate>Thu, 02 Sep 2021 16:55:55 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;p&gt;Hello_World!!!&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>First Posts</title>

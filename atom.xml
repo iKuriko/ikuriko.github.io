@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-Hans">
     <title type="text">Hugo Theme MemE</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2021-09-02T16:42:02&#43;08:00</updated>
+    <updated>2021-09-02T16:57:59&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,34 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">Hello_world</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hello_world/" />
+            <id>https://ikuriko.github.io/posts/hello_world/</id>
+            <updated>2021-09-02T16:56:33&#43;08:00</updated>
+            <published>2021-09-02T16:55:55&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">Hello_World!!!</summary>
+            
+                <content type="html">&lt;p&gt;Hello_World!!!&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">First Posts</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/first-posts/" />
