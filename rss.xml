@@ -9,7 +9,7 @@
     <channel>
         <title>ikuriko</title>
         <link>https://ikuriko.github.io/</link>
-        <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
+        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
         <generator>Hugo 0.87.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
@@ -21,9 +21,9 @@
             <webMaster>ikuriko@qq.com (ikuriko)</webMaster>
         
         
-            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 07 Sep 2021 11:02:07 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 07 Sep 2021 11:25:16 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -36,7 +36,7 @@
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
                     <description>&lt;p&gt;Hello World !!!&lt;/p&gt;
 </description>
