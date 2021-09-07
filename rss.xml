@@ -7,12 +7,12 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo Theme MemE</title>
+        <title>ikuriko</title>
         <link>https://ikuriko.github.io/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.87.0 https://gohugo.io/</generator>
         
-            <language>zh-Hans</language>
+            <language>zh-CN</language>
         
         
             <managingEditor>ikuriko@qq.com (ikuriko)</managingEditor>
@@ -23,47 +23,22 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 02 Sep 2021 16:57:59 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 07 Sep 2021 11:02:07 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
         
             <item>
                 <title>Hello_world</title>
-                <link>https://ikuriko.github.io/posts/hello_world/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/hello_world/</guid>
+                <link>https://ikuriko.github.io/posts/hello-world/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/hello-world/</guid>
                 <pubDate>Thu, 02 Sep 2021 16:55:55 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
                 
-                    <description>&lt;p&gt;Hello_World!!!&lt;/p&gt;
-</description>
-                
-                
-                
-                
-                
-                    
-                        
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>First Posts</title>
-                <link>https://ikuriko.github.io/posts/first-posts/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/first-posts/</guid>
-                <pubDate>Thu, 02 Sep 2021 14:33:56 &#43;0800</pubDate>
-                
-                    <author>ikuriko@qq.com (ikuriko)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
-                
-                    <description>&lt;p&gt;First Posts&lt;/p&gt;
+                    <description>&lt;p&gt;Hello World !!!&lt;/p&gt;
 </description>
                 
                 
