@@ -1,2 +1,2 @@
-# ikuriko.github.io
-Gihub Pages
+# ikuriko's blog
+This is a lazy blog
