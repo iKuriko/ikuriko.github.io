@@ -3,8 +3,8 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
-    <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2021-09-07T11:25:16&#43;08:00</updated>
+    <subtitle type="html">lazy blog</subtitle>
+    <updated>2021-09-08T12:02:36&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -17,10 +17,35 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
         <entry>
+            <title type="text">Hugo&#43;GithubPages个人站点搭建</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/" />
+            <id>https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</id>
+            <updated>2021-09-08T11:44:37&#43;08:00</updated>
+            <published>2021-09-07T14:20:48&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">hugo 安装 首先在本地安装hugo，选择适合自己系统的安装包 将hu……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Hello_world</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hello-world/" />
             <id>https://ikuriko.github.io/posts/hello-world/</id>
-            <updated>2021-09-07T11:01:07&#43;08:00</updated>
+            <updated>2021-09-08T11:44:53&#43;08:00</updated>
             <published>2021-09-02T16:55:55&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -28,9 +53,6 @@
                     <email>ikuriko@qq.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Hello World !!!</summary>
-            
-                <content type="html">&lt;p&gt;Hello World !!!&lt;/p&gt;
-</content>
             
             
             

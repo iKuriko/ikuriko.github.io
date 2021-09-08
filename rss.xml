@@ -9,7 +9,7 @@
     <channel>
         <title>ikuriko</title>
         <link>https://ikuriko.github.io/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <description>lazy blog</description>
         <generator>Hugo 0.87.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 07 Sep 2021 11:25:16 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 08 Sep 2021 12:02:36 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Hugo&#43;GithubPages个人站点搭建</title>
+                <link>https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</guid>
+                <pubDate>Tue, 07 Sep 2021 14:20:48 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>hugo 安装 首先在本地安装hugo，选择适合自己系统的安装包 将hu……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Hello_world</title>
@@ -37,9 +60,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                
-                    <description>&lt;p&gt;Hello World !!!&lt;/p&gt;
-</description>
+                <description>Hello World !!!</description>
                 
                 
                 
