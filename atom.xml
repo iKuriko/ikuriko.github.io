@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-09-09T17:52:00&#43;08:00</updated>
+    <updated>2021-09-09T17:55:49&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,14 +20,14 @@
             <title type="text">Vim快捷键</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vim%E5%BF%AB%E6%8D%B7%E9%94%AE/" />
             <id>https://ikuriko.github.io/posts/vim%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
-            <updated>2021-09-09T17:51:43&#43;08:00</updated>
+            <updated>2021-09-09T17:55:38&#43;08:00</updated>
             <published>2021-09-09T16:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">### 命令模式： u //撤销 ctrl+r //重做 ~ //当前字符切换大小写 \ /……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">命令模式： u //撤销 ctrl+r //重做 ~ //当前字符切换大小写 &amp;gt;&amp;gt; //……</summary>
             
             
             

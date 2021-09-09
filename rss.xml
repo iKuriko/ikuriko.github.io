@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 09 Sep 2021 17:52:00 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 09 Sep 2021 17:55:49 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -37,7 +37,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>### 命令模式： u //撤销 ctrl+r //重做 ~ //当前字符切换大小写 \ /……</description>
+                <description>命令模式： u //撤销 ctrl+r //重做 ~ //当前字符切换大小写 &amp;gt;&amp;gt; //……</description>
                 
                 
                 
