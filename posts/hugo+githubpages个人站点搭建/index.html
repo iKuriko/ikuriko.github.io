@@ -60,7 +60,7 @@
         "description": "hugo 安装 首先在本地安装hugo，选择适合自己系统的安装包 将hu……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  765 ,
+        "wordCount":  740 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -230,7 +230,7 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;765</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;740</span>
     
     
         
@@ -247,224 +247,61 @@
 <p>首先在本地安装<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">hugo</a>，选择适合自己系统的安装包</p>
 <p>将hugo执行目录加入系统的环境变量</p>
 <p>添加系统变量后，测试是否成功</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo version
-</code></pre></td></tr></table></div>
-</div>
-</div><p>此时，我们就可以开始新建站点了</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new site blog
-</code></pre></td></tr></table></div>
-</div>
-</div><p>它会在当前目录，生成一个名为<code>blog</code>的文件夹，里面是新建的站点文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo version
+</code></pre></div><p>此时，我们就可以开始新建站点了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new site blog
+</code></pre></div><p>它会在当前目录，生成一个名为<code>blog</code>的文件夹，里面是新建的站点文件</p>
 <p>在生成开始之前，我们需要为hugo安装一个主题，这里选用的是MemE</p>
 <p>进入<code>blog</code>目录安装主题</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> blog
-</code></pre></td></tr></table></div>
-</div>
-</div><p>使用git初始化仓库</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init
-</code></pre></td></tr></table></div>
-</div>
-</div><p>下载<a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a>主题文件</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git submodule add --depth <span class="m">1</span> https://github.com/reuixiy/hugo-theme-meme.git themes/meme
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将<code>config.toml</code>替换为示例配置</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv config.toml config.toml.bak
-</code></pre></td></tr></table></div>
-</div>
-</div><div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp themes/meme/config-examples/en/config.toml config.toml
-</code></pre></td></tr></table></div>
-</div>
-</div><p>新建一篇文章和一个关于页面</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new “posts/test.md”
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> blog
+</code></pre></div><p>使用git初始化仓库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init
+</code></pre></div><p>下载<a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a>主题文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git submodule add --depth <span class="m">1</span> https://github.com/reuixiy/hugo-theme-meme.git themes/meme
+</code></pre></div><p>将<code>config.toml</code>替换为示例配置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv config.toml config.toml.bak
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp themes/meme/config-examples/en/config.toml config.toml
+</code></pre></div><p>新建一篇文章和一个关于页面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new “posts/test.md”
 hugo new <span class="s2">&#34;about/_index.md&#34;</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>Game Start</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo server -D
-</code></pre></td></tr></table></div>
-</div>
-</div><p>生成本地测试页面，在浏览器使用<code>localhost:1313</code>访问</p>
+</code></pre></div><p>Game Start</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo server -D
+</code></pre></div><p>生成本地测试页面，在浏览器使用<code>localhost:1313</code>访问</p>
 <h1 id="推送到github-pages"><a href="#推送到github-pages" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>推送到Github Pages</h1>
 <p>首先，你需要拥有一个Github账号</p>
 <p>创建一个存储仓库，在仓库启用Github Pages</p>
 <p>设置你的Github配置</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ git config --global user.name <span class="s2">&#34;username&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ git config --global user.name <span class="s2">&#34;username&#34;</span>
 $ git config --global user.email <span class="s2">&#34;useremail&#34;</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+</code></pre></div><p>注意git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
 <p>生成SSH密钥对</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;useremail&#34;</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.ssh/id_rsa.pub
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将生成的密钥复制，去Github上设置一个新的密钥对<a href="https://github.com/settings/keys" target="_blank" rel="noopener">New SSH key</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ssh-keygen -t rsa -b <span class="m">4096</span> -C <span class="s2">&#34;useremail&#34;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ cat ~/.ssh/id_rsa.pub
+</code></pre></div><p>将生成的密钥复制，去Github上设置一个新的密钥对<a href="https://github.com/settings/keys" target="_blank" rel="noopener">New SSH key</a></p>
 <p>测试连接</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh -T git@github.com
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将Github仓库克隆到本地</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/iKuriko/ikuriko.github.io.git ikuriko_blog
-</code></pre></td></tr></table></div>
-</div>
-</div><p>进入仓库目录</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ikuriko_blog
-</code></pre></td></tr></table></div>
-</div>
-</div><p>初始化仓库</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将本地Git仓库和远程仓库关联起来，并设置远程仓库名称</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git remote add origin git@github.com:iKuriko/ikuriko.github.io.git
-</code></pre></td></tr></table></div>
-</div>
-</div><p>添加所有文件到本地缓冲区</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git add -A
-</code></pre></td></tr></table></div>
-</div>
-</div><p>提交到本地仓库，标签为<code>第一次提交</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git commit -m <span class="s2">&#34;first commit&#34;</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>提交到远程仓库，第一次需指定用户和分支</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git push -u origin main
-</code></pre></td></tr></table></div>
-</div>
-</div><p>#非首次推送</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git push
-</code></pre></td></tr></table></div>
-</div>
-</div><p>修改blog目录下的config.xoml文件，添加一行：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">publishDir</span> <span class="o">=</span> <span class="s2">&#34;../ikuriko_blog&#34;</span>
-</code></pre></td></tr></table></div>
-</div>
-</div><p>将hugo生成的public目录改为刚才克隆的Github仓库的目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ssh -T git@github.com
+</code></pre></div><p>将Github仓库克隆到本地</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/iKuriko/ikuriko.github.io.git ikuriko_blog
+</code></pre></div><p>进入仓库目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ikuriko_blog
+</code></pre></div><p>初始化仓库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git init
+</code></pre></div><p>将本地Git仓库和远程仓库关联起来，并设置远程仓库名称</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git remote add origin git@github.com:iKuriko/ikuriko.github.io.git
+</code></pre></div><p>添加所有文件到本地缓冲区</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git add -A
+</code></pre></div><p>提交到本地仓库，标签为<code>第一次提交</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git commit -m <span class="s2">&#34;first commit&#34;</span>
+</code></pre></div><p>提交到远程仓库，第一次需指定用户和分支</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git push -u origin main
+</code></pre></div><p>#非首次推送</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git push
+</code></pre></div><p>修改blog目录下的config.xoml文件，添加一行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">publishDir</span> <span class="o">=</span> <span class="s2">&#34;../ikuriko_blog&#34;</span>
+</code></pre></div><p>将hugo生成的public目录改为刚才克隆的Github仓库的目录</p>
 <p>生成页面</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo -D
-</code></pre></td></tr></table></div>
-</div>
-</div><p>使用上面的<code>git</code>命令推送到远程仓库，Success！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo -D
+</code></pre></div><p>使用上面的<code>git</code>命令推送到远程仓库，Success！</p>
 <p>访问你的Github Page</p>
 
             </div>
