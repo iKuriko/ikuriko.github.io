@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 09 Sep 2021 17:55:49 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 23 Sep 2021 16:35:00 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>CAD快捷命令</title>
+                <link>https://ikuriko.github.io/posts/cad%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/cad%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</guid>
+                <pubDate>Thu, 23 Sep 2021 15:57:29 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>记录绘制 2D 平面图使用的常用CAD快捷命令 所有的命令通过键入命……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Vim快捷键</title>
