@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 12 Oct 2021 11:03:37 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 19 Oct 2021 15:47:53 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Vsftpd</title>
+                <link>https://ikuriko.github.io/posts/vsftpd/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/vsftpd/</guid>
+                <pubDate>Thu, 14 Oct 2021 15:16:25 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>[TOC] 简介 为了解决在复杂多样的设备之间传输文件，文件传输协议（F……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Tcpdump</title>
