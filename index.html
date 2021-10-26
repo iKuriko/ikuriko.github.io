@@ -56,7 +56,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "datePublished": "2020-09-20T20:17:43+00:00",
-        "dateModified": "2021-10-22T11:47:54+08:00",
+        "dateModified": "2021-10-26T11:25:16+08:00",
         "url": "https://ikuriko.github.io/",
         "description": "lazy blog",
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
@@ -219,9 +219,9 @@
 
 
         </div>
-        
+            
 
-        
+            
 
 
 
@@ -252,5 +252,29 @@
 
 
 
+<div class="app-refresh" id="app-refresh">
+    <div class="app-refresh-wrap" onclick="location.reload()">
+        <label>已更新最新版本</label>
+        <span>点击刷新</span>
+    </div>
+</div>
+<script>
+    if ('serviceWorker' in navigator) {
+        if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.addEventListener('controllerchange', function() {
+                showNotification();
+            });
+        }
+
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js');
+        });
+    }
+
+    function showNotification() {
+        document.querySelector('meta[name=theme-color]').content = '#000';
+        document.getElementById('app-refresh').className += ' app-refresh-show';
+    }
+</script>
     </body>
 </html>
