@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ikuriko.github.io/posts/ansible/</loc>
-    <lastmod>2021-11-01T16:12:26+08:00</lastmod>
-  </url><url>
     <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2021-11-01T16:12:26+08:00</lastmod>
+    <lastmod>2021-11-01T17:56:49+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/posts/linux%E7%83%AD%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/</loc>
+    <lastmod>2021-11-01T17:56:49+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/</loc>
+    <lastmod>2021-11-01T17:56:49+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/posts/ansible/</loc>
     <lastmod>2021-11-01T16:12:26+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/vsftpd/</loc>

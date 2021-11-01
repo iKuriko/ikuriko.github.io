@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 01 Nov 2021 16:12:40 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 01 Nov 2021 17:57:00 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Linux热添加硬盘</title>
+                <link>https://ikuriko.github.io/posts/linux%E7%83%AD%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux%E7%83%AD%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/</guid>
+                <pubDate>Mon, 01 Nov 2021 17:41:41 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>Linux服务器开机时，扫描新插入的硬盘 此环境为VMware……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Ansible</title>
