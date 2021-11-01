@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 26 Oct 2021 12:07:21 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 01 Nov 2021 16:12:40 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Ansible</title>
+                <link>https://ikuriko.github.io/posts/ansible/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/ansible/</guid>
+                <pubDate>Fri, 29 Oct 2021 11:50:51 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>简介 Ansible目前是运维自动化工具中最简单、容易上手的一……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Vsftpd</title>

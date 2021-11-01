@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>Ansible | ikuriko</title>
+
+    <link rel="stylesheet" href="/css/meme.min.434a4f32d07dfc786f08f7e3b63ec8e1d2c9773ca551b974de9b1adf008b4acf.css"/>
+
+    
+    
+        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
+
+    <meta name="author" content="ikuriko" /><meta name="description" content="简介 Ansible目前是运维自动化工具中最简单、容易上手的一……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ikuriko" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ikuriko" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://ikuriko.github.io/posts/ansible/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2021-10-29T11:50:51+08:00",
+        "dateModified": "2021-11-01T16:12:26+08:00",
+        "url": "https://ikuriko.github.io/posts/ansible/",
+        "headline": "Ansible",
+        "description": "简介 Ansible目前是运维自动化工具中最简单、容易上手的一……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  17457 ,
+        "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Mosi Meta",
+            "email": "ikuriko@qq.com",
+            "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+            "url": "https://ikuriko.github.io",
+            "name": "ikuriko"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ikuriko",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ikuriko.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://ikuriko.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://ikuriko.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@akur1ko" />
+<meta name="twitter:creator" content="@akur1ko" />
+
+    
+
+
+
+<meta property="og:title" content="Ansible" />
+<meta property="og:description" content="简介 Ansible目前是运维自动化工具中最简单、容易上手的一……" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/ansible/" />
+<meta property="og:site_name" content="ikuriko" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-10-29T11:50:51&#43;08:00" />
+    <meta property="article:modified_time" content="2021-11-01T16:12:26&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">ikuriko</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/life/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">日常</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon about"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">Ansible</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:简介" href="#简介">简介</a></li>
+    <li><a id="contents:部署服务" href="#部署服务">部署服务</a></li>
+    <li><a id="contents:设置主机清单hosts" href="#设置主机清单hosts">设置主机清单（hosts）</a></li>
+    <li><a id="contents:运行临时命令ansible" href="#运行临时命令ansible">运行临时命令（ansible）</a></li>
+    <li><a id="contents:运行剧本文件playbook" href="#运行剧本文件playbook">运行剧本文件（playbook）</a></li>
+    <li><a id="contents:创建及使用角色role" href="#创建及使用角色role">创建及使用角色（role）</a>
+      <ol>
+        <li><a id="contents:加载系统内置角色" href="#加载系统内置角色">加载系统内置角色</a></li>
+        <li><a id="contents:从外部获取角色" href="#从外部获取角色">从外部获取角色</a></li>
+        <li><a id="contents:创建自定义角色" href="#创建自定义角色">创建自定义角色</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:创建和使用逻辑卷" href="#创建和使用逻辑卷">创建和使用逻辑卷</a></li>
+    <li><a id="contents:判断主机组名" href="#判断主机组名">判断主机组名</a></li>
+    <li><a id="contents:管理文件属性" href="#管理文件属性">管理文件属性</a></li>
+    <li><a id="contents:管理密码库文件" href="#管理密码库文件">管理密码库文件</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h2 id="简介"><a href="#简介" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:简介" class="headings">简介</a></h2>
+<p><strong>Ansible</strong>目前是<strong>运维自动化工具</strong>中最简单、容易上手的一款优秀软件，能够用来管理各种资源，批量部署应用程序等。能够帮助运维人员提高工作效率，减少人为失误。例如，借助于Ansible，我们可以轻松地对服务器进行初始化配置、安全基线配置，以及进行更新和打补丁操作。</p>
+<p><strong>基于模块</strong>：Ansible服务本身并没有批量部署的功能，它仅仅是一个框架，真正具有批量部署能力的是其所运行的模块。Ansible有上千个功能丰富且实用的模块，几乎可以满足一切需求，使用起来也非常简单，而且有详尽的帮助信息可供查阅，可以轻松上手。如果需要更高级的功能，也可以运用Python语言对Ansible进行二次开发。</p>
+<p><strong>基于SSH</strong>：相较于Chef、Puppet、SaltStack等C/S（客户端/服务器）架构的自动化工具来讲，尽管Ansible的性能并不是最好的，但由于它基于SSH远程会话协议，不需要客户端程序，只要知道受管主机的账号密码，就能直接用SSH协议进行远程控制，因此使用起来优势明显。由于受控节点不需要安装客户端，而SSH协议是Linux系统的标配，因此可以直接通过SSH协议进行远程控制。在控制节点上，也不用每次都重复开启服务程序，使用ansible命令直接调用模块进行控制即可。</p>
+<p>Ansible服务专用术语</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th style="text-align:left">术语　</th>
+<th style="text-align:left">服务名称 　　</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Control node</td>
+<td style="text-align:left">控制节点</td>
+<td>指的是安装了Ansible服务的主机，也被称为Ansible控制端，主要是用来发布运行任务、调用功能模块，对其他主机进行批量控制。</td>
+</tr>
+<tr>
+<td style="text-align:left">Managed nodes</td>
+<td style="text-align:left">受控节点</td>
+<td>指的是被Ansible服务所管理的主机，也被称为受控主机或客户端，是模块命令的被执行对象。</td>
+</tr>
+<tr>
+<td style="text-align:left">Inventory</td>
+<td style="text-align:left">主机清单</td>
+<td>指的是受控节点的列表，可以是IP地址、主机名称或者域名。</td>
+</tr>
+<tr>
+<td style="text-align:left">Modules</td>
+<td style="text-align:left">模块</td>
+<td>指的是上文提到的特定功能代码，默认自带有上千款功能模块，在Ansible Galaxy有超多可供选择。</td>
+</tr>
+<tr>
+<td style="text-align:left">Task</td>
+<td style="text-align:left">任务</td>
+<td>指的是Ansible客户端上面要被执行的操作。</td>
+</tr>
+<tr>
+<td style="text-align:left">Playbook</td>
+<td style="text-align:left">剧本</td>
+<td>指的是通过YAML语言编写的可重复执行的任务列表，把常做的操作写入到剧本文件中，下次可以直接重复执行一遍。</td>
+</tr>
+<tr>
+<td style="text-align:left">Roles</td>
+<td style="text-align:left">角色</td>
+<td>从Ansible 1.2版本开始引入的新特性，用于结构化的组织Playbook，通过调用角色实现一连串的功能。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="部署服务"><a href="#部署服务" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:部署服务" class="headings">部署服务</a></h2>
+<p>备份原官方在线源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.bak
+</code></pre></div><p>下载阿里云的在线源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo https://mirrors.aliyun.com/repo/Centos-8.repo
+</code></pre></div><p>安装EPEL<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup>扩展软件包在线源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install epel-release
+</code></pre></div><p>安装ansible软件包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install -y ansible
+</code></pre></div><p>安装完毕后，Ansible服务便默认已经启动。可以看到Ansible服务的版本及配置信息。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible --version
+</code></pre></div><p>Ansible服务配置文件优先级顺序<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">[2]</a></sup></p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>文件位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高</td>
+<td>./ansible.cfg</td>
+</tr>
+<tr>
+<td>中</td>
+<td>~/.ansible.cfg</td>
+</tr>
+<tr>
+<td>低</td>
+<td>/etc/ansible/ansible.cfg</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="设置主机清单hosts"><a href="#设置主机清单hosts" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:设置主机清单hosts" class="headings">设置主机清单（hosts）</a></h2>
+<blockquote>
+<p>主机清单（inventory）。将要管理的主机IP预写入<code>/etc/ansible/hosts</code>文件，这样后续执行ansible命令的任务时就包含这些主机了</p>
+</blockquote>
+<p>受管主机信息如下</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>IP地址</th>
+<th>功能用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RHEL 8</td>
+<td>192.168.88.130</td>
+<td>dev</td>
+</tr>
+<tr>
+<td>RHEL 8</td>
+<td>192.168.88.139</td>
+<td>web</td>
+</tr>
+</tbody>
+</table></div>
+<p>#由于主机清单文件/etc/ansible/hosts中默认存在大量的注释信息，建议先备份文件，然后新建一个文件</p>
+<p>备份hosts文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/ansible/hosts /etc/ansible/hosts.bak
+</code></pre></div><p>新建hosts文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ansible/hosts
+
+<span class="o">[</span>devserver<span class="o">]</span>
+192.168.88.130
+<span class="o">[</span>webserver<span class="o">]</span>
+192.168.88.139 
+</code></pre></div><p>Ansible是基于SSH实现自动化控制的，sshd服务在初次连接时回要求用户接受一次对方主机的指纹信息，然后再输入主机的账号和密码，这样是非常麻烦的。而Ansible提供了变量来解决这个问题</p>
+<p>Ansible常用变量汇总</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ansible_ssh_host</td>
+<td>受管主机名</td>
+</tr>
+<tr>
+<td>ansible_ssh_port</td>
+<td>端口号</td>
+</tr>
+<tr>
+<td>ansible_ssh_user</td>
+<td>默认账号</td>
+</tr>
+<tr>
+<td>ansible_ssh_pass</td>
+<td>默认密码</td>
+</tr>
+<tr>
+<td>ansible_<a href="https://www.linuxcool.com/" target="_blank" rel="noopener">shell</a>_type</td>
+<td>Shell终端类型</td>
+</tr>
+</tbody>
+</table></div>
+<p>用户只需要将对应的变量及信息填写到主机清单文件中，在执行任务时便会自动对账号和密码进行匹配，而不用每次重复输入它们。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ansible/hosts
+
+<span class="o">[</span>devserver<span class="o">]</span>
+192.168.88.130
+<span class="o">[</span>webserver<span class="o">]</span>
+192.168.88.139
+
+<span class="o">[</span>all:vars<span class="o">]</span>
+<span class="nv">ansible_user</span><span class="o">=</span>root
+<span class="nv">ansible_password</span><span class="o">=</span><span class="m">123</span>
+</code></pre></div><p>以结构化的方式显示出受管主机的信息</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-inventory --graph
+
+@all:
+ <span class="p">|</span>--@devserver:
+ <span class="p">|</span> <span class="p">|</span>--192.168.88.130
+ <span class="p">|</span>--@ungrouped:
+ <span class="p">|</span>--@webserver:
+ <span class="p">|</span> <span class="p">|</span>--192.168.88.139
+</code></pre></div><p>修改Ansible主配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ansible/ansible.cfg
+
+<span class="m">71</span> <span class="nv">host_key_checking</span> <span class="o">=</span> False           <span class="c1">#关闭SSH协议的指纹验证</span>
+<span class="m">107</span> <span class="nv">remote_user</span> <span class="o">=</span> root                 <span class="c1">#默认执行剧本时所使用的管理员名称为root</span>
+</code></pre></div><p>修改后不需要重启服务</p>
+<blockquote>
+<p>连接host主机时ssh密钥不匹配怎么办</p>
+</blockquote>
+<ol>
+<li>
+<p>在/root/.ssh/known_hosts中添加正确的主机密钥。</p>
+</li>
+<li>
+<p>修改在/root/.ssh/known_主机中有问题的ECDSA密钥：1</p>
+</li>
+<li>
+<p>直接删除 rm /root/.ssh/known_hosts</p>
+</li>
+</ol>
+<h2 id="运行临时命令ansible"><a href="#运行临时命令ansible" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:运行临时命令ansible" class="headings">运行临时命令（ansible）</a></h2>
+<blockquote>
+<p>Ansible服务的强大之处在于只需要一条命令，便可以操控成千上万台的主机节点，而ansible命令便是最得力的工具之一。ansible命令是用于执行临时任务的命令，一次性执行后结束，无法重复执行。前面提到，Ansible服务实际上只是一个框架，能够完成工作的是模块化功能代码。</p>
+</blockquote>
+<p>Ansible服务常用模块名称及作用</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>模块名称</th>
+<th>模块作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ping</td>
+<td>检查受管节点主机网络是否能够联通。</td>
+</tr>
+<tr>
+<td>yum</td>
+<td>安装、更新及卸载软件包。</td>
+</tr>
+<tr>
+<td>yum_repository</td>
+<td>管理主机的软件仓库配置文件。</td>
+</tr>
+<tr>
+<td>template</td>
+<td>复制模板文件到受管节点主机。</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>新建、修改及复制文件。</td>
+</tr>
+<tr>
+<td>user</td>
+<td>创建、修改及删除用户。</td>
+</tr>
+<tr>
+<td>group</td>
+<td>创建、修改及删除用户组。</td>
+</tr>
+<tr>
+<td>service</td>
+<td>启动、关闭及查看服务状态。</td>
+</tr>
+<tr>
+<td>get_url</td>
+<td>从网络中下载文件。</td>
+</tr>
+<tr>
+<td>file</td>
+<td>设置文件权限及创建快捷方式。</td>
+</tr>
+<tr>
+<td>cron</td>
+<td>添加、修改及删除计划任务。</td>
+</tr>
+<tr>
+<td>command</td>
+<td>直接执行用户指定的命令。</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>直接执行用户指定的命令（支持特殊字符）。</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>输出调试或报错信息。</td>
+</tr>
+<tr>
+<td>mount</td>
+<td>挂载硬盘设备文件。</td>
+</tr>
+<tr>
+<td>filesystem</td>
+<td>格式化硬盘设备文件。</td>
+</tr>
+<tr>
+<td>lineinfile</td>
+<td>通过正则表达式修改文件内容。</td>
+</tr>
+<tr>
+<td>setup</td>
+<td>收集受管节点主机上的系统及变量信息。</td>
+</tr>
+<tr>
+<td>firewalld</td>
+<td>添加、修改及删除防火墙策略。</td>
+</tr>
+<tr>
+<td>lvg</td>
+<td>管理主机的物理卷及卷组设备。</td>
+</tr>
+<tr>
+<td>lvol</td>
+<td>管理主机的逻辑卷设备。</td>
+</tr>
+</tbody>
+</table></div>
+<p>在使用ansible命令时，必须指明受管主机的信息，如果已经设置过主机清单文件（/etc/ansible/hosts），则可以使用all参数来指代全体受管主机，或是用dev、test等主机组名称来指代某一组的主机。</p>
+<p>ansible命令常用的语法格式为　ansible 受管主机节点 -m 模块名称 [-a模块参数]　，常见的参数如表所示。其中，-a是要传递给模块的参数，只有功能极其简单的模块才不需要额外参数，所以大多情况下 -m 与 -a 参数都会同时出现。</p>
+<p>ansible命令常用参数</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-k</td>
+<td>手动输入SSH协议密码</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>指定主机清单文件</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>指定要使用的模块名</td>
+</tr>
+<tr>
+<td>-M</td>
+<td>指定要使用的模块路径</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>使用su命令</td>
+</tr>
+<tr>
+<td>-T</td>
+<td>设置SSH协议连接超时时间</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>设置传递给模块的参数</td>
+</tr>
+<tr>
+<td>--version</td>
+<td>查看版本信息</td>
+</tr>
+</tbody>
+</table></div>
+<p>如果想实现某个功能，但是却不知道用什么模块，又或者是知道了模块名称，但不清楚模块具体的作用，则建议使用ansible-doc命令进行查找。例如，列举出当前Ansible服务所支持的所有模块信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-doc -l
+
+a10_server                          Manage A10 Netwo...
+a10_server_axapi3                       Manage A10 Netwo...
+a10_service_group                       Manage A10 Netwo...
+a10_virtual_server                      Manage A10 Netwo...
+aci_aaa_user                         Manage AAA users...
+aci_aaa_user_certificate                   Manage AAA user ...
+aci_access_port_block_to_access_port             Manage port bloc...
+aci_access_port_to_interface_policy_leaf_profile       Manage Fabric in...
+aci_access_sub_port_block_to_access_port           Manage sub port ...
+aci_aep                            Manage attachabl...
+aci_aep_to_domain                       Bind AEPs to Phy...
+aci_ap                            Manage top level...
+aci_bd                            Manage Bridge Do...
+aci_bd_subnet                         Manage Subnets <span class="o">(</span>...
+aci_bd_to_l3out                        Bind Bridge Doma...
+aci_config_rollback                      Provides rollbac...
+…………
+</code></pre></div><p>一般情况下，很难通过名称来判别一个模块的作用，要么是参考模块后面的介绍信息，要么是平时多学多练，进行积累。例如，接下来随机查看一个模块的详细信息。ansible-doc命令会在屏幕上显示出这个模块的作用、可用参数及实例等信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc aci_domain</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; ACI_DOMAIN  (/usr/lib/python3.6/site-packages/ansible/modules/network/aci/aci_&gt;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">​    Manage physical, virtual, bridged, routed or FC domain</span><span class="w">
+</span><span class="w"></span><span class="l">​    profiles on Cisco ACI fabrics.</span><span class="w">
+</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module is maintained by an Ansible Partner</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">…………</span><span class="w">
+</span></code></pre></div><p>之前已经成功地将受管主机的IP地址填写到主机清单文件中，接下来检查一下这些主机的网络连通性。ping模块用于进行简单的网络测试（类似于常用的ping命令）。可以使用ansible命令直接针对所有主机调用ping模块，不需要增加额外的参数，返回值若为SUCCESS，则表示主机当前在线。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible all -m ping
+
+192.168.88.139 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+​    <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: false,
+  <span class="s2">&#34;ping&#34;</span>: <span class="s2">&#34;pong&#34;</span>
+<span class="o">}</span>
+192.168.88.130 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+​    <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: false,
+  <span class="s2">&#34;ping&#34;</span>: <span class="s2">&#34;pong&#34;</span>
+<span class="o">}</span>
+</code></pre></div><p>除了使用-m参数直接指定模块名称之外，还可以用-a参数将参数传递给模块，让模块的功能更高级，更好地满足当前生产的需求。例如，yum_repository模块的作用是管理主机的软件仓库，能够添加、修改及删除软件仓库的配置信息，参数相对比较复杂。遇到这种情况时，建议先用ansible-doc命令对其进行了解。尤其是下面的EXAMPLES结构段会有该模块的实例，对用户来说有非常高的参考价值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-doc -l <span class="p">|</span> grep yum
+
+yum                              Manages packages with the <span class="sb">`</span>yum<span class="err">&#39;</span> package manager                  
+yum_repository                        Add or remove YUM repositories
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc yum_repository</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; YUM_REPOSITORY  (/usr/lib/python3.6/site-packages/ansible/modules/packaging/os/yum_repository.py)</span><span class="w">
+</span><span class="w">
+</span><span class="w">     </span><span class="l">Add or remove YUM repositories in RPM-based Linux distributions. If you wish to update an existing repository</span><span class="w">
+</span><span class="w">     </span><span class="l">definition use [ini_file] instead.</span><span class="w">
+</span><span class="w">     
+</span><span class="w"></span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Core Team</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">OPTIONS (= is mandatory)</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add repository</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum_repository</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">epel</span><span class="w">
+</span><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">EPEL YUM repo</span><span class="w">
+</span><span class="w">  </span><span class="nt">baseurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://download.fedoraproject.org/pub/epel/$releasever/$basearch/</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add multiple repositories into the same file (1/2)</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum_repository</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">epel</span><span class="w">
+</span><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">EPEL YUM repo</span><span class="w">
+</span><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l">external_repos</span><span class="w">
+</span><span class="w">  </span><span class="nt">baseurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://download.fedoraproject.org/pub/epel/$releasever/$basearch/</span><span class="w">
+</span><span class="w">  </span><span class="nt">gpgcheck</span><span class="p">:</span><span class="w"> </span><span class="kc">no</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Add multiple repositories into the same file (2/2)</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum_repository</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">rpmforge</span><span class="w">
+</span><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">RPMforge YUM repo</span><span class="w">
+</span><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l">external_repos</span><span class="w">
+</span><span class="w">  </span><span class="nt">baseurl</span><span class="p">:</span><span class="w"> </span><span class="l">http://apt.sw.be/redhat/el7/en/$basearch/rpmforge</span><span class="w">
+</span></code></pre></div><p>参数并不是很多，而且与/etc/yum.repos.d/目录中的配置文件基本相似。现在，想为主机清单中的所有服务器新增一个如表所示的软件仓库，该怎么操作呢？</p>
+<p>新增软件仓库信息</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>仓库名称</th>
+<th>CentOS-8-Base-mirrors.aliyun.com</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仓库描述</td>
+<td>mirrors.163.com</td>
+</tr>
+<tr>
+<td>仓库地址</td>
+<td><a href="https://mirrors.aliyun.com/centos/$releasever/BaseOS/$basearch/os/" target="_blank" rel="noopener">https://mirrors.aliyun.com/centos/$releasever/BaseOS/$basearch/os/</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="http://mirrors.cloud.aliyuncs.com/centos/$releasever/BaseOS/$basearch/os/" target="_blank" rel="noopener">http://mirrors.cloud.aliyuncs.com/centos/$releasever/BaseOS/$basearch/os/</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="http://mirrors.aliyuncs.com/centos/$releasever/BaseOS/$basearch/os/" target="_blank" rel="noopener">http://mirrors.aliyuncs.com/centos/$releasever/BaseOS/$basearch/os/</a></td>
+</tr>
+<tr>
+<td>GPG签名</td>
+<td>启用</td>
+</tr>
+<tr>
+<td>GPG密钥文件</td>
+<td><a href="file://media/cdrom/RPM-GPG-KEY-redhat-release">https://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>我们可以对照着EXAMPLE实例段，逐一对应填写需求值和参数，其标准格式是在-a参数后接整体参数（用单引号圈起），而各个参数字段的值则用双引号圈起。这是最严谨的写法。在执行下述命令后如果出现CHANGED字样，则表示修改已经成功：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible all -m yum_repository -a &#39;name=&#34;CentOS-8-Base-mirrors.aliyun.com&#34; description=&#34;mirrors.163.com&#34; baseurl=&#34;https://mirrors.aliyun.com/centos/$releasever/BaseOS/$basearch/os/ \n http://mirrors.aliyuncs.com/centos/$releasever/BaseOS/$basearch/os/ \n http://mirrors.cloud.aliyuncs.com/centos/$releasever/BaseOS/$basearch/os/&#34; gpgcheck=yes enabled=1 gpgkey=&#34;https://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official&#34;&#39;</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">192.168.88.139 <span class="p">|</span> <span class="nv">CHANGED</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+​    <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: true,
+  <span class="s2">&#34;repo&#34;</span>: <span class="s2">&#34;CentOS-8-Base-mirrors.aliyun.com&#34;</span>,
+  <span class="s2">&#34;state&#34;</span>: <span class="s2">&#34;present&#34;</span>
+<span class="o">}</span>
+
+192.168.88.130 <span class="p">|</span> <span class="nv">CHANGED</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+​    <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: true,
+  <span class="s2">&#34;repo&#34;</span>: <span class="s2">&#34;CentOS-8-Base-mirrors.aliyun.com&#34;</span>,
+  <span class="s2">&#34;state&#34;</span>: <span class="s2">&#34;present&#34;</span>
+<span class="o">}</span>
+</code></pre></div><p>在命令执行成功后，可以到主机清单中的任意机器上查看新建成功的软件仓库配置文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play2 ~<span class="o">]</span><span class="c1"># cat /etc/yum.repos.d/CentOS-8-Base-mirrors.aliyun.com.repo </span>
+<span class="o">[</span>CentOS-8-Base-mirrors.aliyun.com<span class="o">]</span>
+<span class="nv">baseurl</span> <span class="o">=</span> https://mirrors.aliyun.com/centos/<span class="nv">$releasever</span>/BaseOS/<span class="nv">$basearch</span>/os/
+          http://mirrors.aliyuncs.com/centos/<span class="nv">$releasever</span>/BaseOS/<span class="nv">$basearch</span>/os/
+          http://mirrors.cloud.aliyuncs.com/centos/<span class="nv">$releasever</span>/BaseOS/<span class="nv">$basearch</span>/os/
+<span class="nv">enabled</span> <span class="o">=</span> <span class="m">1</span>
+<span class="nv">gpgcheck</span> <span class="o">=</span> <span class="m">1</span>
+<span class="nv">gpgkey</span> <span class="o">=</span> https://mirrors.aliyun.com/centos/RPM-GPG-KEY-CentOS-Official
+<span class="nv">name</span> <span class="o">=</span> mirrors.163.com
+</code></pre></div><h2 id="运行剧本文件playbook"><a href="#运行剧本文件playbook" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:运行剧本文件playbook" class="headings">运行剧本文件（playbook）</a></h2>
+<p>使用ansible临时命令仅执行单个命令或调用某一个模块，根本无法满足复杂工作的需求。所以Ansible服务允许用户根据需求，编写类似于shell脚本从上到下按顺序运行命令的playbook，由程序自动、重复的执行。</p>
+<p>Ansible服务的剧本（playbook）文件采用<strong>YAML</strong>语言编写，具有<strong>强制性的格式规范</strong>，它通过空格将不同信息分组，因此有时会因一两个空格错位而导致报错。使用时要万分小心。YAML文件的开头需要先写3个减号（---），多个分组的信息需要间隔一致才能执行，而且上下也要对齐，后缀名一般为.yml。剧本文件在执行后，会在屏幕上输出运行界面，内容会根据工作的不同而变化。在运行界面中，绿色表示成功，黄色表示执行成功并进行了修改，而红色则表示执行失败。</p>
+<p>剧本文件的结构由4部分组成，分别是target、variable、task、handler，其各自的作用如下。</p>
+<ul>
+<li>
+<p>target：用于定义要执行剧本的主机范围。</p>
+</li>
+<li>
+<p>variable：用于定义剧本执行时要用到的变量。</p>
+</li>
+<li>
+<p>task：用于定义将在远程主机上执行的任务列表。</p>
+</li>
+<li>
+<p>handler：用于定义执行完成后需要调用的后续任务。</p>
+</li>
+</ul>
+<p>例如，创建一个名为packages.yml的剧本，让dev、test组的主机可以自动安装数据库软件，并且将dev组主机的软件更新至最新。</p>
+<p>安装和更新软件需要使用yum模块。先看一下帮助信息中的示例吧：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc yum</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; YUM  (/usr/lib/python3.6/site-packages/ansible/modules/packaging/os/yum.py)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">​    Installs, upgrade, downgrades, removes, and lists packages and</span><span class="w">
+</span><span class="w"></span><span class="l">​    groups with the `yum&#39; package manager. This module only works</span><span class="w">
+</span><span class="w"></span><span class="l">​    on Python 2. If you require Python 3 support see the [dnf]</span><span class="w">
+</span><span class="w"></span><span class="l">​    module.</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Core Team</span><span class="w">
+</span><span class="w">  </span><span class="nt">* note</span><span class="p">:</span><span class="w"> </span><span class="l">This module has a corresponding action plugin.</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install the latest version of Apache</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ensure a list of packages installed</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ packages }}&#34;</span><span class="w">
+</span><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">packages</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="l">httpd</span><span class="w">
+</span><span class="w">  </span>- <span class="l">httpd-tools</span><span class="w">
+</span></code></pre></div><p>在配置Ansible剧本文件时，ansible-doc命令提供的帮助信息真是好用。在知道yum模块的使用方法和格式后，就可以开始编写剧本了。初次编写剧本文件时，请务必看准格式，模块及play（动作）格式也要上下对齐，否则会出现“参数一模一样，但不能执行”的情况。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim packages.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">安装软件包</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">devserver,webserver</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">sql</span><span class="w">
+</span><span class="w">            </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">mariadb</span><span class="w">
+</span><span class="w">                    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w">
+</span></code></pre></div><p><strong>name</strong>字段表示此项play（动作）的名字，用于在执行过程中提示用户执行到了哪一步，可以在name字段自行命名，没有任何限制。</p>
+<p><strong>hosts</strong>字段表示要在哪些主机上执行该剧本，多个主机组之间用逗号间隔；如果需要对全部主机进行操作，则使用all参数。</p>
+<p><strong>tasks</strong>字段用于定义要执行的任务，每个任务都要有一个独立的name字段进行命名，并且每个任务的name字段和模块名称都要严格上下对齐，参数要单独缩进。</p>
+<p>在确认无误后就可以用<code>ansible-playbook</code>命令运行这个剧本文件了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible-playbook packages.yml </span>
+PLAY <span class="o">[</span>安装软件包<span class="o">]</span> ***********************************************************************
+
+TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> *************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>sql<span class="o">]</span> *************************************************************************
+changed: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+
+PLAY RECAP *************************************************************************
+192.168.88.130       : <span class="nv">ok</span><span class="o">=</span><span class="m">2</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">1</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span>  
+192.168.88.139       : <span class="nv">ok</span><span class="o">=</span><span class="m">2</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">1</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span> 
+</code></pre></div><p>在执行成功后，我们主要观察最下方的输出信息。其中，ok和changed表示执行及修改成功。如遇到unreachable或failed大于0的情况，建议手动检查剧本是否在所有主机中都正确运行了，以及有无安装失败的情况。在正确执行过packages.yml文件后，随机切换到dev、test、prod组中的任意一台主机上，再次安装mariadb软件包，此时会提示该服务已经存在。这说明刚才的操作一切顺利！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play2 ~<span class="o">]</span><span class="c1"># dnf install mariadb</span>
+Last metadata expiration check: 1:12:15 ago on Wed <span class="m">27</span> Oct <span class="m">2021</span> 06:28:24 PM CST.
+Package mariadb-3:10.3.28-1.module_el8.3.0+757+d382997d.x86_64 is already installed.
+Dependencies resolved.
+Nothing to <span class="k">do</span>.
+Complete!
+</code></pre></div><h2 id="创建及使用角色role"><a href="#创建及使用角色role" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建及使用角色role" class="headings">创建及使用角色（role）</a></h2>
+<blockquote>
+</blockquote>
+<p>在日常编写剧本时，会存在剧本越来越长的情况，这不利于进行阅读和维护，而且还无法让其他剧本灵活地调用其中的功能代码。角色（role）这一功能则是自Ansible 1.2版本开始引入的新特性，用于层次性、结构化地组织剧本。</p>
+<p>角色功能分别把变量、文件、任务、模块及处理器配置放在各个独立的目录中，然后对其进行便捷加载。简单来说，<strong>角色功能是把常用的一些功能“类模块化”</strong>，然后在用的时候加载即可。</p>
+<p>Ansible服务的角色功能类似于编程中的封装技术—将具体的功能封装起来，用户不仅可以方便地调用它，而且甚至可以不用完全理解其中的原理。这便是技术封装的好处。</p>
+<p>角色的好处就在于将剧本组织成了一个简洁的、可重复调用的抽象对象，使得用户把注意力放到剧本的宏观大局上，统筹各个关键性任务，只有在需要时才去深入了解细节。</p>
+<blockquote>
+<p>Ansible有3种角色的获取方法，分别是加载系统内置角色、从外部环境获取角色以及自行创建角色。</p>
+</blockquote>
+<h3 id="加载系统内置角色"><a href="#加载系统内置角色" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:加载系统内置角色" class="headings">加载系统内置角色</a></h3>
+<p>在使用RHEL系统的内置角色时，我们不需要联网就能实现。用户只需要配置好软件仓库的配置文件，然后安装包含系统角色的软件包rhel-system-roles，随后便可以在系统中找到它们了，然后就能够使用剧本文件调用角色了。</p>
+<p>安装包含系统角色的软件包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install -y rhel-system-roles
+</code></pre></div><p>安装完毕后，查看RHEL 8系统中有哪些自带的角色可用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-galaxy list
+
+<span class="c1"># /usr/share/ansible/roles</span>
+- linux-system-roles.certificate, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.crypto_policies, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.ha_cluster, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.kdump, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.kernel_settings, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.logging, <span class="o">(</span>unknown version<span class="o">)</span>
+……
+</code></pre></div><p>千万不要低估这些由系统镜像自带的角色，它们在日常的工作中能派上大用场。</p>
+<p>ansible系统角色描述</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>角色名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rhel-system-roles.kdump</td>
+<td>配置kdump崩溃恢复服务</td>
+</tr>
+<tr>
+<td>rhel-system-roles.network</td>
+<td>配置网络接口</td>
+</tr>
+<tr>
+<td>rhel-system-roles.selinux</td>
+<td>配置SELinux策略及模式</td>
+</tr>
+<tr>
+<td>rhel-system-roles.timesync</td>
+<td>配置网络时间协议</td>
+</tr>
+<tr>
+<td>rhel-system-roles.postfix</td>
+<td>配置邮件传输服务</td>
+</tr>
+<tr>
+<td>rhel-system-roles.firewall</td>
+<td>配置防火墙服务</td>
+</tr>
+<tr>
+<td>rhel-system-roles.tuned</td>
+<td>配置系统调优选项</td>
+</tr>
+</tbody>
+</table></div>
+<p>以rhel-system-roles.timesync角色为例，它用于设置系统的时间和NTP服务，让主机能够同步准确的时间信息。剧本模板文件存放在/usr/share/doc/rhel-system-roles/目录中，可以复制过来修改使用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /usr/share/doc/rhel-system-roles/timesync/example-timesync-playbook.yml timesync.yml
+</code></pre></div><p>NTP服务器主要用于同步计算机的时间，可以提供高精度的时间校准服务，帮助计算机校对系统时钟。在复制来的剧本模板文件中，删除掉多余的代码，将NTP服务器的地址填写到timesync_ntp_servers变量的hostname字段中即可。该变量的参数含义如表所示。稍后timesync角色就会自动为用户配置参数信息了。</p>
+<p>timesync_ntp_servers变量参数含义</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hostname</td>
+<td>NTP服务器主机名</td>
+</tr>
+<tr>
+<td>iburst</td>
+<td>启用快速同步</td>
+</tr>
+</tbody>
+</table></div>
+<p>新建剧本文件，调用系统角色</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim timesync.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">timesync_ntp_servers</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">ntp.aliyun.com</span><span class="w">
+</span><span class="w">        </span><span class="nt">iburst</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">rhel-system-roles.timesync</span><span class="w">
+</span></code></pre></div><p>执行剧本文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-playbook timesync.yml
+</code></pre></div><h3 id="从外部获取角色"><a href="#从外部获取角色" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:从外部获取角色" class="headings">从外部获取角色</a></h3>
+<p>Ansible Galaxy是Ansible的一个官方社区，用于共享角色和功能代码，用户可以在网站自由地共享和下载Ansible角色。该社区是管理和使用角色的不二之选。</p>
+<p>在Ansible Galaxy官网中，左侧有3个功能选项，分别是首页（Home）、搜索（Search）以及社区（Community）。单击Search按钮进入到搜索界面，这里以nginx服务为例进行搜索，即可找到Nginx官方发布的角色信息</p>
+<p>当单击nginx角色进入到详情页面后，会显示这个项目的软件版本、评分、下载次数等信息。在Installation字段可以看到相应的安装方式，在保持虚拟机能够连接外网的前提下，可以按这个页面提示的命令进行安装。</p>
+<p>这时，如果需要使用这个角色，可以在虚拟机联网的状态下直接按照“ansible-galaxy install角色名称”的命令格式自动获取：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-galaxy collection install nginxinc.nginx_core
+</code></pre></div><p>执行完毕后，再次查看系统中已有的角色，便可找到nginx角色信息了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-galaxy list
+
+<span class="c1"># /etc/ansible/roles</span>
+- nginxinc.nginx, 0.19.1
+<span class="c1"># /usr/share/ansible/roles</span>
+- linux-system-roles.kdump, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.network, <span class="o">(</span>unknown version<span class="o">)</span>
+</code></pre></div><p>这里还存在两种特殊情况。</p>
+<p>在国内问Ansible Galaxy官网时可能存在不稳定的情况，导致访问不了或者网速较慢。</p>
+<p>某位作者是将作品上传到了自己的网站，或者除Ansible Galaxy官网以外的其他平台。</p>
+<p>在这两种情况下，就不能再用“ansible-galaxy install角色名称”的命令直接加载了，而是需要手动先编写一个YAML语言格式的文件，指明网址链接和角色名称，然后再用-r参数进行加载。</p>
+<p>例如，在（www.linuxprobe.com）上传了一个名为nginx_core的角色软件包（一个用于对nginx网站进行保护的插件）。这时需要编写如下所示的一个yml配置文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim nginx.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">https://www.linuxprobe.com/Software/nginxinc-nginx_core-0.3.0.tar.gz</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-core</span><span class="w">
+</span></code></pre></div><p>随后使用ansible-galaxy命令的-r参数加载这个文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-galaxy install -r nginx.yml
+</code></pre></div><p>即可查看到新角色信息了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-galaxy list
+
+<span class="c1"># /root/.ansible/roles</span>
+- nginx-core, <span class="o">(</span>unknown version<span class="o">)</span>
+<span class="c1"># /usr/share/ansible/roles</span>
+- linux-system-roles.certificate, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.crypto_policies, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.ha_cluster, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.kdump, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.kernel_settings, <span class="o">(</span>unknown version<span class="o">)</span>
+- linux-system-roles.logging, <span class="o">(</span>unknown version<span class="o">)</span>
+</code></pre></div><h3 id="创建自定义角色"><a href="#创建自定义角色" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建自定义角色" class="headings">创建自定义角色</a></h3>
+<p>除了能够使用系统自带的角色和从Ansible Galaxy中获取的角色之外，也可以自行创建符合工作需求的角色。这种定制化的编写工作能够更好地贴合生产环境的实际情况，但难度也会稍高一些。</p>
+<p>接下来将会创建一个名为apache的新角色，它能够帮助我们自动安装、运行httpd网站服务，设置防火墙的允许规则，以及根据每个主机生成独立的index.html首页文件。用户在调用这个角色后能享受到“一条龙”的网站部署服务。</p>
+<p>在Ansible的主配置文件中，第68行定义的是角色保存路径。如果用户新建的角色信息不在规定的目录内，则无法使用ansible-galaxy list命令找到。因此需要手动填写新角色的目录路径，或是进入/etc/ansible/roles目录内再进行创建。为了避免后期角色信息过于分散导致不好管理，我们还是决定在默认目录下进行创建，不再修改。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ansible/ansible.cfg
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="m">67</span> <span class="c1"># additional paths to search for roles in, colon separated</span>
+ <span class="m">68</span> <span class="c1"># roles_path  = /etc/ansible/roles</span>
+</code></pre></div><p>在ansible-galaxy命令后面跟一个init参数，创建一个新的角色信息，且建立成功后便会在当前目录下生成出一个新的目录：</p>
+<pre><code>cd /etc/ansible/roles/
+</code></pre><pre><code>ansible-galaxy init apache
+- Role apache was created successfully
+</code></pre><p>此时的apache即是角色名称，也是用于存在角色信息的目录名称。切换到该目录下，查看它的结构：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls apache/
+defaults files handlers meta README.md tasks templates tests vars
+</code></pre></div><p>在创建新角色时，最关键的便是能够正确理解目录结构。通俗来说，就是要把正确的信息放入正确的目录中，这样在调用角色时才能有正确的效果。角色信息对应的目录结构及含义如表所示</p>
+<p>Ansible角色目录结构及含义</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>目录</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>defaults</td>
+<td>包含角色变量的默认值（优先级低）。</td>
+</tr>
+<tr>
+<td>files</td>
+<td>包含角色执行tasks任务时做引用的静态文件。</td>
+</tr>
+<tr>
+<td>handlers</td>
+<td>包含角色的处理程序定义。</td>
+</tr>
+<tr>
+<td>meta</td>
+<td>包含角色的作者、许可证、频台和依赖关系等信息。</td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>包含角色所执行的任务。</td>
+</tr>
+<tr>
+<td>templates</td>
+<td>包含角色任务所使用的Jinja2模板。</td>
+</tr>
+<tr>
+<td>tests</td>
+<td>包含用于测试角色的剧本文件。</td>
+</tr>
+<tr>
+<td>vars</td>
+<td>包含角色变量的默认值（优先级高）。</td>
+</tr>
+</tbody>
+</table></div>
+<p>下面准备创建自定义角色。</p>
+<p><strong>第1步</strong>：打开用于定义角色任务的tasks/main.yml文件。在该文件中不需要定义要执行的主机组列表，因为后面会单独编写剧本进行调用，此时应先对apache角色能做的事情（任务）有一个<strong>明确的思路</strong>，在调用角色后yml文件会按照从上到下的顺序自动执行。</p>
+<ul>
+<li>
+<p><strong>任务1</strong>：安装httpd网站服务。</p>
+</li>
+<li>
+<p><strong>任务2</strong>：运行httpd网站服务，并加入到开机启动项中。</p>
+</li>
+<li>
+<p><strong>任务3</strong>：配置防火墙，使其放行HTTP协议。</p>
+</li>
+<li>
+<p><strong>任务4</strong>：根据每台主机的变量值，生成不同的主页文件。</p>
+</li>
+</ul>
+<p>先写出第一个任务。使用yum模块安装httpd网站服务程序（注意格式）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim /etc/ansible/roles/apache/tasks/main.yml</span><span class="w">
+</span><span class="w">  
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="c"># tasks file for apache</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w">
+</span></code></pre></div><p><strong>第2步</strong>：使用service模块启动httpd网站服务程序，并加入到启动项中，保证能够一直为用户提供服务。在初次使用模块前，先用ansible-doc命令查看一下帮助和实例信息。对这里的信息进行了删减，仅保留了有用的内容。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc service</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; SERVICE  (/usr/lib/python3.6/site-packages/ansible/modules/system/service.py)</span><span class="w">
+</span><span class="w">    </span><span class="l">Controls services on remote hosts. Supported init systems</span><span class="w">
+</span><span class="w">    </span><span class="l">include BSD init, OpenRC, SysV, Solaris SMF, systemd, upstart.</span><span class="w">
+</span><span class="w">    </span><span class="l">For Windows targets, use the [win_service] module instead.</span><span class="w">
+</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Core Team</span><span class="w">
+</span><span class="w"> </span><span class="nt">* note</span><span class="p">:</span><span class="w"> </span><span class="l">This module has a corresponding action plugin.</span><span class="w">
+</span><span class="w"> 
+</span><span class="w"></span><span class="nt">XAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Start service httpd, if not started</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">started</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Stop service httpd, if started</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">stopped</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Restart service httpd, in all cases</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">restarted</span><span class="w">
+</span><span class="w">  
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Reload service httpd, in all cases</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">reloaded</span><span class="w">
+</span><span class="w">  
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Enable service httpd, and not touch the state</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></code></pre></div><p>默认的EXAMPLES示例使用的就是httpd网站服务。通过输出信息可得知，启动服务为“state: started”参数，而加入到开机启动项则是“enabled: yes”参数。继续编写：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim /etc/ansible/roles/apache/tasks/main.yml</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="c"># tasks file for apache</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">started</span><span class="w">
+</span><span class="w">          </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></code></pre></div><p><strong>第3步</strong>：配置防火墙的允许策略，让其他主机可以正常访问。在配置防火墙时，需要使用firewalld模块。同样也是先看一下帮助示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc firewalld</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; FIREWALLD    (/usr/lib/python3.6/site-packages/ansible/modules/system/firewalld.py)</span><span class="w">
+</span><span class="w">
+</span><span class="w">        </span><span class="l">This module allows for addition or deletion of services and ports (either TCP or UDP) in either running or</span><span class="w">
+</span><span class="w">        </span><span class="l">permanent firewalld rules.</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Community</span><span class="w">
+</span><span class="w">  
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">https</span><span class="w">
+</span><span class="w">    </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8081</span><span class="l">/tcp</span><span class="w">
+</span><span class="w">    </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">disabled</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">161-162</span><span class="l">/udp</span><span class="w">
+</span><span class="w">    </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">zone</span><span class="p">:</span><span class="w"> </span><span class="l">dmz</span><span class="w">
+</span><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span><span class="w">    </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span><span class="w">    
+</span><span class="w"></span>- <span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">rich_rule</span><span class="p">:</span><span class="w"> </span><span class="l">rule service name=&#34;ftp&#34; audit limit value=&#34;1/m&#34; accept</span><span class="w">
+</span><span class="w">    </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span></code></pre></div><p>依据输出信息可得知，在firewalld模块设置防火墙策略时，指定协议名称为“service: http”参数，放行该协议为“state: enabled”参数，设置为永久生效为“permanent: yes”参数，当前立即生效为“immediate: yes”参数。参数虽然多了一些，但是基本与在之前学习的一致，并不需要担心。继续编写：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim /etc/ansible/roles/apache/tasks/main.yml</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="c"># tasks file for apache</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">started</span><span class="w">
+</span><span class="w">          </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">firewall</span><span class="w">
+</span><span class="w">  </span><span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span><span class="w">          </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span><span class="w">          </span><span class="nt">immediate</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></code></pre></div><p><strong>第4步</strong>：让每台主机显示的主页文件均不相同。在使用Ansible的常规模块时，都是采用“查询版主示例并模仿”的方式搞定的，这里为了增加难度，我们再提出个新需求，即能否让每台主机上运行的httpd网站服务都能显示不同的内容呢？例如显示当前服务器的主机名及IP地址。这就要用到template模块及Jinja2技术了。</p>
+<p>我们依然使用ansible-doc命令来查询template模块的使用方法。示例部分依然大有帮助：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc template</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; TEMPLATE  (/usr/lib/python3.6/site-packages/ansible/modules/files/template.py)</span><span class="w">
+</span><span class="w">     </span><span class="l">Templates are processed by the L(Jinja2 templating</span><span class="w">
+</span><span class="w">     </span><span class="l">language,http://jinja.pocoo.org/docs/). Documentation on the</span><span class="w">
+</span><span class="w">     </span><span class="l">template formatting can be found in the L(Template Designer</span><span class="w">
+</span><span class="w">     </span><span class="l">Documentation,http://jinja.pocoo.org/docs/templates/).</span><span class="w">
+</span><span class="w">     </span><span class="l">Additional variables listed below can be used in templates.</span><span class="w">
+</span><span class="w">     </span><span class="l">`ansible_managed&#39; (configurable via the `defaults&#39; section of</span><span class="w">
+</span><span class="w">     </span><span class="l">`ansible.cfg&#39;) contains a string which can be used to describe</span><span class="w">
+</span><span class="w">     </span><span class="l">the template name, host, modification time of the template</span><span class="w">
+</span><span class="w">     </span><span class="l">file and the owner uid. `template_host&#39; contains the node name</span><span class="w">
+</span><span class="w">     </span><span class="l">of the template&#39;s machine. `template_uid&#39; is the numeric user</span><span class="w">
+</span><span class="w">     </span><span class="l">id of the owner. `template_path&#39; is the path of the template.</span><span class="w">
+</span><span class="w">     </span><span class="l">`template_fullpath&#39; is the absolute path of the template.</span><span class="w">
+</span><span class="w">     </span><span class="l">`template_destpath&#39; is the path of the template on the remote</span><span class="w">
+</span><span class="w">     </span><span class="l">system (added in 2.8). `template_run_date&#39; is the date that</span><span class="w">
+</span><span class="w">     </span><span class="l">the template was rendered.</span><span class="w">
+</span><span class="w">     
+</span><span class="w">  </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Core Team</span><span class="w">
+</span><span class="w">  </span><span class="nt">* note</span><span class="p">:</span><span class="w"> </span><span class="l">This module has a corresponding action plugin.</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Template a file to /etc/files.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/mytemplates/foo.j2</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/file.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">bin</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">wheel</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0644&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Template a file, using symbolic modes (equivalent to 0644)</span><span class="w">
+</span><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/mytemplates/foo.j2</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/file.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">bin</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">wheel</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l">u=rw,g=r,o=r</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Copy a version of named.conf that is dependent on the OS. setype obtained &gt;</span><span class="w">
+</span><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">named.conf_{{ ansible_os_family }}.j2</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/named.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">named</span><span class="w">
+</span><span class="w">  </span><span class="nt">setype</span><span class="p">:</span><span class="w"> </span><span class="l">named_conf_t</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="m">0640</span><span class="w">
+</span></code></pre></div><p>从template模块的输出信息中可得知，这是一个用于复制文件模板的模块，能够把文件从Ansible服务器复制到受管主机上。其中，src参数用于定义本地文件的路径，dest参数用于定义复制到受管主机的文件路径，而owner、group、mode参数可选择性地设置文件归属及权限信息。</p>
+<p>正常来说，我们可以直接复制文件的操作，受管主机上会获取到一个与Ansible服务器上的文件一模一样的文件。但有时候，我们想让每台客户端根据自身系统的情况产生不同的文件信息，这就需要用到Jinja2技术了，Jinja2格式的模板文件后缀是.j2。继续编写：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim /etc/ansible/roles/apache/tasks/main.yml</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="c"># tasks file for apache</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">install</span><span class="w">
+</span><span class="w">  </span><span class="nt">yum</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">start</span><span class="w">
+</span><span class="w">  </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">httpd</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">started</span><span class="w">
+</span><span class="w">          </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">firewall</span><span class="w">
+</span><span class="w">  </span><span class="nt">firewalld</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l">http</span><span class="w">
+</span><span class="w">          </span><span class="nt">permanent</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w">          </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">enabled</span><span class="w">
+</span><span class="w">          </span><span class="nt">immediate</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">index</span><span class="w">
+</span><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">index.html.j2</span><span class="w">
+</span><span class="w">          </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/var/www/html/index.html</span><span class="w">
+</span></code></pre></div><p>Jinja2是Python语言中一个被广泛使用的模板引擎，最初的设计思想源自Django的模块引擎。Jinja2基于此发展了其语法和一系列强大的功能，能够让受管主机根据自身变量产生出不同的文件内容。换句话说，正常情况下的复制操作会让新旧文件一模一样，但在使用Jinja2技术时，不是在原始文件中直接写入文件内容，而是写入一系列的变量名称。在使用template模块进行复制的过程中，由Ansible服务负责在受管主机上收集这些变量名称所对应的值，然后再逐一填写到目标文件中，从而让每台主机的文件都根据自身系统的情况独立生成。</p>
+<p>例如，想要让每个网站的输出信息值为“Welcome to 主机名 on 主机地址”，也就是用每个主机自己独有的名称和IP地址来替换文本中的内容，这样就有趣太多了。这个实验的难点在于查询到对应的变量名称、主机名及地址所对应的值保存在哪里？可以用setup模块进行查询。</p>
+<pre><code>ansible-doc setup
+
+&gt; SETUP  (/usr/lib/python3.6/site-packages/ansible/modules/system/setup.py)
+
+     This module is automatically called by playbooks to gather
+     useful variables about remote hosts that can be used in
+     playbooks. It can also be executed directly by
+     `/usr/bin/ansible' to check what variables are available to a
+     host. Ansible provides many `facts' about the system,
+     automatically. This module is also supported for Windows
+     targets.
+
+ * This module is maintained by The Ansible Core Team
+</code></pre><p>setup模块的作用是自动收集受管主机上的<strong>变量</strong>信息，使用-a参数外加filter命令可以对收集来的信息进行二次过滤。相应的语法格式为ansible all -m setup -a 'filter=&quot;<em>关键词</em>&quot;'，其中*号是Shell中的通配符，用于进行关键词查询。例如，如果想搜索各个主机的名称，可以使用通配符搜索所有包含fqdn关键词的变量值信息。</p>
+<p>**FQDN（Fully Qualified Domain Name，完全限定域名）**用于在逻辑上准确表示出主机的位置。FQDN常常被作为主机名的完全表达形式，比 /etc/hostname 文件中定义的主机名更加严谨和准确。通过输出信息可得知，ansible_fqdn变量保存有主机名称。随后进行下一步操作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible all -m setup -a &#39;filter=&#34;*fqdn&#34;&#39;</span>
+
+192.168.88.139 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+     <span class="s2">&#34;ansible_fqdn&#34;</span>: <span class="s2">&#34;play3&#34;</span>,
+     <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: <span class="nb">false</span>
+<span class="o">}</span>
+192.168.88.130 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+     <span class="s2">&#34;ansible_fqdn&#34;</span>: <span class="s2">&#34;play2&#34;</span>,
+     <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: <span class="nb">false</span>
+<span class="o">}</span>
+</code></pre></div><p>用于指定主机地址的变量可以用ip作为关键词进行检索。可以看到，ansible_all_ipv4_addresses变量中的值是我们想要的信息。如果想输出IPv6形式的地址，则可用ansible_all_ipv6_addresses变量。</p>
+<pre><code>[root@play1 ~]# ansible all -m setup -a 'filter=&quot;*ip*&quot;'
+
+192.168.88.139 | SUCCESS =&gt; {
+
+  &quot;ansible_facts&quot;: {
+
+     &quot;ansible_all_ipv4_addresses&quot;: [
+       &quot;192.168.88.139&quot;
+     ],
+     &quot;ansible_all_ipv6_addresses&quot;: [],
+     &quot;ansible_default_ipv4&quot;: {
+       &quot;address&quot;: &quot;192.168.88.139&quot;,
+       &quot;alias&quot;: &quot;ens33&quot;,
+       &quot;broadcast&quot;: &quot;192.168.88.255&quot;,
+       &quot;gateway&quot;: &quot;192.168.88.2&quot;,
+       &quot;interface&quot;: &quot;ens33&quot;,
+       &quot;macaddress&quot;: &quot;00:0c:29:84:d1:6f&quot;,
+       &quot;mtu&quot;: 1500,
+       &quot;netmask&quot;: &quot;255.255.255.0&quot;,
+       &quot;network&quot;: &quot;192.168.88.0&quot;,
+       &quot;type&quot;: &quot;ether&quot;
+     },
+     &quot;ansible_default_ipv6&quot;: {},
+     &quot;ansible_fips&quot;: false,
+     &quot;discovered_interpreter_python&quot;: &quot;/usr/libexec/platform-python&quot;
+  },
+  &quot;changed&quot;: false
+}
+
+192.168.88.130 | SUCCESS =&gt; {
+  &quot;ansible_facts&quot;: {
+     &quot;ansible_all_ipv4_addresses&quot;: [
+       &quot;192.168.88.130&quot;,
+       &quot;192.168.122.1&quot;
+     ],
+     &quot;ansible_all_ipv6_addresses&quot;: [
+       &quot;fe80::20c:29ff:fe7c:18d7&quot;
+     ],
+     &quot;ansible_default_ipv4&quot;: {
+       &quot;address&quot;: &quot;192.168.88.130&quot;,
+       &quot;alias&quot;: &quot;ens33&quot;,
+       &quot;broadcast&quot;: &quot;192.168.88.255&quot;,
+       &quot;gateway&quot;: &quot;192.168.88.2&quot;,
+       &quot;interface&quot;: &quot;ens33&quot;,
+       &quot;macaddress&quot;: &quot;00:0c:29:7c:18:d7&quot;,
+       &quot;mtu&quot;: 1500,
+       &quot;netmask&quot;: &quot;255.255.255.0&quot;,
+       &quot;network&quot;: &quot;192.168.88.0&quot;,
+       &quot;type&quot;: &quot;ether&quot;
+     },
+     &quot;ansible_default_ipv6&quot;: {},
+     &quot;ansible_fips&quot;: false,
+     &quot;discovered_interpreter_python&quot;: &quot;/usr/libexec/platform-python&quot;
+  },
+  &quot;changed&quot;: false
+}
+</code></pre><p>在确认了主机名与IP地址所对应的具体变量名称后，在角色所对应的templates目录内新建一个与上面的template模块参数相同的文件名称（index.html.j2）。Jinja2在调用变量值时，格式为在变量名称的两侧格加两个大括号：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/ansible/roles/apache/
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim templates/index.html.j2 
+Welcome to <span class="o">{{</span> ansible_fqdn <span class="o">}}</span> on <span class="o">{{</span> ansible_all_ipv4_addresses <span class="o">}}</span>
+</code></pre></div><p>进行到这里，任务基本就算完成了。最后要做的就是编写一个用于调用apache角色的yml文件，以及执行这个文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim roles.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">调用自建角色</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span><span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="l">apache </span><span class="w">
+</span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible-playbook roles.yml </span>
+
+PLAY <span class="o">[</span>调用自建角色<span class="o">]</span> ****************************************************************************************************************************************
+
+TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> *******************************************************************************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>apache : install<span class="o">]</span> ******************************************************************************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>apache : start<span class="o">]</span> ********************************************************************************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>apache : firewall<span class="o">]</span> *****************************************************************************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>apache : index<span class="o">]</span> ********************************************************************************************************************************
+changed: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+ 
+PLAY RECAP *******************************************************************************************************************************************
+192.168.88.130       : <span class="nv">ok</span><span class="o">=</span><span class="m">5</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">1</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span>  
+192.168.88.139       : <span class="nv">ok</span><span class="o">=</span><span class="m">5</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">1</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span>  
+</code></pre></div><p>执行完毕后，在浏览器中随机输入几台主机的IP地址，即可访问到包含主机FQDN和IP地址的网页了</p>
+<h2 id="创建和使用逻辑卷"><a href="#创建和使用逻辑卷" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建和使用逻辑卷" class="headings">创建和使用逻辑卷</a></h2>
+<p>创建一个能批量、自动管理逻辑卷设备的剧本，不但能大大提高硬盘设备的管理效率，而且还能避免手动创建带来的错误。例如，我们想在每台受管主机上都创建出一个名为data的逻辑卷设备，大小为150MB，归属于new卷组。如果创建成功，则进一步用Ext4文件系统进行格式化操作；如果创建失败，则给用户输出一条报错提醒，以便排查原因。</p>
+<p>在这种情况下，使用Ansible剧本要比使用Shell脚本的优势大，原因主要有下面两点。</p>
+<ul>
+<li>
+<p>Ansible模块化的功能让操作更标准，只要在执行过程中无报错，那么便会依据远程主机的系统版本及配置自动做出判断和操作，不用担心因系统变化而导致命令失效的问题。</p>
+</li>
+<li>
+<p>Ansible服务在执行剧本文件时会进行判断：如果该文件或该设备已经被创建过，或是某个动作（play）已经被执行过，则绝对不会再重复执行；而使用Shell脚本有可能导致设备被重复格式化，导致数据丢失。</p>
+</li>
+</ul>
+<p>通过之前学习过的逻辑卷的知识，我们应该让剧本文件依次创建物理卷（PV）、卷组（VG）及逻辑卷（LV）。需要先使用lvg模块让设备支持逻辑卷技术，然后创建一个名为new的卷组。lvg模块的帮助信息如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc lvg</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; LVG  (/usr/lib/python3.6/site-packages/ansible/modules/system/lvg.py)</span><span class="w">
+</span><span class="w">    </span>*<span class="w"> </span><span class="l">This module creates, removes or resizes volume groups.</span><span class="w">
+</span><span class="w">    </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Community</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a volume group on top of /dev/sda1 with physical extent size = 32MB</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">vg.services</span><span class="w">
+</span><span class="w">  </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sda1</span><span class="w">
+</span><span class="w">  </span><span class="nt">pesize</span><span class="p">:</span><span class="w"> </span><span class="m">32</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a volume group on top of /dev/sdb with physical extent size = 128KiB</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">vg.services</span><span class="w">
+</span><span class="w">  </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb</span><span class="w">
+</span><span class="w">  </span><span class="nt">pesize</span><span class="p">:</span><span class="w"> </span><span class="l">128K</span><span class="w">
+</span><span class="w">  
+</span><span class="w"></span><span class="c"># If, for example, we already have VG vg.services on top of /dev/sdb1,</span><span class="w">
+</span><span class="w"></span><span class="c"># this VG will be extended by /dev/sdc5. Or if vg.services was created on</span><span class="w">
+</span><span class="w"></span><span class="c"># top of /dev/sda5, we first extend it with /dev/sdb1 and /dev/sdc5,</span><span class="w">
+</span><span class="w"></span><span class="c"># and then reduce by /dev/sda5.</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create or resize a volume group on top of /dev/sdb1 and /dev/sdc5.</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">vg.services</span><span class="w">
+</span><span class="w">  </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb1,/dev/sdc5</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Remove a volume group with name vg.services</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">vg.services</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">absent</span><span class="w">
+</span></code></pre></div><p>通过输出信息可得知，创建PV和VG的lvg模块总共有3个必备参数。其中，vg参数用于定义卷组的名称，pvs参数用于指定硬盘设备的名称，pesize参数用于确定最终卷组的容量大小（可以用PE个数或容量值进行指定）。这样一来，我们先创建出一个由/dev/sdb设备组成的名称为research、大小为150MB的卷组设备。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim lv.yml</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">创建和使用逻辑卷</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">dev</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create pv vg</span><span class="w">
+</span><span class="w">          </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">          </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb</span><span class="w">
+</span><span class="w">          </span><span class="nt">pesize</span><span class="p">:</span><span class="w"> </span><span class="l">150M</span><span class="w">
+</span></code></pre></div><p>接下来使用lvol模块创建出逻辑卷设备。还是按照惯例，先查看模块的帮助信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc lvol</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; LVOL  (/usr/lib/python3.6/site-packages/ansible/modules/system/lvol.py)</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module creates, removes or resizes logical volumes.</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Community</span><span class="w">
+</span><span class="w"> 
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a logical volume of 512m</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">firefly</span><span class="w">
+</span><span class="w">  </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">test</span><span class="w">
+</span><span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">512</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a logical volume of 512m with disks /dev/sda and /dev/sdb</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">firefly</span><span class="w">
+</span><span class="w">  </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">test</span><span class="w">
+</span><span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="m">512</span><span class="w">
+</span><span class="w">  </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sda,/dev/sdb</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create cache pool logical volume</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">firefly</span><span class="w">
+</span><span class="w">  </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">lvcache</span><span class="w">
+</span><span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">512m</span><span class="w">
+</span><span class="w">  </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span>--<span class="l">type cache-pool</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a logical volume of 512g.</span><span class="w">
+</span><span class="w">  </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">firefly</span><span class="w">
+</span><span class="w">  </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">test</span><span class="w">
+</span><span class="w">  </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">512g</span><span class="w">
+</span></code></pre></div><p>通过输出信息可得知，lvol是用于创建逻辑卷设备的模块。其中，vg参数用于指定卷组名称，lv参数用于指定逻辑卷名称，size参数则用于指定最终逻辑卷设备的容量大小（不用加单位，默认为MB）。填写好参数，创建出一个大小为150MB、归属于new卷组且名称为data的逻辑卷设备</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim lv.yml</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">创建和使用逻辑卷</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">dev</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">         </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create pv vg</span><span class="w">
+</span><span class="w">           </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">           </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">           </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb</span><span class="w">
+</span><span class="w">           </span><span class="nt">pesize</span><span class="p">:</span><span class="w"> </span><span class="l">150M</span><span class="w">
+</span><span class="w">           
+</span><span class="w">         </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create lv</span><span class="w">
+</span><span class="w">           </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">           </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">           </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">data</span><span class="w">
+</span><span class="w">           </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">150M</span><span class="w">
+</span></code></pre></div><p>这样还不够，如果还能将创建出的/dev/new/data逻辑卷设备自动用Ext4文件系统进行格式化操作，则又能帮助运维管理员减少一些工作量。可使用filesystem模块来完成设备的文件系统格式化操作。该模块的帮助信息如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc filesystem</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; FILESYSTEM  (/usr/lib/python3.6/site-packages/ansible/modules/system/filesyste&gt;</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module creates a filesystem.</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Community</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a ext2 filesystem on /dev/sdb1</span><span class="w">
+</span><span class="w">  </span><span class="nt">filesystem</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l">ext2</span><span class="w">
+</span><span class="w">  </span><span class="nt">dev</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb1</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a ext4 filesystem on /dev/sdb1 and check disk blocks</span><span class="w">
+</span><span class="w">  </span><span class="nt">filesystem</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l">ext4</span><span class="w">
+</span><span class="w">  </span><span class="nt">dev</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb1</span><span class="w">
+</span><span class="w">  </span><span class="nt">opts</span><span class="p">:</span><span class="w"> </span>-<span class="l">cc</span><span class="w">
+</span></code></pre></div><p>filesystem模块的参数真是简练，fstype参数用于指定文件系统的格式化类型，dev参数用于指定要格式化的设备文件路径。继续编写</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim lv.yml</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">创建和使用逻辑卷</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">dev</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">         </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create pv vg</span><span class="w">
+</span><span class="w">           </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">           </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">           </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb</span><span class="w">
+</span><span class="w">           </span><span class="nt">pesize</span><span class="p">:</span><span class="w"> </span><span class="l">150M</span><span class="w">
+</span><span class="w">           
+</span><span class="w">         </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create lv</span><span class="w">
+</span><span class="w">           </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">           </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">           </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">data</span><span class="w">
+</span><span class="w">           </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">150M </span><span class="w">
+</span><span class="w">           
+</span><span class="w">         </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">format lv</span><span class="w">
+</span><span class="w">           </span><span class="nt">filesystem</span><span class="p">:</span><span class="w">
+</span><span class="w">           </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l">xfs</span><span class="w">
+</span><span class="w">           </span><span class="nt">dev</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/new/data</span><span class="w">
+</span></code></pre></div><p>这样按照顺序执行下来，逻辑卷设备就能够自动创建好了。等一下，还有个问题没有解决。现在只有dev组的主机上添加了新的硬盘设备文件，其余主机是无法按照既定模块顺利完成操作的。这时就要使用类似于Shell的if条件语句的方式进行判断—如果失败……，则……。</p>
+<p>首先用block操作符将上述的3个模块命令作为一个整体（相当于对这3个模块的执行结果作为一个整体进行判断），然后使用rescue操作符进行救援，且只有block块中的模块执行失败后才会调用rescue中的救援模块。其中，debug模块的msg参数的作用是，如果block中的模块执行失败，则输出一条信息到屏幕，用于提醒用户。完成编写后的剧本是下面这个样子：</p>
+<p><strong>(注意缩进)</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">vim lv.yml</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">创建和使用逻辑卷</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">block</span><span class="p">:</span><span class="w">
+</span><span class="w">                  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create pv vg</span><span class="w">
+</span><span class="w">                    </span><span class="nt">lvg</span><span class="p">:</span><span class="w">
+</span><span class="w">                            </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">                            </span><span class="nt">pvs</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/sdb</span><span class="w">
+</span><span class="w">                            </span><span class="nt">pesize</span><span class="p">:</span><span class="w"> </span><span class="l">150M</span><span class="w">
+</span><span class="w">                  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">create lv</span><span class="w">
+</span><span class="w">                    </span><span class="nt">lvol</span><span class="p">:</span><span class="w">
+</span><span class="w">                            </span><span class="nt">vg</span><span class="p">:</span><span class="w"> </span><span class="l">new</span><span class="w">
+</span><span class="w">                            </span><span class="nt">lv</span><span class="p">:</span><span class="w"> </span><span class="l">data</span><span class="w">
+</span><span class="w">                            </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="l">150M</span><span class="w">
+</span><span class="w">                  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">format lv</span><span class="w">
+</span><span class="w">                    </span><span class="nt">filesystem</span><span class="p">:</span><span class="w">
+</span><span class="w">                            </span><span class="nt">fstype</span><span class="p">:</span><span class="w"> </span><span class="l">xfs</span><span class="w">
+</span><span class="w">                            </span><span class="nt">dev</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/new/data</span><span class="w">
+</span><span class="w">            </span><span class="nt">rescue</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span>- <span class="nt">debug</span><span class="p">:</span><span class="w">
+</span><span class="w">                            </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Could not create logical volume of that size(无法创建那样大小的逻辑卷)&#34;</span><span class="w">
+</span></code></pre></div><p>YAML语言对格式有着硬性的要求，既然rescue是对block内的模块进行救援的功能代码，因此recue和block两个操作符必须严格对齐，错开一个空格都会导致剧本执行失败。确认无误后，执行lv.yml剧本文件检阅一下效果：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible-playbook lv.yml </span>
+
+PLAY <span class="o">[</span>创建和使用逻辑卷<span class="o">]</span> ***********************************************************************************************************************************************************
+
+TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> ****************************************************************************************************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>create pv vg<span class="o">]</span> *******************************************************************************************************************************************************
+changed: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+
+TASK <span class="o">[</span>create lv<span class="o">]</span> **********************************************************************************************************************************************************
+changed: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+TASK <span class="o">[</span>format lv<span class="o">]</span> **********************************************************************************************************************************************************
+changed: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+
+PLAY RECAP ****************************************************************************************************************************************************************
+192.168.88.130       : <span class="nv">ok</span><span class="o">=</span><span class="m">4</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">3</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span> 
+192.168.88.139       : <span class="nv">ok</span><span class="o">=</span><span class="m">4</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">3</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">0</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span> 
+</code></pre></div><p>在剧本运行完毕后的执行记录（PLAY RECAP）中可以很清晰地看到只有192.168.10.22及192.168.10.23这两台dev组中的主机执行成功了，其余主机均触发了rescue功能。登录到任意一台dev组的主机上，找到新建的逻辑卷设备信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lvdisplay </span>
+ --- Logical volume ---
+ LV Path        /dev/new/data
+ LV Name        data
+ VG Name        new
+ LV UUID        oHVRhH-K017-riVa-VRvp-DEuY-FY8t-jNIng4
+ LV Write Access    read/write
+ LV Creation host, <span class="nb">time</span> localhost.localdomain, 2021-10-29 00:34:22 +0800
+ LV Status       available
+ <span class="c1"># open         0</span>
+ LV Size        150.00 MiB
+ Current LE       <span class="m">1</span>
+ Segments        <span class="m">1</span>
+ Allocation       inherit
+ Read ahead sectors   auto
+ <span class="se">\-</span> currently <span class="nb">set</span> to   <span class="m">8192</span>
+ Block device      253:2
+</code></pre></div><h2 id="判断主机组名"><a href="#判断主机组名" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:判断主机组名" class="headings">判断主机组名</a></h2>
+<p>在上面的剧本实验中，我们可以让不同的主机根据自身不同的变量信息而生成出独特的网站主页文件，但却无法对某个主机组进行针对性的操作。其实，在每个客户端中都会有一个名为inventory_hostname的变量，用于定义每台主机所对应的Ansible服务的主机组名称，也就是/etc/ansible/hosts文件中所对应的分组信息，例如dev、test、prod、balancers。</p>
+<p>inventory_hostname是Ansible服务中的魔法变量，这意味着无法使用setup模块直接进行查询，诸如ansible all -m setup -a 'filter=&quot;<em>关键词</em>&quot;'这样的命令将对它失效。魔法变量需要在执行剧本文件时的Gathering Facts阶段进行搜集，直接查询是看不到的，只能在剧本文件中进行调用。</p>
+<p>在获得了存储主机组名称的变量名称后，接下来开始实战。这里的需求如下：</p>
+<ul>
+<li>
+<p>若主机在dev分组中，则修改/etc/issue文件内容为Development；</p>
+</li>
+<li>
+<p>若主机在test分组中，则修改/etc/issue文件内容为Test；</p>
+</li>
+</ul>
+<p>根据之前所提及的Ansible常用模块名称及作用，可以看到<strong>copy模块的主要作用是新建、修改及复制文件</strong>，更符合当前的需要，此时便派上了用场。先查询copy模块的帮助信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc copy</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; COPY  (/usr/lib/python3.6/site-packages/ansible/modules/files/copy.py)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">​    The `copy&#39; module copies a file from the local or remote</span><span class="w">
+</span><span class="w"></span><span class="l">​    machine to a location on the remote machine. Use the [fetch]</span><span class="w">
+</span><span class="w"></span><span class="l">​    module to copy files from remote locations to the local box.</span><span class="w">
+</span><span class="w"></span><span class="l">​    If you need variable interpolation in copied files, use the</span><span class="w">
+</span><span class="w"></span><span class="l">​    [template] module. Using a variable in the `content&#39; field</span><span class="w">
+</span><span class="w"></span><span class="l">​    will result in unpredictable output. For Windows targets, use</span><span class="w">
+</span><span class="w"></span><span class="l">​    the [win_copy] module instead.</span><span class="w">
+</span><span class="w">
+</span><span class="w"> </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Core Team</span><span class="w">
+</span><span class="w"> </span><span class="nt">* note</span><span class="p">:</span><span class="w"> </span><span class="l">This module has a corresponding action plugin.</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Copy file with owner and permissions</span><span class="w">
+</span><span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/srv/myfiles/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0644&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Copy file with owner and permission, using symbolic representation</span><span class="w">
+</span><span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/srv/myfiles/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l">u=rw,g=r,o=r</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Another symbolic mode example, adding some permissions and removing others</span><span class="w">
+</span><span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/srv/myfiles/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l">u+rw,g-wx,o-rwx</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Copy a new &#34;ntp.conf file into place, backing up the original if it differ&gt;</span><span class="w">
+</span><span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/mine/ntp.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/ntp.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0644&#39;</span><span class="w">
+</span><span class="w">  </span><span class="nt">backup</span><span class="p">:</span><span class="w"> </span><span class="kc">yes</span><span class="w">
+</span></code></pre></div><p>在输出信息中列举了两种管理文件内容的示例。第一种用于文件的复制行为，第二种是通过content参数定义内容，通过dest参数指定新建文件的名称。显然，第二种更加符合当前的实验场景。编写剧本文件如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim issue.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">修改文件内容</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">定义内容dev</span><span class="w">
+</span><span class="w">            </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Development&#39;</span><span class="w">
+</span><span class="w">                    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/issue</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">定义内容web</span><span class="w">
+</span><span class="w">            </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Web&#39;</span><span class="w">
+</span><span class="w">                    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/issue</span><span class="w">
+</span></code></pre></div><p>但是，如果按照这种顺序执行下去，每一台主机的/etc/issue文件都会被重复修改2次，最终定格在“Web”字样，这显然缺少了一些东西。我们应该依据inventory_hostname变量中的值进行判断。若主机为dev组，则执行第一个动作；若主机为web组，则执行第二个动作；因此，要进行2次判断。</p>
+<p><strong>when是用于判断的语法</strong>，我们将其用在每个动作的下方进行判断，使得只有在满足条件才会执行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim issue.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">修改文件内容</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">定义内容dev</span><span class="w">
+</span><span class="w">            </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Development&#39;</span><span class="w">
+</span><span class="w">                    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/issue</span><span class="w">
+</span><span class="w">            </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;inventory_hostname in groups.devserver&#34;</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">定义内容web</span><span class="w">
+</span><span class="w">            </span><span class="nt">copy</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Web&#39;</span><span class="w">
+</span><span class="w">                    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/issue</span><span class="w">
+</span><span class="w">            </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;inventory_hostname in groups.webserver&#34;</span><span class="w">
+</span></code></pre></div><p>执行剧本文件，在过程中可清晰地看到由于when语法的作用，未在指定主机组中的主机将被跳过（skipping）：</p>
+<pre><code>[root@play1 ~]# ansible-playbook issue.yml 
+
+PLAY [修改文件内容] **********************************************************************
+
+TASK [Gathering Facts] *************************************************************
+ok: [192.168.88.139]
+ok: [192.168.88.130]
+
+TASK [定义内容dev] *********************************************************************
+skipping: [192.168.88.139]
+changed: [192.168.88.130]
+
+TASK [定义内容web] *********************************************************************
+skipping: [192.168.88.130]
+changed: [192.168.88.139]
+
+
+PLAY RECAP *************************************************************************
+192.168.88.130       : ok=2  changed=1  unreachable=0  failed=0  skipped=1  rescued=0  ignored=0  
+192.168.88.139       : ok=2  changed=1  unreachable=0  failed=0  skipped=1  rescued=0  ignored=0 
+</code></pre><p>登录到dev组的192.168.88.139主机上，查看文件内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/issue
+
+Development
+</code></pre></div><p>登录到dev组的192.168.88.130主机上，查看文件内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/issue
+
+Web
+</code></pre></div><h2 id="管理文件属性"><a href="#管理文件属性" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:管理文件属性" class="headings">管理文件属性</a></h2>
+<p>我们学习剧本的目的是为了满足日常的工作需求，把重复的事情写入到脚本中，然后再批量执行下去，从而提高运维工作的效率。其中，创建文件、管理权限以及设置快捷方式几乎是每天都用到的技能。尤其是在学习文件的一般权限、特殊权限、隐藏权限时，往往还会因命令的格式问题而导致出错。这么多命令该怎么记呢？</p>
+<p><strong>Ansible服务将常用的文件管理功能都合并到了file模块中</strong>，大家不用再为了寻找模块而“东奔西跑”了。先来看一下file模块的帮助信息：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="l">ansible-doc file</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">&gt; FILE  (/usr/lib/python3.6/site-packages/ansible/modules/files/file.py)</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="l">​    Set attributes of files, symlinks or directories.</span><span class="w">
+</span><span class="w"></span><span class="l">​    Alternatively, remove files, symlinks or directories. Many</span><span class="w">
+</span><span class="w"></span><span class="l">​    other modules support the same options as the `file&#39; module -</span><span class="w">
+</span><span class="w"></span><span class="l">​    including [copy], [template], and [assemble]. For Windows</span><span class="w">
+</span><span class="w"></span><span class="l">​    targets, use the [win_file] module instead.</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span>*<span class="w"> </span><span class="l">This module is maintained by The Ansible Core Team</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">EXAMPLES</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Change file ownership, group and permissions</span><span class="w">
+</span><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/foo.conf</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0644&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Give insecure permissions to an existing file</span><span class="w">
+</span><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/work</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;1777&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create a symbolic link</span><span class="w">
+</span><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/file/to/link/to</span><span class="w">
+</span><span class="w">  </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/path/to/symlink</span><span class="w">
+</span><span class="w">  </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">foo</span><span class="w">
+</span><span class="w">  </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">link</span><span class="w">
+</span></code></pre></div><p>通过上面的输出示例，大家已经能够了解file模块的基本参数了。其中，path参数定义了文件的路径，owner参数定义了文件所有者，group参数定义了文件所属组，mode参数定义了文件权限，src参数定义了源文件的路径，dest参数定义了目标文件的路径，state参数则定义了文件类型。</p>
+<p>可见，file模块基本上把之前学习过的管理文件权限的功能都包含在内了。</p>
+<ul>
+<li>请创建出一个名为/ftproot的新目录，所有者及所属组均为root管理员身份；</li>
+<li>设置所有者和所属于组拥有对文件的完全控制权，而其他人则只有阅读和执行权限；</li>
+<li>给予SGID特殊权限；</li>
+<li>仅在dev主机组的主机上实施。</li>
+<li>创建一个名称为 /ftp 的快捷方式文件，指向刚刚建立的 /ftproot 目录</li>
+</ul>
+<pre><code>vim chmod.yml
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">管理文件属性</span><span class="w">
+</span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">devserver</span><span class="w">
+</span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">chmod</span><span class="w">
+</span><span class="w">            </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/ftproot</span><span class="w">
+</span><span class="w">                    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">directory</span><span class="w">
+</span><span class="w">                    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span><span class="w">                    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span><span class="w">                    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2775&#39;</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ln</span><span class="w">
+</span><span class="w">            </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span><span class="w">                    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">/ftproot</span><span class="w">
+</span><span class="w">                    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/ftp</span><span class="w">
+</span><span class="w">                    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l">link</span><span class="w">
+</span></code></pre></div><p>进入到dev组的主机中，可以看到/ftproot目录及/ftp的快捷方式均已经被顺利创建：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ll -d /ftp
+lrwxrwxrwx <span class="m">1</span> root root <span class="m">8</span> Oct <span class="m">29</span> 01:10 /ftp -&gt; /ftproot
+
+ll -d /ftproot/
+drwxrwsr-x <span class="m">2</span> root root <span class="m">6</span> Oct <span class="m">29</span> 01:10 /ftproot/
+</code></pre></div><h2 id="管理密码库文件"><a href="#管理密码库文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:管理密码库文件" class="headings">管理密码库文件</a></h2>
+<p>自Ansible 1.5版本发布后，<strong>vault</strong>作为一项新功能进入到了运维人员的视野。它不仅能对密码、剧本等敏感信息进行加密，而且还可以加密变量名称和变量值，从而确保数据不会被他人轻易阅读。使用ansible-vault命令可以实现内容的新建（create）、加密（encrypt）、解密（decrypt）、修改密码（rekey）及查看（view）等功能。</p>
+<p>下面通过示例来学习vault的具体用法。</p>
+<p><strong>第1步</strong>：创建出一个名为locker.yml的配置文件，其中保存了两个变量值：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim locker.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">pw_developer</span><span class="p">:</span><span class="w"> </span><span class="l">Imadev</span><span class="w">
+</span><span class="w"></span><span class="nt">pw_manager</span><span class="p">:</span><span class="w"> </span><span class="l">Imamgr</span><span class="w">
+</span></code></pre></div><p><strong>第2步</strong>：使用ansible-vault命令对文件进行加密。由于需要每次输入密码比较麻烦，因此还应新建一个用于保存密码值的文本文件，以便让ansible-vault命令自动调用。为了保证数据的安全性，在新建密码文件后将该文件的权限设置为600，确保仅管理员可读可写：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim secret.txt
+
+whenyouwishuponastar
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">600</span> secret.txt
+</code></pre></div><p>在Ansible服务的主配置文件中，在第140行的vault_password_file参数后指定密码值保存的文件路径，准备进行调用（如果把密码文件路径加入主配置文件，则查看加密文件时无需输入密码）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ansible/ansible.cfg
+
+<span class="m">140</span> <span class="nv">vault_password_file</span> <span class="o">=</span> /root/secret.txt
+</code></pre></div><p><strong>第3步</strong>：在设置好密码文件的路径后，Ansible服务便会自动进行加载。用户也就不用在每次加密或解密时都重复输入密码了。例如，在加密刚刚创建的locker.yml文件时，只需要使用encrypt参数即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-vault encrypt locker.yml 
+
+Encryption successful
+</code></pre></div><p>文件将使用AES 256加密方式进行加密，也就是意味着密钥有2256种可能。查看到加密后的内容为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat locker.yml 
+
+<span class="nv">$ANSIBLE_VAULT</span><span class="p">;</span>1.1<span class="p">;</span>AES256
+<span class="m">66363866396439333330303937326263646231386131333233346237366232333631636636653730</span>
+3262633761366532353165366465643132343861386464330a326265386265656630393263613333
+<span class="m">65343065643332653637363730626365663830636462306239653537376231326539386666383631</span>
+3461396566633734620a643639663465616664663938326464393333336562343631373666663431
+<span class="m">35373062363831306562653630373066613462343335303235646165623738306331663637386534</span>
+<span class="m">6330346432386439333966333261383165376235393534613339</span>
+</code></pre></div><p>如果不想使用原始密码了呢？也可以使用rekey参数手动对文件进行改密操作，同时应结合--ask-vault-pass参数进行修改，否则Ansible服务会因接收不到用户输入的旧密码值而拒绝新的密码变更请求：</p>
+<pre><code>ansible-vault rekey --ask-vault-pass locker.yml 
+Vault password: 
+New Vault password: 
+Confirm New Vault password: 
+Rekey successful
+</code></pre><p><strong>第4步</strong>：如果想查看和修改加密文件中的内容，该怎么操作呢？对于已经加密过的文件，需要使用ansible-vault命令的edit参数进行修改，随后用view参数即可查看到修改后的内容。ansible-vault命令对加密文件的编辑操作默认使用的是Vim编辑器，在修改完毕后请记得执行wq操作保存后退出：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-vault edit locker.yml 
+
+---
+pw_developer: Imadev
+pw_manager: Imamgr
+pw_production: Imaprod
+</code></pre></div><p>最后，再用view参数进行查看，便是最新的内容了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-vault view locker.yml 
+
+---
+pw_developer: Imadev
+pw_manager: Imamgr
+pw_production: Imaprod
+</code></pre></div><hr>
+<p>参考文章：</p>
+<p>使用Ansible服务实现自动化运维：https://www.linuxprobe.com/basic-learning-16.html</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Epel-release：RHEL 8系统的镜像文件默认不带有某些服务程序，需要从Extra Packages for Enterprise Linux（EPEL）扩展软件包仓库获取。EPEL软件包仓库由红帽公司提供，是一个用于创建、维护和管理企业版Linux的高质量软件扩展仓库，通用于RHEL、CentOS、Oracle Linux等多种红帽系企业版系统，目的是对于默认系统仓库软件包进行扩展。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Ansible服务的主配置文件存在优先级的顺序关系，默认存放在/etc/ansible目录中的主配置文件优先级最低。如果在当前目录或用户家目录中也存放着一份主配置文件，则以当前目录或用户家目录中的主配置文件为主。同时存在多个Ansible服务主配置文件时，具体优先级顺序如表所示。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+</ol>
+</section>
+
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+    <div class="updated-badge-container">
+        <span title="Updated @ 2021-11-01 16:12:26 CST" style="cursor:help">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-01</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-01</text></g></svg>
+        </span></div>
+
+
+
+        
+
+
+        
+
+
+        
+    
+    
+
+
+
+        
+    
+
+
+
+        
+    <footer class="minimal-footer">
+        
+        
+        
+            
+        
+    </footer>
+
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/vsftpd/" rel="next">Vsftpd &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2020–2021&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;ikuriko</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+            
+
+            
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>
