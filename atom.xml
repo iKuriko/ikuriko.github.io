@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-11-02T16:48:11&#43;08:00</updated>
+    <updated>2021-11-03T18:01:52&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,31 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">CentOS7安装VNC</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/" />
+            <id>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/</id>
+            <updated>2021-11-03T18:01:28&#43;08:00</updated>
+            <published>2021-11-03T17:38:40&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装&amp;quot;GNOME Desktop&amp;quot;软件包组……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Nmcli</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/nmcli/" />
