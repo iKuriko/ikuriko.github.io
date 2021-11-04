@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-11-02T14:37:25+08:00",
-        "dateModified": "2021-11-04T14:31:38+08:00",
+        "dateModified": "2021-11-04T14:44:33+08:00",
         "url": "https://ikuriko.github.io/posts/nmcli/",
         "headline": "Nmcli",
         "description": "nmcli 常用命令 查看网络连接 列出所有网络设备 nmcli connection show 查看所有活动的连……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  715 ,
+        "wordCount":  731 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-11-02T14:37:25&#43;08:00" />
-    <meta property="article:modified_time" content="2021-11-04T14:31:38&#43;08:00" />
+    <meta property="article:modified_time" content="2021-11-04T14:44:33&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -291,7 +291,8 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nmcli connection up Bridge
 </code></pre></div><p><strong>配置gretap</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nmcli connection add <span class="nb">type</span> ip-tunnel mode gretap con-name gretap01 ifname gretap01 ip-tunnel.ttl <span class="m">255</span> ip-tunnel.input-key <span class="m">1</span> ip-tunnel.output-key <span class="m">1</span> <span class="nb">local</span> 172.16.100.1 remote 172.16.100.100 master br0
-</code></pre></div><p>参数详解：</p>
+</code></pre></div><hr>
+<p>参数详解：</p>
 <p>add：新建连接</p>
 <p>type：连接类型</p>
 <p>mode：ip-tunnel的隧道模式</p>
@@ -303,6 +304,8 @@
 <p>local：本地的IP地址</p>
 <p>remote：远程的IP地址</p>
 <p>master：隧道加入的网桥（按需添加）</p>
+<p>autoconnect：自动连接</p>
+<hr>
 <p>配置网卡ipv4地址手动，ipv6地址禁用</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nmcli connection modify gretap01 ipv4.method manual ipv6.method disable
 </code></pre></div><p>启用设备，生效配置</p>
@@ -329,7 +332,7 @@
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2021-11-04 14:31:38 CST" style="cursor:help">
+        <span title="Updated @ 2021-11-04 14:44:33 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-04</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-04</text></g></svg>
         </span></div>
