@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-11-05T09:49:51&#43;08:00</updated>
+    <updated>2021-11-05T10:39:01&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,31 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">CentOS7修改中文</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/" />
+            <id>https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</id>
+            <updated>2021-11-05T10:35:58&#43;08:00</updated>
+            <published>2021-11-05T10:34:28&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装中文语言包 yum install kde-l10n-Chinese yum reinstall glibc-common 安装字体 yum groupinstall &amp;#34;fonts&amp;#34; 查看系统支持的语言（……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">CentOS7安装VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/" />
@@ -220,7 +245,7 @@
             <title type="text">Javaweb开发环境搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/javaweb%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" />
             <id>https://ikuriko.github.io/posts/javaweb%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</id>
-            <updated>2021-11-01T10:15:45&#43;08:00</updated>
+            <updated>2021-11-05T10:38:45&#43;08:00</updated>
             <published>2021-09-09T16:53:45&#43;08:00</published>
             <author>
                     <name>ikuriko</name>

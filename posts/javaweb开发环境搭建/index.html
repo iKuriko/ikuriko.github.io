@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-09-09T16:53:45+08:00",
-        "dateModified": "2021-11-01T10:15:45+08:00",
+        "dateModified": "2021-11-05T10:38:45+08:00",
         "url": "https://ikuriko.github.io/posts/javaweb%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/",
         "headline": "Javaweb开发环境搭建",
         "description": "为 Javaweb 开发项目搭建基础环境，全部使用源码包手动安装 环境使用软件……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  985 ,
+        "wordCount":  1014 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-09-09T16:53:45&#43;08:00" />
-    <meta property="article:modified_time" content="2021-11-01T10:15:45&#43;08:00" />
+    <meta property="article:modified_time" content="2021-11-05T10:38:45&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -289,8 +289,9 @@ symbolic-links<span class="o">=</span><span class="m">0</span>
 <span class="nb">source</span> /etc/profile
 </code></pre></div><p>初始化数据库，指定配置文件，安装目录，数据目录，指定用户</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mysqld --defaults-file<span class="o">=</span>/etc/my.cnf --basedir<span class="o">=</span>/usr/local/mysql/ --datadir<span class="o">=</span>/data/mysql/ --user<span class="o">=</span>mysql --initialize
-</code></pre></div><p>查看mysql日志，查看数据库初始密码</p>
+</code></pre></div><p>查看mysql日志，查看数据库初始用户和密码（在最后一段）</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /data/mysql/mysql.err
+
 2021-08-23T14:47:03.946617Z <span class="m">1</span> <span class="o">[</span>Note<span class="o">]</span> A temporary password is generated <span class="k">for</span> root@localhost: R4LagOyP26%,
 </code></pre></div><p>拷贝启动脚本</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /opt/mysql/support-files/mysql.server /etc/init.d/mysql
@@ -299,6 +300,7 @@ symbolic-links<span class="o">=</span><span class="m">0</span>
 chkconfig mysql on
 </code></pre></div><p>mysql默认监听3306端口</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ss -utpln <span class="p">|</span> grep <span class="m">3306</span>
+
 tcp    LISTEN     <span class="m">0</span>      <span class="m">80</span>        *:3306                  *:*                   users:<span class="o">((</span><span class="s2">&#34;mysqld&#34;</span>,pid<span class="o">=</span>3824,fd<span class="o">=</span>20<span class="o">))</span>
 </code></pre></div><p>使用刚才看到的密码，登录数据库，重置密码为root</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w">
@@ -333,6 +335,7 @@ tcp    LISTEN     <span class="m">0</span>      <span class="m">80</span>       
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/opt/python/bin
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> /etc/profile
 </code></pre></div><pre><code>[root@test1 ~]# python3
+
 Python 3.6.2 (default, Aug 24 2021, 20:05:45)
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
@@ -349,11 +352,13 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /opt/tomcat/bin/setclasspath.sh
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/opt/jdk
 <span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span>/opt/jdk/jre
-<span class="c1">#已添加环境变量则无需再次添加</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> setclasspath.sh
+<span class="c1">#已在/etc/profile添加过此环境变量则无需再次添加</span>
+</code></pre></div><p>立即生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> setclasspath.sh
 </code></pre></div><p>启动tomcat服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /opt/tomcat/bin
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./startup.sh
+
 Using CATALINA_BASE:   /opt/tomcat
 Using CATALINA_HOME:   /opt/tomcat
 Using CATALINA_TMPDIR: /opt/tomcat/temp
@@ -363,9 +368,11 @@ Using CATALINA_OPTS:
 Tomcat started.
 </code></pre></div><p>将启动脚本，加入开机自启</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/rc.local
+
 /bin/sh /opt/tomcat/bin/startup.sh <span class="p">&amp;</span>
 </code></pre></div><p>tomcat默认监听8080端口</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ss -utpln <span class="p">|</span> grep <span class="m">8080</span>
+
 tcp    LISTEN     <span class="m">0</span>      <span class="m">100</span>    <span class="o">[</span>::<span class="o">]</span>:8080               <span class="o">[</span>::<span class="o">]</span>:*                   users:<span class="o">((</span><span class="s2">&#34;java&#34;</span>,pid<span class="o">=</span>17268,fd<span class="o">=</span>55<span class="o">))</span>
 </code></pre></div>
             </div>
@@ -379,9 +386,9 @@ tcp    LISTEN     <span class="m">0</span>      <span class="m">100</span>    <s
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2021-11-01 10:15:45 CST" style="cursor:help">
+        <span title="Updated @ 2021-11-05 10:38:45 CST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-01</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-01</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-05</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-05</text></g></svg>
         </span></div>
 
 

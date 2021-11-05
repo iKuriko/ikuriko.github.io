@@ -2,14 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/</loc>
-    <lastmod>2021-11-04T09:46:34+08:00</lastmod>
+    <loc>https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</loc>
+    <lastmod>2021-11-05T10:35:58+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2021-11-04T14:44:33+08:00</lastmod>
+    <lastmod>2021-11-05T10:38:45+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/</loc>
-    <lastmod>2021-11-04T14:44:33+08:00</lastmod>
+    <lastmod>2021-11-05T10:38:45+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/</loc>
+    <lastmod>2021-11-04T09:46:34+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/life/</loc>
     <lastmod>2021-11-02T16:22:51+08:00</lastmod>
@@ -42,7 +45,7 @@
     <lastmod>2021-10-20T11:21:10+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/javaweb%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-11-01T10:15:45+08:00</lastmod>
+    <lastmod>2021-11-05T10:38:45+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2021-10-20T11:19:39+08:00</lastmod>

@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 05 Nov 2021 09:49:51 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 05 Nov 2021 10:39:01 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>CentOS7修改中文</title>
+                <link>https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</guid>
+                <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>安装中文语言包 yum install kde-l10n-Chinese yum reinstall glibc-common 安装字体 yum groupinstall &amp;#34;fonts&amp;#34; 查看系统支持的语言（……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>CentOS7安装VNC</title>
