@@ -18,7 +18,7 @@
 
     
     
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+        <script src="/js/meme.min.7e3baa1dc12c1370758d9e5724f665552808a10fc39f0e4f2ba8adacb585fb55.js"></script>
 
     
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="安装 查看CPU是否支持虚拟化 cat /proc/cpuinfo | egrep &#39;vmx|svm&#39; 关闭SELinux sed -i……" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="安装 KVM 先查看CPU是否支持虚拟化1 cat /proc/cpuinfo | egrep &#39;vmx|svm&#39; 关闭SELinu……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-11-10T16:36:54+08:00",
-        "dateModified": "2021-11-16T11:33:36+08:00",
+        "dateModified": "2021-11-16T14:49:50+08:00",
         "url": "https://ikuriko.github.io/posts/kvm/",
         "headline": "KVM",
-        "description": "安装 查看CPU是否支持虚拟化 cat /proc/cpuinfo | egrep 'vmx|svm' 关闭SELinux sed -i……",
+        "description": "安装 KVM 先查看CPU是否支持虚拟化1 cat /proc/cpuinfo | egrep 'vmx|svm' 关闭SELinu……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  2476 ,
+        "wordCount":  2644 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -99,13 +99,13 @@
 
 
 <meta property="og:title" content="KVM" />
-<meta property="og:description" content="安装 查看CPU是否支持虚拟化 cat /proc/cpuinfo | egrep &#39;vmx|svm&#39; 关闭SELinux sed -i……" />
+<meta property="og:description" content="安装 KVM 先查看CPU是否支持虚拟化1 cat /proc/cpuinfo | egrep &#39;vmx|svm&#39; 关闭SELinu……" />
 <meta property="og:url" content="https://ikuriko.github.io/posts/kvm/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-11-10T16:36:54&#43;08:00" />
-    <meta property="article:modified_time" content="2021-11-16T11:33:36&#43;08:00" />
+    <meta property="article:modified_time" content="2021-11-16T14:49:50&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -232,22 +232,28 @@
 
             <nav class="contents">
   <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
-    <li><a id="contents:安装" href="#安装">安装</a></li>
-    <li><a id="contents:kvm网络" href="#kvm网络">KVM网络</a>
+    <li><a id="contents:安装-kvm" href="#安装-kvm">安装 KVM</a></li>
+    <li><a id="contents:配置-kvm网络" href="#配置-kvm网络">配置 KVM网络</a>
       <ol>
-        <li><a id="contents:bridge-模式" href="#bridge-模式">Bridge 模式</a></li>
-        <li><a id="contents:nat-模式" href="#nat-模式">NAT 模式</a></li>
-        <li><a id="contents:ovs-br-模式" href="#ovs-br-模式">Ovs-br 模式</a></li>
+        <li><a id="contents:配置-bridge-模式" href="#配置-bridge-模式">配置 Bridge 模式</a></li>
+        <li><a id="contents:配置-nat-模式" href="#配置-nat-模式">配置 NAT 模式</a></li>
+        <li><a id="contents:配置-ovs-br-模式" href="#配置-ovs-br-模式">配置 Ovs-br 模式</a></li>
+        <li><a id="contents:定义-kvm网络" href="#定义-kvm网络">定义 KVM网络</a></li>
       </ol>
     </li>
-    <li><a id="contents:创建虚拟机" href="#创建虚拟机">创建虚拟机</a></li>
-    <li><a id="contents:常用命令" href="#常用命令">常用命令</a></li>
-    <li><a id="contents:克隆和快照" href="#克隆和快照">克隆和快照</a></li>
-    <li><a id="contents:报错随笔" href="#报错随笔">报错随笔</a></li>
+    <li><a id="contents:创建-kvm虚拟机" href="#创建-kvm虚拟机">创建 KVM虚拟机</a></li>
+    <li><a id="contents:常用-kvm命令" href="#常用-kvm命令">常用 KVM命令</a></li>
+    <li><a id="contents:虚拟机克隆和快照" href="#虚拟机克隆和快照">虚拟机克隆和快照</a>
+      <ol>
+        <li><a id="contents:创建克隆" href="#创建克隆">创建克隆</a></li>
+        <li><a id="contents:创建快照" href="#创建快照">创建快照</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:error-随笔" href="#error-随笔">Error 随笔</a></li>
   </ol>
 </nav><div class="post-body e-content">
-                <h2 id="安装"><a href="#安装" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装" class="headings">安装</a></h2>
-<p>查看CPU是否支持虚拟化</p>
+                <h2 id="安装-kvm"><a href="#安装-kvm" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装-kvm" class="headings">安装 KVM</a></h2>
+<p>先查看CPU是否支持虚拟化<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /proc/cpuinfo <span class="p">|</span> egrep <span class="s1">&#39;vmx|svm&#39;</span>
 </code></pre></div><p>关闭SELinux</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sed -i <span class="s2">&#34;/^SELINUX/s/enforcing/disabled/g&#34;</span> /etc/selinux/config
@@ -256,28 +262,28 @@
 </code></pre></div><p>重启宿主机，以便加载 kvm 模块</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">reboot
 </code></pre></div><p>查看KVM模块是否被正确加载</p>
-<pre><code>lsmod | grep kvm          #输出以下参数，说明KVM模块已经正确加载
-kvm_intel       162153 0
-kvm          525259 1 kvm_intel       
-</code></pre><p>开启kvm服务，并且设置其开机自动启动</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lsmod <span class="p">|</span> grep kvm          <span class="c1">#输出以下参数，说明KVM模块已经正确加载</span>
+kvm_intel       <span class="m">162153</span> <span class="m">0</span>
+kvm          <span class="m">525259</span> <span class="m">1</span> kvm_intel       
+</code></pre></div><p>开启kvm服务，并且设置其开机自动启动</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start libvirtd
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> libvirtd
 </code></pre></div><p>查看状态，如Active: active (running)，说明运行情况良好</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl status libvirtd
-</code></pre></div><h2 id="kvm网络"><a href="#kvm网络" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:kvm网络" class="headings">KVM网络</a></h2>
-<p>先删除默认的default网络[^1]</p>
+</code></pre></div><h2 id="配置-kvm网络"><a href="#配置-kvm网络" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置-kvm网络" class="headings">配置 KVM网络</a></h2>
+<p>先删除默认的default网络<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">[2]</a></sup></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-destroy default
 Network default destroyed
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-undefine default
 Network default has been undefined
 </code></pre></div><p>重启服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart libvirtd
-</code></pre></div><p>#开启路由转发</p>
-<pre><code>vim /etc/sysctl.conf
+</code></pre></div><p>#按需求选择是否开启路由转发</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/sysctl.conf
 
-net.ipv4.ip_forward = 1    #开启路由转发
-</code></pre><pre><code>sysctl -p                  #立即生效
-</code></pre><h3 id="bridge-模式"><a href="#bridge-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:bridge-模式" class="headings">Bridge 模式</a></h3>
+net.ipv4.ip_forward <span class="o">=</span> <span class="m">1</span>    <span class="c1">#开启路由转发</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sysctl -p                  <span class="c1">#立即生效</span>
+</code></pre></div><h3 id="配置-bridge-模式"><a href="#配置-bridge-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置-bridge-模式" class="headings">配置 Bridge 模式</a></h3>
 <p>宿主机网络配置</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/sysconfig/network-scripts/ifcfg-br1
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">DEVICE</span><span class="o">=</span>br1
@@ -290,12 +296,12 @@ net.ipv4.ip_forward = 1    #开启路由转发
 </code></pre></div><pre><code>ip link set dev br1 up
 </code></pre><p>新建网络定义 xml 文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /tmp/br1.xml
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&lt;network&gt;
-  &lt;name&gt;br1&lt;/name&gt;
-  &lt;forward <span class="nv">mode</span><span class="o">=</span><span class="s2">&#34;bridge&#34;</span>/&gt;
-  &lt;bridge <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;br1&#34;</span>/&gt;
-&lt;/network&gt;
-</code></pre></div><h3 id="nat-模式"><a href="#nat-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:nat-模式" class="headings">NAT 模式</a></h3>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;network&gt;</span>
+  <span class="nt">&lt;name&gt;</span>br1<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;forward</span> <span class="na">mode=</span><span class="s">&#34;bridge&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;bridge</span> <span class="na">name=</span><span class="s">&#34;br1&#34;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/network&gt;</span>
+</code></pre></div><h3 id="配置-nat-模式"><a href="#配置-nat-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置-nat-模式" class="headings">配置 NAT 模式</a></h3>
 <p>宿主机网络配置</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/sysconfig/network-scripts/ifcfg-natbr0
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">DEVICE</span><span class="o">=</span>natbr0
@@ -308,55 +314,55 @@ net.ipv4.ip_forward = 1    #开启路由转发
 </code></pre></div><pre><code>ip link set dev natbr0 up
 </code></pre><p>新建网络定义 xml 文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /tmp/natbr0.xml
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&lt;network&gt;
- &lt;name&gt;nat&lt;/name&gt;
- &lt;bridge <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;natbr0&#34;</span>/&gt;
- &lt;forward/&gt;
- &lt;ip <span class="nv">address</span><span class="o">=</span><span class="s2">&#34;192.168.112.1&#34;</span> <span class="nv">netmask</span><span class="o">=</span><span class="s2">&#34;255.255.255.0&#34;</span>&gt;
-  &lt;dhcp&gt;
-   &lt;range <span class="nv">start</span><span class="o">=</span><span class="s2">&#34;192.168.112.2&#34;</span> <span class="nv">end</span><span class="o">=</span><span class="s2">&#34;192.168.112.254&#34;</span>/&gt;
-  &lt;/dhcp&gt;
- &lt;/ip&gt;
-&lt;/network&gt;
-</code></pre></div><h3 id="ovs-br-模式"><a href="#ovs-br-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ovs-br-模式" class="headings">Ovs-br 模式</a></h3>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;network&gt;</span>
+ <span class="nt">&lt;name&gt;</span>nat<span class="nt">&lt;/name&gt;</span>
+ <span class="nt">&lt;bridge</span> <span class="na">name=</span><span class="s">&#34;natbr0&#34;</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;forward/&gt;</span>
+ <span class="nt">&lt;ip</span> <span class="na">address=</span><span class="s">&#34;192.168.112.1&#34;</span> <span class="na">netmask=</span><span class="s">&#34;255.255.255.0&#34;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dhcp&gt;</span>
+   <span class="nt">&lt;range</span> <span class="na">start=</span><span class="s">&#34;192.168.112.2&#34;</span> <span class="na">end=</span><span class="s">&#34;192.168.112.254&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/dhcp&gt;</span>
+ <span class="nt">&lt;/ip&gt;</span>
+<span class="nt">&lt;/network&gt;</span>
+</code></pre></div><h3 id="配置-ovs-br-模式"><a href="#配置-ovs-br-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置-ovs-br-模式" class="headings">配置 Ovs-br 模式</a></h3>
 <p>宿主机网络配置</p>
 <p>使用ovs网桥需安装 openvswitch 软件包</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ovs-vsctl add-br ovs-br1    <span class="c1">#创建ovs网桥</span>
 </code></pre></div><p>新建网络定义 xml 文件</p>
 <pre><code>vim /tmp/ovs-br1.xml
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&lt;network&gt;
-  &lt;name&gt;ovs-br1&lt;/name&gt;
-  &lt;forward <span class="nv">mode</span><span class="o">=</span><span class="s2">&#34;bridge&#34;</span>/&gt;
-  &lt;bridge <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ovs-br1&#34;</span>/&gt;
-  &lt;virtualport <span class="nv">type</span><span class="o">=</span><span class="s2">&#34;openvswitch&#34;</span>/&gt;
-&lt;/network&gt;
-</code></pre></div><p>重定义与重启网络</p>
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;network&gt;</span>
+  <span class="nt">&lt;name&gt;</span>ovs-br1<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;forward</span> <span class="na">mode=</span><span class="s">&#34;bridge&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;bridge</span> <span class="na">name=</span><span class="s">&#34;ovs-br1&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;virtualport</span> <span class="na">type=</span><span class="s">&#34;openvswitch&#34;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/network&gt;</span>
+</code></pre></div><h3 id="定义-kvm网络"><a href="#定义-kvm网络" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:定义-kvm网络" class="headings">定义 KVM网络</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-define /tmp/br1.xml
 Network BR1 defined from /tmp/br1.xml
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-start BR1
+</code></pre></div><p>启动网络</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-start BR1
 Network BR1 started
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-autostart BR1
+</code></pre></div><p>自启动网络</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-autostart BR1
 Network BR1 marked as autostarted
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-list
+</code></pre></div><p>查看</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-list
 Name         State   Autostart   Persistent
 ----------------------------------------------------------
 BR1         active   yes      yes
 default       active   yes      yes
 </code></pre></div><p>查看PC1下的网卡</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh domiflist pc1
-</code></pre></div><h2 id="创建虚拟机"><a href="#创建虚拟机" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建虚拟机" class="headings">创建虚拟机</a></h2>
-<p>安装前要设置环境语言为英文LANG=&quot;en_US.UTF-8&quot;，如果是中文的话某些版本可能会报错或乱码。CentOS 7 修改 /etc/locale.conf。（也可以直接参考我之前的文章安装中文语言包）</p>
-<p>图形化控制台</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virt-manager
-</code></pre></div><p>Ps：服务器未安装图形化则无法开启，但可通过远程连接软件强制开启，</p>
-<p>kvm虚拟机的配置文件位置</p>
-<pre><code>/etc/libvirt/qemu/
-</code></pre><p>新建kvm存放目录</p>
+</code></pre></div><h2 id="创建-kvm虚拟机"><a href="#创建-kvm虚拟机" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建-kvm虚拟机" class="headings">创建 KVM虚拟机</a></h2>
+<p>安装前要设置环境语言为英文LANG=&quot;en_US.UTF-8&quot;<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">[3]</a></sup></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/locale.conf
+
+<span class="nv">LANG</span><span class="o">=</span><span class="s2">&#34;en_US.UTF-8&#34;</span>
+</code></pre></div><p>新建kvm存储目录</p>
 <pre><code>mkdir -pv /kvm/store/
 </code></pre><p>新建虚拟磁盘</p>
 <pre><code>qemu-img create -f qcow2 /kvm/store/CentOS-7.9_01.qcow2 20G
-</code></pre><p>给与镜像文件权限</p>
-<p>ps：特别注意.iso镜像文件一定放到/home 或者在根目录重新创建目录，不然会因为权限报错，无法创建虚拟机。</p>
+</code></pre><p>给与镜像文件权限，特别注意.iso镜像文件一定放到/home 或者在根目录重新创建目录，不然会因为权限报错，无法创建虚拟机。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chown root:root /iso/CentOS-7-x86_64-Minimal-2009.iso 
 </code></pre></div><p>创建虚拟机（网络模式设置桥接主机，自定义网卡br0，使用自定义网络）</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virt-install --virt-type<span class="o">=</span>kvm --name<span class="o">=</span>CentOS7.9_01 --os-type<span class="o">=</span>linux --vcpus<span class="o">=</span><span class="m">1</span> --memory<span class="o">=</span><span class="m">1024</span> --location<span class="o">=</span>/iso/CentOS-7-x86_64-Minimal-2009.iso --disk<span class="o">=</span>/kvm/store/CentOS-7.9_01.qcow2,size<span class="o">=</span>20,format<span class="o">=</span>qcow2 --network <span class="nv">bridge</span><span class="o">=</span>br0,model<span class="o">=</span>virtio --accelerate --autostart --extra-args<span class="o">=</span><span class="s1">&#39;console=ttyS0&#39;</span>
@@ -424,53 +430,35 @@ default       active   yes      yes
 --os-type<span class="o">=</span>OS_TYPE（linux,windows）            <span class="c1"># 针对一类操作系统优化虚拟机配置（非必要）</span>
 
 --os-variant<span class="o">=</span>OS_VARIANT（rhel7,winx7,win2k8） <span class="c1"># 针对特定操作系统变体进一步优化虚拟机配置（非必要）</span>
-</code></pre></div><h2 id="常用命令"><a href="#常用命令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:常用命令" class="headings">常用命令</a></h2>
+</code></pre></div><p>#图形化控制台，服务器未安装图形化则无法开启，但可通过远程连接软件强制开启(不稳定)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virt-manager
+</code></pre></div><p>#kvm虚拟机的配置文件位置</p>
+<pre><code>/etc/libvirt/qemu/
+</code></pre><h2 id="常用-kvm命令"><a href="#常用-kvm命令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:常用-kvm命令" class="headings">常用 KVM命令</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh list                          <span class="c1"># 查看已开启的虚拟机</span>
-
-virsh list --all                    <span class="c1"># 查看所有虚拟机</span>
-
-virsh net-list                      <span class="c1"># 查看已开启的虚拟网络</span>
- 
-virsh net-list --all                <span class="c1"># 查看所有虚拟网络</span>
-
-virsh net-define default.xml        <span class="c1"># 定义kvm网络</span>
-
-virsh net-undefine default          <span class="c1"># 删除kvm网络</span>
-
-virsh net-start default             <span class="c1"># 启动kvm网络</span>
-
-virsh net-autostart default         <span class="c1"># 自启动kvm网络</span>
-
-virsh dumpxml vm-name               <span class="c1"># 查看kvm虚拟机配置文件</span>
-
-virsh start vm-name                 <span class="c1"># 启动kvm虚拟机</span>
-
-virsh shutdown vm-name              <span class="c1"># 关闭kvm虚拟机（正常关机）</span>
-
-virsh destroy vm-name               <span class="c1"># 强制关闭虚拟机（非正常关机，相当于直接拔掉电源）</span>
-
-virsh undefine vm-name              <span class="c1"># 移除定义kvm虚拟机（只会删除配置文件，不会删除磁盘文件）</span>
-
-virsh define file-name.xml          <span class="c1"># 根据xml配置文件定义虚拟机</span>
-
-virsh <span class="nb">suspend</span> vm-name               <span class="c1"># 挂起虚拟机</span>
-
-virsh resumed vm-name               <span class="c1"># 恢复被挂起的虚拟机</span>
-
-virsh autostart vm-name             <span class="c1"># 开机自启动kvm虚拟机</span>
-
-virsh console vm-name               <span class="c1"># 使用console控制台连接虚拟机</span>
-Ctrl+5 <span class="c1"># 从虚拟机登录页面，退出到宿主机命令行页面</span>
-
-virsh dumpxml vm-name &gt; ~/vm.xml    <span class="c1">#导出虚拟机的配置文件 </span>
-
-virsh setvcpus working112 --maximum <span class="m">4</span> --config   <span class="c1"># 更改CPU</span>
-
-virsh setmaxmem working112 <span class="m">1048576</span> --config      <span class="c1"># 更改内存</span>
-
-virsh dominfo working112                         <span class="c1"># 查看信息</span>
-</code></pre></div><h2 id="克隆和快照"><a href="#克隆和快照" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:克隆和快照" class="headings">克隆和快照</a></h2>
-<p>克隆虚拟机</p>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh list --all                    <span class="c1"># 查看所有虚拟机</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-list                      <span class="c1"># 查看已开启的虚拟网络</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-list --all                <span class="c1"># 查看所有虚拟网络</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-define default.xml        <span class="c1"># 定义kvm网络</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-undefine default          <span class="c1"># 删除kvm网络</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-start default             <span class="c1"># 启动kvm网络</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-autostart default         <span class="c1"># 自启动kvm网络</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh dumpxml vm-name               <span class="c1"># 查看kvm虚拟机配置文件</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh start vm-name                 <span class="c1"># 启动kvm虚拟机</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh shutdown vm-name              <span class="c1"># 关闭kvm虚拟机（正常关机）</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh destroy vm-name               <span class="c1"># 强制关闭虚拟机（非正常关机，相当于直接拔掉电源）</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh undefine vm-name              <span class="c1"># 移除定义kvm虚拟机（只会删除配置文件，不会删除磁盘文件）</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh define file-name.xml          <span class="c1"># 根据xml配置文件定义虚拟机</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh <span class="nb">suspend</span> vm-name               <span class="c1"># 挂起虚拟机</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh resumed vm-name               <span class="c1"># 恢复被挂起的虚拟机</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh autostart vm-name             <span class="c1"># 开机自启动kvm虚拟机</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh console vm-name               <span class="c1"># 使用console控制台连接虚拟机，键入 Ctrl+5 退出</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh dumpxml vm-name &gt; ~/vm.xml    <span class="c1">#导出虚拟机的配置文件 </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh setvcpus vm-name --maximum <span class="m">4</span> --config   <span class="c1"># 更改CPU</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh setmaxmem vm-name <span class="m">1024</span> --config         <span class="c1"># 更改内存</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh dominfo vm-name                         <span class="c1"># 查看信息</span>
+</code></pre></div><h2 id="虚拟机克隆和快照"><a href="#虚拟机克隆和快照" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:虚拟机克隆和快照" class="headings">虚拟机克隆和快照</a></h2>
+<h3 id="创建克隆"><a href="#创建克隆" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建克隆" class="headings">创建克隆</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virt-clone -o CentOS7.9_01 -n test1 -f /kvm/store/test1.qcow2
 </code></pre></div><p>virt-clone 参数</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">--version            <span class="c1"># 查看版本</span>
@@ -494,7 +482,7 @@ virsh dominfo working112                         <span class="c1"># 查看信息
 --force-copy<span class="o">=</span>TARGET  <span class="c1"># 强制复制设备。</span>
 
 --nonsparse          <span class="c1"># 不使用稀疏文件复制磁盘映像。</span>
-</code></pre></div><p>创建快照</p>
+</code></pre></div><h3 id="创建快照"><a href="#创建快照" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:创建快照" class="headings">创建快照</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh snapshot-create test1
 Domain snapshot <span class="m">1624247774</span> created
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh snapshot-list test1
@@ -523,8 +511,8 @@ Domain snapshot <span class="m">1624249928</span> deleted
 Name         Creation Time       State
 ------------------------------------------------------------
 <span class="m">1624249270</span>      2021-06-21 12:21:10 +0800 shutoff
-</code></pre></div><h2 id="报错随笔"><a href="#报错随笔" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:报错随笔" class="headings">报错随笔</a></h2>
-<p>启动虚拟机时报错</p>
+</code></pre></div><h2 id="error-随笔"><a href="#error-随笔" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:error-随笔" class="headings">Error 随笔</a></h2>
+<p>添加 ovs-br 后启动虚拟机时报错</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh start --domain test2
 error: Failed to start domain test2
 error: Unable to add bridge br0 port vnet2: Operation not supported
@@ -535,7 +523,21 @@ error: Unable to add bridge br0 port vnet2: Operation not supported
  <span class="nt">&lt;virtualport</span> <span class="na">type=</span><span class="s">&#39;openvswitch&#39;</span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/interface&gt;</span>
-</code></pre></div>
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>KVM 是基于 x86 虚拟化扩展(Intel VT 或者 AMD-V) 技术的虚拟机软件，所以查看 CPU 是否支持 VT 技术，就可以判断是否支持KVM。有返回结果，如果结果中有vmx（Intel）或svm(AMD)字样，就说明CPU的支持的。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>为了方便管理KVM网络，删除自带的默认网络，默认的网络模式为NAT模式&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>如果是中文的话某些版本可能会报错或乱码。在CentOS 7 中修改 /etc/locale.conf&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+</ol>
+</section>
+
             </div>
 
             
@@ -547,7 +549,7 @@ error: Unable to add bridge br0 port vnet2: Operation not supported
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2021-11-16 11:33:36 CST" style="cursor:help">
+        <span title="Updated @ 2021-11-16 14:49:50 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-16</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-16</text></g></svg>
         </span></div>
@@ -596,7 +598,7 @@ error: Unable to add bridge br0 port vnet2: Operation not supported
         <ul class="post-nav">
             
                 <li class="post-nav-prev">
-                    <a href="/posts/linux%E7%B3%BB%E7%BB%9F%E6%8E%92%E6%9F%A5%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev">&lt; Linux系统排查常用命令</a>
+                    <a href="/posts/linux%E5%B8%B8%E7%94%A8%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/" rel="prev">&lt; Linux常用排查命令</a>
                 </li>
             
             

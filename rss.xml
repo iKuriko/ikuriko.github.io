@@ -23,21 +23,21 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 16 Nov 2021 12:12:11 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 16 Nov 2021 15:02:20 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
         
             <item>
-                <title>Linux系统排查常用命令</title>
-                <link>https://ikuriko.github.io/posts/linux%E7%B3%BB%E7%BB%9F%E6%8E%92%E6%9F%A5%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux%E7%B3%BB%E7%BB%9F%E6%8E%92%E6%9F%A5%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+                <title>Linux常用排查命令</title>
+                <link>https://ikuriko.github.io/posts/linux%E5%B8%B8%E7%94%A8%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux%E5%B8%B8%E7%94%A8%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</guid>
                 <pubDate>Tue, 16 Nov 2021 11:01:07 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>常用排查命令 ps ps命令：可以查看进程的瞬间信息。 ps -aux 常用参数……</description>
+                <description>ps ps命令：可以查看进程的瞬间信息。 ps -aux 常用参数： -a：显示……</description>
                 
                 
                 
@@ -60,7 +60,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>安装 查看CPU是否支持虚拟化 cat /proc/cpuinfo | egrep &amp;#39;vmx|svm&amp;#39; 关闭SELinux sed -i……</description>
+                <description>安装 KVM 先查看CPU是否支持虚拟化1 cat /proc/cpuinfo | egrep &amp;#39;vmx|svm&amp;#39; 关闭SELinu……</description>
                 
                 
                 
