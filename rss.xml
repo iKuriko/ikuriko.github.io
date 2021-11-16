@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 16 Nov 2021 11:26:04 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 16 Nov 2021 11:34:06 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -37,7 +37,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>ps ps命令：可以查看进程的瞬间信息。 ps -aux 常用参数： -a：显示……</description>
+                <description>常用排查命令 ps ps命令：可以查看进程的瞬间信息。 ps -aux 常用参数……</description>
                 
                 
                 
@@ -55,7 +55,7 @@
                 <title>KVM</title>
                 <link>https://ikuriko.github.io/posts/kvm/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/kvm/</guid>
-                <pubDate>Fri, 05 Nov 2021 16:36:54 &#43;0800</pubDate>
+                <pubDate>Wed, 10 Nov 2021 16:36:54 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
