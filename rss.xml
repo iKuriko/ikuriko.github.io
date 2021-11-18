@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 18 Nov 2021 11:51:53 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 18 Nov 2021 12:06:25 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>CentOS7安装SQLServer2017</title>
+                <link>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85sqlserver2017/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85sqlserver2017/</guid>
+                <pubDate>Thu, 18 Nov 2021 11:56:06 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>在CentoOS上安装sqlserver，需要先下载微软官方……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Linux常用排查命令</title>

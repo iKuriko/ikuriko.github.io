@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-11-18T11:51:53&#43;08:00</updated>
+    <updated>2021-11-18T12:06:25&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,31 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">CentOS7安装SQLServer2017</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85sqlserver2017/" />
+            <id>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85sqlserver2017/</id>
+            <updated>2021-11-18T12:03:09&#43;08:00</updated>
+            <published>2021-11-18T11:56:06&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentoOS上安装sqlserver，需要先下载微软官方……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Linux常用排查命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux%E5%B8%B8%E7%94%A8%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/" />
