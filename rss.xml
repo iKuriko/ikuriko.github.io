@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 16 Nov 2021 15:02:20 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 18 Nov 2021 11:39:25 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -52,15 +52,15 @@
             </item>
         
             <item>
-                <title>KVM</title>
-                <link>https://ikuriko.github.io/posts/kvm/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/kvm/</guid>
+                <title>KVM虚拟化</title>
+                <link>https://ikuriko.github.io/posts/kvm%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/kvm%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
                 <pubDate>Wed, 10 Nov 2021 16:36:54 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>安装 KVM 先查看CPU是否支持虚拟化1 cat /proc/cpuinfo | egrep &amp;#39;vmx|svm&amp;#39; 关闭SELinu……</description>
+                <description>简介 KVM是开源软件，全称是kernel-based virtual mac……</description>
                 
                 
                 
@@ -76,8 +76,8 @@
         
             <item>
                 <title>CentOS7修改中文</title>
-                <link>https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</guid>
+                <link>https://ikuriko.github.io/posts/centos%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85/</guid>
                 <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -122,8 +122,8 @@
         
             <item>
                 <title>Nmcli</title>
-                <link>https://ikuriko.github.io/posts/nmcli/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli/</guid>
+                <link>https://ikuriko.github.io/posts/nmcli%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
