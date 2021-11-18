@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-11-10T16:36:54+08:00",
-        "dateModified": "2021-11-18T11:38:46+08:00",
+        "dateModified": "2021-11-18T11:51:42+08:00",
         "url": "https://ikuriko.github.io/posts/kvm%E8%99%9A%E6%8B%9F%E5%8C%96/",
         "headline": "KVM虚拟化",
         "description": "简介 KVM是开源软件，全称是kernel-based virtual mac……",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-11-10T16:36:54&#43;08:00" />
-    <meta property="article:modified_time" content="2021-11-18T11:38:46&#43;08:00" />
+    <meta property="article:modified_time" content="2021-11-18T11:51:42&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -433,28 +433,28 @@ default       active   yes      yes
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls /etc/libvirt/qemu/
 </code></pre></div><h2 id="kvm-基本管理命令"><a href="#kvm-基本管理命令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:kvm-基本管理命令" class="headings">KVM 基本管理命令</a></h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh list                          <span class="c1"># 查看已开启的虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh list --all                    <span class="c1"># 查看所有虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-list                      <span class="c1"># 查看已开启的虚拟网络</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-list --all                <span class="c1"># 查看所有虚拟网络</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-define default.xml        <span class="c1"># 定义kvm网络</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-undefine default          <span class="c1"># 删除kvm网络</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-start default             <span class="c1"># 启动kvm网络</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh net-autostart default         <span class="c1"># 自启动kvm网络</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh domiflist Centos              <span class="c1"># 查看虚机内的网卡</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh dumpxml vm-name               <span class="c1"># 查看kvm虚拟机配置文件</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh start vm-name                 <span class="c1"># 启动kvm虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh shutdown vm-name              <span class="c1"># 关闭kvm虚拟机（正常关机）</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh destroy vm-name               <span class="c1"># 强制关闭虚拟机（非正常关机，相当于直接拔掉电源）</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh undefine vm-name              <span class="c1"># 移除定义kvm虚拟机（只会删除配置文件，不会删除磁盘文件）</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh define file-name.xml          <span class="c1"># 根据xml配置文件定义虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh <span class="nb">suspend</span> vm-name               <span class="c1"># 挂起虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh resumed vm-name               <span class="c1"># 恢复被挂起的虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh autostart vm-name             <span class="c1"># 开机自启动kvm虚拟机</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh console vm-name               <span class="c1"># 使用console控制台连接虚拟机，键入 Ctrl+5 退出</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh dumpxml vm-name &gt; ~/vm.xml    <span class="c1">#导出虚拟机的配置文件 </span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh setvcpus vm-name --maximum <span class="m">4</span> --config   <span class="c1"># 更改CPU</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh setmaxmem vm-name <span class="m">1024</span> --config         <span class="c1"># 更改内存</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">virsh dominfo vm-name                         <span class="c1"># 查看信息</span>
+virsh list --all                    <span class="c1"># 查看所有虚拟机</span>
+virsh net-list                      <span class="c1"># 查看已开启的虚拟网络</span>
+virsh net-list --all                <span class="c1"># 查看所有虚拟网络</span>
+virsh net-define default.xml        <span class="c1"># 定义kvm网络</span>
+virsh net-undefine default          <span class="c1"># 删除kvm网络</span>
+virsh net-start default             <span class="c1"># 启动kvm网络</span>
+virsh net-autostart default         <span class="c1"># 自启动kvm网络</span>
+virsh domiflist Centos              <span class="c1"># 查看虚机内的网卡</span>
+virsh dumpxml vm-name               <span class="c1"># 查看kvm虚拟机配置文件</span>
+virsh start vm-name                 <span class="c1"># 启动kvm虚拟机</span>
+virsh shutdown vm-name              <span class="c1"># 关闭kvm虚拟机（正常关机）</span>
+virsh destroy vm-name               <span class="c1"># 强制关闭虚拟机（非正常关机，相当于直接拔掉电源）</span>
+virsh undefine vm-name              <span class="c1"># 移除定义kvm虚拟机（只会删除配置文件，不会删除磁盘文件）</span>
+virsh define file-name.xml          <span class="c1"># 根据xml配置文件定义虚拟机</span>
+virsh <span class="nb">suspend</span> vm-name               <span class="c1"># 挂起虚拟机</span>
+virsh resumed vm-name               <span class="c1"># 恢复被挂起的虚拟机</span>
+virsh autostart vm-name             <span class="c1"># 开机自启动kvm虚拟机</span>
+virsh console vm-name               <span class="c1"># 使用console控制台连接虚拟机，键入 Ctrl+5 退出</span>
+virsh dumpxml vm-name &gt; ~/vm.xml    <span class="c1">#导出虚拟机的配置文件 </span>
+virsh setvcpus vm-name --maximum <span class="m">4</span> --config   <span class="c1"># 更改CPU</span>
+virsh setmaxmem vm-name <span class="m">1024</span> --config         <span class="c1"># 更改内存</span>
+virsh dominfo vm-name                         <span class="c1"># 查看信息</span>
 </code></pre></div><h2 id="kvm-高级功能管理"><a href="#kvm-高级功能管理" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:kvm-高级功能管理" class="headings">KVM 高级功能管理</a></h2>
 <h3 id="磁盘格式转换"><a href="#磁盘格式转换" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:磁盘格式转换" class="headings">磁盘格式转换</a></h3>
 <ul>
@@ -574,7 +574,7 @@ error: Unable to add bridge br0 port vnet2: Operation not supported
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2021-11-18 11:38:46 CST" style="cursor:help">
+        <span title="Updated @ 2021-11-18 11:51:42 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-11-18</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-11-18</text></g></svg>
         </span></div>
