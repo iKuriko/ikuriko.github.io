@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-11-18T11:43:10&#43;08:00</updated>
+    <updated>2021-11-18T11:46:29&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -68,34 +68,9 @@
     
         <entry>
             <title type="text">CentOS安装中文语言包</title>
-            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/" />
-            <id>https://ikuriko.github.io/posts/centos7%E4%BF%AE%E6%94%B9%E4%B8%AD%E6%96%87/</id>
-            <updated>2021-11-18T11:39:53&#43;08:00</updated>
-            <published>2021-11-05T10:34:28&#43;08:00</published>
-            <author>
-                    <name>ikuriko</name>
-                    <uri>https://ikuriko.github.io</uri>
-                    <email>ikuriko@qq.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装中文语言包 yum install kde-l10n-Chinese #CentOS7 安装 yum reinstall glibc-common 安装字体 yum groupinstall &amp;#34;fonts&amp;#34; 查看系统支持的……</summary>
-            
-            
-            
-            
-            
-                
-                    
-                
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">CentOS安装中文语言包</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85/" />
             <id>https://ikuriko.github.io/posts/centos%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85/</id>
-            <updated>2021-11-18T11:43:05&#43;08:00</updated>
+            <updated>2021-11-18T11:46:22&#43;08:00</updated>
             <published>2021-11-05T10:34:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
