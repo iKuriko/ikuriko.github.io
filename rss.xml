@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 23 Nov 2021 16:46:44 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 23 Nov 2021 17:38:41 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -52,7 +52,7 @@
             </item>
         
             <item>
-                <title>CentOS7安装SQLServer2017</title>
+                <title>CentOS7 安装 SQLServer2017</title>
                 <link>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85sqlserver2017/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85sqlserver2017/</guid>
                 <pubDate>Thu, 18 Nov 2021 11:56:06 &#43;0800</pubDate>
@@ -75,7 +75,7 @@
             </item>
         
             <item>
-                <title>Linux常用排查命令</title>
+                <title>Linux 常用排查命令</title>
                 <link>https://ikuriko.github.io/posts/linux%E5%B8%B8%E7%94%A8%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux%E5%B8%B8%E7%94%A8%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</guid>
                 <pubDate>Tue, 16 Nov 2021 11:01:07 &#43;0800</pubDate>
@@ -98,7 +98,7 @@
             </item>
         
             <item>
-                <title>KVM虚拟化</title>
+                <title>KVM 虚拟化</title>
                 <link>https://ikuriko.github.io/posts/kvm%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/kvm%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
                 <pubDate>Wed, 10 Nov 2021 16:36:54 &#43;0800</pubDate>
@@ -121,7 +121,7 @@
             </item>
         
             <item>
-                <title>CentOS安装中文语言包</title>
+                <title>CentOS 安装中文语言包</title>
                 <link>https://ikuriko.github.io/posts/centos%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%AF%AD%E8%A8%80%E5%8C%85/</guid>
                 <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
@@ -144,7 +144,7 @@
             </item>
         
             <item>
-                <title>CentOS7安装VNC</title>
+                <title>CentOS7 安装 VNC</title>
                 <link>https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7%E5%AE%89%E8%A3%85vnc/</guid>
                 <pubDate>Wed, 03 Nov 2021 17:38:40 &#43;0800</pubDate>
@@ -190,7 +190,7 @@
             </item>
         
             <item>
-                <title>Linux热添加硬盘</title>
+                <title>Linux 热添加硬盘</title>
                 <link>https://ikuriko.github.io/posts/linux%E7%83%AD%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux%E7%83%AD%E6%B7%BB%E5%8A%A0%E7%A1%AC%E7%9B%98/</guid>
                 <pubDate>Mon, 01 Nov 2021 17:41:41 &#43;0800</pubDate>
@@ -259,7 +259,7 @@
             </item>
         
             <item>
-                <title>Tcpdump</title>
+                <title>Tcpdump 常用命令</title>
                 <link>https://ikuriko.github.io/posts/tcpdump/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tcpdump/</guid>
                 <pubDate>Mon, 11 Oct 2021 17:30:36 &#43;0800</pubDate>
@@ -282,7 +282,7 @@
             </item>
         
             <item>
-                <title>CAD快捷命令</title>
+                <title>CAD 快捷命令</title>
                 <link>https://ikuriko.github.io/posts/cad%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/cad%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</guid>
                 <pubDate>Thu, 23 Sep 2021 15:57:29 &#43;0800</pubDate>
@@ -305,7 +305,7 @@
             </item>
         
             <item>
-                <title>Vim快捷键</title>
+                <title>Vim 快捷键</title>
                 <link>https://ikuriko.github.io/posts/vim%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vim%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:56:06 &#43;0800</pubDate>
@@ -328,7 +328,7 @@
             </item>
         
             <item>
-                <title>Javaweb开发环境搭建</title>
+                <title>Javaweb 开发环境搭建</title>
                 <link>https://ikuriko.github.io/posts/javaweb%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/javaweb%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:53:45 &#43;0800</pubDate>
@@ -351,7 +351,7 @@
             </item>
         
             <item>
-                <title>Hugo&#43;GithubPages个人站点搭建</title>
+                <title>Hugo&#43;GithubPages 个人站点搭建</title>
                 <link>https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hugo&#43;githubpages%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</guid>
                 <pubDate>Tue, 07 Sep 2021 14:20:48 &#43;0800</pubDate>
