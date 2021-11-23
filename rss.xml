@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 19 Nov 2021 12:18:39 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 23 Nov 2021 16:46:44 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>RHEL8 Packaging for OpenvSwitch</title>
+                <link>https://ikuriko.github.io/posts/rhel8-packaging-for-openvswitch/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/rhel8-packaging-for-openvswitch/</guid>
+                <pubDate>Tue, 23 Nov 2021 16:25:50 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>Preparation 操作的系统环境：CentOS 8.4.2105 cat /etc/redhat-release CentOS Linux release 8.4.2105 uname -r 4.18.0-348.el8.x86_64 Ovs软件……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>CentOS7安装SQLServer2017</title>
@@ -144,7 +167,7 @@
             </item>
         
             <item>
-                <title>Nmcli</title>
+                <title>Nmcli 网络管理</title>
                 <link>https://ikuriko.github.io/posts/nmcli%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
