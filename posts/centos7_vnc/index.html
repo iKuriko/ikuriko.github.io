@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Tcpdump 常用命令 | ikuriko</title>
+    <title>CentOS7 安装 VNC | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.f0414dbb01deb037a5f89bd3fe49224cb86072aded5151727632be05bc31b04e.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="安装&#34;GNOME Desktop&#34;软件包组……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,21 +46,21 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/posts/tcpdump/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/centos7_vnc/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2021-10-11T17:30:36+08:00",
-        "dateModified": "2021-12-13T11:54:02+08:00",
-        "url": "https://ikuriko.github.io/posts/tcpdump/",
-        "headline": "Tcpdump 常用命令",
-        "description": "Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……",
+        "datePublished": "2021-11-03T17:38:40+08:00",
+        "dateModified": "2021-12-13T12:00:57+08:00",
+        "url": "https://ikuriko.github.io/posts/centos7_vnc/",
+        "headline": "CentOS7 安装 VNC",
+        "description": "安装\"GNOME Desktop\"软件包组……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  207 ,
+        "wordCount":  433 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="Tcpdump 常用命令" />
-<meta property="og:description" content="Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……" />
-<meta property="og:url" content="https://ikuriko.github.io/posts/tcpdump/" />
+<meta property="og:title" content="CentOS7 安装 VNC" />
+<meta property="og:description" content="安装&#34;GNOME Desktop&#34;软件包组……" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/centos7_vnc/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-10-11T17:30:36&#43;08:00" />
-    <meta property="article:modified_time" content="2021-12-13T11:54:02&#43;08:00" />
+    <meta property="article:published_time" content="2021-11-03T17:38:40&#43;08:00" />
+    <meta property="article:modified_time" content="2021-12-13T12:00:57&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -200,7 +200,7 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">Tcpdump 常用命令</h1>
+            <h1 class="post-title p-name">CentOS7 安装 VNC</h1>
 
             
 
@@ -231,19 +231,57 @@
             
 
             <nav class="contents"></nav><div class="post-body e-content">
-                <p style="text-align:left;color:red;font-size:20px;font-family:arial">Linux下抓包工具Tcpdump的常用方法</p>  
-<p>列出所有可抓取的网口</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -D
-</code></pre></div><p>以端口号显示协议，抓取ens33网卡的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i ens33
-</code></pre></div><p>抓取100个ens33网卡的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -c <span class="m">100</span> -i ens33
-</code></pre></div><p>抓取10个所有网卡过滤源主机为192.168.1.1，端口号不是tcp22的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -c <span class="m">10</span>  src host  192.168.1.1 and not tcp port <span class="m">22</span> -i any
-</code></pre></div><p>抓取10个所有网卡过滤目标主机为192.168.1.2，端口号不是udp22的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -c <span class="m">10</span> dst host 192.168.1.2 and not udp port <span class="m">22</span> -i any
-</code></pre></div><p>抓取ping包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i ens33 -c <span class="m">10</span> icmp
+                <p>安装&quot;GNOME Desktop&quot;软件包组</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum groupinstall -y <span class="s2">&#34;GNOME Desktop&#34;</span> 
+</code></pre></div><p>安装完成后，修改默认启动方式为图形化界面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl set-default graphical.target
+</code></pre></div><p>如果要换回命令模式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl set-default multi-user.target 
+</code></pre></div><p>然后重启系统即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">shutdown -r now
+</code></pre></div><p>安装tigervnc</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install tigervnc-server -y
+</code></pre></div><p>过滤软件包是否安装</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rpm -qa<span class="p">|</span>grep tigervnc-server
+</code></pre></div><p>拷贝服务启动脚本，其中1表示端口号，默认5900+，1即是5901，以此类推：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
+</code></pre></div><p>编辑服务启动脚本，设置登录使用的用户，这里使用的是<code>root</code>用户</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/systemd/system/vncserver@<span class="se">\:</span>1.service
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="m">32</span> <span class="o">[</span>Unit<span class="o">]</span>
+ <span class="m">33</span> <span class="nv">Description</span><span class="o">=</span>Remote desktop service <span class="o">(</span>VNC<span class="o">)</span>
+ <span class="m">34</span> <span class="nv">After</span><span class="o">=</span>syslog.target network.target
+ <span class="m">35</span> 
+ <span class="m">36</span> <span class="o">[</span>Service<span class="o">]</span>
+ <span class="m">37</span> <span class="nv">Type</span><span class="o">=</span>forking
+ <span class="m">38</span> 
+ <span class="m">39</span> <span class="c1"># Clean any existing files in /tmp/.X11-unix environment</span>
+ <span class="m">40</span> <span class="nv">ExecStartPre</span><span class="o">=</span>/bin/sh -c <span class="s1">&#39;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#39;</span>
+ <span class="m">41</span> <span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/runuser -l root -c <span class="s1">&#39;/usr/bin/vncserver %i&#39;</span>
+ <span class="m">42</span> <span class="nv">PIDFile</span><span class="o">=</span>/root/.vnc/%H%i.pid
+ <span class="m">43</span> <span class="nv">ExecStop</span><span class="o">=</span>/bin/sh -c <span class="s1">&#39;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#39;</span>
+ <span class="m">44</span> 
+ <span class="m">45</span> <span class="o">[</span>Install<span class="o">]</span>
+ <span class="m">46</span> <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div><p>设置vnc密码，（“View-only password”，只允许查看,无控制权限，这个没啥用，不用设置。）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vncpasswd
+</code></pre></div><p>开启vnc服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start vncserver@<span class="se">\:</span>1.service
+</code></pre></div><p>重新加载配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl daemon-reload
+</code></pre></div><p>开启自启动</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> vncserver@<span class="se">\:</span>1.service
+</code></pre></div><p>过滤服务端口是否存在（无输出可再次重启服务尝试）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">netstat -utpln <span class="p">|</span> grep Xvnc
+</code></pre></div><p>允许firewalld防火墙通过</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>5901/tcp --permanent
+</code></pre></div><p>重新加载生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --reload
+</code></pre></div><p>查看与VNC相关的SELinux域策略有哪些</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">getsebool -a <span class="p">|</span> grep vnc
+
+xdm_bind_vnc_tcp_port --&gt; off
+</code></pre></div><p>修改SELinux策略，-P永久生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">setsebool -P <span class="nv">xdm_bind_vnc_tcp_port</span><span class="o">=</span>on
 </code></pre></div>
             </div>
 
@@ -256,7 +294,7 @@
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2021-12-13 11:54:02 CST" style="cursor:help">
+        <span title="Updated @ 2021-12-13 12:00:57 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-12-13</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-12-13</text></g></svg>
         </span></div>
@@ -305,12 +343,12 @@
         <ul class="post-nav">
             
                 <li class="post-nav-prev">
-                    <a href="/posts/vsftpd/" rel="prev">&lt; Vsftpd</a>
+                    <a href="/posts/centos_chinese/" rel="prev">&lt; CentOS 安装中文语言包</a>
                 </li>
             
             
                 <li class="post-nav-next">
-                    <a href="/posts/cad/" rel="next">CAD 快捷键 &gt;</a>
+                    <a href="/posts/nmcli/" rel="next">Nmcli 网络管理 &gt;</a>
                 </li>
             
         </ul>

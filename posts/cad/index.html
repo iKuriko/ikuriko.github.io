@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Tcpdump 常用命令 | ikuriko</title>
+    <title>CAD 快捷键 | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.f0414dbb01deb037a5f89bd3fe49224cb86072aded5151727632be05bc31b04e.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="记录绘制 2D 平面图使用的常用CAD快捷命令 所有的命令通过键入命……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,21 +46,21 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/posts/tcpdump/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/cad/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2021-10-11T17:30:36+08:00",
-        "dateModified": "2021-12-13T11:54:02+08:00",
-        "url": "https://ikuriko.github.io/posts/tcpdump/",
-        "headline": "Tcpdump 常用命令",
-        "description": "Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……",
+        "datePublished": "2021-09-23T15:57:29+08:00",
+        "dateModified": "2021-12-13T11:55:17+08:00",
+        "url": "https://ikuriko.github.io/posts/cad/",
+        "headline": "CAD 快捷键",
+        "description": "记录绘制 2D 平面图使用的常用CAD快捷命令 所有的命令通过键入命……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  207 ,
+        "wordCount":  141 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="Tcpdump 常用命令" />
-<meta property="og:description" content="Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……" />
-<meta property="og:url" content="https://ikuriko.github.io/posts/tcpdump/" />
+<meta property="og:title" content="CAD 快捷键" />
+<meta property="og:description" content="记录绘制 2D 平面图使用的常用CAD快捷命令 所有的命令通过键入命……" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/cad/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-10-11T17:30:36&#43;08:00" />
-    <meta property="article:modified_time" content="2021-12-13T11:54:02&#43;08:00" />
+    <meta property="article:published_time" content="2021-09-23T15:57:29&#43;08:00" />
+    <meta property="article:modified_time" content="2021-12-13T11:55:17&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -200,7 +200,7 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">Tcpdump 常用命令</h1>
+            <h1 class="post-title p-name">CAD 快捷键</h1>
 
             
 
@@ -231,20 +231,124 @@
             
 
             <nav class="contents"></nav><div class="post-body e-content">
-                <p style="text-align:left;color:red;font-size:20px;font-family:arial">Linux下抓包工具Tcpdump的常用方法</p>  
-<p>列出所有可抓取的网口</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -D
-</code></pre></div><p>以端口号显示协议，抓取ens33网卡的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i ens33
-</code></pre></div><p>抓取100个ens33网卡的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -c <span class="m">100</span> -i ens33
-</code></pre></div><p>抓取10个所有网卡过滤源主机为192.168.1.1，端口号不是tcp22的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -c <span class="m">10</span>  src host  192.168.1.1 and not tcp port <span class="m">22</span> -i any
-</code></pre></div><p>抓取10个所有网卡过滤目标主机为192.168.1.2，端口号不是udp22的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -c <span class="m">10</span> dst host 192.168.1.2 and not udp port <span class="m">22</span> -i any
-</code></pre></div><p>抓取ping包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i ens33 -c <span class="m">10</span> icmp
-</code></pre></div>
+                <p>记录绘制 2D 平面图使用的常用CAD快捷命令</p>
+<p style='color:red'>所有的命令通过键入命令行，按空格键来执行</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p</td>
+<td>水平移动</td>
+</tr>
+<tr>
+<td>l</td>
+<td>直线</td>
+</tr>
+<tr>
+<td>pl</td>
+<td>多段线</td>
+</tr>
+<tr>
+<td>xl</td>
+<td>射线</td>
+</tr>
+<tr>
+<td>f</td>
+<td>圆角</td>
+</tr>
+<tr>
+<td>a</td>
+<td>圆弧</td>
+</tr>
+<tr>
+<td>c</td>
+<td>圆</td>
+</tr>
+<tr>
+<td>d</td>
+<td>标注样式</td>
+</tr>
+<tr>
+<td>ddi</td>
+<td>直径标注</td>
+</tr>
+<tr>
+<td>rec</td>
+<td>矩形</td>
+</tr>
+<tr>
+<td>e</td>
+<td>删除选中</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>m</td>
+<td>移动</td>
+</tr>
+<tr>
+<td>t</td>
+<td>多行文字</td>
+</tr>
+<tr>
+<td>ex</td>
+<td>延伸到</td>
+</tr>
+<tr>
+<td>s</td>
+<td>拉伸</td>
+</tr>
+<tr>
+<td>z</td>
+<td>局部放大</td>
+</tr>
+<tr>
+<td>u</td>
+<td>返回</td>
+</tr>
+<tr>
+<td>h</td>
+<td>填充</td>
+</tr>
+<tr>
+<td>mi</td>
+<td>镜像</td>
+</tr>
+<tr>
+<td>po</td>
+<td>点</td>
+</tr>
+<tr>
+<td>sc</td>
+<td>比例缩放</td>
+</tr>
+<tr>
+<td>al</td>
+<td>对齐</td>
+</tr>
+<tr>
+<td>b</td>
+<td>块定义</td>
+</tr>
+<tr>
+<td>ro</td>
+<td>旋转</td>
+</tr>
+<tr>
+<td>ar</td>
+<td>阵列</td>
+</tr>
+</tbody>
+</table></div>
+<p>📓待补充</p>
+
             </div>
 
             
@@ -256,7 +360,7 @@
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2021-12-13 11:54:02 CST" style="cursor:help">
+        <span title="Updated @ 2021-12-13 11:55:17 CST" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2021-12-13</text><text x="915" y="140" textLength="650" transform="scale(.1)">2021-12-13</text></g></svg>
         </span></div>
@@ -305,12 +409,12 @@
         <ul class="post-nav">
             
                 <li class="post-nav-prev">
-                    <a href="/posts/vsftpd/" rel="prev">&lt; Vsftpd</a>
+                    <a href="/posts/tcpdump/" rel="prev">&lt; Tcpdump 常用命令</a>
                 </li>
             
             
                 <li class="post-nav-next">
-                    <a href="/posts/cad/" rel="next">CAD 快捷键 &gt;</a>
+                    <a href="/posts/vim/" rel="next">Vim 常用命令 &gt;</a>
                 </li>
             
         </ul>
