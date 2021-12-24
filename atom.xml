@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-12-24T15:32:46&#43;08:00</updated>
+    <updated>2021-12-24T18:02:10&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -395,7 +395,7 @@
             <title type="text">Hugo&#43;GithubPages 个人站点搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hugo&#43;githubpages/" />
             <id>https://ikuriko.github.io/posts/hugo&#43;githubpages/</id>
-            <updated>2021-11-23T17:37:37&#43;08:00</updated>
+            <updated>2021-12-24T17:02:29&#43;08:00</updated>
             <published>2021-09-07T14:20:48&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
