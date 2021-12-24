@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-12-22T12:21:03&#43;08:00</updated>
+    <updated>2021-12-24T15:32:46&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,31 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">CentOS8 时间同步</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
+            <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
+            <updated>2021-12-24T14:41:20&#43;08:00</updated>
+            <published>2021-12-24T14:28:17&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">RHEL8 Packaging for OpenvSwitch</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rhel8_packaging_for_openvswitch/" />
@@ -167,17 +192,17 @@
         </entry>
     
         <entry>
-            <title type="text">Nmcli 网络管理</title>
+            <title type="text">nmcli 命令使用</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/nmcli/" />
             <id>https://ikuriko.github.io/posts/nmcli/</id>
-            <updated>2021-11-23T16:13:38&#43;08:00</updated>
+            <updated>2021-12-24T14:42:27&#43;08:00</updated>
             <published>2021-11-02T14:37:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">nmcli 常用命令 查看网络连接 列出所有网络设备 nmcli connection show 查看所有活动的连……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">常用命令 查看 列出所有网络设备 nmcli connection show 查看所有活动的连接 nmcli connection show --active……</summary>
             
             
             
@@ -245,7 +270,7 @@
             <title type="text">Vsftpd</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vsftpd/" />
             <id>https://ikuriko.github.io/posts/vsftpd/</id>
-            <updated>2021-11-23T17:38:23&#43;08:00</updated>
+            <updated>2021-12-24T14:01:54&#43;08:00</updated>
             <published>2021-10-14T15:16:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -267,10 +292,10 @@
         </entry>
     
         <entry>
-            <title type="text">Tcpdump 常用命令</title>
+            <title type="text">tcpdump 常用命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tcpdump/" />
             <id>https://ikuriko.github.io/posts/tcpdump/</id>
-            <updated>2021-12-13T11:54:02&#43;08:00</updated>
+            <updated>2021-12-24T14:01:44&#43;08:00</updated>
             <published>2021-10-11T17:30:36&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -317,10 +342,10 @@
         </entry>
     
         <entry>
-            <title type="text">Vim 常用命令</title>
+            <title type="text">vim 常用命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vim/" />
             <id>https://ikuriko.github.io/posts/vim/</id>
-            <updated>2021-12-13T12:12:58&#43;08:00</updated>
+            <updated>2021-12-24T14:01:47&#43;08:00</updated>
             <published>2021-09-09T16:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>

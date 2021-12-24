@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 22 Dec 2021 12:21:03 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 24 Dec 2021 15:32:46 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>CentOS8 时间同步</title>
+                <link>https://ikuriko.github.io/posts/centos8_ntp/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_ntp/</guid>
+                <pubDate>Fri, 24 Dec 2021 14:28:17 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>RHEL8 Packaging for OpenvSwitch</title>
@@ -167,7 +190,7 @@
             </item>
         
             <item>
-                <title>Nmcli 网络管理</title>
+                <title>nmcli 命令使用</title>
                 <link>https://ikuriko.github.io/posts/nmcli/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
@@ -175,7 +198,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>nmcli 常用命令 查看网络连接 列出所有网络设备 nmcli connection show 查看所有活动的连……</description>
+                <description>常用命令 查看 列出所有网络设备 nmcli connection show 查看所有活动的连接 nmcli connection show --active……</description>
                 
                 
                 
@@ -259,7 +282,7 @@
             </item>
         
             <item>
-                <title>Tcpdump 常用命令</title>
+                <title>tcpdump 常用命令</title>
                 <link>https://ikuriko.github.io/posts/tcpdump/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tcpdump/</guid>
                 <pubDate>Mon, 11 Oct 2021 17:30:36 &#43;0800</pubDate>
@@ -305,7 +328,7 @@
             </item>
         
             <item>
-                <title>Vim 常用命令</title>
+                <title>vim 常用命令</title>
                 <link>https://ikuriko.github.io/posts/vim/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vim/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:56:06 &#43;0800</pubDate>

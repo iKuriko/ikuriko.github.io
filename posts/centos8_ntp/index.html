@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>只是无聊 | ikuriko</title>
+    <title>CentOS8 时间同步 | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.c5fd4e28f791be54a9f011326094d98ea52f0d1929ddb339b9390bc7cc837381.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="这段时间很颓 烟味 是因为流行病毒？ PopVirus 还是因为迷失方向？ 恐高的鸟……" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,19 +46,30 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/life/nothing/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/centos8_ntp/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "datePublished": "2021-10-11T12:00:40+08:00",
-        "dateModified": "2021-12-24T15:01:50+08:00",
-        "url": "https://ikuriko.github.io/life/nothing/",
-        "name": "只是无聊",
-        "description": "这段时间很颓 烟味 是因为流行病毒？ PopVirus 还是因为迷失方向？ 恐高的鸟……",
+        "@type": "BlogPosting",
+        "datePublished": "2021-12-24T14:28:17+08:00",
+        "dateModified": "2021-12-24T14:41:20+08:00",
+        "url": "https://ikuriko.github.io/posts/centos8_ntp/",
+        "headline": "CentOS8 时间同步",
+        "description": "CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  70 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Mosi Meta",
+            "email": "ikuriko@qq.com",
+            "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+            "url": "https://ikuriko.github.io",
+            "name": "ikuriko"
+        },
         "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
         "publisher": {
             "@type": "Organization",
@@ -87,12 +98,17 @@
 
 
 
-<meta property="og:title" content="只是无聊" />
-<meta property="og:description" content="这段时间很颓 烟味 是因为流行病毒？ PopVirus 还是因为迷失方向？ 恐高的鸟……" />
-<meta property="og:url" content="https://ikuriko.github.io/life/nothing/" />
+<meta property="og:title" content="CentOS8 时间同步" />
+<meta property="og:description" content="CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/centos8_ntp/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-12-24T14:28:17&#43;08:00" />
+    <meta property="article:modified_time" content="2021-12-24T14:41:20&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
 
 
     
@@ -182,13 +198,14 @@
 
         
 
-        <article class="content post h-entry" data-align="justify" data-type="life" data-toc-num="true">
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">只是无聊</h1>
-
-            
+            <h1 class="post-title p-name">CentOS8 时间同步</h1>
 
             
+
+            
+                <div class="post-description p-summary">CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。</div>
                 
             
 
@@ -215,21 +232,22 @@
             
 
             <nav class="contents"></nav><div class="post-body e-content">
-                <p>这段时间很颓  <del>烟味</del></p></p>
-<p>是因为流行病毒？  <del>PopVirus</del></p>
-<p>还是因为迷失方向？  <del>恐高的鸟</del></p>
-<p>Slow Down  <del>慢慢</del></p>
-<p>你看</p>
-<p>白云慢慢的走</p>
-<p>河水慢慢的游</p>
-<p>微风慢慢的走</p>
-<p>风筝慢慢的游</p>
-<p>太阳慢慢的走</p>
-<p>影子慢慢的游</p>
-<p>世界慢慢的　没有烦忧</p>
-<p>让我牵着你手</p>
-<p>我们慢慢的走</p>
-
+                <p>设置时区</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">timedatectl set-timezone Asia/Shanghai
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">timedatectl set-ntp <span class="nb">true</span>
+</code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre></div><p>要与任意设备进行同步时，在 CentOS 8 中需要安装 chronyd 服务</p>
+<p>安装服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install chronyd
+</code></pre></div><p>编辑配置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/chrony.conf
++ server ntp.aliyun.com iburst
+</code></pre></div><p>重启服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart chronyd
+</code></pre></div><p>立即同步</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chronyc sources -v
+</code></pre></div>
             </div>
 
             
@@ -260,12 +278,37 @@
 
 
         
+    <footer class="minimal-footer">
+        
+        
+        
+            
+        
+    </footer>
+
 
 
         
 
 
         
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/rhel8_packaging_for_openvswitch/" rel="next">RHEL8 Packaging for OpenvSwitch &gt;</a>
+                </li>
+            
+        </ul>
+    
+
 
 
         
