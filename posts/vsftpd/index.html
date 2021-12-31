@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-10-14T15:16:25+08:00",
-        "dateModified": "2021-12-24T14:01:54+08:00",
+        "dateModified": "2021-12-31T12:23:16+08:00",
         "url": "https://ikuriko.github.io/posts/vsftpd/",
         "headline": "Vsftpd",
         "description": "Vsftpd 简介 为了解决在复杂多样的设备之间传输文件，文件传输协议（F……",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-10-14T15:16:25&#43;08:00" />
-    <meta property="article:modified_time" content="2021-12-24T14:01:54&#43;08:00" />
+    <meta property="article:modified_time" content="2021-12-31T12:23:16&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -302,85 +302,85 @@ dnf makecache
 <div class="table-container"><table>
 <thead>
 <tr>
-<th>参数</th>
+<th style="text-align:left">参数</th>
 <th style="text-align:left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>listen=[YES|NO]</td>
+<td style="text-align:left">listen=[YES|NO]</td>
 <td style="text-align:left">是否以独立运行的方式监听服务</td>
 </tr>
 <tr>
-<td>listen_address=IP地址</td>
+<td style="text-align:left">listen_address=IP地址</td>
 <td style="text-align:left">设置要监听的IP地址</td>
 </tr>
 <tr>
-<td>listen_port=21</td>
+<td style="text-align:left">listen_port=21</td>
 <td style="text-align:left">设置FTP服务的监听端口</td>
 </tr>
 <tr>
-<td>download_enable＝[YES|NO]</td>
+<td style="text-align:left">download_enable＝[YES|NO]</td>
 <td style="text-align:left">是否允许下载文件</td>
 </tr>
 <tr>
-<td>userlist_enable=[YES|NO]  userlist_deny=[YES|NO]</td>
+<td style="text-align:left">userlist_enable=[YES|NO]  userlist_deny=[YES|NO]</td>
 <td style="text-align:left">设置用户列表为“允许”还是“禁止”操作</td>
 </tr>
 <tr>
-<td>max_clients=0</td>
+<td style="text-align:left">max_clients=0</td>
 <td style="text-align:left">最大客户端连接数，0为不限制</td>
 </tr>
 <tr>
-<td>max_per_ip=0</td>
+<td style="text-align:left">max_per_ip=0</td>
 <td style="text-align:left">同一IP地址的最大连接数，0为不限制</td>
 </tr>
 <tr>
-<td>anonymous_enable=[YES|NO]</td>
+<td style="text-align:left">anonymous_enable=[YES|NO]</td>
 <td style="text-align:left">是否允许匿名用户访问</td>
 </tr>
 <tr>
-<td>anon_upload_enable=[YES|NO]</td>
+<td style="text-align:left">anon_upload_enable=[YES|NO]</td>
 <td style="text-align:left">是否允许匿名用户上传文件</td>
 </tr>
 <tr>
-<td>anon_umask=022</td>
+<td style="text-align:left">anon_umask=022</td>
 <td style="text-align:left">匿名用户上传文件的umask值</td>
 </tr>
 <tr>
-<td>anon_root=/var/ftp</td>
+<td style="text-align:left">anon_root=/var/ftp</td>
 <td style="text-align:left">匿名用户的FTP根目录</td>
 </tr>
 <tr>
-<td>anon_mkdir_write_enable=[YES|NO]</td>
+<td style="text-align:left">anon_mkdir_write_enable=[YES|NO]</td>
 <td style="text-align:left">是否允许匿名用户创建目录</td>
 </tr>
 <tr>
-<td>anon_other_write_enable=[YES|NO]</td>
+<td style="text-align:left">anon_other_write_enable=[YES|NO]</td>
 <td style="text-align:left">是否开放匿名用户的其他写入权限（包括重命名、删除等操作权限）</td>
 </tr>
 <tr>
-<td>anon_max_rate=0</td>
+<td style="text-align:left">anon_max_rate=0</td>
 <td style="text-align:left">匿名用户的最大传输速率（字节/秒），0为不限制</td>
 </tr>
 <tr>
-<td>local_enable=[YES|NO]</td>
+<td style="text-align:left">local_enable=[YES|NO]</td>
 <td style="text-align:left">是否允许本地用户登录FTP</td>
 </tr>
 <tr>
-<td>local_umask=022</td>
+<td style="text-align:left">local_umask=022</td>
 <td style="text-align:left">本地用户上传文件的umask值</td>
 </tr>
 <tr>
-<td>local_root=/var/ftp</td>
+<td style="text-align:left">local_root=/var/ftp</td>
 <td style="text-align:left">本地用户的FTP根目录</td>
 </tr>
 <tr>
-<td>chroot_local_user=[YES|NO]</td>
+<td style="text-align:left">chroot_local_user=[YES|NO]</td>
 <td style="text-align:left">是否将用户权限禁锢在FTP目录，以确保安全</td>
 </tr>
 <tr>
-<td>local_max_rate=0</td>
+<td style="text-align:left">local_max_rate=0</td>
 <td style="text-align:left">本地用户最大传输速率（字节/秒），0为不限制</td>
 </tr>
 </tbody>
