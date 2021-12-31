@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2021-12-31T09:56:50&#43;08:00</updated>
+    <updated>2021-12-31T12:19:54&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -17,17 +17,42 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
         <entry>
+            <title type="text">Wireguard</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/wireguard/" />
+            <id>https://ikuriko.github.io/posts/wireguard/</id>
+            <updated>2021-12-31T12:18:58&#43;08:00</updated>
+            <published>2021-12-31T10:06:44&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">WireGuard 是一个简单、快速且安全的开源VPN软件</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">CentOS8 时间同步</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2021-12-24T14:41:20&#43;08:00</updated>
+            <updated>2021-12-31T12:18:48&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能……</summary>
             
             
             
@@ -395,7 +420,7 @@
             <title type="text">Hugo&#43;GithubPages 个人站点搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hugo&#43;githubpages/" />
             <id>https://ikuriko.github.io/posts/hugo&#43;githubpages/</id>
-            <updated>2021-12-24T17:02:29&#43;08:00</updated>
+            <updated>2021-12-31T10:01:52&#43;08:00</updated>
             <published>2021-09-07T14:20:48&#43;08:00</published>
             <author>
                     <name>ikuriko</name>

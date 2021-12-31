@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 31 Dec 2021 09:56:50 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 31 Dec 2021 12:19:54 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Wireguard</title>
+                <link>https://ikuriko.github.io/posts/wireguard/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/wireguard/</guid>
+                <pubDate>Fri, 31 Dec 2021 10:06:44 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>WireGuard 是一个简单、快速且安全的开源VPN软件</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>CentOS8 时间同步</title>
@@ -37,7 +60,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>CentOS 系统安装过程中，会有选择时区的步骤。如果此时忘记设置时区，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种Error。</description>
+                <description>CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能……</description>
                 
                 
                 
