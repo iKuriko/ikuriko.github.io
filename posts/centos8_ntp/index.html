@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能……" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种报错。" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-12-24T14:28:17+08:00",
-        "dateModified": "2021-12-31T12:18:48+08:00",
+        "dateModified": "2022-01-26T12:01:54+08:00",
         "url": "https://ikuriko.github.io/posts/centos8_ntp/",
         "headline": "CentOS8 时间同步",
-        "description": "CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能……",
+        "description": "CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种报错。",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  140 ,
+        "wordCount":  106 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -99,13 +99,13 @@
 
 
 <meta property="og:title" content="CentOS8 时间同步" />
-<meta property="og:description" content="CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能……" />
+<meta property="og:description" content="CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种报错。" />
 <meta property="og:url" content="https://ikuriko.github.io/posts/centos8_ntp/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-12-24T14:28:17&#43;08:00" />
-    <meta property="article:modified_time" content="2021-12-31T12:18:48&#43;08:00" />
+    <meta property="article:modified_time" content="2022-01-26T12:01:54&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -205,6 +205,7 @@
             
 
             
+                <div class="post-description p-summary">CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种报错。</div>
                 
             
 
@@ -232,15 +233,15 @@
 
             <nav class="contents"></nav><div class="post-body e-content">
                 <blockquote>
-<p>CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种报错。</p>
+<p>设置系统时区</p>
 </blockquote>
-<p>设置时区</p>
+<p>选择时区同步时间</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">timedatectl set-timezone Asia/Shanghai
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">timedatectl set-ntp <span class="nb">true</span>
-</code></pre></div><p>​    or</p>
+</code></pre></div><p>or 创建软连接同步时间</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></pre></div><blockquote>
-<p>要与任意设备进行同步时，在 CentOS 8 中需要安装 chronyd 服务</p>
+<p>要与任意主机进行同步时，在&quot;CentOS 8&quot;中需要安装 chronyd 服务</p>
 </blockquote>
 <p>安装服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install chronyd
