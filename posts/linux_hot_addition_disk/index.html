@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Task | ikuriko</title>
+    <title>Linux 热添加硬盘 | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.c5fd4e28f791be54a9f011326094d98ea52f0d1929ddb339b9390bc7cc837381.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="作息 喝水 饮食 锻炼 学习" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="Linux服务器运行时，扫描新插入的硬盘 此环境为VMware……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,19 +46,30 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/life/task/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/linux_hot_addition_disk/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "datePublished": "2021-12-24T14:45:38+08:00",
-        "dateModified": "2022-01-26T12:22:22+08:00",
-        "url": "https://ikuriko.github.io/life/task/",
-        "name": "Task",
-        "description": "作息 喝水 饮食 锻炼 学习",
+        "@type": "BlogPosting",
+        "datePublished": "2021-11-01T17:41:41+08:00",
+        "dateModified": "2021-12-13T11:53:24+08:00",
+        "url": "https://ikuriko.github.io/posts/linux_hot_addition_disk/",
+        "headline": "Linux 热添加硬盘",
+        "description": "Linux服务器运行时，扫描新插入的硬盘 此环境为VMware……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  418 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Mosi Meta",
+            "email": "ikuriko@qq.com",
+            "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+            "url": "https://ikuriko.github.io",
+            "name": "ikuriko"
+        },
         "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
         "publisher": {
             "@type": "Organization",
@@ -87,12 +98,17 @@
 
 
 
-<meta property="og:title" content="Task" />
-<meta property="og:description" content="作息 喝水 饮食 锻炼 学习" />
-<meta property="og:url" content="https://ikuriko.github.io/life/task/" />
+<meta property="og:title" content="Linux 热添加硬盘" />
+<meta property="og:description" content="Linux服务器运行时，扫描新插入的硬盘 此环境为VMware……" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/linux_hot_addition_disk/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-11-01T17:41:41&#43;08:00" />
+    <meta property="article:modified_time" content="2021-12-13T11:53:24&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
 
 
     
@@ -182,9 +198,9 @@
 
         
 
-        <article class="content post h-entry" data-align="justify" data-type="life" data-toc-num="true">
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">Task</h1>
+            <h1 class="post-title p-name">Linux 热添加硬盘</h1>
 
             
 
@@ -215,13 +231,45 @@
             
 
             <nav class="contents"></nav><div class="post-body e-content">
-                <ul>
-<li><input checked="" disabled="" type="checkbox"> 作息</li>
-<li><input checked="" disabled="" type="checkbox"> 喝水</li>
-<li><input checked="" disabled="" type="checkbox"> 饮食</li>
-<li><input checked="" disabled="" type="checkbox"> 锻炼</li>
-<li><input checked="" disabled="" type="checkbox"> 学习</li>
+                <p>Linux服务器运行时，扫描新插入的硬盘</p>
+<p>此环境为VMware虚拟机，服务器真机同样适用</p>
+<p>扫描所有磁盘</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> i in /sys/class/scsi_host/host*/scan<span class="p">;</span><span class="k">do</span> <span class="nb">echo</span> <span class="s2">&#34;- - -&#34;</span> &gt;<span class="nv">$i</span><span class="p">;</span><span class="k">done</span>
+</code></pre></div><p>命令解释</p>
+<p>'- - -'代表channel，target和LUN编号。以上命令会导致host下所有channel，target以及可见LUN被扫描</p>
+<p>or</p>
+<p>添加磁盘：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> “scsi add-single-device <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> 4” &gt;/proc/scsi/scsi
+</code></pre></div><p>移除硬盘：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> “scsi remove-single-device <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> 4” &gt; /proc/scsi/scsi
+</code></pre></div><p>命令行中的 1 2 3 4 需要自行修改成相应的参数：</p>
+<ul>
+<li>1 : SCSI HBA ID  主机适配器标识，第一个适配器为零(0)</li>
+<li>2 : SCSI Channel  主机适配器上的 SCSI 通道，第一个通道为零(0)</li>
+<li>3 : SCSI ID  设备的 SCSI 标识</li>
+<li>4 : LUN ID   LUN 号，第一个 LUN 为零(0)</li>
 </ul>
+<p>查看scsi磁盘的命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lsscsi
+
+<span class="o">[</span>1:0:0:0<span class="o">]</span>  cd/dvd NECVMWar VMware IDE CDR10 1.00 /dev/sr0 
+<span class="o">[</span>2:0:0:0<span class="o">]</span>  disk  VMware, VMware Virtual S 1.0  /dev/sda 
+<span class="o">[</span>2:0:1:0<span class="o">]</span>  disk  VMware, VMware Virtual S 1.0  /dev/sdb 
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /proc/scsi/scsi 
+
+Attached devices:
+Host: scsi2 Channel: <span class="m">00</span> Id: <span class="m">00</span> Lun: <span class="m">00</span>
+ Vendor: VMware, Model: VMware Virtual S Rev: 1.0 
+ Type:  Direct-Access          ANSI SCSI revision: <span class="m">02</span>
+Host: scsi1 Channel: <span class="m">00</span> Id: <span class="m">00</span> Lun: <span class="m">00</span>
+ Vendor: NECVMWar Model: VMware IDE CDR10 Rev: 1.00
+ Type:  CD-ROM              ANSI SCSI revision: <span class="m">05</span>
+Host: scsi2 Channel: <span class="m">00</span> Id: <span class="m">01</span> Lun: <span class="m">00</span>
+ Vendor: VMware, Model: VMware Virtual S Rev: 1.0 
+ Type:  Direct-Access          ANSI SCSI revision: <span class="m">02</span>
+</code></pre></div><p>未验证的方法</p>
+<p><del>#使用rpm包sg3_utils 中的rescan-scsi-bus.sh脚本重新扫描</del></p>
+<p><del># /usr/bin/rescan-scsi-bus.sh</del></p>
 
             </div>
 
@@ -253,12 +301,41 @@
 
 
         
+    <footer class="minimal-footer">
+        
+        
+        
+            
+        
+    </footer>
+
 
 
         
 
 
         
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/nmcli/" rel="prev">&lt; nmcli 命令使用</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/ansible/" rel="next">Ansible &gt;</a>
+                </li>
+            
+        </ul>
+    
+
 
 
         

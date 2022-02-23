@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy blog</subtitle>
-    <updated>2022-01-26T15:12:34&#43;08:00</updated>
+    <updated>2022-02-23T14:41:48&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,31 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">Network NameSpace</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/namespace/" />
+            <id>https://ikuriko.github.io/posts/namespace/</id>
+            <updated>2022-02-23T14:41:01&#43;08:00</updated>
+            <published>2022-02-22T14:50:30&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">NameSpace 简介 Network NameSpace：网络命名空间（名字空间），是 Linux 内……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Wireguard</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/wireguard/" />
@@ -45,7 +70,7 @@
             <title type="text">CentOS8 时间同步</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2022-01-26T12:01:54&#43;08:00</updated>
+            <updated>2022-02-22T14:40:09&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -145,7 +170,7 @@
             <title type="text">KVM 虚拟化</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/kvm/" />
             <id>https://ikuriko.github.io/posts/kvm/</id>
-            <updated>2021-12-13T11:53:37&#43;08:00</updated>
+            <updated>2022-02-22T15:27:55&#43;08:00</updated>
             <published>2021-11-10T16:36:54&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -243,8 +268,8 @@
     
         <entry>
             <title type="text">Linux 热添加硬盘</title>
-            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_hot_add_hard_disk/" />
-            <id>https://ikuriko.github.io/posts/linux_hot_add_hard_disk/</id>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_hot_addition_disk/" />
+            <id>https://ikuriko.github.io/posts/linux_hot_addition_disk/</id>
             <updated>2021-12-13T11:53:24&#43;08:00</updated>
             <published>2021-11-01T17:41:41&#43;08:00</published>
             <author>
