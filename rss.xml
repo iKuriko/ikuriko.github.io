@@ -9,7 +9,7 @@
     <channel>
         <title>ikuriko</title>
         <link>https://ikuriko.github.io/</link>
-        <description>lazy blog</description>
+        <description>lazy</description>
         <generator>Hugo 0.87.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 23 Feb 2022 14:41:48 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 24 Feb 2022 10:36:32 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -52,7 +52,7 @@
             </item>
         
             <item>
-                <title>Wireguard</title>
+                <title>WireGuard</title>
                 <link>https://ikuriko.github.io/posts/wireguard/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/wireguard/</guid>
                 <pubDate>Fri, 31 Dec 2021 10:06:44 &#43;0800</pubDate>
