@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-02-24T10:36:32&#43;08:00</updated>
+    <updated>2022-03-07T16:13:48&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -70,7 +70,7 @@
             <title type="text">CentOS8 时间同步</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2022-02-22T14:40:09&#43;08:00</updated>
+            <updated>2022-03-07T16:13:29&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
