@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-07T16:13:48&#43;08:00</updated>
+    <updated>2022-03-09T12:11:53&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,31 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">CentOS8 pppoe 4G拨号</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe_4g/" />
+            <id>https://ikuriko.github.io/posts/centos8_pppoe_4g/</id>
+            <updated>2022-03-09T12:11:33&#43;08:00</updated>
+            <published>2022-03-09T11:44:50&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CentOS8 使用Huawei ME906s 4G模块pppoe拨号上网</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Network NameSpace</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/namespace/" />
@@ -220,7 +245,7 @@
             <title type="text">CentOS7 安装 VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_vnc/" />
             <id>https://ikuriko.github.io/posts/centos7_vnc/</id>
-            <updated>2021-12-13T12:00:57&#43;08:00</updated>
+            <updated>2022-03-09T11:25:20&#43;08:00</updated>
             <published>2021-11-03T17:38:40&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -320,7 +345,7 @@
             <title type="text">Vsftpd</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vsftpd/" />
             <id>https://ikuriko.github.io/posts/vsftpd/</id>
-            <updated>2021-12-31T12:23:16&#43;08:00</updated>
+            <updated>2022-03-09T12:03:37&#43;08:00</updated>
             <published>2021-10-14T15:16:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -470,7 +495,7 @@
             <title type="text">Hello_world</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hello_world/" />
             <id>https://ikuriko.github.io/posts/hello_world/</id>
-            <updated>2021-12-30T18:05:29&#43;08:00</updated>
+            <updated>2022-03-09T11:40:55&#43;08:00</updated>
             <published>2021-09-02T16:55:55&#43;08:00</published>
             <author>
                     <name>ikuriko</name>

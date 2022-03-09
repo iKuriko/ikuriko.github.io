@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 07 Mar 2022 16:13:48 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 09 Mar 2022 12:11:53 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>CentOS8 pppoe 4G拨号</title>
+                <link>https://ikuriko.github.io/posts/centos8_pppoe_4g/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_pppoe_4g/</guid>
+                <pubDate>Wed, 09 Mar 2022 11:44:50 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>CentOS8 使用Huawei ME906s 4G模块pppoe拨号上网</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Network NameSpace</title>
