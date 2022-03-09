@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-09T12:11:53&#43;08:00</updated>
+    <updated>2022-03-09T15:35:56&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,14 +20,14 @@
             <title type="text">CentOS8 pppoe 4G拨号</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe_4g/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe_4g/</id>
-            <updated>2022-03-09T12:11:33&#43;08:00</updated>
+            <updated>2022-03-09T15:31:32&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">CentOS8 使用Huawei ME906s 4G模块pppoe拨号上网</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用Huawei ME906s 4G模块pppoe拨号上网</summary>
             
             
             
