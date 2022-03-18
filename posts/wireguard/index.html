@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-12-31T10:06:44+08:00",
-        "dateModified": "2022-03-10T12:00:29+08:00",
+        "dateModified": "2022-03-18T11:40:28+08:00",
         "url": "https://ikuriko.github.io/posts/wireguard/",
         "headline": "WireGuard",
         "description": "WireGuard 是一个简单、快速且安全的开源VPN软件",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1342 ,
+        "wordCount":  1405 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-12-31T10:06:44&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-10T12:00:29&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-18T11:40:28&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -260,6 +260,7 @@
 <p>仅 4000 行代码的精简代码库。将它与 OpenVPN（另一个流行的开源 VPN）的 100,000 行代码相比。显然调试 WireGuard 更加容易。</p>
 <p>支持所有最新的加密技术，例如 Noise 协议框架、Curve25519、ChaCha20、Poly1305、BLAKE2、SipHash24、HKDF 和安全受信任结构。</p>
 <p>运行在内核空间，因此可以高速的提供安全的网络。</p>
+<p>这些是 WireGuard 越来越受欢迎的一些原因。Linux 创造者 Linus Torvalds 非常喜欢 WireGuard，以至于将其合并到 Linux Kernel 5.6 中以取代OpenVPN。</p>
 <h2 id="安装"><a href="#安装" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装" class="headings">安装</a></h2>
 <p>添加软件包仓库源</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install epel-release elrepo-release yum-plugin-elrepo -y
@@ -410,6 +411,14 @@
                     <a href="/tags/vpn/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>VPN</a>
                 
             
+                
+                
+                
+                
+                    
+                    <a href="/tags/centos/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS</a>
+                
+            
         </div>
     
 
@@ -418,7 +427,7 @@
         
     <footer class="minimal-footer">
         
-            <div class="post-tag"><a href="/tags/linux/" rel="tag" class="post-tag-link">#linux</a> <a href="/tags/vpn/" rel="tag" class="post-tag-link">#vpn</a></div>
+            <div class="post-tag"><a href="/tags/linux/" rel="tag" class="post-tag-link">#linux</a> <a href="/tags/vpn/" rel="tag" class="post-tag-link">#vpn</a> <a href="/tags/centos/" rel="tag" class="post-tag-link">#centos</a></div>
         
         
         

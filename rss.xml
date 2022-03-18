@@ -23,10 +23,53 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 10 Mar 2022 15:33:28 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 18 Mar 2022 16:09:44 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>OpenVPN</title>
+                <link>https://ikuriko.github.io/posts/openvpn/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/openvpn/</guid>
+                <pubDate>Fri, 18 Mar 2022 11:27:46 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>在CentOS8.5上部署OVPN，使用账号密码实现客户端登录</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>CentOS8 pppoe 4G拨号</title>
@@ -52,6 +95,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
                                 
                             
                         
@@ -128,6 +177,12 @@
                                     <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
                         
                     
                 
@@ -157,6 +212,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
                                 
                             
                         
@@ -190,6 +251,18 @@
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/openvswitch/">OpenvSwitch</category>
+                                
+                            
                         
                     
                 
@@ -219,6 +292,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
                                 
                             
                         
@@ -289,6 +368,12 @@
                                     <category domain="https://ikuriko.github.io/tags/kvm/">KVM</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
                         
                     
                 
@@ -320,6 +405,12 @@
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
                         
                     
                 
@@ -349,6 +440,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
                                 
                             
                         
@@ -419,6 +516,12 @@
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
                         
                     
                 
@@ -456,6 +559,12 @@
                                     <category domain="https://ikuriko.github.io/tags/ansible/">Ansible</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
                         
                     
                 
@@ -485,6 +594,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
                                 
                             
                         
@@ -611,6 +726,12 @@
                                     <category domain="https://ikuriko.github.io/tags/linux/">Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
+                                
+                            
                         
                     
                 
@@ -671,6 +792,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/hello-world/">Hello world</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/markdown/">Markdown</category>
                                 
                             
                         

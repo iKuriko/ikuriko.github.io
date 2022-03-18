@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>OpenVPN | ikuriko</title>
+
+    <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
+
+    
+    
+        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
+
+    <meta name="author" content="ikuriko" /><meta name="description" content="在CentOS8.5上部署OVPN，使用账号密码实现客户端登录" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ikuriko" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ikuriko" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://ikuriko.github.io/posts/openvpn/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2022-03-18T11:27:46+08:00",
+        "dateModified": "2022-03-18T16:09:30+08:00",
+        "url": "https://ikuriko.github.io/posts/openvpn/",
+        "headline": "OpenVPN",
+        "description": "在CentOS8.5上部署OVPN，使用账号密码实现客户端登录",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  4555 ,
+        "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Mosi Meta",
+            "email": "ikuriko@qq.com",
+            "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+            "url": "https://ikuriko.github.io",
+            "name": "ikuriko"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ikuriko",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ikuriko.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://ikuriko.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://ikuriko.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@callousmaster" />
+<meta name="twitter:creator" content="@callousmaster" />
+
+    
+
+
+
+<meta property="og:title" content="OpenVPN" />
+<meta property="og:description" content="在CentOS8.5上部署OVPN，使用账号密码实现客户端登录" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/openvpn/" />
+<meta property="og:site_name" content="ikuriko" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2022-03-18T11:27:46&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-18T16:09:30&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">ikuriko</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Tech</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/life/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Life</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">Tag</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon about"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">About</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">OpenVPN</h1>
+
+            
+
+            
+                <div class="post-description p-summary">在CentOS8.5上部署OVPN，使用账号密码实现客户端登录</div>
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:ovpn-server部署" href="#ovpn-server部署">OVPN-Server部署</a>
+      <ol>
+        <li><a id="contents:安装软件包" href="#安装软件包">安装软件包</a></li>
+        <li><a id="contents:生成-server-证书" href="#生成-server-证书">生成 Server 证书</a></li>
+        <li><a id="contents:server-配置" href="#server-配置">Server 配置</a></li>
+        <li><a id="contents:配置账号密码登录" href="#配置账号密码登录">配置账号密码登录</a></li>
+        <li><a id="contents:服务启动" href="#服务启动">服务启动</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:ovpn-client-拨号" href="#ovpn-client-拨号">OVPN-Client 拨号</a>
+      <ol>
+        <li><a id="contents:安装软件包-1" href="#安装软件包-1">安装软件包</a></li>
+        <li><a id="contents:生成-client-证书" href="#生成-client-证书">生成 Client 证书</a></li>
+        <li><a id="contents:client-配置" href="#client-配置">Client 配置</a></li>
+        <li><a id="contents:配置账号密码登录-1" href="#配置账号密码登录-1">配置账号密码登录</a></li>
+        <li><a id="contents:服务启动-1" href="#服务启动-1">服务启动</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:ovpn-server-代理上网" href="#ovpn-server-代理上网">OVPN-Server 代理上网</a>
+      <ol>
+        <li><a id="contents:路由转发" href="#路由转发">路由转发</a></li>
+        <li><a id="contents:防火墙流量转发" href="#防火墙流量转发">防火墙流量转发</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h2 id="ovpn-server部署"><a href="#ovpn-server部署" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ovpn-server部署" class="headings">OVPN-Server部署</a></h2>
+<h3 id="安装软件包"><a href="#安装软件包" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装软件包" class="headings">安装软件包</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install openvpn easy-rsa    <span class="c1">#ovpn服务端部署，CA证书生成和管理 </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install -y lzo-devel openssl-devel pam-devel    <span class="c1">#lzo压缩支持，openssl库支持，pam认证模块支持</span>
+</code></pre></div><h3 id="生成-server-证书"><a href="#生成-server-证书" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:生成-server-证书" class="headings">生成 Server 证书</a></h3>
+<p>生成CA证书存放的目录，复制easy-rsa到/etc/openvpn目录下（也可以直接在原目录修改生成证书）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp -r /usr/share/easy-rsa/ /etc/openvpn/easy-rsa
+</code></pre></div><p>生成CA证书配置文件，复制easy-rsa配置文件到/etc/openvpn/easy-rsa/3.0.8目录下,并重命名为vars</p>
+<pre><code>cp -r /usr/share/doc/easy-rsa/vars.example /etc/openvpn/easy-rsa/3.0.8/vars
+</code></pre><p>修改证书配置文件，其他的默认，主要是修改个人信息，也可以不改</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/openvpn/easy-rsa/3.0.8/vars
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="m">95</span> set_var EASYRSA_REQ_COUNTRY   <span class="s2">&#34;CN&#34;</span>
+ <span class="m">96</span> set_var EASYRSA_REQ_PROVINCE  <span class="s2">&#34;Beijing&#34;</span>
+ <span class="m">97</span> set_var EASYRSA_REQ_CITY    <span class="s2">&#34;Beijing&#34;</span>
+ <span class="m">98</span> set_var EASYRSA_REQ_ORG     <span class="s2">&#34;Center Certificate Co&#34;</span>
+ <span class="m">99</span> set_var EASYRSA_REQ_EMAIL    <span class="s2">&#34;ikuriko@qq.com&#34;</span>
+<span class="m">100</span> set_var EASYRSA_REQ_OU     <span class="s2">&#34;Personal Organization&#34;</span>
+</code></pre></div><p>初始化环境</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 ~<span class="o">]</span><span class="c1"># cd /etc/openvpn/easy-rsa/3.0.8/</span>
+
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa init-pki</span>
+
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+<span class="c1">#注意：从：/etc/openvpn/Easy RSA/3.0.8/vars使用Easy RSA配置</span>
+
+init-pki complete<span class="p">;</span> you may now create a CA or requests.
+<span class="c1">#初始化pki完成；您现在可以创建CA或请求。</span>
+
+Your newly created PKI dir is: /etc/openvpn/easy-rsa/3.0.8/pki
+<span class="c1">#您新创建的PKI目录是：/etc/openvpn/easy rsa/3.0.8/PKI</span>
+</code></pre></div><p>创建CA根证书，然后会提示设置密码，此处可用使用nopass参数选择不要密码,如果有密码服务器每次启动都要求输入密码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa build-ca nopass</span>
+
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+<span class="c1">#注意：在/etc/openvpn/easy-rsa/3.0.8/vars 使用Easy-RSA配置</span>
+
+Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
+<span class="c1">#使用的SSL版本：openssl OpenSSL 1.1.1k</span>
+
+Generating RSA private key, <span class="m">2048</span> bit long modulus <span class="o">(</span><span class="m">2</span> primes<span class="o">)</span>
+<span class="c1">#生成RSA私钥</span>
+..............................................................................+++++
+..................................+++++
+e is <span class="m">65537</span> <span class="o">(</span>0x010001<span class="o">)</span>
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter <span class="s1">&#39;.&#39;</span>, the field will be left blank.
+-----
+Common Name <span class="o">(</span>eg: your user, host, or server name<span class="o">)</span> <span class="o">[</span>Easy-RSA CA<span class="o">]</span>:play-1
+<span class="c1">#通用名（例如：你的用户名，主机名或服务名）</span>
+CA creation <span class="nb">complete</span> and you may now import and sign cert requests.
+<span class="c1">#CA创建完成，您现在可以导入并签署证书请求。</span>
+Your new CA certificate file <span class="k">for</span> publishing is at: 
+/etc/openvpn/easy-rsa/3.0.8/pki/ca.crt
+<span class="c1">#要发布的新CA证书文件位于：/etc/openvpn/easy-rsa/3.0.8/pki/ca.crt</span>
+</code></pre></div><p>创建Server端的证书和私钥文件（根密钥）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa gen-req server nopass</span>
+
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+
+Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
+Generating a RSA private key
+........+++++
+..................+++++
+writing new private key to <span class="s1">&#39;/etc/openvpn/easy-rsa/3.0.8/pki/easy-rsa-19567.mEo6g0/tmp.gK6LGc&#39;</span>
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter <span class="s1">&#39;.&#39;</span>, the field will be left blank.
+-----
+Common Name <span class="o">(</span>eg: your user, host, or server name<span class="o">)</span> <span class="o">[</span>server<span class="o">]</span>:paly-1
+<span class="c1">#这里输入用户名、主机、或服务名</span>
+Keypair and certificate request completed. Your files are:
+req: /etc/openvpn/easy-rsa/3.0.8/pki/reqs/server.req
+key: /etc/openvpn/easy-rsa/3.0.8/pki/private/server.key
+</code></pre></div><p>给Server端刚才申请的证书进行签名，提示confirm request details:时,输入yes</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa sign server server</span>
+ 
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+
+Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
+You are about to sign the following certificate.
+Please check over the details shown below <span class="k">for</span> accuracy. Note that this request
+has not been cryptographically verified. Please be sure it came from a trusted
+<span class="nb">source</span> or that you have verified the request checksum with the sender.
+Request subject, to be signed as a server certificate <span class="k">for</span> <span class="m">825</span> days:
+ 
+<span class="nv">subject</span><span class="o">=</span>
+
+  <span class="nv">commonName</span>        <span class="o">=</span> paly-1
+ 
+ 
+Type the word <span class="s1">&#39;yes&#39;</span> to <span class="k">continue</span>, or any other input to abort.
+ Confirm request details: yes
+ <span class="c1">#这里输入yes进行确认</span>
+Using configuration from /etc/openvpn/easy-rsa/3.0.8/pki/easy-rsa-19603.18ogaV/tmp.rp74CT
+Check that the request matches the signature
+Signature ok
+The Subject<span class="s1">&#39;s Distinguished Name is as follows
+</span><span class="s1">commonName      :ASN.1 12:&#39;</span>paly-1<span class="err">&#39;</span>
+Certificate is to be certified <span class="k">until</span> Jun <span class="m">19</span> 16:27:30 <span class="m">2024</span> GMT <span class="o">(</span><span class="m">825</span> days<span class="o">)</span>
+ 
+Write out database with <span class="m">1</span> new entries
+Data Base Updated
+ 
+Certificate created at: /etc/openvpn/easy-rsa/3.0.8/pki/issued/server.crt
+</code></pre></div><p>创建dh文件,秘钥交换算法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa gen-dh</span>
+ 
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
+Generating DH parameters, <span class="m">2048</span> bit long safe prime, generator <span class="m">2</span>
+This is going to take a long <span class="nb">time</span>
+..................................+.......................................................................................................................................................................................................................................................................................................................................................................++*++*++*++*
+ 
+DH parameters of size <span class="m">2048</span> created at /etc/openvpn/easy-rsa/3.0.8/pki/dh.pem
+</code></pre></div><p>创建tls认证所需的秘钥文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># openvpn --genkey --secret ta.key</span>
+</code></pre></div><p>查看当前生成的文件目录结构</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># tree pki</span>
+
+pki
+├── ca.crt
+├── certs_by_serial
+│  └── EFD5BE86E8C4AF3D921EF8994E7B88C0.pem
+├── dh.pem
+├── index.txt
+├── index.txt.attr
+├── index.txt.attr.old
+├── index.txt.old
+├── issued
+│  └── server.crt
+├── openssl-easyrsa.cnf
+├── private
+│  ├── ca.key
+│  └── server.key
+├── renewed
+│  ├── certs_by_serial
+│  ├── private_by_serial
+│  └── reqs_by_serial
+├── reqs
+│  └── server.req
+├── revoked
+│  ├── certs_by_serial
+│  ├── private_by_serial
+│  └── reqs_by_serial
+├── safessl-easyrsa.cnf
+├── serial
+└── serial.old
+ 
+<span class="m">12</span> directories, <span class="m">15</span> files
+</code></pre></div><p>新建证书管理目录，拷贝证书相关文件到该目录下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># mkdir /etc/openvpn/certs</span>
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/ca.crt /etc/openvpn/certs</span>
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/dh.pem /etc/openvpn/certs/</span>
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/issued/server.crt /etc/openvpn/certs/</span>
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/private/server.key /etc/openvpn/certs/</span>
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ta.key /etc/openvpn/certs</span>
+</code></pre></div><h3 id="server-配置"><a href="#server-配置" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:server-配置" class="headings">Server 配置</a></h3>
+<p>拷贝模板配置文件到OVPN工作目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /usr/share/doc/openvpn/sample/sample-config-files/server.conf /etc/openvpn/
+</code></pre></div><p>修改后的配置文件如下，方便复制，详细的参数介绍放在后面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 openvpn<span class="o">]</span><span class="c1"># cat server.conf | grep -vE &#39;^#|^;|^$&#39;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">local</span> 0.0.0.0
+port <span class="m">55003</span>
+proto udp
+dev tap
+ca /etc/openvpn/certs/ca.crt
+cert /etc/openvpn/certs/server.crt
+key /etc/openvpn/certs/server.key
+dh /etc/openvpn/certs/dh.pem
+server 100.88.0.0 255.255.255.0
+ifconfig-pool-persist ipp.txt
+push <span class="s2">&#34;redirect-gateway def1 bypass-dhcp&#34;</span>
+push <span class="s2">&#34;dhcp-option DNS 114.114.114.114&#34;</span>
+client-config-dir /etc/openvpn/ccd
+client-to-client
+duplicate-cn
+keepalive <span class="m">10</span> <span class="m">120</span>
+tls-auth /etc/openvpn/certs/ta.key <span class="m">0</span>
+cipher AES-256-GCM
+comp-lzo
+max-clients <span class="m">100</span>
+user openvpn
+group openvpn
+persist-key
+persist-tun
+status openvpn-status.log
+log /etc/openvpn/log/openvpn.log
+log-append /etc/openvpn/log/openvpn.log
+verb <span class="m">3</span>
+mute <span class="m">20</span>
+tls-version-min 1.3
+client-cert-not-required
+auth-user-pass-verify /etc/openvpn/checkpsw.sh via-env
+script-security <span class="m">3</span>
+username-as-common-name
+</code></pre></div><p>配置文件的参数介绍</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 openvpn<span class="o">]</span><span class="c1"># cat /etc/openvpn/server.conf </span>
+
+<span class="c1">#监听的本地IP地址</span>
+<span class="nb">local</span> 0.0.0.0
+
+<span class="c1">#监听的端口号</span>
+port <span class="m">55003</span>
+
+<span class="c1">#指定采用的传输协议，tcp|udp</span>
+proto udp
+
+<span class="c1">#指定创建的通信隧道类型，tun|tap|，windows服务器必须是tap</span>
+dev tap
+
+<span class="c1">#指定CA证书的文件路径</span>
+ca /etc/openvpn/certs/ca.crt
+
+<span class="c1">#指定服务器端的证书文件路径</span>
+cert /etc/openvpn/certs/server.crt
+
+<span class="c1">#指定服务器端的私钥文件路径，这个文件应该保密</span>
+key /etc/openvpn/certs/server.key 
+
+<span class="c1">#指定迪菲赫尔曼参数的文件路径</span>
+dh /etc/openvpn/certs/dh.pem
+
+<span class="c1">#指定隧道占用的IP地址段和子网掩码，不能和服务器上的其他网段相同</span>
+server 100.88.0.0 255.255.255.0
+
+ 
+<span class="c1">#服务器自动给客户端分配IP后，客户端下次连接时，仍然采用上次的IP地址(第一次 分配的IP保存在ipp.txt中，下一次分配其中保存的IP)。</span>
+ifconfig-pool-persist ipp.txt
+
+<span class="c1">#自动推送客户端上的网关及DHCP,此项开启了流量转发,有这项才能使用服务器代理上 网</span>
+push <span class="s2">&#34;redirect-gateway def1 bypass-dhcp&#34;</span>
+
+<span class="c1">#OpenVPN的DHCP功能为客户端提供指定的 DNS、WINS 等</span>
+push <span class="s2">&#34;dhcp-option DNS 114.114.114.114&#34;</span>
+
+<span class="c1">#客户端的配置下发目录</span>
+client-config-dir /etc/openvpn/ccd
+
+<span class="c1">#允许客户端与客户端相连接，默认情况下客户端只能与服务器相连接</span>
+client-to-client
+
+<span class="c1">#允许通过客户端证书多次登录，看需求配置</span>
+duplicate-cn
+
+<span class="c1">#每10秒ping一次，连接超时时间设置为120秒</span>
+keepalive <span class="m">10</span> <span class="m">120</span>
+
+<span class="c1">#开启TLS-auth，使用ta.key防御攻击。服务器端的第二个参数值为0，客户端的为1。</span>
+tls-auth /etc/openvpn/certs/ta.key <span class="m">0</span>
+
+<span class="c1">#加密认证算法,2.4之前是AES-256-CBC</span>
+cipher AES-256-GCM
+
+<span class="c1">#使用lzo压缩的通讯,服务端和客户端都必须配置</span>
+comp-lzo
+
+<span class="c1">#最大连接用户</span>
+max-clients <span class="m">100</span>
+
+<span class="c1">#定义运行的用户和组,openvpn用户是安装的时候系统自动创建的</span>
+user openvpn
+group openvpn
+
+<span class="c1">#重启时仍保留一些状态</span>
+persist-key
+persist-tun
+
+<span class="c1">#输出短日志,每分钟刷新一次,以显示当前的客户端</span>
+status openvpn-status.log
+
+<span class="c1">#日志保存路径</span>
+log /etc/openvpn/log/openvpn.log
+log-append /etc/openvpn/log/openvpn.log
+
+<span class="c1">#指定日志文件的记录详细级别，可选0-9，等级越高日志内容越详细</span>
+verb <span class="m">3</span>
+
+<span class="c1">#相同信息的数量，如果连续出现 20 条相同的信息，将不记录到日志中</span>
+mute <span class="m">20</span>
+
+<span class="c1">#下面这项只能udp连接开启</span>
+explicit-exit-notify <span class="m">1</span>
+
+<span class="c1">#设置tls最低版本为1.3,连接的客户端如果是2.4以下则配置为1.0</span>
+tls-version-min 1.3
+
+<span class="c1">#不需要客户证书</span>
+client-cert-not-required
+
+<span class="c1">#客户账号密码验证脚本</span>
+auth-user-pass-verify /etc/openvpn/checkpsw.sh via-env
+
+<span class="c1">#设置脚本安全等级 允许用户自定义脚本使用</span>
+script-security <span class="m">3</span>
+
+<span class="c1">#用户名作为通用名（别名）</span>
+username-as-common-name
+</code></pre></div><h3 id="配置账号密码登录"><a href="#配置账号密码登录" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置账号密码登录" class="headings">配置账号密码登录</a></h3>
+<p>用户使用账号密码登录认证时使用的脚本（来自OpenVPN官网）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 openvpn<span class="o">]</span><span class="c1"># vim checkpsw.sh </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh 
+</span><span class="cp"></span><span class="c1">###########################################################  </span>
+<span class="c1"># checkpsw.sh (C) 2004 Mathias Sundman &lt;mathias@openvpn.se&gt; </span>
+<span class="c1">#  </span>
+<span class="c1"># This script will authenticate OpenVPN users against  </span>
+<span class="c1"># a plain text file. The passfile should simply contain  </span>
+<span class="c1"># one row per user with the username first followed by  </span>
+<span class="c1"># one or more space(s) or tab(s) and then the password.  </span>
+ 
+<span class="nv">PASSFILE</span><span class="o">=</span><span class="s2">&#34;/etc/openvpn/psw-file&#34;</span>          
+<span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">&#34;/etc/openvpn/openvpn-password.log&#34;</span> 
+<span class="nv">TIME_STAMP</span><span class="o">=</span><span class="sb">`</span>date <span class="s2">&#34;+%Y-%m-%d %T&#34;</span><span class="sb">`</span>  
+ 
+<span class="c1">###########################################################  </span>
+
+<span class="k">if</span> <span class="o">[</span> ! -r <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+	  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Could not open password file \&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">\&#34; for reading.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
+	    <span class="nb">exit</span> <span class="m">1</span>  
+    <span class="k">fi</span>  
+    <span class="nv">CORRECT_PASSWORD</span><span class="o">=</span><span class="sb">`</span>awk <span class="s1">&#39;!/^;/&amp;&amp;!/^#/&amp;&amp;$1==&#34;&#39;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s1">&#39;&#34;{print $2;exit}&#39;</span> <span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="sb">`</span>  
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   
+	      <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: User does not exist: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=  
+</span><span class="s2">	      \&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
+	        <span class="nb">exit</span> <span class="m">1</span>  
+	<span class="k">fi</span>  
+	<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   
+		  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Successful authentication: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
+		    <span class="nb">exit</span> <span class="m">0</span>  
+	    <span class="k">fi</span>  
+	    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Incorrect password: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=  
+</span><span class="s2">	    \&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span> 
+
+</code></pre></div><p>新建用户账号密码记录文件，后续添加账号可直接添加</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 openvpn<span class="o">]</span><span class="c1"># vim psw-file</span>
+<span class="nb">test</span>	123456			<span class="c1"># 用户名：test，密码：123456。IP地址：100.88.0.254</span>
+</code></pre></div><p>新建登录密码验证日志文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">touch /etc/openvpn/openvpn-password.log
+</code></pre></div><p>设置以上两个文件的所属组和所属用户为openvpn</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chown openvpn:openvpn checkpsw.sh 
+chown openvpn:openvpn openvpn-password.log
+</code></pre></div><p>新建用户下发配置目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/openvpn/ccd 
+</code></pre></div><p>可以给test用户分配一个固定的IP地址</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/openvpn/ccd/test 
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ifconfig-push 100.88.0.254 255.255.255.0
+</code></pre></div><h3 id="服务启动"><a href="#服务启动" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:服务启动" class="headings">服务启动</a></h3>
+<p>因为CentOS8没有OpenVPN的unit服务启动文件，需要自己新建</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /lib/systemd/system/openvpn@.service
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>OpenVPN Robust And Highly Flexible Tunneling Application On %I
+<span class="nv">After</span><span class="o">=</span>network.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>notify
+<span class="nv">PrivateTmp</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/openvpn --cd /etc/openvpn/ --config %i.conf
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div><p>重新加载服务的启动配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl daemon-reload
+</code></pre></div><p>启动OVPN-Server服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start openvpn@server
+</code></pre></div><p>将OVPN-Server服务设置为开机自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> openvpn@server
+</code></pre></div><p>首先查看服务状态</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl status openvpn@server
+</code></pre></div><p>查看端口和进程是否启动成功</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ss -utpln <span class="p">|</span>grep openvpn
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ps -aux<span class="p">|</span>grep openvpn
+</code></pre></div><p>查看日志</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tail -f /etc/openvpn/openvpn-status.log
+</code></pre></div><h2 id="ovpn-client-拨号"><a href="#ovpn-client-拨号" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ovpn-client-拨号" class="headings">OVPN-Client 拨号</a></h2>
+<h3 id="安装软件包-1"><a href="#安装软件包-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装软件包-1" class="headings">安装软件包</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install openvpn easy-rsa    <span class="c1">#ovpn服务端部署，CA证书生成和管理 </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install -y lzo-devel openssl-devel pam-devel    <span class="c1">#lzo压缩支持，openssl库支持，pam认证模块支持</span>
+</code></pre></div><h3 id="生成-client-证书"><a href="#生成-client-证书" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:生成-client-证书" class="headings">生成 Client 证书</a></h3>
+<p>进入证书管理目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/openvpn/easy-rsa/3.0.8
+</code></pre></div><p>生成客户端1的证书，客户端2依次类推。如果配置 Server 使用账号密码认证登录，则无需申请多个证书，所有客户端可共用同一个证书实现认证登录，但是需要在 server.conf 加入 duplicate-cn 的配置选项</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa gen-req client nopass</span>
+ 
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
+Generating a RSA private key
+...........+++++
+....................................................................................+++++
+writing new private key to <span class="s1">&#39;/etc/openvpn/easy-rsa/3.0.8/pki/easy-rsa-21281.oB04fP/tmp.QEXXEd&#39;</span>
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter <span class="s1">&#39;.&#39;</span>, the field will be left blank.
+-----
+Common Name <span class="o">(</span>eg: your user, host, or server name<span class="o">)</span> <span class="o">[</span>client<span class="o">]</span>:play-2 
+<span class="c1">#这里输入客户端的用户名，主机或服务名</span>
+ 
+Keypair and certificate request completed. Your files are:
+req: /etc/openvpn/easy-rsa/3.0.8/pki/reqs/client.req
+key: /etc/openvpn/easy-rsa/3.0.8/pki/private/client.key
+</code></pre></div><p>为客户端的证书进行签名，输入yes进行确认</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa sign client client</span>
+ 
+Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
+Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
+ 
+ 
+You are about to sign the following certificate.
+Please check over the details shown below <span class="k">for</span> accuracy. Note that this request
+has not been cryptographically verified. Please be sure it came from a trusted
+<span class="nb">source</span> or that you have verified the request checksum with the sender.
+ 
+Request subject, to be signed as a client certificate <span class="k">for</span> <span class="m">825</span> days:
+ 
+<span class="nv">subject</span><span class="o">=</span>
+  <span class="nv">commonName</span>        <span class="o">=</span> play-2
+ 
+ 
+Type the word <span class="s1">&#39;yes&#39;</span> to <span class="k">continue</span>, or any other input to abort.
+ Confirm request details: yes
+ <span class="c1">#这里输入yes进行确认</span>
+Using configuration from /etc/openvpn/easy-rsa/3.0.8/pki/easy-rsa-21325.18TS67/tmp.iF9iA2
+Check that the request matches the signature
+Signature ok
+The Subject<span class="s1">&#39;s Distinguished Name is as follows
+</span><span class="s1">commonName      :ASN.1 12:&#39;</span>play-2<span class="err">&#39;</span>
+Certificate is to be certified <span class="k">until</span> Jun <span class="m">19</span> 17:25:07 <span class="m">2024</span> GMT <span class="o">(</span><span class="m">825</span> days<span class="o">)</span>
+ 
+Write out database with <span class="m">1</span> new entries
+Data Base Updated
+ 
+Certificate created at: /etc/openvpn/easy-rsa/3.0.8/pki/issued/client.crt
+</code></pre></div><p>拷贝客户证书存放到Client目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/issued/client.crt /etc/openvpn/client/</span>
+<span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/private/client.key /etc/openvpn/client/</span>
+</code></pre></div><h3 id="client-配置"><a href="#client-配置" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:client-配置" class="headings">Client 配置</a></h3>
+<p>将服务端的client.crt（客户端证书）、client.key（客户端密钥）、ta.key（tls认证所需的秘钥文件）、ca.crt（CA根证书）四个文件拷贝到本地客户端目录的/etc/openvpn目录下（Windows 客户端为config目录）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-2 ~<span class="o">]</span><span class="c1"># ls /etc/openvpn/certs/</span>
+ca.crt  client.crt  client.key  ta.key
+</code></pre></div><p>配置客户端配置文件,拷贝客户端sample-config目录下的client.conf文件到config目录下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /usr/share/doc/openvpn/sample/sample-config-files/client.conf /etc/openvpn
+</code></pre></div><p>修改后的配置文件如下，方便复制，详细的参数介绍放在后面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 openvpn<span class="o">]</span><span class="c1"># cat /etc/openvpn/client.conf | grep -Ev &#34;^#|^;|^$&#34;</span>
+
+client
+dev tap
+proto udp
+remote 192.168.88.133 <span class="m">55003</span>
+nobind
+persist-key
+persist-tun
+ca /etc/openvpn/certs/ca.crt
+cert /etc/openvpn/certs/client.crt
+key /etc/openvpn/certs/client.key
+remote-cert-tls server
+cipher AES-256-GCM
+tls-auth /etc/openvpn/certs/ta.key <span class="m">1</span>
+comp-lzo 
+verb <span class="m">3</span>
+mute <span class="m">20</span>
+tls-version-min 1.3
+auth-nocache
+auth-user-pass
+ncp-disable
+auth SHA1
+tls-client
+resolv-retry infinite
+</code></pre></div><p>配置文件的参数介绍</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-2 ~<span class="o">]</span><span class="c1"># cat /etc/openvpn/client.conf </span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#客户端</span>
+client
+
+<span class="c1">#隧道类型，与服务器一致</span>
+dev tap
+
+<span class="c1">#tcp|udp，与服务器一致</span>
+proto udp
+
+<span class="c1">#服务器ip和端口</span>
+remote 192.168.88.133 <span class="m">55003</span>
+
+<span class="c1">#不绑定本地特定的端口</span>
+nobind
+
+<span class="c1">#服务器重启后保持的一些状态</span>
+persist-key
+persist-tun
+
+<span class="c1">#客户端证书目录</span>
+ca /etc/openvpn/certs/ca.crt
+cert /etc/openvpn/certs/client.crt
+key /etc/openvpn/certs/client.key
+
+<span class="c1">#远程证书验证</span>
+remote-cert-tls server
+
+<span class="c1">#加密方式（BF-CBC）</span>
+cipher AES-256-GCM
+
+<span class="c1">#tls握手秘钥,与服务器保持一致,服务器0,客户端1</span>
+tls-auth /etc/openvpn/certs/ta.key <span class="m">1</span>
+
+<span class="c1">#开启数据压缩</span>
+comp-lzo 
+
+<span class="c1">#日志级别</span>
+verb <span class="m">3</span>
+
+<span class="c1">#相同信息的数量，如果连续出现 20 条相同的信息，将不记录到日志中</span>
+mute <span class="m">20</span>
+
+<span class="c1">#tls最低版本,与服务器保持一致</span>
+tls-version-min 1.3
+
+<span class="c1">#不保存密码</span>
+auth-nocache
+
+<span class="c1">#使客户端中所有流量经过VPN,所有网络连接都使用vpn</span>
+redirect-gateway def1
+
+<span class="c1">#用户需要密码认证</span>
+auth-user-pass
+
+<span class="c1">#关闭网络控制协议</span>
+ncp-disable
+
+<span class="c1">#哈希加密认证</span>
+auth SHA1
+
+<span class="c1">#客户端开启tls加密</span>
+tls-client
+
+<span class="c1">#重新获取DNS</span>
+resolv-retry infinite
+</code></pre></div><h3 id="配置账号密码登录-1"><a href="#配置账号密码登录-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置账号密码登录-1" class="headings">配置账号密码登录</a></h3>
+<pre><code>vim /etc/openvpn/passwd
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">test</span>    <span class="c1">#第一行用户名</span>
+<span class="m">123456</span>    <span class="c1">#第二行密码</span>
+</code></pre></div><h3 id="服务启动-1"><a href="#服务启动-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:服务启动-1" class="headings">服务启动</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">openvpn --daemon --cd /etc/openvpn --config client.conf --auth-user-pass /etc/openvpn/passwd --log-append /var/log/openvpn.log
+</code></pre></div><p>参数详解：</p>
+<p>--daemon    #以后台守护进程的方式执行</p>
+<p>--cd /etc/openvpn    #进入openvpn工作目录</p>
+<p>--config client.conf    #指定拨号使用的配置文件</p>
+<p>--auth-user-pass /etc/openvpn/passwd    #指定认证使用的用户名和密码文件</p>
+<p>--log-append /var/log/openvpn.log    #指定记录openvpn日志的文件位置</p>
+<h2 id="ovpn-server-代理上网"><a href="#ovpn-server-代理上网" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ovpn-server-代理上网" class="headings">OVPN-Server 代理上网</a></h2>
+<p>想要将OVPN-Server当作网关路由器上网使用。首先，你的OVPN-Server需要拥有一个能够访问目标网段地址的网络接口，这个接口获取IP地址的方式可以是绑定的静态IP，也可以是DHCP动态获取。</p>
+<h3 id="路由转发"><a href="#路由转发" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:路由转发" class="headings">路由转发</a></h3>
+<p>修改内核参数，开启基于ipv4的路由转发功能</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span> &gt;&gt; /etc/sysctl.conf
+</code></pre></div><p>立即生效配置</p>
+<pre><code>sysctl -p
+</code></pre><h3 id="防火墙流量转发"><a href="#防火墙流量转发" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:防火墙流量转发" class="headings">防火墙流量转发</a></h3>
+<p>关闭firewall防火墙</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl stop firewalld
+systemctl disable firewalld
+</code></pre></div><p>关闭selinux，有时候会碍事</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sed -i <span class="s2">&#34;s/SELINUX=enforcing/SELINUX=disabled/g&#34;</span> /etc/selinux/config     <span class="c1">#永久关闭，重启生效</span>
+setenforce <span class="m">0</span>    <span class="c1">#临时关闭</span>
+</code></pre></div><p>启动iptables，并设置开机自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start iptables
+systemctl <span class="nb">enable</span> iptables
+</code></pre></div><p>配置SNAT地址转换，将来自OVPN隧道网段的IP地址转换为本机eth0的IP地址，代理上网主要以iptables转发流量实现。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iptables -t nat -A POSTROUTING -s 100.88.0.0/24 -j SNAT --to-source 192.168.88.133    <span class="c1">#适用于出口为静态IP地址</span>
+iptables -t nat -A POSTROUTING -s 100.88.0.0/24 -o eth0 -j MASQUERADE    <span class="c1">#适用于出口为动态IP地址</span>
+</code></pre></div><p>配置转发策略，FORWARD链，允许转发</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iptables -P FORWARD ACCEPT
+</code></pre></div><p>配置进站策略，INPUT链，允许tcp/udp协议55003端口通过防火墙</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iptables -I INPUT -p tcp --dport <span class="m">55003</span> -m comment --comment <span class="s2">&#34;openvpn&#34;</span> -j ACCEPT
+iptables -I INPUT -p udp --dport <span class="m">55003</span> -m comment --comment <span class="s2">&#34;openvpn&#34;</span> -j ACCEPT
+</code></pre></div><p>保存防火墙规则，并重启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">service iptables save
+systemctl restart iptables
+</code></pre></div><hr>
+<p>References &amp; Resources：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/429566474" target="_blank" rel="noopener">centos8安装配置openvpn实现服务器代理上网</a></p>
+
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+    
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Linux</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/vpn/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>VPN</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/centos/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS</a>
+                
+            
+        </div>
+    
+
+
+
+        
+    <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/linux/" rel="tag" class="post-tag-link">#linux</a> <a href="/tags/vpn/" rel="tag" class="post-tag-link">#vpn</a> <a href="/tags/centos/" rel="tag" class="post-tag-link">#centos</a></div>
+        
+        
+        
+            
+        
+    </footer>
+
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/centos8_pppoe_4g/" rel="next">CentOS8 pppoe 4G拨号 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2022&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;ikuriko</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+            
+
+            
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>
