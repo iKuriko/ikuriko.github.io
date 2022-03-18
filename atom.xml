@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-18T17:29:42&#43;08:00</updated>
+    <updated>2022-03-18T18:06:00&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,14 +20,14 @@
             <title type="text">OpenVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvpn/" />
             <id>https://ikuriko.github.io/posts/openvpn/</id>
-            <updated>2022-03-18T16:56:30&#43;08:00</updated>
+            <updated>2022-03-18T17:54:56&#43;08:00</updated>
             <published>2022-03-18T11:27:46&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentOS8.5上部署OVPN，使用账号密码实现客户端登录</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在 CentOS8 上部署 OVPN ，实现使用账号密码的客户端登录和代理上网</summary>
             
             
             
@@ -41,7 +41,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
@@ -53,7 +53,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/openvpn/" term="OpenVPN" label="OpenVPN" />
                             
                         
                     
@@ -65,14 +65,14 @@
             <title type="text">CentOS8 PPPOE 4G</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe_4g/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe_4g/</id>
-            <updated>2022-03-18T17:20:54&#43;08:00</updated>
+            <updated>2022-03-18T18:05:39&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用Huawei ME906s 4G模块pppoe拨号上网</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用Huawei ME906s 4G模块PPPOE拨号上网</summary>
             
             
             
@@ -86,13 +86,13 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/pppoe/" term="PPPOE" label="PPPOE" />
                             
                         
                     
@@ -104,14 +104,14 @@
             <title type="text">Network NameSpace</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/namespace/" />
             <id>https://ikuriko.github.io/posts/namespace/</id>
-            <updated>2022-03-18T11:35:08&#43;08:00</updated>
+            <updated>2022-03-18T17:46:19&#43;08:00</updated>
             <published>2022-02-22T14:50:30&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">NameSpace 简介 Network NameSpace：网络命名空间（名字空间），是 Linux 内……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Namespace能够创建多个隔离的网络空间</summary>
             
             
             
@@ -125,7 +125,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
@@ -143,7 +143,7 @@
             <title type="text">WireGuard</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/wireguard/" />
             <id>https://ikuriko.github.io/posts/wireguard/</id>
-            <updated>2022-03-18T11:40:28&#43;08:00</updated>
+            <updated>2022-03-18T17:43:03&#43;08:00</updated>
             <published>2021-12-31T10:06:44&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -164,19 +164,19 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
                                 <category scheme="https://ikuriko.github.io/tags/vpn/" term="VPN" label="VPN" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/wireguard/" term="WireGuard" label="WireGuard" />
                             
                         
                     
@@ -188,7 +188,7 @@
             <title type="text">CentOS8 时间同步</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2022-03-18T17:27:12&#43;08:00</updated>
+            <updated>2022-03-18T17:37:16&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -209,13 +209,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -227,14 +221,14 @@
             <title type="text">RHEL8 Packaging for OpenvSwitch</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rhel8_packaging_for_openvswitch/" />
             <id>https://ikuriko.github.io/posts/rhel8_packaging_for_openvswitch/</id>
-            <updated>2022-03-18T11:35:45&#43;08:00</updated>
+            <updated>2022-03-18T17:52:09&#43;08:00</updated>
             <published>2021-11-23T16:25:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Preparation 操作的系统环境：CentOS 8.4.2105 cat /etc/redhat-release CentOS Linux release 8.4.2105 uname -r 4.18.0-348.el8.x86_64 Ovs软件……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在 CentOS8 上构建 OpenvSwitch 软件包</summary>
             
             
             
@@ -248,13 +242,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
@@ -272,7 +260,7 @@
             <title type="text">CentOS7 SQLServer2017</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_sqlserver2017/" />
             <id>https://ikuriko.github.io/posts/centos7_sqlserver2017/</id>
-            <updated>2022-03-18T17:27:16&#43;08:00</updated>
+            <updated>2022-03-18T17:36:32&#43;08:00</updated>
             <published>2021-11-18T11:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -293,13 +281,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -311,14 +293,14 @@
             <title type="text">Linux 常用排查命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_troubleshooting_commands/" />
             <id>https://ikuriko.github.io/posts/linux_troubleshooting_commands/</id>
-            <updated>2022-03-18T17:29:26&#43;08:00</updated>
+            <updated>2022-03-18T17:55:53&#43;08:00</updated>
             <published>2021-11-16T11:01:07&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">ps ps命令：可以查看进程的瞬间信息。 ps -aux 常用参数： -a：显示……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在常见的 Linux 发行版本下，排查故障的常用命令</summary>
             
             
             
@@ -332,7 +314,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -344,14 +326,14 @@
             <title type="text">KVM 虚拟化</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/kvm/" />
             <id>https://ikuriko.github.io/posts/kvm/</id>
-            <updated>2022-03-18T17:26:40&#43;08:00</updated>
+            <updated>2022-03-18T18:05:07&#43;08:00</updated>
             <published>2021-11-10T16:36:54&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">简介 KVM是开源软件，全称是kernel-based virtual mac……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">KVM是x86架构且硬件支持虚拟化技术（如 intel VT 或 AMD-V）的 Linux 虚拟化解决方案。</summary>
             
             
             
@@ -361,12 +343,6 @@
                     
                 
                     
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
                         
                             
                             
@@ -377,7 +353,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -389,7 +365,7 @@
             <title type="text">CentOS 中文语言安装</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_chinese/" />
             <id>https://ikuriko.github.io/posts/centos_chinese/</id>
-            <updated>2022-03-18T17:27:05&#43;08:00</updated>
+            <updated>2022-03-18T18:05:17&#43;08:00</updated>
             <published>2021-11-05T10:34:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -410,13 +386,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -428,7 +398,7 @@
             <title type="text">CentOS7 VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_vnc/" />
             <id>https://ikuriko.github.io/posts/centos7_vnc/</id>
-            <updated>2022-03-18T17:21:16&#43;08:00</updated>
+            <updated>2022-03-18T17:37:08&#43;08:00</updated>
             <published>2021-11-03T17:38:40&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -449,13 +419,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -467,14 +431,14 @@
             <title type="text">Nmcli 命令使用</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/nmcli/" />
             <id>https://ikuriko.github.io/posts/nmcli/</id>
-            <updated>2022-03-18T17:29:03&#43;08:00</updated>
+            <updated>2022-03-18T17:46:29&#43;08:00</updated>
             <published>2021-11-02T14:37:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">常用命令 查看 列出所有网络设备 nmcli connection show 查看所有活动的连接 nmcli connection show --active……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Nmcli 由 网络管理器 NetworkManager 软件包提供，是新一代的网络管理工具</summary>
             
             
             
@@ -488,7 +452,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
@@ -503,17 +467,17 @@
         </entry>
     
         <entry>
-            <title type="text">Linux 热添加硬盘</title>
+            <title type="text">CentOS 热添加硬盘</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_hot_addition_disk/" />
             <id>https://ikuriko.github.io/posts/linux_hot_addition_disk/</id>
-            <updated>2022-03-18T17:25:25&#43;08:00</updated>
+            <updated>2022-03-18T17:57:08&#43;08:00</updated>
             <published>2021-11-01T17:41:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装了 Linux 发行版的服务器正在运行，并且无法进行关机操作时，以下……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装了 CentOS Linux 发行版的服务器正在运行，并且无法进行关机操作时，下面的命令可以扫描到新插入的硬盘</summary>
             
             
             
@@ -527,13 +491,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -545,7 +503,7 @@
             <title type="text">Ansible 自动化</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ansible/" />
             <id>https://ikuriko.github.io/posts/ansible/</id>
-            <updated>2022-03-18T17:27:46&#43;08:00</updated>
+            <updated>2022-03-18T17:34:47&#43;08:00</updated>
             <published>2021-10-29T11:50:51&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -566,19 +524,13 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
-                            
-                        
-                            
-                            
-                            
                                 <category scheme="https://ikuriko.github.io/tags/ansible/" term="Ansible" label="Ansible" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                     
@@ -590,14 +542,14 @@
             <title type="text">Vsftpd</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vsftpd/" />
             <id>https://ikuriko.github.io/posts/vsftpd/</id>
-            <updated>2022-03-18T17:28:35&#43;08:00</updated>
+            <updated>2022-03-18T17:50:24&#43;08:00</updated>
             <published>2021-10-14T15:16:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Vsftpd 简介 为了解决在复杂多样的设备之间传输文件，文件传输协议（F……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Vsftpd 解决了在多样设备之间，使用加密方式安全传输文件的问题</summary>
             
             
             
@@ -611,19 +563,19 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/vsftpd/" term="Vsftpd" label="Vsftpd" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/ftp/" term="FTP" label="FTP" />
+                                <category scheme="https://ikuriko.github.io/tags/tftp/" term="Tftp" label="Tftp" />
                             
                         
                     
@@ -635,14 +587,14 @@
             <title type="text">Tcpdump 常用命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tcpdump/" />
             <id>https://ikuriko.github.io/posts/tcpdump/</id>
-            <updated>2022-03-18T17:25:49&#43;08:00</updated>
+            <updated>2022-03-18T17:51:18&#43;08:00</updated>
             <published>2021-10-11T17:30:36&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux下抓包工具Tcpdump的常用方法 列出所有可抓取的……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 下抓包工具 Tcpdump 的使用方法</summary>
             
             
             
@@ -656,7 +608,13 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/tcpdump/" term="Tcpdump" label="Tcpdump" />
                             
                         
                     
@@ -668,7 +626,7 @@
             <title type="text">CAD 快捷命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cad/" />
             <id>https://ikuriko.github.io/posts/cad/</id>
-            <updated>2022-03-18T17:27:35&#43;08:00</updated>
+            <updated>2022-03-18T17:36:15&#43;08:00</updated>
             <published>2021-09-23T15:57:29&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -689,7 +647,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/other/" term="Other" label="Other" />
+                                <category scheme="https://ikuriko.github.io/tags/cad/" term="CAD" label="CAD" />
                             
                         
                     
@@ -701,14 +659,14 @@
             <title type="text">Vim 常用命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vim/" />
             <id>https://ikuriko.github.io/posts/vim/</id>
-            <updated>2022-03-18T17:28:49&#43;08:00</updated>
+            <updated>2022-03-18T17:48:50&#43;08:00</updated>
             <published>2021-09-09T16:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">命令模式 命令 功能 u 撤销 Ctrl+r 重做 ~ 当前字符切换大小写 &amp;gt;&amp;gt; 当前行向右……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Vim编辑神器的常用快捷命令收集</summary>
             
             
             
@@ -722,7 +680,13 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/vim/" term="Vim" label="Vim" />
                             
                         
                     
@@ -734,7 +698,7 @@
             <title type="text">Javaweb 开发环境搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/building_javaweb_development_environment/" />
             <id>https://ikuriko.github.io/posts/building_javaweb_development_environment/</id>
-            <updated>2022-03-18T11:33:33&#43;08:00</updated>
+            <updated>2022-03-18T17:36:53&#43;08:00</updated>
             <published>2021-09-09T16:53:45&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -755,13 +719,37 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux/" term="Linux" label="Linux" />
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
                             
                         
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
+                                <category scheme="https://ikuriko.github.io/tags/javaweb/" term="Javaweb" label="Javaweb" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/jdk/" term="JDK" label="JDK" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/mysql/" term="MySQL" label="MySQL" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/tomcat/" term="Tomcat" label="Tomcat" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/python/" term="Python" label="Python" />
                             
                         
                     
