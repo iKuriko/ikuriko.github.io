@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 18 Mar 2022 16:56:43 &#43;0800</lastBuildDate>
+        <lastBuildDate>Fri, 18 Mar 2022 17:29:42 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -72,7 +72,7 @@
             </item>
         
             <item>
-                <title>CentOS8 pppoe 4G拨号</title>
+                <title>CentOS8 PPPOE 4G</title>
                 <link>https://ikuriko.github.io/posts/centos8_pppoe_4g/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_pppoe_4g/</guid>
                 <pubDate>Wed, 09 Mar 2022 11:44:50 &#43;0800</pubDate>
@@ -269,7 +269,7 @@
             </item>
         
             <item>
-                <title>CentOS7 安装 SQLServer2017</title>
+                <title>CentOS7 SQLServer2017</title>
                 <link>https://ikuriko.github.io/posts/centos7_sqlserver2017/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_sqlserver2017/</guid>
                 <pubDate>Thu, 18 Nov 2021 11:56:06 &#43;0800</pubDate>
@@ -380,7 +380,7 @@
             </item>
         
             <item>
-                <title>CentOS 安装中文语言包</title>
+                <title>CentOS 中文语言安装</title>
                 <link>https://ikuriko.github.io/posts/centos_chinese/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_chinese/</guid>
                 <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
@@ -417,7 +417,7 @@
             </item>
         
             <item>
-                <title>CentOS7 安装 VNC</title>
+                <title>CentOS7 VNC</title>
                 <link>https://ikuriko.github.io/posts/centos7_vnc/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_vnc/</guid>
                 <pubDate>Wed, 03 Nov 2021 17:38:40 &#43;0800</pubDate>
@@ -454,7 +454,7 @@
             </item>
         
             <item>
-                <title>nmcli 命令使用</title>
+                <title>Nmcli 命令使用</title>
                 <link>https://ikuriko.github.io/posts/nmcli/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
@@ -499,7 +499,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>Linux服务器运行时，扫描新插入的硬盘 此环境为VMware……</description>
+                <description>安装了 Linux 发行版的服务器正在运行，并且无法进行关机操作时，以下……</description>
                 
                 
                 
@@ -528,7 +528,7 @@
             </item>
         
             <item>
-                <title>Ansible</title>
+                <title>Ansible 自动化</title>
                 <link>https://ikuriko.github.io/posts/ansible/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ansible/</guid>
                 <pubDate>Fri, 29 Oct 2021 11:50:51 &#43;0800</pubDate>
@@ -602,13 +602,19 @@
                                     <category domain="https://ikuriko.github.io/tags/centos/">CentOS</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/ftp/">FTP</category>
+                                
+                            
                         
                     
                 
             </item>
         
             <item>
-                <title>tcpdump 常用命令</title>
+                <title>Tcpdump 常用命令</title>
                 <link>https://ikuriko.github.io/posts/tcpdump/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tcpdump/</guid>
                 <pubDate>Mon, 11 Oct 2021 17:30:36 &#43;0800</pubDate>
@@ -639,7 +645,7 @@
             </item>
         
             <item>
-                <title>CAD 快捷键</title>
+                <title>CAD 快捷命令</title>
                 <link>https://ikuriko.github.io/posts/cad/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/cad/</guid>
                 <pubDate>Thu, 23 Sep 2021 15:57:29 &#43;0800</pubDate>
@@ -670,7 +676,7 @@
             </item>
         
             <item>
-                <title>vim 常用命令</title>
+                <title>Vim 常用命令</title>
                 <link>https://ikuriko.github.io/posts/vim/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vim/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:56:06 &#43;0800</pubDate>
@@ -738,7 +744,7 @@
             </item>
         
             <item>
-                <title>Hugo&#43;GithubPages 个人站点搭建</title>
+                <title>Hugo&#43;GithubPages 站点搭建</title>
                 <link>https://ikuriko.github.io/posts/hugo&#43;githubpages/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hugo&#43;githubpages/</guid>
                 <pubDate>Tue, 07 Sep 2021 14:20:48 &#43;0800</pubDate>
@@ -769,7 +775,7 @@
             </item>
         
             <item>
-                <title>Hello_world</title>
+                <title>Hello world</title>
                 <link>https://ikuriko.github.io/posts/hello_world/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hello_world/</guid>
                 <pubDate>Thu, 02 Sep 2021 16:55:55 &#43;0800</pubDate>

@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-18T16:56:43&#43;08:00</updated>
+    <updated>2022-03-18T17:29:42&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -62,10 +62,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS8 pppoe 4G拨号</title>
+            <title type="text">CentOS8 PPPOE 4G</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe_4g/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe_4g/</id>
-            <updated>2022-03-18T11:33:50&#43;08:00</updated>
+            <updated>2022-03-18T17:20:54&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -188,7 +188,7 @@
             <title type="text">CentOS8 时间同步</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2022-03-18T11:33:47&#43;08:00</updated>
+            <updated>2022-03-18T17:27:12&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -269,10 +269,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS7 安装 SQLServer2017</title>
+            <title type="text">CentOS7 SQLServer2017</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_sqlserver2017/" />
             <id>https://ikuriko.github.io/posts/centos7_sqlserver2017/</id>
-            <updated>2022-03-18T11:33:42&#43;08:00</updated>
+            <updated>2022-03-18T17:27:16&#43;08:00</updated>
             <published>2021-11-18T11:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -311,7 +311,7 @@
             <title type="text">Linux 常用排查命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_troubleshooting_commands/" />
             <id>https://ikuriko.github.io/posts/linux_troubleshooting_commands/</id>
-            <updated>2022-03-18T16:35:19&#43;08:00</updated>
+            <updated>2022-03-18T17:29:26&#43;08:00</updated>
             <published>2021-11-16T11:01:07&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -344,7 +344,7 @@
             <title type="text">KVM 虚拟化</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/kvm/" />
             <id>https://ikuriko.github.io/posts/kvm/</id>
-            <updated>2022-03-18T11:34:29&#43;08:00</updated>
+            <updated>2022-03-18T17:26:40&#43;08:00</updated>
             <published>2021-11-10T16:36:54&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -386,10 +386,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS 安装中文语言包</title>
+            <title type="text">CentOS 中文语言安装</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_chinese/" />
             <id>https://ikuriko.github.io/posts/centos_chinese/</id>
-            <updated>2022-03-18T11:33:53&#43;08:00</updated>
+            <updated>2022-03-18T17:27:05&#43;08:00</updated>
             <published>2021-11-05T10:34:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -425,10 +425,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS7 安装 VNC</title>
+            <title type="text">CentOS7 VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_vnc/" />
             <id>https://ikuriko.github.io/posts/centos7_vnc/</id>
-            <updated>2022-03-18T11:33:45&#43;08:00</updated>
+            <updated>2022-03-18T17:21:16&#43;08:00</updated>
             <published>2021-11-03T17:38:40&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -464,10 +464,10 @@
         </entry>
     
         <entry>
-            <title type="text">nmcli 命令使用</title>
+            <title type="text">Nmcli 命令使用</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/nmcli/" />
             <id>https://ikuriko.github.io/posts/nmcli/</id>
-            <updated>2022-03-10T11:49:53&#43;08:00</updated>
+            <updated>2022-03-18T17:29:03&#43;08:00</updated>
             <published>2021-11-02T14:37:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -506,14 +506,14 @@
             <title type="text">Linux 热添加硬盘</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_hot_addition_disk/" />
             <id>https://ikuriko.github.io/posts/linux_hot_addition_disk/</id>
-            <updated>2022-03-18T11:34:31&#43;08:00</updated>
+            <updated>2022-03-18T17:25:25&#43;08:00</updated>
             <published>2021-11-01T17:41:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux服务器运行时，扫描新插入的硬盘 此环境为VMware……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装了 Linux 发行版的服务器正在运行，并且无法进行关机操作时，以下……</summary>
             
             
             
@@ -542,10 +542,10 @@
         </entry>
     
         <entry>
-            <title type="text">Ansible</title>
+            <title type="text">Ansible 自动化</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ansible/" />
             <id>https://ikuriko.github.io/posts/ansible/</id>
-            <updated>2022-03-18T11:33:24&#43;08:00</updated>
+            <updated>2022-03-18T17:27:46&#43;08:00</updated>
             <published>2021-10-29T11:50:51&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -590,7 +590,7 @@
             <title type="text">Vsftpd</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vsftpd/" />
             <id>https://ikuriko.github.io/posts/vsftpd/</id>
-            <updated>2022-03-18T11:35:58&#43;08:00</updated>
+            <updated>2022-03-18T17:28:35&#43;08:00</updated>
             <published>2021-10-14T15:16:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -620,16 +620,22 @@
                                 <category scheme="https://ikuriko.github.io/tags/centos/" term="CentOS" label="CentOS" />
                             
                         
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/ftp/" term="FTP" label="FTP" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">tcpdump 常用命令</title>
+            <title type="text">Tcpdump 常用命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tcpdump/" />
             <id>https://ikuriko.github.io/posts/tcpdump/</id>
-            <updated>2022-03-10T11:50:08&#43;08:00</updated>
+            <updated>2022-03-18T17:25:49&#43;08:00</updated>
             <published>2021-10-11T17:30:36&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -659,10 +665,10 @@
         </entry>
     
         <entry>
-            <title type="text">CAD 快捷键</title>
+            <title type="text">CAD 快捷命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cad/" />
             <id>https://ikuriko.github.io/posts/cad/</id>
-            <updated>2022-03-18T11:33:39&#43;08:00</updated>
+            <updated>2022-03-18T17:27:35&#43;08:00</updated>
             <published>2021-09-23T15:57:29&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -692,10 +698,10 @@
         </entry>
     
         <entry>
-            <title type="text">vim 常用命令</title>
+            <title type="text">Vim 常用命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vim/" />
             <id>https://ikuriko.github.io/posts/vim/</id>
-            <updated>2022-03-10T11:50:12&#43;08:00</updated>
+            <updated>2022-03-18T17:28:49&#43;08:00</updated>
             <published>2021-09-09T16:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -764,10 +770,10 @@
         </entry>
     
         <entry>
-            <title type="text">Hugo&#43;GithubPages 个人站点搭建</title>
+            <title type="text">Hugo&#43;GithubPages 站点搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hugo&#43;githubpages/" />
             <id>https://ikuriko.github.io/posts/hugo&#43;githubpages/</id>
-            <updated>2022-03-18T11:34:22&#43;08:00</updated>
+            <updated>2022-03-18T17:21:45&#43;08:00</updated>
             <published>2021-09-07T14:20:48&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -797,10 +803,10 @@
         </entry>
     
         <entry>
-            <title type="text">Hello_world</title>
+            <title type="text">Hello world</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hello_world/" />
             <id>https://ikuriko.github.io/posts/hello_world/</id>
-            <updated>2022-03-18T11:34:11&#43;08:00</updated>
+            <updated>2022-03-18T17:21:32&#43;08:00</updated>
             <published>2021-09-02T16:55:55&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
