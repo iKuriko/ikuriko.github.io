@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-18T18:06:00&#43;08:00</updated>
+    <updated>2022-03-21T17:07:56&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -260,14 +260,14 @@
             <title type="text">CentOS7 SQLServer2017</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_sqlserver2017/" />
             <id>https://ikuriko.github.io/posts/centos7_sqlserver2017/</id>
-            <updated>2022-03-18T17:36:32&#43;08:00</updated>
+            <updated>2022-03-21T17:04:15&#43;08:00</updated>
             <published>2021-11-18T11:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentoOS上安装sqlserver，需要先下载微软官方……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接</summary>
             
             
             
@@ -365,14 +365,14 @@
             <title type="text">CentOS 中文语言安装</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_chinese/" />
             <id>https://ikuriko.github.io/posts/centos_chinese/</id>
-            <updated>2022-03-18T18:05:17&#43;08:00</updated>
+            <updated>2022-03-21T17:06:04&#43;08:00</updated>
             <published>2021-11-05T10:34:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装中文语言包 yum install kde-l10n-Chinese # CentOS 7 安装 yum install langpacks-zh_CN.noarch # CentOS 8 安装 yum reinstall glibc-common 安装字体……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">为 CentOS 系统安装中文语言支持</summary>
             
             
             
@@ -398,14 +398,14 @@
             <title type="text">CentOS7 VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_vnc/" />
             <id>https://ikuriko.github.io/posts/centos7_vnc/</id>
-            <updated>2022-03-18T17:37:08&#43;08:00</updated>
+            <updated>2022-03-21T17:05:00&#43;08:00</updated>
             <published>2021-11-03T17:38:40&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">安装&amp;quot;GNOME Desktop&amp;quot;软件包组……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在 CentOS7 上安装VNC进行远程桌面连接</summary>
             
             
             
@@ -470,7 +470,7 @@
             <title type="text">CentOS 热添加硬盘</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_hot_addition_disk/" />
             <id>https://ikuriko.github.io/posts/linux_hot_addition_disk/</id>
-            <updated>2022-03-18T17:57:08&#43;08:00</updated>
+            <updated>2022-03-21T17:07:24&#43;08:00</updated>
             <published>2021-11-01T17:41:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -503,14 +503,14 @@
             <title type="text">Ansible 自动化</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ansible/" />
             <id>https://ikuriko.github.io/posts/ansible/</id>
-            <updated>2022-03-18T17:34:47&#43;08:00</updated>
+            <updated>2022-03-21T17:02:50&#43;08:00</updated>
             <published>2021-10-29T11:50:51&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">简介 Ansible目前是运维自动化工具中最简单、容易上手的一……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Ansible 是目前运维自动化工具中最简单、容易上手的一款优秀软件，能够用来管理各种资源，批量部署应用程序等。</summary>
             
             
             
@@ -626,14 +626,14 @@
             <title type="text">CAD 快捷命令</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cad/" />
             <id>https://ikuriko.github.io/posts/cad/</id>
-            <updated>2022-03-18T17:36:15&#43;08:00</updated>
+            <updated>2022-03-21T17:03:43&#43;08:00</updated>
             <published>2021-09-23T15:57:29&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">记录绘制 2D 平面图使用的常用CAD快捷命令 所有的命令通过键入命……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">记录绘制 2D 平面图常用的CAD快捷命令</summary>
             
             
             
@@ -698,14 +698,14 @@
             <title type="text">Javaweb 开发环境搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/building_javaweb_development_environment/" />
             <id>https://ikuriko.github.io/posts/building_javaweb_development_environment/</id>
-            <updated>2022-03-18T17:36:53&#43;08:00</updated>
+            <updated>2022-03-21T17:03:18&#43;08:00</updated>
             <published>2021-09-09T16:53:45&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">为 Javaweb 开发项目搭建基础环境，全部使用源码包手动安装 环境使用软件……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">为 Javaweb 开发项目搭建基础环境，全部软件使用源码包手动安装</summary>
             
             
             
@@ -761,14 +761,14 @@
             <title type="text">Hugo&#43;GithubPages 站点搭建</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hugo&#43;githubpages/" />
             <id>https://ikuriko.github.io/posts/hugo&#43;githubpages/</id>
-            <updated>2022-03-18T17:21:45&#43;08:00</updated>
+            <updated>2022-03-21T17:07:11&#43;08:00</updated>
             <published>2021-09-07T14:20:48&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Hugo 安装 首先在本地安装hugo，选择适合自己系统的安装包 将hu……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">本文为此站点的构建方式</summary>
             
             
             

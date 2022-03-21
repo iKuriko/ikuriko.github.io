@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="在CentoOS上安装sqlserver，需要先下载微软官方……" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-11-18T11:56:06+08:00",
-        "dateModified": "2022-03-18T17:36:32+08:00",
+        "dateModified": "2022-03-21T17:04:15+08:00",
         "url": "https://ikuriko.github.io/posts/centos7_sqlserver2017/",
         "headline": "CentOS7 SQLServer2017",
-        "description": "在CentoOS上安装sqlserver，需要先下载微软官方……",
+        "description": "在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1009 ,
+        "wordCount":  918 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -99,13 +99,13 @@
 
 
 <meta property="og:title" content="CentOS7 SQLServer2017" />
-<meta property="og:description" content="在CentoOS上安装sqlserver，需要先下载微软官方……" />
+<meta property="og:description" content="在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接" />
 <meta property="og:url" content="https://ikuriko.github.io/posts/centos7_sqlserver2017/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-11-18T11:56:06&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-18T17:36:32&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-21T17:04:15&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -210,6 +210,7 @@
             
 
             
+                <div class="post-description p-summary">在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接</div>
                 
             
 
@@ -243,10 +244,9 @@
     <li><a id="contents:卸载-sql-server" href="#卸载-sql-server">卸载 SQL Server</a></li>
   </ol>
 </nav><div class="post-body e-content">
-                <p>在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接</p>
+                <p>OS必须条件</p>
 <blockquote>
-<p>OS必须条件<br>
-Memory：3.25 GB<br>
+<p>Memory：3.25 GB<br>
 File System：XFS or EXT4 (other file systems, such as BTRFS, are unsupported)<br>
 Disk space ：6 GB<br>
 Processor speed：2 GHz<br>
