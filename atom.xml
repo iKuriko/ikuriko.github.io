@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-21T17:07:56&#43;08:00</updated>
+    <updated>2022-03-21T17:11:43&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -260,14 +260,14 @@
             <title type="text">CentOS7 SQLServer2017</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_sqlserver2017/" />
             <id>https://ikuriko.github.io/posts/centos7_sqlserver2017/</id>
-            <updated>2022-03-21T17:04:15&#43;08:00</updated>
+            <updated>2022-03-21T17:11:34&#43;08:00</updated>
             <published>2021-11-18T11:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentoOS上安装sqlserver，需要先下载微软官方提供的在线yum源，再安装mssql-server软件包，再根据需要安装sqlserver的命令行工具或远程客户端进行连接</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentoOS上安装sqlserver，首先下载微软官方提供的在线yum源，安装mssql-server软件包，然后根据需要安装sqlserver的命令行工具或远程客户端进行连接</summary>
             
             
             
