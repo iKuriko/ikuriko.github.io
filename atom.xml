@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-22T17:19:30&#43;08:00</updated>
+    <updated>2022-03-24T10:34:05&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -104,14 +104,14 @@
             <title type="text">Network NameSpace</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/namespace/" />
             <id>https://ikuriko.github.io/posts/namespace/</id>
-            <updated>2022-03-18T17:46:19&#43;08:00</updated>
+            <updated>2022-03-24T10:33:16&#43;08:00</updated>
             <published>2022-02-22T14:50:30&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Namespace能够创建多个隔离的网络空间</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Namespace是 Linux 内核中隔离资源的一种特性，是 Linux 实现网络虚拟化的重要功能，能够创建多个隔离的网络空间，各自拥有独自的网络栈信息</summary>
             
             
             
@@ -143,7 +143,7 @@
             <title type="text">WireGuard</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/wireguard/" />
             <id>https://ikuriko.github.io/posts/wireguard/</id>
-            <updated>2022-03-18T17:43:03&#43;08:00</updated>
+            <updated>2022-03-24T10:31:53&#43;08:00</updated>
             <published>2021-12-31T10:06:44&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -365,7 +365,7 @@
             <title type="text">CentOS 中文语言安装</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_chinese/" />
             <id>https://ikuriko.github.io/posts/centos_chinese/</id>
-            <updated>2022-03-21T17:06:04&#43;08:00</updated>
+            <updated>2022-03-24T10:33:52&#43;08:00</updated>
             <published>2021-11-05T10:34:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
