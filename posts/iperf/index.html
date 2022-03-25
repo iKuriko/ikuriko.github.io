@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Tcpdump | ikuriko</title>
+    <title>Iperf | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="Linux 下软件包分析工具 Tcpdump 的常用命令" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="Iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,21 +46,21 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/posts/tcpdump/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/iperf/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2021-10-11T17:30:36+08:00",
-        "dateModified": "2022-03-25T18:00:47+08:00",
-        "url": "https://ikuriko.github.io/posts/tcpdump/",
-        "headline": "Tcpdump",
-        "description": "Linux 下软件包分析工具 Tcpdump 的常用命令",
+        "datePublished": "2022-03-25T11:38:58+08:00",
+        "dateModified": "2022-03-25T17:53:47+08:00",
+        "url": "https://ikuriko.github.io/posts/iperf/",
+        "headline": "Iperf",
+        "description": "Iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  469 ,
+        "wordCount":  1008 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="Tcpdump" />
-<meta property="og:description" content="Linux 下软件包分析工具 Tcpdump 的常用命令" />
-<meta property="og:url" content="https://ikuriko.github.io/posts/tcpdump/" />
+<meta property="og:title" content="Iperf" />
+<meta property="og:description" content="Iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/iperf/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-10-11T17:30:36&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-25T18:00:47&#43;08:00" />
+    <meta property="article:published_time" content="2022-03-25T11:38:58&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-25T17:53:47&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -205,12 +205,12 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">Tcpdump</h1>
+            <h1 class="post-title p-name">Iperf</h1>
 
             
 
             
-                <div class="post-description p-summary">Linux 下软件包分析工具 Tcpdump 的常用命令</div>
+                <div class="post-description p-summary">Iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。</div>
                 
             
 
@@ -238,92 +238,115 @@
 
             <nav class="contents">
   <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:命令安装" href="#命令安装">命令安装</a></li>
     <li><a id="contents:命令语法" href="#命令语法">命令语法</a></li>
     <li><a id="contents:命令示例" href="#命令示例">命令示例</a></li>
   </ol>
 </nav><div class="post-body e-content">
-                <h2 id="命令语法"><a href="#命令语法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:命令语法" class="headings">命令语法</a></h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump <span class="o">[</span>选项<span class="o">]</span> &lt;抓取的网口&gt; <span class="o">[</span>选项<span class="o">]</span>
+                <h2 id="命令安装"><a href="#命令安装" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:命令安装" class="headings">命令安装</a></h2>
+<p><strong>CentOS 安装 iperf2&amp;3</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install epel-release
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install iperf iperf3
+</code></pre></div><p><strong>iperf2 &amp; iperf3</strong></p>
+<ul>
+<li>
+<p>iperf 存在两个版本，iperf2与iperf3。iperf2 的软件包 在 CentOS8 中被官方软件仓库移除。</p>
+</li>
+<li>
+<p>iperf3不支持双工模式测试，iperf2支持双工测试<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup></p>
+</li>
+<li>
+<p>iperf3 server端使用了统一的命令<code>iperf3 -s</code>，不再区分测试的是UDP还是TCP</p>
+</li>
+<li>
+<p>相同硬件条件下（x86平台），iperf3能测试的UDP带宽更高，但丢包严重。iperf2能测试的UDP带宽较小，但不丢包</p>
+</li>
+</ul>
+<h2 id="命令语法"><a href="#命令语法" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:命令语法" class="headings">命令语法</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iperf3 <span class="o">[</span>-c/-s<span class="o">]</span> &lt;服务端IP地址&gt; &lt;其他选项&gt;
 </code></pre></div><div class="table-container"><table>
 <thead>
 <tr>
 <th>选项</th>
-<th>功能</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>-D</td>
-<td>列出所有可抓取的网口</td>
+<td>-t</td>
+<td>设置时间，默认10s</td>
 </tr>
 <tr>
-<td>-i</td>
-<td>指定抓取的网口，any表示所有网口</td>
-</tr>
-<tr>
-<td>-n</td>
-<td>不把主机的网络地址转换成名字。</td>
-</tr>
-<tr>
-<td>-nn</td>
-<td>以端口号显示协议，例如 ssh == 22</td>
+<td>-u</td>
+<td>使用UDP协议，默认为TCP</td>
 </tr>
 <tr>
 <td>-c</td>
-<td>指定抓取数据包的数量</td>
+<td>指定服务端的IP地址</td>
 </tr>
 <tr>
-<td>host</td>
-<td>指定抓取的主机，包括 src host 和 dst host</td>
+<td>-b</td>
+<td>设置带宽大小。带宽越大，每秒钟发送的数据越多</td>
 </tr>
 <tr>
-<td>src host</td>
-<td>源主机</td>
+<td>-P</td>
+<td>设置多线程的数量</td>
 </tr>
 <tr>
-<td>dst host</td>
-<td>目标主机</td>
+<td>-p</td>
+<td>指定端口号</td>
 </tr>
 <tr>
-<td>and</td>
-<td>用来衔接多个选项</td>
+<td>-s</td>
+<td>启用服务端</td>
 </tr>
 <tr>
-<td>tcp</td>
-<td>TCP协议</td>
+<td>-l</td>
+<td>指定数据包的长度<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">[2]</a></sup></td>
 </tr>
 <tr>
-<td>udp</td>
-<td>UDP协议</td>
+<td>-B</td>
+<td>绑定服务端的IP地址</td>
 </tr>
 <tr>
-<td>port</td>
-<td>指定抓取的端口号</td>
-</tr>
-<tr>
-<td>not</td>
-<td>不抓取指定的主机/协议/端口，如 not port 22 ：不抓取22号端口的数据包</td>
+<td>-f</td>
+<td>显示的流量单位 [B/K/M/G]</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="命令示例"><a href="#命令示例" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:命令示例" class="headings">命令示例</a></h2>
-<p>列出所有可抓取的网口</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -D
-</code></pre></div><p>抓取ens33网口，过滤所有数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i ens33    
-</code></pre></div><p>抓取ens33网口，过滤 ping 包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i ens33 icmp
-</code></pre></div><p>抓取所有网口，过滤源目主机为192.168.1.1的ping包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i any host 192.168.1.1 and icmp
-</code></pre></div><p>抓取所有网口，过滤源主机为192.168.1.1，目的主机位192.168.1.2的ping包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i any src 192.168.1.1 and dst 192.168.1.2 and icmp
-</code></pre></div><p>抓取所有网口，过滤源主机为192.168.1.1 &amp; 端口号不是tcp22的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i any src host 192.168.1.1 and not tcp port <span class="m">22</span>
-</code></pre></div><p>抓取所有网口，过滤目的主机为192.168.1.2 &amp; 端口号不是udp53的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -nn -i any dst host 192.168.1.2 and not udp port <span class="m">53</span>
-</code></pre></div><p>抓取100个ens33网卡的数据包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tcpdump -c <span class="m">100</span> -i ens33
-</code></pre></div>
+<p>两台设备，其中一端开启服务端准备接收数据包，另一端启用客户端进行测试</p>
+<p><strong>Server端</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iperf3 -s -B 192.168.88.140 -p <span class="m">52001</span>
+</code></pre></div><p>命令详解：</p>
+<p>-s 指定服务端</p>
+<p>-p 指定端口（要和客户端一致）为 25001</p>
+<p>-B 绑定IP地址为 192.168.33.103</p>
+<p>#-u udp协议，默认是tcp协议，iperf3的server端不支持“-u”参数，默认可以测试tcp和udp</p>
+<p><strong>Client端</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iperf3 -c 192.168.88.140 -b 100M -t 10s -P <span class="m">4</span> -u -p <span class="m">52001</span>
+</code></pre></div><p>命令详解：</p>
+<p>-c 指定服务端的IP地址</p>
+<p>-b 指定流量大小为 100M</p>
+<p>-t 设置时间为10s</p>
+<p>-P 使用 4 个线程同时发送</p>
+<p>-u 使用UDP协议</p>
+<p>-p 指定服务器的端口为 25001</p>
+<hr>
+<p>References &amp; Resources：</p>
+<p><a href="https://blog.csdn.net/hfut_zhanghu/article/details/122980059" target="_blank" rel="noopener">iperf2 与 iperf3 的区别，及使用与介绍</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>iperf 2.05 客户端可以使用参数&quot;-d&quot;来进行双工测试，先测试发送，client向server发送数据，等到测试时间结束后（默认为10s，可以通过-t选项来更改），然后再测试接收，client端接收server发送数据，最后得出发送和接收吞吐率。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>&lt;1&gt; TCP默认为8KB，UDP默认为1470字节。测试时，需要保证被测试网卡的MTU值 &gt; 测试包的长度，即 -l 的值，默认UDP的packet size是1470，加上udp和ip头的长度28， 等于1498。若默认的packet size &gt; MTU，将会出现接收端收不到数据的情况。&lt;2&gt; 增加包的长度或增大缓冲区长度可以减少丢包率，因为包长度很小的话会造成包的数量更多，更易造成拥塞。在发送包为大包情况下，保障不丢包的方式，应当同时增大系统的读写缓冲区大小（修改/etc/sysctl.conf）&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+</li>
+</ol>
+</section>
+
             </div>
 
             
@@ -357,7 +380,7 @@
                 
                 
                     
-                    <a href="/tags/centos-linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS Linux</a>
+                    <a href="/tags/iperf/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>iperf</a>
                 
             
                 
@@ -365,7 +388,7 @@
                 
                 
                     
-                    <a href="/tags/tcpdump/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Tcpdump</a>
+                    <a href="/tags/centos-linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS Linux</a>
                 
             
         </div>
@@ -376,7 +399,7 @@
         
     <footer class="minimal-footer">
         
-            <div class="post-tag"><a href="/tags/centos-linux/" rel="tag" class="post-tag-link">#centos-linux</a> <a href="/tags/tcpdump/" rel="tag" class="post-tag-link">#tcpdump</a></div>
+            <div class="post-tag"><a href="/tags/iperf/" rel="tag" class="post-tag-link">#iperf</a> <a href="/tags/centos-linux/" rel="tag" class="post-tag-link">#centos-linux</a></div>
         
         
         
@@ -399,13 +422,9 @@
     
         <ul class="post-nav">
             
-                <li class="post-nav-prev">
-                    <a href="/posts/vsftpd/" rel="prev">&lt; Vsftpd</a>
-                </li>
-            
             
                 <li class="post-nav-next">
-                    <a href="/posts/cad/" rel="next">CAD 快捷命令 &gt;</a>
+                    <a href="/posts/openvpn/" rel="next">OpenVPN &gt;</a>
                 </li>
             
         </ul>

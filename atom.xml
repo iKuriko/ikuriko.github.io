@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-24T16:08:03&#43;08:00</updated>
+    <updated>2022-03-25T18:01:00&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,45 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">Iperf</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iperf/" />
+            <id>https://ikuriko.github.io/posts/iperf/</id>
+            <updated>2022-03-25T17:53:47&#43;08:00</updated>
+            <published>2022-03-25T11:38:58&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/iperf/" term="iperf" label="iperf" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">OpenVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvpn/" />
@@ -584,17 +623,17 @@
         </entry>
     
         <entry>
-            <title type="text">Tcpdump 常用命令</title>
+            <title type="text">Tcpdump</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tcpdump/" />
             <id>https://ikuriko.github.io/posts/tcpdump/</id>
-            <updated>2022-03-18T17:51:18&#43;08:00</updated>
+            <updated>2022-03-25T18:00:47&#43;08:00</updated>
             <published>2021-10-11T17:30:36&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 下抓包工具 Tcpdump 的使用方法</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 下软件包分析工具 Tcpdump 的常用命令</summary>
             
             
             
