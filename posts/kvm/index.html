@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>KVM 虚拟化 | ikuriko</title>
+    <title>KVM | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
 
@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-11-10T16:36:54+08:00",
-        "dateModified": "2022-03-18T18:05:07+08:00",
+        "dateModified": "2022-03-28T11:25:22+08:00",
         "url": "https://ikuriko.github.io/posts/kvm/",
-        "headline": "KVM 虚拟化",
+        "headline": "KVM",
         "description": "KVM是x86架构且硬件支持虚拟化技术（如 intel VT 或 AMD-V）的 Linux 虚拟化解决方案。",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  4513 ,
+        "wordCount":  4514 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="KVM 虚拟化" />
+<meta property="og:title" content="KVM" />
 <meta property="og:description" content="KVM是x86架构且硬件支持虚拟化技术（如 intel VT 或 AMD-V）的 Linux 虚拟化解决方案。" />
 <meta property="og:url" content="https://ikuriko.github.io/posts/kvm/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-11-10T16:36:54&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-18T18:05:07&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-28T11:25:22&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -205,7 +205,7 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">KVM 虚拟化</h1>
+            <h1 class="post-title p-name">KVM</h1>
 
             
 
@@ -238,7 +238,7 @@
 
             <nav class="contents">
   <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
-    <li><a id="contents:简介" href="#简介">简介</a></li>
+    <li><a id="contents:kvm-简介" href="#kvm-简介">KVM 简介</a></li>
     <li><a id="contents:虚拟化类型" href="#虚拟化类型">虚拟化类型</a></li>
     <li><a id="contents:安装-kvm" href="#安装-kvm">安装 KVM</a></li>
     <li><a id="contents:配置-kvm网络" href="#配置-kvm网络">配置 KVM网络</a>
@@ -266,7 +266,7 @@
     <li><a id="contents:error-随笔" href="#error-随笔">Error 随笔</a></li>
   </ol>
 </nav><div class="post-body e-content">
-                <h2 id="简介"><a href="#简介" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:简介" class="headings">简介</a></h2>
+                <h2 id="kvm-简介"><a href="#kvm-简介" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:kvm-简介" class="headings">KVM 简介</a></h2>
 <p>KVM是开源软件，全称是kernel-based virtual machine（基于内核的虚拟机）。使用半虚拟化技术创建虚拟机的模块，可以将Linux内核转化为一个hypervisor<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup>。目前Red Hat只支持在64位的RHEL 5.4及以上的系统运行KVM（其余发行版也可使用），同时硬件需要支持VT技术；</p>
 <p>KVM的前身是QEMU，2008年被Red Hat公司收购并获得的一项hypervisor技术，不过Red Hat的KVM被认为是将成为未来Linux hypervisor的主流。准确来说，KVM仅仅是Linux内核的一个模块，想要管理和创建完整的KVM虚拟机，需要更多的辅助工具。</p>
 <p>KVM在2007年2月被整合到Linux 2.6.20核心中，以可加载核心模块的方式被移植到FreeBSD及illumos上，它依托CPU和虚拟化指令集（如Inter-VT、AMD-V）实现高性能的虚拟化支持；由于与Linux内核高度整合，因此在性能、安全性、兼容性、稳定性上都有很好的表现。</p>
