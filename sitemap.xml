@@ -53,12 +53,6 @@
     <loc>https://ikuriko.github.io/posts/wireguard/</loc>
     <lastmod>2022-03-24T11:23:14+08:00</lastmod>
   </url><url>
-    <loc>https://ikuriko.github.io/life/</loc>
-    <lastmod>2022-03-10T14:38:54+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/life/task/</loc>
-    <lastmod>2022-03-10T14:38:35+08:00</lastmod>
-  </url><url>
     <loc>https://ikuriko.github.io/posts/centos8_ntp/</loc>
     <lastmod>2022-03-18T17:37:16+08:00</lastmod>
   </url><url>
@@ -88,6 +82,9 @@
   </url><url>
     <loc>https://ikuriko.github.io/life/chituankaishi/</loc>
     <lastmod>2022-01-26T12:14:45+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/life/</loc>
+    <lastmod>2022-03-10T14:38:54+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/networkmanager/</loc>
     <lastmod>2022-03-18T17:46:29+08:00</lastmod>
