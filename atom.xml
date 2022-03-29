@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-03-29T11:09:00&#43;08:00</updated>
+    <updated>2022-03-29T11:56:30&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Iptables</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iptables/" />
             <id>https://ikuriko.github.io/posts/iptables/</id>
-            <updated>2022-03-29T11:08:40&#43;08:00</updated>
+            <updated>2022-03-29T11:56:23&#43;08:00</updated>
             <published>2022-03-28T11:23:42&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
