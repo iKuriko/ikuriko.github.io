@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2022-03-28T11:23:42+08:00",
-        "dateModified": "2022-03-29T12:03:09+08:00",
+        "dateModified": "2022-03-29T15:11:40+08:00",
         "url": "https://ikuriko.github.io/posts/iptables/",
         "headline": "Iptables",
         "description": "netfilter/iptables 是 Linux 内核集成的IP信息包过滤系统，有利于在 Linux 系统上更好的控制IP信息包过滤和防火墙配置",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2022-03-28T11:23:42&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-29T12:03:09&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-29T15:11:40&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -335,26 +335,26 @@
 <div class="table-container"><table>
 <thead>
 <tr>
-<th>表名</th>
-<th>作用</th>
+<th style="text-align:left">表名</th>
+<th style="text-align:left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>raw</td>
-<td>状态跟踪</td>
+<td style="text-align:left">raw</td>
+<td style="text-align:left">状态跟踪</td>
 </tr>
 <tr>
-<td>mangle</td>
-<td>标记数据包</td>
+<td style="text-align:left">mangle</td>
+<td style="text-align:left">标记数据包</td>
 </tr>
 <tr>
-<td>nat</td>
-<td>地址转换</td>
+<td style="text-align:left">nat</td>
+<td style="text-align:left">地址转换</td>
 </tr>
 <tr>
-<td>filter</td>
-<td>地址过滤</td>
+<td style="text-align:left">filter</td>
+<td style="text-align:left">地址过滤</td>
 </tr>
 </tbody>
 </table></div>
@@ -362,30 +362,30 @@
 <div class="table-container"><table>
 <thead>
 <tr>
-<th>链名</th>
-<th>作用</th>
+<th style="text-align:left">链名</th>
+<th style="text-align:left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>INPUT</td>
-<td>过滤入站的数据包，过滤指定的包到达本地服务器</td>
+<td style="text-align:left">INPUT</td>
+<td style="text-align:left">过滤入站的数据包，过滤指定的包到达本地服务器</td>
 </tr>
 <tr>
-<td>OUTPUT</td>
-<td>过滤出站数据包，限制本地服务器发出指定的包，一般不做控制，全部放行</td>
+<td style="text-align:left">OUTPUT</td>
+<td style="text-align:left">过滤出站数据包，限制本地服务器发出指定的包，一般不做控制，全部放行</td>
 </tr>
 <tr>
-<td>FORWARD</td>
-<td>转发数据包，一般用于网关型防火墙，实现数据包的转发</td>
+<td style="text-align:left">FORWARD</td>
+<td style="text-align:left">转发数据包，一般用于网关型防火墙，实现数据包的转发</td>
 </tr>
 <tr>
-<td>PREROUTING</td>
-<td>路由前的数据包，用于在网关型防火墙下，实现DNAT，将内网的主机发布到公网，让公网用户访问</td>
+<td style="text-align:left">PREROUTING</td>
+<td style="text-align:left">路由前的数据包，用于在网关型防火墙下，实现DNAT，将内网的主机发布到公网，让公网用户访问</td>
 </tr>
 <tr>
-<td>POSTROUTING</td>
-<td>路由后的数据包，用于在网关型防火墙下，实现SNAT，用于内网主机共享独立公网IP，实现上网需求</td>
+<td style="text-align:left">POSTROUTING</td>
+<td style="text-align:left">路由后的数据包，用于在网关型防火墙下，实现SNAT，用于内网主机共享独立公网IP，实现上网需求</td>
 </tr>
 </tbody>
 </table></div>
@@ -394,10 +394,10 @@
 <div class="table-container"><table>
 <thead>
 <tr>
-<th>raw</th>
-<th>mangle</th>
-<th>nat</th>
-<th>filter</th>
+<th style="text-align:left">raw</th>
+<th style="text-align:left">mangle</th>
+<th style="text-align:left">nat</th>
+<th style="text-align:left">filter</th>
 </tr>
 </thead>
 </table></div>
