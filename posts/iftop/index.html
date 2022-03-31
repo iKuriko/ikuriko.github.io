@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>CentOS Chinese | ikuriko</title>
+    <title>Iftop | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="为 CentOS 系统安装中文语言支持" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="iftop 可以监控 Linux 网卡的实时流量，查看数据流向、IP地址和端口等信息。" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,21 +46,21 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/posts/centos_chinese/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/iftop/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2021-11-05T10:34:28+08:00",
-        "dateModified": "2022-03-31T14:50:17+08:00",
-        "url": "https://ikuriko.github.io/posts/centos_chinese/",
-        "headline": "CentOS Chinese",
-        "description": "为 CentOS 系统安装中文语言支持",
+        "datePublished": "2022-03-31T11:39:01+08:00",
+        "dateModified": "2022-03-31T14:33:23+08:00",
+        "url": "https://ikuriko.github.io/posts/iftop/",
+        "headline": "Iftop",
+        "description": "iftop 可以监控 Linux 网卡的实时流量，查看数据流向、IP地址和端口等信息。",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  94 ,
+        "wordCount":  708 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="CentOS Chinese" />
-<meta property="og:description" content="为 CentOS 系统安装中文语言支持" />
-<meta property="og:url" content="https://ikuriko.github.io/posts/centos_chinese/" />
+<meta property="og:title" content="Iftop" />
+<meta property="og:description" content="iftop 可以监控 Linux 网卡的实时流量，查看数据流向、IP地址和端口等信息。" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/iftop/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-11-05T10:34:28&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-31T14:50:17&#43;08:00" />
+    <meta property="article:published_time" content="2022-03-31T11:39:01&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-31T14:33:23&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -205,12 +205,12 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">CentOS Chinese</h1>
+            <h1 class="post-title p-name">Iftop</h1>
 
             
 
             
-                <div class="post-description p-summary">为 CentOS 系统安装中文语言支持</div>
+                <div class="post-description p-summary">iftop 可以监控 Linux 网卡的实时流量，查看数据流向、IP地址和端口等信息。</div>
                 
             
 
@@ -236,23 +236,145 @@
 
             
 
-            <nav class="contents"></nav><div class="post-body e-content">
-                <p>安装中文语言包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install kde-l10n-Chinese          <span class="c1"># CentOS 7 安装</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install langpacks-zh_CN.noarch    <span class="c1"># CentOS 8 安装</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum reinstall glibc-common
-</code></pre></div><p>安装字体</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum groupinstall <span class="s2">&#34;fonts&#34;</span>
-</code></pre></div><p>查看系统支持的语言（是否支持zh_CN.utf8）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">locale -a <span class="p">|</span> grep zh
-</code></pre></div><p>编辑系统语言文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/locale.conf
-<span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
-</code></pre></div><p>立即生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> /etc/locale.conf
-</code></pre></div><p>也可以直接设置系统语言</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">localectl  set-locale <span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
-</code></pre></div>
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:命令" href="#命令">命令</a></li>
+    <li><a id="contents:详解" href="#详解">详解</a></li>
+    <li><a id="contents:操作命令" href="#操作命令">操作命令</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h2 id="命令"><a href="#命令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:命令" class="headings">命令</a></h2>
+<p>语法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> iftop <span class="o">[</span>选项<span class="o">]</span> &lt;网卡设备名&gt;
+</code></pre></div><p>选项：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">-i：指定检测的网卡（物理网卡和虚拟网卡都可以检测）
+-B：以字节（Bytes）为单位显示流量，默认为比特（Bits）
+-n：将host信息默认都显示为IP地址
+-N：将端口信息默认都显示为端口号
+-F：显示特定网段的进出流量，如iftop -F 10.10.1.0/24
+-h：帮助信息
+-f：过滤计算包
+-P：默认显示host信息和端口信息
+-b：默认显示流量图形条
+-m：设置上面刻度的最大值，刻度分为五个大段显示，例如iftop -m 100M
+</code></pre></div><h2 id="详解"><a href="#详解" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:详解" class="headings">详解</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iftop -i eth0    <span class="c1">#监控eth0网口</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt">1.界面的上方是流量的刻度尺，高光代表流量的统计条
+
+2.“=&gt; &lt;=”是数据的流向，左右两边是源主机和目的主机的IP
+
+3.界面的下方是具体的流量数据
+​	TX：发送的流量
+​	RX：接收的流量
+​	TOTAL：总流量
+​	cum：运行iftop到目前为止的总流量
+​	peek：流量峰值（最大的带宽）
+​	rates：表示2s、10s、40s的平均流量
+</code></pre></div><h2 id="操作命令"><a href="#操作命令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:操作命令" class="headings">操作命令</a></h2>
+<p>在iftop界面下，可以键入如下命令</p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h</td>
+<td>显示帮助</td>
+</tr>
+<tr>
+<td>n</td>
+<td>显示主机的IP或主机名</td>
+</tr>
+<tr>
+<td>s</td>
+<td>显示源主机host信息</td>
+</tr>
+<tr>
+<td>d</td>
+<td>显示目标主机的host信息</td>
+</tr>
+<tr>
+<td>t</td>
+<td>显示的流量为发送流量或接收流量</td>
+</tr>
+<tr>
+<td>N</td>
+<td>显示端口号或服务名称</td>
+</tr>
+<tr>
+<td>S</td>
+<td>显示源主机的端口信息</td>
+</tr>
+<tr>
+<td>D</td>
+<td>显示目标主机的端口</td>
+</tr>
+<tr>
+<td>p</td>
+<td>显示端口信息</td>
+</tr>
+<tr>
+<td>P</td>
+<td>暂停/继续显示</td>
+</tr>
+<tr>
+<td>b</td>
+<td>显示平均流量图形条</td>
+</tr>
+<tr>
+<td>B</td>
+<td>显示2s、10s、40s内平均的流量</td>
+</tr>
+<tr>
+<td>T</td>
+<td>显示每个连接的总流量</td>
+</tr>
+<tr>
+<td>I</td>
+<td>过滤，比如IP，只输出过滤的流量信息</td>
+</tr>
+<tr>
+<td>L</td>
+<td>切换显示上面的刻度</td>
+</tr>
+<tr>
+<td>j | k</td>
+<td>向上或向下滚动屏幕显示的连接记录</td>
+</tr>
+<tr>
+<td>1 | 2 | 3</td>
+<td>根据右侧显示的三列流量数据进行排序</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>根据源主机名或IP进行排序</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>根据目的主机名或IP进行排序</td>
+</tr>
+<tr>
+<td>o</td>
+<td>固定只显示当前的连接</td>
+</tr>
+<tr>
+<td>f</td>
+<td>编辑过滤代码</td>
+</tr>
+<tr>
+<td>!</td>
+<td>使用shell命令</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出监控</td>
+</tr>
+</tbody>
+</table></div>
+
             </div>
 
             
@@ -286,7 +408,7 @@
                 
                 
                     
-                    <a href="/tags/centos-linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS Linux</a>
+                    <a href="/tags/network-tools/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Network tools</a>
                 
             
                 
@@ -294,7 +416,7 @@
                 
                 
                     
-                    <a href="/tags/other/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Other</a>
+                    <a href="/tags/centos-linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS Linux</a>
                 
             
         </div>
@@ -305,7 +427,7 @@
         
     <footer class="minimal-footer">
         
-            <div class="post-tag"><a href="/tags/centos-linux/" rel="tag" class="post-tag-link">#centos-linux</a> <a href="/tags/other/" rel="tag" class="post-tag-link">#other</a></div>
+            <div class="post-tag"><a href="/tags/network-tools/" rel="tag" class="post-tag-link">#network-tools</a> <a href="/tags/centos-linux/" rel="tag" class="post-tag-link">#centos-linux</a></div>
         
         
         
@@ -328,13 +450,9 @@
     
         <ul class="post-nav">
             
-                <li class="post-nav-prev">
-                    <a href="/posts/kvm/" rel="prev">&lt; KVM</a>
-                </li>
-            
             
                 <li class="post-nav-next">
-                    <a href="/posts/centos7_vnc/" rel="next">CentOS7 VNC &gt;</a>
+                    <a href="/posts/yum/" rel="next">Yum &gt;</a>
                 </li>
             
         </ul>

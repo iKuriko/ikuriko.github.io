@@ -23,10 +23,78 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 29 Mar 2022 15:11:49 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 31 Mar 2022 14:59:09 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Iftop</title>
+                <link>https://ikuriko.github.io/posts/iftop/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/iftop/</guid>
+                <pubDate>Thu, 31 Mar 2022 11:39:01 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>iftop 可以监控 Linux 网卡的实时流量，查看数据流向、IP地址和端口等信息。</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Yum</title>
+                <link>https://ikuriko.github.io/posts/yum/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/yum/</guid>
+                <pubDate>Wed, 30 Mar 2022 14:48:31 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>YUM 是基于RPM包的软件包管理工具，能自动解决 RPM 包复杂的依赖关系，并且一次性安装所有依赖的软件包</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Iptables</title>
@@ -51,13 +119,19 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/iptables/">iptables</category>
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
                                 
                             
                         
@@ -74,7 +148,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description>Iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。</description>
+                <description>iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。</description>
                 
                 
                 
@@ -88,7 +162,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/iperf/">iperf</category>
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
                                 
                             
                                 
@@ -137,7 +211,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/openvpn/">OpenVPN</category>
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
                                 
                             
                         
@@ -147,8 +221,8 @@
         
             <item>
                 <title>CentOS8 PPPOE 4G</title>
-                <link>https://ikuriko.github.io/posts/centos8_pppoe_4g/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_pppoe_4g/</guid>
+                <link>https://ikuriko.github.io/posts/centos8_pppoe/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_pppoe/</guid>
                 <pubDate>Wed, 09 Mar 2022 11:44:50 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -169,6 +243,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
                                 
                             
                                 
@@ -211,7 +291,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/namespace/">Namespace</category>
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
                                 
                             
                         
@@ -254,7 +334,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/wireguard/">WireGuard</category>
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
                                 
                             
                         
@@ -263,7 +343,7 @@
             </item>
         
             <item>
-                <title>CentOS8 时间同步</title>
+                <title>CentOS8 NTP</title>
                 <link>https://ikuriko.github.io/posts/centos8_ntp/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_ntp/</guid>
                 <pubDate>Fri, 24 Dec 2021 14:28:17 &#43;0800</pubDate>
@@ -288,6 +368,12 @@
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
+                                
+                            
                         
                     
                 
@@ -295,8 +381,8 @@
         
             <item>
                 <title>RHEL8 Packaging for OpenvSwitch</title>
-                <link>https://ikuriko.github.io/posts/rhel8_packaging_for_openvswitch/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/rhel8_packaging_for_openvswitch/</guid>
+                <link>https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</guid>
                 <pubDate>Tue, 23 Nov 2021 16:25:50 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -332,8 +418,8 @@
         
             <item>
                 <title>CentOS7 SQLServer2017</title>
-                <link>https://ikuriko.github.io/posts/centos7_sqlserver2017/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_sqlserver2017/</guid>
+                <link>https://ikuriko.github.io/posts/centos7_sqlserver/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_sqlserver/</guid>
                 <pubDate>Thu, 18 Nov 2021 11:56:06 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -356,15 +442,21 @@
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
+                                
+                            
                         
                     
                 
             </item>
         
             <item>
-                <title>Linux 常用排查命令</title>
-                <link>https://ikuriko.github.io/posts/linux_troubleshooting_commands/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_troubleshooting_commands/</guid>
+                <title>Linux Troubleshooting Commands</title>
+                <link>https://ikuriko.github.io/posts/linux_tro_com/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_tro_com/</guid>
                 <pubDate>Tue, 16 Nov 2021 11:01:07 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -385,6 +477,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
                                 
                             
                         
@@ -415,7 +513,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/kvm/">KVM</category>
+                                    <category domain="https://ikuriko.github.io/tags/virtualization/">Virtualization</category>
                                 
                             
                                 
@@ -424,13 +522,19 @@
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
+                                
+                            
                         
                     
                 
             </item>
         
             <item>
-                <title>CentOS 中文语言安装</title>
+                <title>CentOS Chinese</title>
                 <link>https://ikuriko.github.io/posts/centos_chinese/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_chinese/</guid>
                 <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
@@ -453,6 +557,12 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
                                 
                             
                         
@@ -486,13 +596,19 @@
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
+                                
+                            
                         
                     
                 
             </item>
         
             <item>
-                <title>Nmcli 命令使用</title>
+                <title>Nmcli</title>
                 <link>https://ikuriko.github.io/posts/nmcli/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
@@ -520,7 +636,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/networkmanager/">NetworkManager</category>
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
                                 
                             
                         
@@ -529,9 +645,9 @@
             </item>
         
             <item>
-                <title>CentOS 热添加硬盘</title>
-                <link>https://ikuriko.github.io/posts/linux_hot_addition_disk/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_hot_addition_disk/</guid>
+                <title>CentOS Hot addition Disk</title>
+                <link>https://ikuriko.github.io/posts/linux_hot_add_disk/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_hot_add_disk/</guid>
                 <pubDate>Mon, 01 Nov 2021 17:41:41 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -554,13 +670,19 @@
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                
+                            
                         
                     
                 
             </item>
         
             <item>
-                <title>Ansible 自动化</title>
+                <title>Ansible</title>
                 <link>https://ikuriko.github.io/posts/ansible/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ansible/</guid>
                 <pubDate>Fri, 29 Oct 2021 11:50:51 &#43;0800</pubDate>
@@ -582,13 +704,13 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/ansible/">Ansible</category>
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
                                 
                             
                         
@@ -625,13 +747,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/vsftpd/">Vsftpd</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/tftp/">Tftp</category>
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
                                 
                             
                         
@@ -668,7 +784,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tcpdump/">Tcpdump</category>
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
                                 
                             
                         
@@ -677,7 +793,7 @@
             </item>
         
             <item>
-                <title>CAD 快捷命令</title>
+                <title>CAD</title>
                 <link>https://ikuriko.github.io/posts/cad/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/cad/</guid>
                 <pubDate>Thu, 23 Sep 2021 15:57:29 &#43;0800</pubDate>
@@ -702,13 +818,19 @@
                                     <category domain="https://ikuriko.github.io/tags/cad/">CAD</category>
                                 
                             
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                
+                            
                         
                     
                 
             </item>
         
             <item>
-                <title>Vim 常用命令</title>
+                <title>Vim</title>
                 <link>https://ikuriko.github.io/posts/vim/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vim/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:56:06 &#43;0800</pubDate>
@@ -736,7 +858,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/vim/">Vim</category>
+                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
                                 
                             
                         
@@ -745,9 +867,9 @@
             </item>
         
             <item>
-                <title>Javaweb 开发环境搭建</title>
-                <link>https://ikuriko.github.io/posts/building_javaweb_development_environment/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/building_javaweb_development_environment/</guid>
+                <title>Javaweb Dev Env</title>
+                <link>https://ikuriko.github.io/posts/javaweb_dev_env/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/javaweb_dev_env/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:53:45 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -776,37 +898,13 @@
                                     <category domain="https://ikuriko.github.io/tags/javaweb/">Javaweb</category>
                                 
                             
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/jdk/">JDK</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/mysql/">MySQL</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/tomcat/">Tomcat</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/python/">Python</category>
-                                
-                            
                         
                     
                 
             </item>
         
             <item>
-                <title>Hugo&#43;GithubPages 站点搭建</title>
+                <title>Hugo&#43;GithubPages</title>
                 <link>https://ikuriko.github.io/posts/hugo&#43;githubpages/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hugo&#43;githubpages/</guid>
                 <pubDate>Tue, 07 Sep 2021 14:20:48 &#43;0800</pubDate>
@@ -828,7 +926,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/hugo/">Hugo</category>
+                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
                                 
                             
                         
@@ -865,7 +963,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/markdown/">Markdown</category>
+                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
                                 
                             
                         
