@@ -23,10 +23,47 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 31 Mar 2022 15:16:09 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 06 Apr 2022 12:09:28 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Iproute2</title>
+                <link>https://ikuriko.github.io/posts/iproute2/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/iproute2/</guid>
+                <pubDate>Sat, 02 Apr 2022 14:23:55 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>Iproute2 是 Linux 下强大的网络配置工具，用来显示或配置 Linux 主机的路由、网络设备、策略路由和隧道等功能。</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Iftop</title>
