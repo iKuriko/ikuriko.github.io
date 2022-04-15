@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-04-15T18:04:46&#43;08:00</updated>
+    <updated>2022-04-15T18:07:12&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">SSH NOPASSWD</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ssh_nopasswd/" />
             <id>https://ikuriko.github.io/posts/ssh_nopasswd/</id>
-            <updated>2022-04-15T18:04:36&#43;08:00</updated>
+            <updated>2022-04-15T18:07:01&#43;08:00</updated>
             <published>2022-04-15T17:27:16&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
