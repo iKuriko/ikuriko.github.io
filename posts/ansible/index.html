@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-10-29T11:50:51+08:00",
-        "dateModified": "2022-03-31T14:37:10+08:00",
+        "dateModified": "2022-04-20T15:29:52+08:00",
         "url": "https://ikuriko.github.io/posts/ansible/",
         "headline": "Ansible",
         "description": "Ansible 是目前运维自动化工具中最简单、容易上手的一款优秀软件，能够用来管理各种资源，批量部署应用程序等。",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-10-29T11:50:51&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-31T14:37:10&#43;08:00" />
+    <meta property="article:modified_time" content="2022-04-20T15:29:52&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -969,10 +969,10 @@ Complete!
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="m">67</span> <span class="c1"># additional paths to search for roles in, colon separated</span>
  <span class="m">68</span> <span class="c1"># roles_path  = /etc/ansible/roles</span>
 </code></pre></div><p>在ansible-galaxy命令后面跟一个init参数，创建一个新的角色信息，且建立成功后便会在当前目录下生成出一个新的目录：</p>
-<pre><code>cd /etc/ansible/roles/
-</code></pre><pre><code>ansible-galaxy init apache
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/ansible/roles/
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-galaxy init apache
 - Role apache was created successfully
-</code></pre><p>此时的apache即是角色名称，也是用于存在角色信息的目录名称。切换到该目录下，查看它的结构：</p>
+</code></pre></div><p>此时的apache即是角色名称，也是用于存在角色信息的目录名称。切换到该目录下，查看它的结构：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls apache/
 defaults files handlers meta README.md tasks templates tests vars
 </code></pre></div><p>在创建新角色时，最关键的便是能够正确理解目录结构。通俗来说，就是要把正确的信息放入正确的目录中，这样在调用角色时才能有正确的效果。角色信息对应的目录结构及含义如表所示</p>
@@ -1227,20 +1227,20 @@ defaults files handlers meta README.md tasks templates tests vars
 </span><span class="w">          </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/var/www/html/index.html</span><span class="w">
 </span></code></pre></div><p>Jinja2是Python语言中一个被广泛使用的模板引擎，最初的设计思想源自Django的模块引擎。Jinja2基于此发展了其语法和一系列强大的功能，能够让受管主机根据自身变量产生出不同的文件内容。换句话说，正常情况下的复制操作会让新旧文件一模一样，但在使用Jinja2技术时，不是在原始文件中直接写入文件内容，而是写入一系列的变量名称。在使用template模块进行复制的过程中，由Ansible服务负责在受管主机上收集这些变量名称所对应的值，然后再逐一填写到目标文件中，从而让每台主机的文件都根据自身系统的情况独立生成。</p>
 <p>例如，想要让每个网站的输出信息值为“Welcome to 主机名 on 主机地址”，也就是用每个主机自己独有的名称和IP地址来替换文本中的内容，这样就有趣太多了。这个实验的难点在于查询到对应的变量名称、主机名及地址所对应的值保存在哪里？可以用setup模块进行查询。</p>
-<pre><code>ansible-doc setup
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-doc setup
 
-&gt; SETUP  (/usr/lib/python3.6/site-packages/ansible/modules/system/setup.py)
+&gt; SETUP  <span class="o">(</span>/usr/lib/python3.6/site-packages/ansible/modules/system/setup.py<span class="o">)</span>
 
      This module is automatically called by playbooks to gather
      useful variables about remote hosts that can be used in
      playbooks. It can also be executed directly by
-     `/usr/bin/ansible' to check what variables are available to a
-     host. Ansible provides many `facts' about the system,
-     automatically. This module is also supported for Windows
+     <span class="sb">`</span>/usr/bin/ansible<span class="s1">&#39; to check what variables are available to a
+</span><span class="s1">     host. Ansible provides many `facts&#39;</span> about the system,
+     automatically. This module is also supported <span class="k">for</span> Windows
      targets.
 
  * This module is maintained by The Ansible Core Team
-</code></pre><p>setup模块的作用是自动收集受管主机上的<strong>变量</strong>信息，使用-a参数外加filter命令可以对收集来的信息进行二次过滤。相应的语法格式为ansible all -m setup -a 'filter=&quot;<em>关键词</em>&quot;'，其中*号是Shell中的通配符，用于进行关键词查询。例如，如果想搜索各个主机的名称，可以使用通配符搜索所有包含fqdn关键词的变量值信息。</p>
+</code></pre></div><p>setup模块的作用是自动收集受管主机上的<strong>变量</strong>信息，使用-a参数外加filter命令可以对收集来的信息进行二次过滤。相应的语法格式为ansible all -m setup -a 'filter=&quot;<em>关键词</em>&quot;'，其中*号是Shell中的通配符，用于进行关键词查询。例如，如果想搜索各个主机的名称，可以使用通配符搜索所有包含fqdn关键词的变量值信息。</p>
 <p>**FQDN（Fully Qualified Domain Name，完全限定域名）**用于在逻辑上准确表示出主机的位置。FQDN常常被作为主机名的完全表达形式，比 /etc/hostname 文件中定义的主机名更加严谨和准确。通过输出信息可得知，ansible_fqdn变量保存有主机名称。随后进行下一步操作：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible all -m setup -a &#39;filter=&#34;*fqdn&#34;&#39;</span>
 
@@ -1259,63 +1259,63 @@ defaults files handlers meta README.md tasks templates tests vars
   <span class="s2">&#34;changed&#34;</span>: <span class="nb">false</span>
 <span class="o">}</span>
 </code></pre></div><p>用于指定主机地址的变量可以用ip作为关键词进行检索。可以看到，ansible_all_ipv4_addresses变量中的值是我们想要的信息。如果想输出IPv6形式的地址，则可用ansible_all_ipv6_addresses变量。</p>
-<pre><code>[root@play1 ~]# ansible all -m setup -a 'filter=&quot;*ip*&quot;'
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible all -m setup -a &#39;filter=&#34;*ip*&#34;&#39;</span>
 
-192.168.88.139 | SUCCESS =&gt; {
+192.168.88.139 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
 
-  &quot;ansible_facts&quot;: {
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
 
-     &quot;ansible_all_ipv4_addresses&quot;: [
-       &quot;192.168.88.139&quot;
-     ],
-     &quot;ansible_all_ipv6_addresses&quot;: [],
-     &quot;ansible_default_ipv4&quot;: {
-       &quot;address&quot;: &quot;192.168.88.139&quot;,
-       &quot;alias&quot;: &quot;ens33&quot;,
-       &quot;broadcast&quot;: &quot;192.168.88.255&quot;,
-       &quot;gateway&quot;: &quot;192.168.88.2&quot;,
-       &quot;interface&quot;: &quot;ens33&quot;,
-       &quot;macaddress&quot;: &quot;00:0c:29:84:d1:6f&quot;,
-       &quot;mtu&quot;: 1500,
-       &quot;netmask&quot;: &quot;255.255.255.0&quot;,
-       &quot;network&quot;: &quot;192.168.88.0&quot;,
-       &quot;type&quot;: &quot;ether&quot;
-     },
-     &quot;ansible_default_ipv6&quot;: {},
-     &quot;ansible_fips&quot;: false,
-     &quot;discovered_interpreter_python&quot;: &quot;/usr/libexec/platform-python&quot;
-  },
-  &quot;changed&quot;: false
-}
+     <span class="s2">&#34;ansible_all_ipv4_addresses&#34;</span>: <span class="o">[</span>
+       <span class="s2">&#34;192.168.88.139&#34;</span>
+     <span class="o">]</span>,
+     <span class="s2">&#34;ansible_all_ipv6_addresses&#34;</span>: <span class="o">[]</span>,
+     <span class="s2">&#34;ansible_default_ipv4&#34;</span>: <span class="o">{</span>
+       <span class="s2">&#34;address&#34;</span>: <span class="s2">&#34;192.168.88.139&#34;</span>,
+       <span class="s2">&#34;alias&#34;</span>: <span class="s2">&#34;ens33&#34;</span>,
+       <span class="s2">&#34;broadcast&#34;</span>: <span class="s2">&#34;192.168.88.255&#34;</span>,
+       <span class="s2">&#34;gateway&#34;</span>: <span class="s2">&#34;192.168.88.2&#34;</span>,
+       <span class="s2">&#34;interface&#34;</span>: <span class="s2">&#34;ens33&#34;</span>,
+       <span class="s2">&#34;macaddress&#34;</span>: <span class="s2">&#34;00:0c:29:84:d1:6f&#34;</span>,
+       <span class="s2">&#34;mtu&#34;</span>: 1500,
+       <span class="s2">&#34;netmask&#34;</span>: <span class="s2">&#34;255.255.255.0&#34;</span>,
+       <span class="s2">&#34;network&#34;</span>: <span class="s2">&#34;192.168.88.0&#34;</span>,
+       <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;ether&#34;</span>
+     <span class="o">}</span>,
+     <span class="s2">&#34;ansible_default_ipv6&#34;</span>: <span class="o">{}</span>,
+     <span class="s2">&#34;ansible_fips&#34;</span>: false,
+     <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: <span class="nb">false</span>
+<span class="o">}</span>
 
-192.168.88.130 | SUCCESS =&gt; {
-  &quot;ansible_facts&quot;: {
-     &quot;ansible_all_ipv4_addresses&quot;: [
-       &quot;192.168.88.130&quot;,
-       &quot;192.168.122.1&quot;
-     ],
-     &quot;ansible_all_ipv6_addresses&quot;: [
-       &quot;fe80::20c:29ff:fe7c:18d7&quot;
-     ],
-     &quot;ansible_default_ipv4&quot;: {
-       &quot;address&quot;: &quot;192.168.88.130&quot;,
-       &quot;alias&quot;: &quot;ens33&quot;,
-       &quot;broadcast&quot;: &quot;192.168.88.255&quot;,
-       &quot;gateway&quot;: &quot;192.168.88.2&quot;,
-       &quot;interface&quot;: &quot;ens33&quot;,
-       &quot;macaddress&quot;: &quot;00:0c:29:7c:18:d7&quot;,
-       &quot;mtu&quot;: 1500,
-       &quot;netmask&quot;: &quot;255.255.255.0&quot;,
-       &quot;network&quot;: &quot;192.168.88.0&quot;,
-       &quot;type&quot;: &quot;ether&quot;
-     },
-     &quot;ansible_default_ipv6&quot;: {},
-     &quot;ansible_fips&quot;: false,
-     &quot;discovered_interpreter_python&quot;: &quot;/usr/libexec/platform-python&quot;
-  },
-  &quot;changed&quot;: false
-}
-</code></pre><p>在确认了主机名与IP地址所对应的具体变量名称后，在角色所对应的templates目录内新建一个与上面的template模块参数相同的文件名称（index.html.j2）。Jinja2在调用变量值时，格式为在变量名称的两侧格加两个大括号：</p>
+192.168.88.130 <span class="p">|</span> <span class="nv">SUCCESS</span> <span class="o">=</span>&gt; <span class="o">{</span>
+  <span class="s2">&#34;ansible_facts&#34;</span>: <span class="o">{</span>
+     <span class="s2">&#34;ansible_all_ipv4_addresses&#34;</span>: <span class="o">[</span>
+       <span class="s2">&#34;192.168.88.130&#34;</span>,
+       <span class="s2">&#34;192.168.122.1&#34;</span>
+     <span class="o">]</span>,
+     <span class="s2">&#34;ansible_all_ipv6_addresses&#34;</span>: <span class="o">[</span>
+       <span class="s2">&#34;fe80::20c:29ff:fe7c:18d7&#34;</span>
+     <span class="o">]</span>,
+     <span class="s2">&#34;ansible_default_ipv4&#34;</span>: <span class="o">{</span>
+       <span class="s2">&#34;address&#34;</span>: <span class="s2">&#34;192.168.88.130&#34;</span>,
+       <span class="s2">&#34;alias&#34;</span>: <span class="s2">&#34;ens33&#34;</span>,
+       <span class="s2">&#34;broadcast&#34;</span>: <span class="s2">&#34;192.168.88.255&#34;</span>,
+       <span class="s2">&#34;gateway&#34;</span>: <span class="s2">&#34;192.168.88.2&#34;</span>,
+       <span class="s2">&#34;interface&#34;</span>: <span class="s2">&#34;ens33&#34;</span>,
+       <span class="s2">&#34;macaddress&#34;</span>: <span class="s2">&#34;00:0c:29:7c:18:d7&#34;</span>,
+       <span class="s2">&#34;mtu&#34;</span>: 1500,
+       <span class="s2">&#34;netmask&#34;</span>: <span class="s2">&#34;255.255.255.0&#34;</span>,
+       <span class="s2">&#34;network&#34;</span>: <span class="s2">&#34;192.168.88.0&#34;</span>,
+       <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;ether&#34;</span>
+     <span class="o">}</span>,
+     <span class="s2">&#34;ansible_default_ipv6&#34;</span>: <span class="o">{}</span>,
+     <span class="s2">&#34;ansible_fips&#34;</span>: false,
+     <span class="s2">&#34;discovered_interpreter_python&#34;</span>: <span class="s2">&#34;/usr/libexec/platform-python&#34;</span>
+  <span class="o">}</span>,
+  <span class="s2">&#34;changed&#34;</span>: <span class="nb">false</span>
+<span class="o">}</span>
+</code></pre></div><p>在确认了主机名与IP地址所对应的具体变量名称后，在角色所对应的templates目录内新建一个与上面的template模块参数相同的文件名称（index.html.j2）。Jinja2在调用变量值时，格式为在变量名称的两侧格加两个大括号：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/ansible/roles/apache/
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim templates/index.html.j2 
 Welcome to <span class="o">{{</span> ansible_fqdn <span class="o">}}</span> on <span class="o">{{</span> ansible_all_ipv4_addresses <span class="o">}}</span>
@@ -1667,27 +1667,27 @@ PLAY RECAP *********************************************************************
 </span><span class="w">                    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/issue</span><span class="w">
 </span><span class="w">            </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;inventory_hostname in groups.webserver&#34;</span><span class="w">
 </span></code></pre></div><p>执行剧本文件，在过程中可清晰地看到由于when语法的作用，未在指定主机组中的主机将被跳过（skipping）：</p>
-<pre><code>[root@play1 ~]# ansible-playbook issue.yml 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play1 ~<span class="o">]</span><span class="c1"># ansible-playbook issue.yml </span>
 
-PLAY [修改文件内容] **********************************************************************
+PLAY <span class="o">[</span>修改文件内容<span class="o">]</span> **********************************************************************
 
-TASK [Gathering Facts] *************************************************************
-ok: [192.168.88.139]
-ok: [192.168.88.130]
+TASK <span class="o">[</span>Gathering Facts<span class="o">]</span> *************************************************************
+ok: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+ok: <span class="o">[</span>192.168.88.130<span class="o">]</span>
 
-TASK [定义内容dev] *********************************************************************
-skipping: [192.168.88.139]
-changed: [192.168.88.130]
+TASK <span class="o">[</span>定义内容dev<span class="o">]</span> *********************************************************************
+skipping: <span class="o">[</span>192.168.88.139<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.130<span class="o">]</span>
 
-TASK [定义内容web] *********************************************************************
-skipping: [192.168.88.130]
-changed: [192.168.88.139]
+TASK <span class="o">[</span>定义内容web<span class="o">]</span> *********************************************************************
+skipping: <span class="o">[</span>192.168.88.130<span class="o">]</span>
+changed: <span class="o">[</span>192.168.88.139<span class="o">]</span>
 
 
 PLAY RECAP *************************************************************************
-192.168.88.130       : ok=2  changed=1  unreachable=0  failed=0  skipped=1  rescued=0  ignored=0  
-192.168.88.139       : ok=2  changed=1  unreachable=0  failed=0  skipped=1  rescued=0  ignored=0 
-</code></pre><p>登录到dev组的192.168.88.139主机上，查看文件内容：</p>
+192.168.88.130       : <span class="nv">ok</span><span class="o">=</span><span class="m">2</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">1</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">1</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span>  
+192.168.88.139       : <span class="nv">ok</span><span class="o">=</span><span class="m">2</span>  <span class="nv">changed</span><span class="o">=</span><span class="m">1</span>  <span class="nv">unreachable</span><span class="o">=</span><span class="m">0</span>  <span class="nv">failed</span><span class="o">=</span><span class="m">0</span>  <span class="nv">skipped</span><span class="o">=</span><span class="m">1</span>  <span class="nv">rescued</span><span class="o">=</span><span class="m">0</span>  <span class="nv">ignored</span><span class="o">=</span><span class="m">0</span> 
+</code></pre></div><p>登录到dev组的192.168.88.139主机上，查看文件内容：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/issue
 
 Development
@@ -1742,8 +1742,8 @@ Web
 <li>仅在dev主机组的主机上实施。</li>
 <li>创建一个名称为 /ftp 的快捷方式文件，指向刚刚建立的 /ftproot 目录</li>
 </ul>
-<pre><code>vim chmod.yml
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim chmod.yml
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
 </span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">管理文件属性</span><span class="w">
 </span><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">devserver</span><span class="w">
 </span><span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w">
@@ -1798,12 +1798,12 @@ Encryption successful
 <span class="m">35373062363831306562653630373066613462343335303235646165623738306331663637386534</span>
 <span class="m">6330346432386439333966333261383165376235393534613339</span>
 </code></pre></div><p>如果不想使用原始密码了呢？也可以使用rekey参数手动对文件进行改密操作，同时应结合--ask-vault-pass参数进行修改，否则Ansible服务会因接收不到用户输入的旧密码值而拒绝新的密码变更请求：</p>
-<pre><code>ansible-vault rekey --ask-vault-pass locker.yml 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-vault rekey --ask-vault-pass locker.yml 
 Vault password: 
 New Vault password: 
 Confirm New Vault password: 
 Rekey successful
-</code></pre><p><strong>第4步</strong>：如果想查看和修改加密文件中的内容，该怎么操作呢？对于已经加密过的文件，需要使用ansible-vault命令的edit参数进行修改，随后用view参数即可查看到修改后的内容。ansible-vault命令对加密文件的编辑操作默认使用的是Vim编辑器，在修改完毕后请记得执行wq操作保存后退出：</p>
+</code></pre></div><p><strong>第4步</strong>：如果想查看和修改加密文件中的内容，该怎么操作呢？对于已经加密过的文件，需要使用ansible-vault命令的edit参数进行修改，随后用view参数即可查看到修改后的内容。ansible-vault命令对加密文件的编辑操作默认使用的是Vim编辑器，在修改完毕后请记得执行wq操作保存后退出：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ansible-vault edit locker.yml 
 
 ---
