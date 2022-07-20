@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2022-03-09T11:44:50+08:00",
-        "dateModified": "2022-03-31T14:58:16+08:00",
+        "dateModified": "2022-07-20T11:08:30+08:00",
         "url": "https://ikuriko.github.io/posts/centos8_pppoe/",
         "headline": "CentOS8 PPPOE 4G",
         "description": "使用Huawei ME906s 4G模块PPPOE拨号上网",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2022-03-09T11:44:50&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-31T14:58:16&#43;08:00" />
+    <meta property="article:modified_time" content="2022-07-20T11:08:30&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -249,13 +249,13 @@
 </code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lsusb
 Bus <span class="m">001</span> Device 005: ID 12d1:15c1 Huawei Technologies Co., Ltd. ME906s LTE M.2 Module
 Bus <span class="m">001</span> Device 004: ID 05e3:0608 Genesys Logic, Inc. Hub
-Bus <span class="m">001</span> Device 002: ID 8087:07e6 Intel Corp. 
+Bus <span class="m">001</span> Device 002: ID 8087:07e6 Intel Corp.
 Bus <span class="m">001</span> Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </code></pre></div><p>2.新建拨号脚本文件夹</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/ppp/peers/
 </code></pre></div><p>3.拨号的脚本</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ppp/peers/gprsdial
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is pppd script for China Mobile, used Huawei GTM900-B GPRS Module</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is pppd script for China Mobile, used Huawei ME906s GPRS Module</span>
 
 /dev/ttyUSB0
 <span class="m">9600</span>
@@ -350,7 +350,7 @@ refuse-chap       <span class="c1">#外置模块刷新DNS</span>
 
 refuse-mschap
 
-refuse-mschap-v2 
+refuse-mschap-v2
 
 user <span class="s2">&#34;cmnet&#34;</span>      <span class="c1">#用户，中国移动。设置由对方验证本地系统的用户名。</span>
 
