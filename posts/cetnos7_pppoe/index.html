@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>CentOS8 PPPOE 4G | ikuriko</title>
+    <title>CetnOS7 PPPoE Server | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="使用Huawei ME906s 4G模块PPPE拨号上网" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="在CentOS7上搭建PPPoE Server" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -46,21 +46,21 @@
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/posts/centos8_pppoe/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/cetnos7_pppoe/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "datePublished": "2022-03-09T11:44:50+08:00",
-        "dateModified": "2022-12-30T10:34:19+08:00",
-        "url": "https://ikuriko.github.io/posts/centos8_pppoe/",
-        "headline": "CentOS8 PPPOE 4G",
-        "description": "使用Huawei ME906s 4G模块PPPE拨号上网",
+        "datePublished": "2022-12-30T10:29:28+08:00",
+        "dateModified": "2022-12-30T10:59:47+08:00",
+        "url": "https://ikuriko.github.io/posts/cetnos7_pppoe/",
+        "headline": "CetnOS7 PPPoE Server",
+        "description": "在CentOS7上搭建PPPoE Server",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1691 ,
+        "wordCount":  114 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="CentOS8 PPPOE 4G" />
-<meta property="og:description" content="使用Huawei ME906s 4G模块PPPE拨号上网" />
-<meta property="og:url" content="https://ikuriko.github.io/posts/centos8_pppoe/" />
+<meta property="og:title" content="CetnOS7 PPPoE Server" />
+<meta property="og:description" content="在CentOS7上搭建PPPoE Server" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/cetnos7_pppoe/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2022-03-09T11:44:50&#43;08:00" />
-    <meta property="article:modified_time" content="2022-12-30T10:34:19&#43;08:00" />
+    <meta property="article:published_time" content="2022-12-30T10:29:28&#43;08:00" />
+    <meta property="article:modified_time" content="2022-12-30T10:59:47&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -205,12 +205,12 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">CentOS8 PPPOE 4G</h1>
+            <h1 class="post-title p-name">CetnOS7 PPPoE Server</h1>
 
             
 
             
-                <div class="post-description p-summary">使用Huawei ME906s 4G模块PPPE拨号上网</div>
+                <div class="post-description p-summary">在CentOS7上搭建PPPoE Server</div>
                 
             
 
@@ -236,125 +236,57 @@
 
             
 
-            <nav class="contents"></nav><div class="post-body e-content">
-                <p>1.插上4G模块，通过以下命令查看是否连接，输出如下</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls /dev/ttyUSB*
-/dev/ttyUSB0 /dev/ttyUSB1 /dev/ttyUSB2 /dev/ttyUSB3 /dev/ttyUSB4
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dmesg <span class="p">|</span> grep ttyUSB
-<span class="o">[</span>  8.058470<span class="o">]</span> usb 1-1.3: GSM modem <span class="o">(</span>1-port<span class="o">)</span> converter now attached to ttyUSB0
-<span class="o">[</span>  8.058700<span class="o">]</span> usb 1-1.3: GSM modem <span class="o">(</span>1-port<span class="o">)</span> converter now attached to ttyUSB1
-<span class="o">[</span>  8.069734<span class="o">]</span> usb 1-1.3: GSM modem <span class="o">(</span>1-port<span class="o">)</span> converter now attached to ttyUSB2
-<span class="o">[</span>  8.069918<span class="o">]</span> usb 1-1.3: GSM modem <span class="o">(</span>1-port<span class="o">)</span> converter now attached to ttyUSB3
-<span class="o">[</span>  8.084378<span class="o">]</span> usb 1-1.3: GSM modem <span class="o">(</span>1-port<span class="o">)</span> converter now attached to ttyUSB4
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lsusb
-Bus <span class="m">001</span> Device 005: ID 12d1:15c1 Huawei Technologies Co., Ltd. ME906s LTE M.2 Module
-Bus <span class="m">001</span> Device 004: ID 05e3:0608 Genesys Logic, Inc. Hub
-Bus <span class="m">001</span> Device 002: ID 8087:07e6 Intel Corp.
-Bus <span class="m">001</span> Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-</code></pre></div><p>2.新建拨号脚本文件夹</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/ppp/peers/
-</code></pre></div><p>3.拨号的脚本</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ppp/peers/gprsdial
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is pppd script for China Mobile, used Huawei ME906s GPRS Module</span>
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:安装软件包" href="#安装软件包">安装软件包</a></li>
+    <li><a id="contents:修改配置文件" href="#修改配置文件">修改配置文件</a></li>
+    <li><a id="contents:添加用户" href="#添加用户">添加用户</a></li>
+    <li><a id="contents:服务启动文件" href="#服务启动文件">服务启动文件</a></li>
+    <li><a id="contents:启动服务开机自启" href="#启动服务开机自启">启动服务&amp;开机自启</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h2 id="安装软件包"><a href="#安装软件包" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装软件包" class="headings">安装软件包</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum -y install rp-pppoe
+</code></pre></div><h2 id="修改配置文件"><a href="#修改配置文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:修改配置文件" class="headings">修改配置文件</a></h2>
+<p>vim /etc/ppp/pppoe-server-options</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># PPP options for the PPPoE server</span>
+<span class="c1"># LIC: GPL</span>
+require-chap
+require-pap
+auth
+login
+lcp-echo-interval <span class="m">10</span>
+lcp-echo-failure 2.4.4
+logfile /var/log/pppoe-server.log
+ms-dns 114.114.114.114
+ms-dns 8.8.8.8
+</code></pre></div><p>vim /etc/ppp/pppoe-server-env</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">INT</span><span class="o">=</span>enp1s0
+<span class="nv">LOCAL</span><span class="o">=</span>192.168.1.1
+<span class="nv">START</span><span class="o">=</span>192.168.1.2
+<span class="nv">NUMBER</span><span class="o">=</span><span class="m">253</span>
+</code></pre></div><h2 id="添加用户"><a href="#添加用户" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:添加用户" class="headings">添加用户</a></h2>
+<p>vim /etc/ppp/chap-secrets</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Secrets for authentication using CHAP</span>
+<span class="c1"># client        server  secret                  IP addresses</span>
+<span class="s2">&#34;test&#34;</span> * <span class="s2">&#34;123456&#34;</span> *
+</code></pre></div><h2 id="服务启动文件"><a href="#服务启动文件" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:服务启动文件" class="headings">服务启动文件</a></h2>
+<p>vim /etc/systemd/system/pppoe-server.service</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>PPPoE Server.
+<span class="nv">After</span><span class="o">=</span>syslog.target
 
-/dev/ttyUSB0
-<span class="m">9600</span>
-crtscts
-modem
-<span class="c1">#noauth</span>
-debug
-nodetach
-<span class="c1">#hide-password</span>
-usepeerdns
-noipdefault
-defaultroute
-user <span class="s2">&#34;cmnet&#34;</span>
-0.0.0.0:0.0.0.0
-<span class="c1">#ipcp-accept-local</span>
-<span class="c1">#ipcp-accept-remote</span>
-<span class="c1">#lcp-echo-failure 12</span>
-<span class="c1">#lcp-echo-interval 3</span>
-<span class="c1">#noccp</span>
-<span class="c1">#novj</span>
-<span class="c1">#novjccomp</span>
-<span class="c1">#persist</span>
-connect <span class="s1">&#39;/usr/sbin/chat -s -v -f /etc/ppp/gprs-connect-chat&#39;</span>
-<span class="c1">#disconnect &#39;/bin/chat -v -f /etc/ppp/gprs-disconnect-chat&#39;</span>
-</code></pre></div><p>4.校验文本/etc/ppp/gprs-connect-chat的具体内容如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/ppp/gprs-connect-chat
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#Chat script for China Mobile, used Huawei ME906s LTE M.2 Module.</span>
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>forking
+<span class="nv">EnvironmentFile</span><span class="o">=</span>/etc/ppp/pppoe-server-env
+<span class="nv">ExecStart</span><span class="o">=</span>/sbin/pppoe-server -I <span class="nv">$INT</span> -L <span class="nv">$LOCAL</span> -R <span class="nv">$START</span> -N <span class="nv">$NUMBER</span>
 
-TIMEOUT <span class="m">15</span>
-ABORT <span class="s2">&#34;DELAYED&#34;</span>
-ABORT <span class="s2">&#34;BUSY&#34;</span>
-ABORT <span class="s2">&#34;ERROR&#34;</span>
-ABORT <span class="s2">&#34;NO DIALTONE&#34;</span>
-ABORT <span class="s2">&#34;NO CARRIER&#34;</span>
-TIMEOUT <span class="m">40</span>
-<span class="s1">&#39;&#39;</span> <span class="se">\r</span>AT
-OK <span class="nv">ATS0</span><span class="o">=</span><span class="m">0</span>
-OK ATE0V1
-OK AT+CGDCONT<span class="o">=</span>1,<span class="s2">&#34;IP&#34;</span>,<span class="s2">&#34;CMNET&#34;</span>
-OK AT+CGEQREQ<span class="o">=</span>1,2,128,384,,,0,,,,,,
-OK ATDT*99*1#
-CONNECT
-</code></pre></div><p>5.拨号验证（两种方式效果相同）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pppd call gprsdial <span class="p">&amp;</span>
-或
-pppd file /etc/ppp/peers/gprsdial <span class="p">&amp;</span>
-</code></pre></div><p>6.编写拨号脚本，一键拨号，获取DNS</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim gprs_dialup.sh
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
-</span><span class="cp"></span><span class="nv">dns1</span><span class="o">=</span><span class="s2">&#34; &#34;</span>
-<span class="nv">dns2</span><span class="o">=</span><span class="s2">&#34; &#34;</span>
-<span class="nb">cd</span> /etc/ppp/peers
-pppd call gprsdial &gt;/dev/null <span class="p">&amp;</span>
-<span class="nb">echo</span> <span class="s2">&#34;pppd ok&#34;</span>
-sleep <span class="m">12</span>
-<span class="nb">echo</span> <span class="s2">&#34;sleep ok&#34;</span>
-cp -rf /run/ppp/resolv.conf /etc/
-sed -n <span class="s1">&#39;1p&#39;</span> /etc/resolv.conf &gt; /etc/ppp/primarydns
-sed -n <span class="s1">&#39;2p&#39;</span> /etc/resolv.conf &gt; /etc/ppp/seconddns
-<span class="nv">dns1</span><span class="o">=</span><span class="sb">`</span>cut -f <span class="m">2</span> -d <span class="s1">&#39; &#39;</span> /etc/ppp/primarydns<span class="sb">`</span>
-<span class="nv">dns2</span><span class="o">=</span><span class="sb">`</span>cut -f <span class="m">2</span> -d <span class="s1">&#39; &#39;</span> /etc/ppp/seconddns<span class="sb">`</span>
-<span class="nb">echo</span> <span class="nv">$dns1</span>
-<span class="nb">echo</span> <span class="nv">$dns2</span>
-<span class="nb">echo</span> <span class="s2">&#34;dns ok&#34;</span>
-</code></pre></div><hr>
-<p>gprsdial参数详情</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># This is pppd script for China Mobile, used Huawei GTM900-B GPRS Module</span>
-/dev/ttyUSB0  <span class="c1">#端口名称Modem port for ppp-dial</span>
-<span class="m">9600</span>  <span class="c1">#通信波特率</span>
-crtscts  <span class="c1">#接口带硬件流控  nocrtscts(无流控制)</span>
-modem  <span class="c1">#使用数据机控制线路。这个选项是默认的。硬体流控，pppd将等待CD信号。</span>
-noauth  <span class="c1">#不需要对方验证自己</span>
-debug  <span class="c1">#把调试信息输出到/var/log/messages</span>
-nodetach  <span class="c1">#不后台运行，默认是后台运行的</span>
-hide-password  <span class="c1">#写log内容时不包括密码字符串，这个参数是默认的</span>
-usepeerdns  <span class="c1">#选中这个选项，从对方请求两个DNS地址. 对方提供的地址传给文件/etc/ppp/ip-up中的环境变量DNS1和DNS2,将环境变量USEPEERDNS设置成1. 而且pppd将创建一个文件/etc/ppp/resolv.conf file，其中一个或两个服务器行包括由对方提供的地址。</span>
-noipdefault  <span class="c1">#关闭在没有指定本地IP位址时所进行的预设动作，这是用来由从主机名称决定（如果可能的话）本地IP位址。加上这个选项的话，彼端将必须在进行IPCP协商时（除非在指令行或在选项档中明确地指定它）提供本地的IP地址。</span>
-defaultroute      <span class="c1">#当 IPCP 协商完全成功时， 增加一个预设递送路径到系统的递送表，将彼端当作闸道器使用。这个项目在 ppp 连线中断後会移除。</span>
-refuse-chap       <span class="c1">#外置模块刷新DNS</span>
-refuse-mschap
-refuse-mschap-v2
-user <span class="s2">&#34;cmnet&#34;</span>      <span class="c1">#用户，中国移动。设置由对方验证本地系统的用户名。</span>
-0.0.0.0:0.0.0.0
-ipcp-accept-local      <span class="c1">#加上这个选项的话，pppd将会接受彼端对於本地IP位址的意见，即使本地的IP位址已经在某个选项中指定。</span>
-ipcp-accept-remote        <span class="c1">#加上这个选项的话，pppd将会接受彼端对於它的IP位址的意见，即使远端的IP位址已经在某个选项中指定。</span>
-lcp-echo-failure <span class="m">12</span>    <span class="c1">#如果有给这个选项，那麽如果传送n个LCP回应要求没有接收到有效的LCP回应回覆的话pppd将会推测彼端是死掉的。如果发生这种情形，pppd将会终结该连线。这个选项的使用要求一个非零的lcp-echo-interval参数值。这个选项可以用在硬体数据机控制线路无法使用的情况下当实际连线被中断之後（e.g.,数据机已经挂断）终结 pppd的执行。</span>
-lcp-echo-interval <span class="m">3</span>    <span class="c1">#如果有给这个选项，pppd每秒将会送出一个LCP回应要求(echo-request)封包(frame)给彼端。在Linux系统下，回应要求在n秒内没有从彼端接收到封包时会被送出。一般彼端应该以传送一个回应回覆(echo-reply)来反应该回应要求。这个选项可以与lcp-echo-failure选项一起使用来侦测不再连线的彼端。</span>
-noccp        <span class="c1">#关闭压缩控制协议协商。若对方有漏洞会被来自PPPD的压缩控制协议协商请求干扰的情况下，需要设置该选项。</span>
-novj        <span class="c1">#选中这个选项，将关闭双方的Van Jacobson形式TCP/IP报文头压缩</span>
-novjccomp    <span class="c1">#选中这个选项，将关闭Van Jacobson形式TCP/IP报文头压缩中的连接ID压缩。Pppd将忽略来自VanJacobson形式压缩TCP/IP报文头中的连接ID字节，也不要求对方这样作。</span>
-persist    <span class="c1">#连接中断后不退出，而是重新打开连接。</span>
-connect <span class="s1">&#39;/usr/sbin/chat -s -v -f /etc/ppp/gprs-connect-chat&#39;</span>  <span class="c1">#拨号调用一个验证脚本，账号加密用的</span>
-disconnect <span class="s1">&#39;/bin/chat -v -f /etc/ppp/gprs-disconnect-chat&#39;</span>
-</code></pre></div><hr>
-<p>References &amp; Resources：</p>
-<p><a href="https://blog.csdn.net/heiniaoyuyouling/article/details/5694792" target="_blank" rel="noopener">linux环境下pppd gprs拨号上网总结</a></p>
-<p><a href="https://blog.csdn.net/zqixiao_09/article/details/52540887" target="_blank" rel="noopener">在ARM-linux上实现4G模块PPP拨号上网</a></p>
-<p><a href="http://blog.chinaunix.net/uid-31410005-id-5783842.html" target="_blank" rel="noopener">etc/ppp/gprs文件详解</a></p>
-
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div><h2 id="启动服务开机自启"><a href="#启动服务开机自启" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:启动服务开机自启" class="headings">启动服务&amp;开机自启</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start pppoe-server
+systemctl <span class="nb">enable</span> pppoe-server
+</code></pre></div>
             </div>
 
             
@@ -438,13 +370,9 @@ disconnect <span class="s1">&#39;/bin/chat -v -f /etc/ppp/gprs-disconnect-chat&#
     
         <ul class="post-nav">
             
-                <li class="post-nav-prev">
-                    <a href="/posts/openvpn/" rel="prev">&lt; OpenVPN</a>
-                </li>
-            
             
                 <li class="post-nav-next">
-                    <a href="/posts/namespace/" rel="next">Network NameSpace &gt;</a>
+                    <a href="/posts/openvswitch/" rel="next">OpenvSwitch &gt;</a>
                 </li>
             
         </ul>

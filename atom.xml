@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-07-20T11:08:54&#43;08:00</updated>
+    <updated>2022-12-30T10:59:51&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,96 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">CetnOS7 PPPoE Server</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cetnos7_pppoe/" />
+            <id>https://ikuriko.github.io/posts/cetnos7_pppoe/</id>
+            <updated>2022-12-30T10:59:47&#43;08:00</updated>
+            <published>2022-12-30T10:29:28&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在CentOS7上搭建PPPoE Server</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/pppoe/" term="PPPOE" label="PPPOE" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">OpenvSwitch</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvswitch/" />
+            <id>https://ikuriko.github.io/posts/openvswitch/</id>
+            <updated>2022-10-14T16:36:37&#43;08:00</updated>
+            <published>2022-10-14T15:50:53&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">虚拟交换机的软件,主要用于虚拟机VM环境,支持Xen/XenServer,KVM以及VirtualBox多种虚拟化技术</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/network-tools/" term="Network tools" label="Network tools" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">SSH NOPASSWD</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ssh_nopasswd/" />
@@ -248,7 +338,7 @@
             <title type="text">OpenVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvpn/" />
             <id>https://ikuriko.github.io/posts/openvpn/</id>
-            <updated>2022-03-31T14:32:34&#43;08:00</updated>
+            <updated>2022-10-14T15:51:23&#43;08:00</updated>
             <published>2022-03-18T11:27:46&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -293,14 +383,14 @@
             <title type="text">CentOS8 PPPOE 4G</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe/</id>
-            <updated>2022-07-20T11:08:30&#43;08:00</updated>
+            <updated>2022-12-30T10:34:19&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用Huawei ME906s 4G模块PPPOE拨号上网</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用Huawei ME906s 4G模块PPPE拨号上网</summary>
             
             
             

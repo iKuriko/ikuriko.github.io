@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2022-03-18T11:27:46+08:00",
-        "dateModified": "2022-03-31T14:32:34+08:00",
+        "dateModified": "2022-10-14T15:51:23+08:00",
         "url": "https://ikuriko.github.io/posts/openvpn/",
         "headline": "OpenVPN",
         "description": "在 CentOS8 上部署 OVPN ，实现使用账号密码的客户端登录和代理上网",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2022-03-18T11:27:46&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-31T14:32:34&#43;08:00" />
+    <meta property="article:modified_time" content="2022-10-14T15:51:23&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -350,7 +350,7 @@ req: /etc/openvpn/easy-rsa/3.0.8/pki/reqs/server.req
 key: /etc/openvpn/easy-rsa/3.0.8/pki/private/server.key
 </code></pre></div><p>给Server端刚才申请的证书进行签名，提示confirm request details:时,输入yes</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa sign server server</span>
- 
+
 Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
 
 Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
@@ -359,12 +359,12 @@ Please check over the details shown below <span class="k">for</span> accuracy. N
 has not been cryptographically verified. Please be sure it came from a trusted
 <span class="nb">source</span> or that you have verified the request checksum with the sender.
 Request subject, to be signed as a server certificate <span class="k">for</span> <span class="m">825</span> days:
- 
+
 <span class="nv">subject</span><span class="o">=</span>
 
   <span class="nv">commonName</span>        <span class="o">=</span> paly-1
- 
- 
+
+
 Type the word <span class="s1">&#39;yes&#39;</span> to <span class="k">continue</span>, or any other input to abort.
  Confirm request details: yes
  <span class="c1">#这里输入yes进行确认</span>
@@ -374,20 +374,20 @@ Signature ok
 The Subject<span class="s1">&#39;s Distinguished Name is as follows
 </span><span class="s1">commonName      :ASN.1 12:&#39;</span>paly-1<span class="err">&#39;</span>
 Certificate is to be certified <span class="k">until</span> Jun <span class="m">19</span> 16:27:30 <span class="m">2024</span> GMT <span class="o">(</span><span class="m">825</span> days<span class="o">)</span>
- 
+
 Write out database with <span class="m">1</span> new entries
 Data Base Updated
- 
+
 Certificate created at: /etc/openvpn/easy-rsa/3.0.8/pki/issued/server.crt
 </code></pre></div><p>创建dh文件,秘钥交换算法</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa gen-dh</span>
- 
+
 Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
 Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
 Generating DH parameters, <span class="m">2048</span> bit long safe prime, generator <span class="m">2</span>
 This is going to take a long <span class="nb">time</span>
 ..................................+.......................................................................................................................................................................................................................................................................................................................................................................++*++*++*++*
- 
+
 DH parameters of size <span class="m">2048</span> created at /etc/openvpn/easy-rsa/3.0.8/pki/dh.pem
 </code></pre></div><p>创建tls认证所需的秘钥文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># openvpn --genkey --secret ta.key</span>
@@ -422,7 +422,7 @@ pki
 ├── safessl-easyrsa.cnf
 ├── serial
 └── serial.old
- 
+
 <span class="m">12</span> directories, <span class="m">15</span> files
 </code></pre></div><p>新建证书管理目录，拷贝证书相关文件到该目录下</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># mkdir /etc/openvpn/certs</span>
@@ -500,7 +500,7 @@ dh /etc/openvpn/certs/dh.pem
 <span class="c1">#指定隧道占用的IP地址段和子网掩码，不能和服务器上的其他网段相同</span>
 server 100.88.0.0 255.255.255.0
 
- 
+
 <span class="c1">#服务器自动给客户端分配IP后，客户端下次连接时，仍然采用上次的IP地址(第一次 分配的IP保存在ipp.txt中，下一次分配其中保存的IP)。</span>
 ifconfig-pool-persist ipp.txt
 
@@ -583,35 +583,34 @@ username-as-common-name
 <span class="c1"># a plain text file. The passfile should simply contain  </span>
 <span class="c1"># one row per user with the username first followed by  </span>
 <span class="c1"># one or more space(s) or tab(s) and then the password.  </span>
- 
+
 <span class="nv">PASSFILE</span><span class="o">=</span><span class="s2">&#34;/etc/openvpn/psw-file&#34;</span>          
 <span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">&#34;/etc/openvpn/openvpn-password.log&#34;</span> 
 <span class="nv">TIME_STAMP</span><span class="o">=</span><span class="sb">`</span>date <span class="s2">&#34;+%Y-%m-%d %T&#34;</span><span class="sb">`</span>  
- 
+
 <span class="c1">###########################################################  </span>
 
 <span class="k">if</span> <span class="o">[</span> ! -r <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
-	  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Could not open password file \&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">\&#34; for reading.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
-	    <span class="nb">exit</span> <span class="m">1</span>  
+      <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Could not open password file \&#34;</span><span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="s2">\&#34; for reading.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
+        <span class="nb">exit</span> <span class="m">1</span>  
     <span class="k">fi</span>  
     <span class="nv">CORRECT_PASSWORD</span><span class="o">=</span><span class="sb">`</span>awk <span class="s1">&#39;!/^;/&amp;&amp;!/^#/&amp;&amp;$1==&#34;&#39;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s1">&#39;&#34;{print $2;exit}&#39;</span> <span class="si">${</span><span class="nv">PASSFILE</span><span class="si">}</span><span class="sb">`</span>  
     <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   
-	      <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: User does not exist: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=  
-</span><span class="s2">	      \&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
-	        <span class="nb">exit</span> <span class="m">1</span>  
-	<span class="k">fi</span>  
-	<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   
-		  <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Successful authentication: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
-		    <span class="nb">exit</span> <span class="m">0</span>  
-	    <span class="k">fi</span>  
-	    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Incorrect password: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=  
-</span><span class="s2">	    \&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span> 
-
+          <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: User does not exist: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=  
+</span><span class="s2">          \&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
+            <span class="nb">exit</span> <span class="m">1</span>  
+    <span class="k">fi</span>  
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CORRECT_PASSWORD</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   
+          <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Successful authentication: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span>  
+            <span class="nb">exit</span> <span class="m">0</span>  
+        <span class="k">fi</span>  
+        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="si">${</span><span class="nv">TIME_STAMP</span><span class="si">}</span><span class="s2">: Incorrect password: username=\&#34;</span><span class="si">${</span><span class="nv">username</span><span class="si">}</span><span class="s2">\&#34;, password=  
+</span><span class="s2">        \&#34;</span><span class="si">${</span><span class="nv">password</span><span class="si">}</span><span class="s2">\&#34;.&#34;</span> &gt;&gt; <span class="si">${</span><span class="nv">LOG_FILE</span><span class="si">}</span> 
 </code></pre></div><p>给予脚本执行权限</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod +x checkpsw.sh 
 </code></pre></div><p>新建用户账号密码记录文件，后续添加账号可直接添加</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 openvpn<span class="o">]</span><span class="c1"># vim psw-file</span>
-<span class="nb">test</span>	123456			<span class="c1"># 用户名：test，密码：123456。IP地址：100.88.0.254</span>
+<span class="nb">test</span>    <span class="m">123456</span>            <span class="c1"># 用户名：test，密码：123456。IP地址：100.88.0.254</span>
 </code></pre></div><p>新建登录密码验证日志文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">touch /etc/openvpn/openvpn-password.log
 </code></pre></div><p>设置以上两个文件的所属组和所属用户为openvpn</p>
@@ -658,7 +657,7 @@ chown openvpn:openvpn openvpn-password.log
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/openvpn/easy-rsa/3.0.8
 </code></pre></div><p>生成客户端1的证书，客户端2依次类推。如果配置 Server 使用账号密码认证登录，则无需申请多个证书，所有客户端可共用同一个证书实现认证登录，但是需要在 server.conf 加入 duplicate-cn 的配置选项</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa gen-req client nopass</span>
- 
+
 Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
 Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
 Generating a RSA private key
@@ -675,28 +674,28 @@ If you enter <span class="s1">&#39;.&#39;</span>, the field will be left blank.
 -----
 Common Name <span class="o">(</span>eg: your user, host, or server name<span class="o">)</span> <span class="o">[</span>client<span class="o">]</span>:play-2 
 <span class="c1">#这里输入客户端的用户名，主机或服务名</span>
- 
+
 Keypair and certificate request completed. Your files are:
 req: /etc/openvpn/easy-rsa/3.0.8/pki/reqs/client.req
 key: /etc/openvpn/easy-rsa/3.0.8/pki/private/client.key
 </code></pre></div><p>为客户端的证书进行签名，输入yes进行确认</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># ./easyrsa sign client client</span>
- 
+
 Note: using Easy-RSA configuration from: /etc/openvpn/easy-rsa/3.0.8/vars
 Using SSL: openssl OpenSSL 1.1.1k FIPS <span class="m">25</span> Mar <span class="m">2021</span>
- 
- 
+
+
 You are about to sign the following certificate.
 Please check over the details shown below <span class="k">for</span> accuracy. Note that this request
 has not been cryptographically verified. Please be sure it came from a trusted
 <span class="nb">source</span> or that you have verified the request checksum with the sender.
- 
+
 Request subject, to be signed as a client certificate <span class="k">for</span> <span class="m">825</span> days:
- 
+
 <span class="nv">subject</span><span class="o">=</span>
   <span class="nv">commonName</span>        <span class="o">=</span> play-2
- 
- 
+
+
 Type the word <span class="s1">&#39;yes&#39;</span> to <span class="k">continue</span>, or any other input to abort.
  Confirm request details: yes
  <span class="c1">#这里输入yes进行确认</span>
@@ -706,10 +705,10 @@ Signature ok
 The Subject<span class="s1">&#39;s Distinguished Name is as follows
 </span><span class="s1">commonName      :ASN.1 12:&#39;</span>play-2<span class="err">&#39;</span>
 Certificate is to be certified <span class="k">until</span> Jun <span class="m">19</span> 17:25:07 <span class="m">2024</span> GMT <span class="o">(</span><span class="m">825</span> days<span class="o">)</span>
- 
+
 Write out database with <span class="m">1</span> new entries
 Data Base Updated
- 
+
 Certificate created at: /etc/openvpn/easy-rsa/3.0.8/pki/issued/client.crt
 </code></pre></div><p>拷贝客户证书存放到Client目录</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@play-1 3.0.8<span class="o">]</span><span class="c1"># cp ./pki/issued/client.crt /etc/openvpn/client/</span>
