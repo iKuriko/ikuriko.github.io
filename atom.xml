@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-12-30T13:09:56&#43;08:00</updated>
+    <updated>2022-12-30T15:41:59&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,51 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.87.0">Hugo</generator>
+        <entry>
+            <title type="text">Firewalld</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/firewalld/" />
+            <id>https://ikuriko.github.io/posts/firewalld/</id>
+            <updated>2022-12-30T15:40:56&#43;08:00</updated>
+            <published>2022-12-30T14:22:06&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Firewalld是基于区域(zone)的防火墙规则管理工具</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/network-tools/" term="Network tools" label="Network tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">CetnOS7 PPPoE Server</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cetnos7_pppoe/" />
@@ -254,7 +299,7 @@
             <title type="text">Iptables</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iptables/" />
             <id>https://ikuriko.github.io/posts/iptables/</id>
-            <updated>2022-03-31T14:47:32&#43;08:00</updated>
+            <updated>2022-12-30T14:35:17&#43;08:00</updated>
             <published>2022-03-28T11:23:42&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -380,10 +425,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS8 PPPOE 4G</title>
+            <title type="text">CentOS8 PPPE 4G</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe/</id>
-            <updated>2022-12-30T10:34:19&#43;08:00</updated>
+            <updated>2022-12-30T14:04:32&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
