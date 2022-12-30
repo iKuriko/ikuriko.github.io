@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2022-12-30T15:41:59&#43;08:00</updated>
+    <updated>2022-12-30T15:54:11&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Firewalld</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/firewalld/" />
             <id>https://ikuriko.github.io/posts/firewalld/</id>
-            <updated>2022-12-30T15:40:56&#43;08:00</updated>
+            <updated>2022-12-30T15:53:58&#43;08:00</updated>
             <published>2022-12-30T14:22:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
