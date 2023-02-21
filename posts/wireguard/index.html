@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-12-31T10:06:44+08:00",
-        "dateModified": "2022-03-31T14:32:37+08:00",
+        "dateModified": "2023-01-31T09:37:45+08:00",
         "url": "https://ikuriko.github.io/posts/wireguard/",
         "headline": "WireGuard",
         "description": "WireGuard 是一个简单、快速且安全的开源VPN软件",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1410 ,
+        "wordCount":  1422 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-12-31T10:06:44&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-31T14:32:37&#43;08:00" />
+    <meta property="article:modified_time" content="2023-01-31T09:37:45&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -291,6 +291,8 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wg <span class="nb">set</span> wg0 peer <span class="k">$(</span>cat ./test_client1.pub<span class="k">)</span> allowed-ips 198.18.233.2/32
 </code></pre></div><p>在Server端添加client2的peer公钥和允许的IP</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wg <span class="nb">set</span> wg0 peer <span class="k">$(</span>cat ./test_client2.pub<span class="k">)</span> allowed-ips 198.18.233.3/32
+</code></pre></div><p>删除客户端</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wg <span class="nb">set</span> wg_qlzy peer  <span class="k">$(</span>cat ./test_client.pub<span class="k">)</span> remove
 </code></pre></div><p><strong>保存配置</strong></p>
 <p>新建wg0配置文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">touch /etc/wireguard/wg0.conf
