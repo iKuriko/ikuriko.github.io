@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.120.1"><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -18,7 +18,7 @@
 
     
     
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+        <script src="/js/meme.min.1343c21422ddd723ef2bde0b482ea241020c7d5c128b72528dd13d375565510b.js"></script>
 
     
 
@@ -238,21 +238,21 @@
 
             <nav class="contents"></nav><div class="post-body e-content">
                 <p>安装中文语言包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install kde-l10n-Chinese          <span class="c1"># CentOS 7 安装</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install langpacks-zh_CN.noarch    <span class="c1"># CentOS 8 安装</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum reinstall glibc-common
-</code></pre></div><p>安装字体</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum groupinstall <span class="s2">&#34;fonts&#34;</span>
-</code></pre></div><p>查看系统支持的语言（是否支持zh_CN.utf8）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">locale -a <span class="p">|</span> grep zh
-</code></pre></div><p>编辑系统语言文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/locale.conf
-<span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
-</code></pre></div><p>立即生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> /etc/locale.conf
-</code></pre></div><p>也可以直接设置系统语言</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">localectl  set-locale <span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install kde-l10n-Chinese          <span class="c1"># CentOS 7 安装</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install langpacks-zh_CN.noarch    <span class="c1"># CentOS 8 安装</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum reinstall glibc-common
+</span></span></code></pre></div><p>安装字体</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum groupinstall <span class="s2">&#34;fonts&#34;</span>
+</span></span></code></pre></div><p>查看系统支持的语言（是否支持zh_CN.utf8）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">locale -a <span class="p">|</span> grep zh
+</span></span></code></pre></div><p>编辑系统语言文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/locale.conf
+</span></span><span class="line"><span class="cl"><span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
+</span></span></code></pre></div><p>立即生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> /etc/locale.conf
+</span></span></code></pre></div><p>也可以直接设置系统语言</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">localectl  set-locale <span class="nv">LANG</span><span class="o">=</span>zh_CN.utf8
+</span></span></code></pre></div>
             </div>
 
             

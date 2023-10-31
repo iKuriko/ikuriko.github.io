@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.120.1"><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -18,7 +18,7 @@
 
     
     
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+        <script src="/js/meme.min.1343c21422ddd723ef2bde0b482ea241020c7d5c128b72528dd13d375565510b.js"></script>
 
     
 
@@ -238,57 +238,57 @@
 
             <nav class="contents"></nav><div class="post-body e-content">
                 <p>安装&quot;GNOME Desktop&quot;软件包组</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum groupinstall -y <span class="s2">&#34;GNOME Desktop&#34;</span> 
-</code></pre></div><p>安装完成后，修改默认启动方式为图形化界面</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl set-default graphical.target
-</code></pre></div><p>如果要换回命令模式</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl set-default multi-user.target 
-</code></pre></div><p>然后重启系统即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">shutdown -r now
-</code></pre></div><p>安装tigervnc</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum install tigervnc-server -y
-</code></pre></div><p>过滤软件包是否安装</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rpm -qa<span class="p">|</span>grep tigervnc-server
-</code></pre></div><p>拷贝服务启动脚本，其中1表示端口号，默认5900+，1即是5901，以此类推：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
-</code></pre></div><p>编辑服务启动脚本，设置登录使用的用户，这里使用的是<code>root</code>用户</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/systemd/system/vncserver@<span class="se">\:</span>1.service
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"> <span class="m">32</span> <span class="o">[</span>Unit<span class="o">]</span>
- <span class="m">33</span> <span class="nv">Description</span><span class="o">=</span>Remote desktop service <span class="o">(</span>VNC<span class="o">)</span>
- <span class="m">34</span> <span class="nv">After</span><span class="o">=</span>syslog.target network.target
- <span class="m">35</span> 
- <span class="m">36</span> <span class="o">[</span>Service<span class="o">]</span>
- <span class="m">37</span> <span class="nv">Type</span><span class="o">=</span>forking
- <span class="m">38</span> 
- <span class="m">39</span> <span class="c1"># Clean any existing files in /tmp/.X11-unix environment</span>
- <span class="m">40</span> <span class="nv">ExecStartPre</span><span class="o">=</span>/bin/sh -c <span class="s1">&#39;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#39;</span>
- <span class="m">41</span> <span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/runuser -l root -c <span class="s1">&#39;/usr/bin/vncserver %i&#39;</span>
- <span class="m">42</span> <span class="nv">PIDFile</span><span class="o">=</span>/root/.vnc/%H%i.pid
- <span class="m">43</span> <span class="nv">ExecStop</span><span class="o">=</span>/bin/sh -c <span class="s1">&#39;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#39;</span>
- <span class="m">44</span> 
- <span class="m">45</span> <span class="o">[</span>Install<span class="o">]</span>
- <span class="m">46</span> <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</code></pre></div><p>设置vnc密码，（“View-only password”，只允许查看,无控制权限，这个没啥用，不用设置。）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vncpasswd
-</code></pre></div><p>开启vnc服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start vncserver@<span class="se">\:</span>1.service
-</code></pre></div><p>重新加载配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl daemon-reload
-</code></pre></div><p>开启自启动</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> vncserver@<span class="se">\:</span>1.service
-</code></pre></div><p>过滤服务端口是否存在（无输出可再次重启服务尝试）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">netstat -utpln <span class="p">|</span> grep Xvnc
-</code></pre></div><p>允许firewalld防火墙通过</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>5901/tcp --permanent
-</code></pre></div><p>重新加载生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --reload
-</code></pre></div><p>查看与VNC相关的SELinux域策略有哪些</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">getsebool -a <span class="p">|</span> grep vnc
-
-xdm_bind_vnc_tcp_port --&gt; off
-</code></pre></div><p>修改SELinux策略，-P永久生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">setsebool -P <span class="nv">xdm_bind_vnc_tcp_port</span><span class="o">=</span>on
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum groupinstall -y <span class="s2">&#34;GNOME Desktop&#34;</span> 
+</span></span></code></pre></div><p>安装完成后，修改默认启动方式为图形化界面</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl set-default graphical.target
+</span></span></code></pre></div><p>如果要换回命令模式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl set-default multi-user.target 
+</span></span></code></pre></div><p>然后重启系统即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">shutdown -r now
+</span></span></code></pre></div><p>安装tigervnc</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install tigervnc-server -y
+</span></span></code></pre></div><p>过滤软件包是否安装</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rpm -qa<span class="p">|</span>grep tigervnc-server
+</span></span></code></pre></div><p>拷贝服务启动脚本，其中1表示端口号，默认5900+，1即是5901，以此类推：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
+</span></span></code></pre></div><p>编辑服务启动脚本，设置登录使用的用户，这里使用的是<code>root</code>用户</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/systemd/system/vncserver@<span class="se">\:</span>1.service
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="m">32</span> <span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> <span class="m">33</span> <span class="nv">Description</span><span class="o">=</span>Remote desktop service <span class="o">(</span>VNC<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="m">34</span> <span class="nv">After</span><span class="o">=</span>syslog.target network.target
+</span></span><span class="line"><span class="cl"> <span class="m">35</span> 
+</span></span><span class="line"><span class="cl"> <span class="m">36</span> <span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> <span class="m">37</span> <span class="nv">Type</span><span class="o">=</span>forking
+</span></span><span class="line"><span class="cl"> <span class="m">38</span> 
+</span></span><span class="line"><span class="cl"> <span class="m">39</span> <span class="c1"># Clean any existing files in /tmp/.X11-unix environment</span>
+</span></span><span class="line"><span class="cl"> <span class="m">40</span> <span class="nv">ExecStartPre</span><span class="o">=</span>/bin/sh -c <span class="s1">&#39;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#39;</span>
+</span></span><span class="line"><span class="cl"> <span class="m">41</span> <span class="nv">ExecStart</span><span class="o">=</span>/usr/sbin/runuser -l root -c <span class="s1">&#39;/usr/bin/vncserver %i&#39;</span>
+</span></span><span class="line"><span class="cl"> <span class="m">42</span> <span class="nv">PIDFile</span><span class="o">=</span>/root/.vnc/%H%i.pid
+</span></span><span class="line"><span class="cl"> <span class="m">43</span> <span class="nv">ExecStop</span><span class="o">=</span>/bin/sh -c <span class="s1">&#39;/usr/bin/vncserver -kill %i &gt; /dev/null 2&gt;&amp;1 || :&#39;</span>
+</span></span><span class="line"><span class="cl"> <span class="m">44</span> 
+</span></span><span class="line"><span class="cl"> <span class="m">45</span> <span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> <span class="m">46</span> <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></div><p>设置vnc密码，（“View-only password”，只允许查看,无控制权限，这个没啥用，不用设置。）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vncpasswd
+</span></span></code></pre></div><p>开启vnc服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start vncserver@<span class="se">\:</span>1.service
+</span></span></code></pre></div><p>重新加载配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl daemon-reload
+</span></span></code></pre></div><p>开启自启动</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> vncserver@<span class="se">\:</span>1.service
+</span></span></code></pre></div><p>过滤服务端口是否存在（无输出可再次重启服务尝试）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">netstat -utpln <span class="p">|</span> grep Xvnc
+</span></span></code></pre></div><p>允许firewalld防火墙通过</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --add-port<span class="o">=</span>5901/tcp --permanent
+</span></span></code></pre></div><p>重新加载生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><p>查看与VNC相关的SELinux域策略有哪些</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">getsebool -a <span class="p">|</span> grep vnc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xdm_bind_vnc_tcp_port --&gt; off
+</span></span></code></pre></div><p>修改SELinux策略，-P永久生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">setsebool -P <span class="nv">xdm_bind_vnc_tcp_port</span><span class="o">=</span>on
+</span></span></code></pre></div>
             </div>
 
             

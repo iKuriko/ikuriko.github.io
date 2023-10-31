@@ -10,7 +10,7 @@
         <title>ikuriko</title>
         <link>https://ikuriko.github.io/</link>
         <description>lazy</description>
-        <generator>Hugo 0.87.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.120.1 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
@@ -23,10 +23,33 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 21 Feb 2023 16:14:04 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 31 Oct 2023 11:25:10 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Linux_Bond</title>
+                <link>https://ikuriko.github.io/posts/linux_bond/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_bond/</guid>
+                <pubDate>Tue, 31 Oct 2023 11:06:02 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Firewalld</title>

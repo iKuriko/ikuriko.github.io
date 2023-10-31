@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.120.1"><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -18,7 +18,7 @@
 
     
     
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+        <script src="/js/meme.min.1343c21422ddd723ef2bde0b482ea241020c7d5c128b72528dd13d375565510b.js"></script>
 
     
 
@@ -281,30 +281,30 @@
 <p>　　更安全的一种认证模式，它需要FTP服务单独为客户建立数据库文件，虚拟出用来进行密码验证的账户信息，而这些账户信息在服务器系统中实际上是不存在的，仅供FTP服务进行认证使用。</p>
 <h3 id="安装vsftpd"><a href="#安装vsftpd" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装vsftpd" class="headings">安装Vsftpd</a></h3>
 <p>当前环境为CentOS Linux 8.4，配置软件仓库</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.bak
-curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo https://mirrors.aliyun.com/repo/Centos-8.repo
-dnf clean all
-dnf makecache
-</code></pre></div><p>安装vsftp软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install vsftpd
-</code></pre></div><p>备份原配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
-</code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>查看配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/vsftpd/vsftpd.conf
-
-<span class="m">1</span>  <span class="nv">anonymous_enable</span><span class="o">=</span>NO
-<span class="m">2</span>  <span class="nv">local_enable</span><span class="o">=</span>YES
-<span class="m">3</span>  <span class="nv">write_enable</span><span class="o">=</span>YES
-<span class="m">4</span>  <span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
-<span class="m">5</span>  <span class="nv">dirmessage_enable</span><span class="o">=</span>YES
-<span class="m">6</span>  <span class="nv">xferlog_enable</span><span class="o">=</span>YES
-<span class="m">7</span>  <span class="nv">connect_from_port_20</span><span class="o">=</span>YES
-<span class="m">8</span>  <span class="nv">xferlog_std_format</span><span class="o">=</span>YES
-<span class="m">9</span>  <span class="nv">listen</span><span class="o">=</span>NO
-<span class="m">10</span> <span class="nv">listen_ipv6</span><span class="o">=</span>YES
-</code></pre></div><p>主配置文件的常用参数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv /etc/yum.repos.d/CentOS-Linux-BaseOS.repo /etc/yum.repos.d/CentOS-Linux-BaseOS.repo.bak
+</span></span><span class="line"><span class="cl">curl -o /etc/yum.repos.d/CentOS-Linux-BaseOS.repo https://mirrors.aliyun.com/repo/Centos-8.repo
+</span></span><span class="line"><span class="cl">dnf clean all
+</span></span><span class="line"><span class="cl">dnf makecache
+</span></span></code></pre></div><p>安装vsftp软件包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install vsftpd
+</span></span></code></pre></div><p>备份原配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
+</span></span></code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
+</span></span></code></pre></div><p>查看配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/vsftpd/vsftpd.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">1</span>  <span class="nv">anonymous_enable</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="m">2</span>  <span class="nv">local_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="m">3</span>  <span class="nv">write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="m">4</span>  <span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span>  <span class="nv">dirmessage_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="m">6</span>  <span class="nv">xferlog_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="m">7</span>  <span class="nv">connect_from_port_20</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="m">8</span>  <span class="nv">xferlog_std_format</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="m">9</span>  <span class="nv">listen</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="m">10</span> <span class="nv">listen_ipv6</span><span class="o">=</span>YES
+</span></span></code></pre></div><p>主配置文件的常用参数</p>
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -396,31 +396,31 @@ dnf makecache
 <p>vsftpd服务程序默认关闭了匿名登录的方式，我们需要开放匿名用户的上传、下载文件的权限，以及让匿名用户创建、删除、更名文件的权限。不建议在生产环境中使用此种模式</p>
 </blockquote>
 <p>安装vsftpd软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install vsftpd
-</code></pre></div><p>备份原配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
-</code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>编辑配置文件</p>
-<pre><code>vim /etc/vsftpd/vsftpd.conf
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">anonymous_enable</span><span class="o">=</span>YES
-<span class="nv">anon_umask</span><span class="o">=</span><span class="m">022</span>
-<span class="nv">anon_upload_enable</span><span class="o">=</span>YES
-<span class="nv">anon_mkdir_write_enable</span><span class="o">=</span>YES
-<span class="nv">anon_other_write_enable</span><span class="o">=</span>YES
-
-<span class="nv">local_enable</span><span class="o">=</span>YES
-<span class="nv">write_enable</span><span class="o">=</span>YES
-<span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
-<span class="nv">dirmessage_enable</span><span class="o">=</span>YES
-<span class="nv">xferlog_enable</span><span class="o">=</span>YES
-<span class="nv">connect_from_port_20</span><span class="o">=</span>YES
-<span class="nv">xferlog_std_format</span><span class="o">=</span>YES
-<span class="nv">listen</span><span class="o">=</span>NO
-<span class="nv">listen_ipv6</span><span class="o">=</span>YES
-<span class="nv">pam_service_name</span><span class="o">=</span>vsftpd
-<span class="nv">userlist_enable</span><span class="o">=</span>YES
-</code></pre></div><p>向匿名用户开放的权限参数以及作用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install vsftpd
+</span></span></code></pre></div><p>备份原配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
+</span></span></code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
+</span></span></code></pre></div><p>编辑配置文件</p>
+<pre tabindex="0"><code>vim /etc/vsftpd/vsftpd.conf
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">anonymous_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">anon_umask</span><span class="o">=</span><span class="m">022</span>
+</span></span><span class="line"><span class="cl"><span class="nv">anon_upload_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">anon_mkdir_write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">anon_other_write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">local_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dirmessage_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">xferlog_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">connect_from_port_20</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">xferlog_std_format</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">listen</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="nv">listen_ipv6</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">pam_service_name</span><span class="o">=</span>vsftpd
+</span></span><span class="line"><span class="cl"><span class="nv">userlist_enable</span><span class="o">=</span>YES
+</span></span></code></pre></div><p>向匿名用户开放的权限参数以及作用</p>
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -452,47 +452,47 @@ dnf makecache
 </tbody>
 </table></div>
 <p>创建在ftp默认访问目录下创建一个公用目录</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir  /var/ftp/pub
-</code></pre></div><p>给与ftp用户子目录的属主</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chown -R ftp /var/ftp/pub/
-</code></pre></div><p><font color=red> <em>注意：不建议给予父目录/var/ftp属主或777权限，会触发安全保护机制，导致用户无法登录</em></font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir  /var/ftp/pub
+</span></span></code></pre></div><p>给与ftp用户子目录的属主</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chown -R ftp /var/ftp/pub/
+</span></span></code></pre></div><p><font color=red> <em>注意：不建议给予父目录/var/ftp属主或777权限，会触发安全保护机制，导致用户无法登录</em></font></p>
 <p>重启服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart vsftpd
-</code></pre></div><p>加入开机自启</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> vsftpd
-</code></pre></div><p>查看与FTP相关的SELinux域策略</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">getsebool -a <span class="p">|</span> grep ftp
-</code></pre></div><p>修改SELinux策略，-P永久生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">setsebool -P <span class="nv">ftpd_full_access</span><span class="o">=</span>on
-</code></pre></div><p>允许firewall通过ftp协议</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>ftp
-</code></pre></div><p>重新加载firewall策略生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --reload
-</code></pre></div><h3 id="配置本地用户模式"><a href="#配置本地用户模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置本地用户模式" class="headings">配置本地用户模式</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span></code></pre></div><p>加入开机自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> vsftpd
+</span></span></code></pre></div><p>查看与FTP相关的SELinux域策略</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">getsebool -a <span class="p">|</span> grep ftp
+</span></span></code></pre></div><p>修改SELinux策略，-P永久生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">setsebool -P <span class="nv">ftpd_full_access</span><span class="o">=</span>on
+</span></span></code></pre></div><p>允许firewall通过ftp协议</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>ftp
+</span></span></code></pre></div><p>重新加载firewall策略生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><h3 id="配置本地用户模式"><a href="#配置本地用户模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置本地用户模式" class="headings">配置本地用户模式</a></h3>
 <blockquote>
 <p>vsftpd服务程序默认关闭了匿名登录的方式，我们需要开放匿名用户的上传、下载文件的权限，以及让匿名用户创建、删除、更名文件的权限。不建议在生产环境中使用此种模式</p>
 </blockquote>
 <p>安装vsftpd软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install vsftpd
-</code></pre></div><p>备份原配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
-</code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>编辑配置文件</p>
-<pre><code>vim /etc/vsftpd/vsftpd.conf
-</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">anonymous_enable</span><span class="o">=</span>NO
-<span class="nv">local_enable</span><span class="o">=</span>YES
-<span class="nv">write_enable</span><span class="o">=</span>YES
-<span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
-<span class="nv">dirmessage_enable</span><span class="o">=</span>YES
-<span class="nv">xferlog_enable</span><span class="o">=</span>YES
-<span class="nv">connect_from_port_20</span><span class="o">=</span>YES
-<span class="nv">xferlog_std_format</span><span class="o">=</span>YES
-<span class="nv">listen</span><span class="o">=</span>NO
-<span class="nv">listen_ipv6</span><span class="o">=</span>YES
-<span class="nv">pam_service_name</span><span class="o">=</span>vsftpd
-<span class="nv">userlist_enable</span><span class="o">=</span>YES
-</code></pre></div><p>本地用户模式使用的权限参数以及作用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install vsftpd
+</span></span></code></pre></div><p>备份原配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
+</span></span></code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
+</span></span></code></pre></div><p>编辑配置文件</p>
+<pre tabindex="0"><code>vim /etc/vsftpd/vsftpd.conf
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">anonymous_enable</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="nv">local_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dirmessage_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">xferlog_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">connect_from_port_20</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">xferlog_std_format</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">listen</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="nv">listen_ipv6</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">pam_service_name</span><span class="o">=</span>vsftpd
+</span></span><span class="line"><span class="cl"><span class="nv">userlist_enable</span><span class="o">=</span>YES
+</span></span></code></pre></div><p>本地用户模式使用的权限参数以及作用</p>
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -528,84 +528,84 @@ dnf makecache
 </tbody>
 </table></div>
 <p>重启服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart vsftpd
-</code></pre></div><p>加入开机自启</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> vsftpd
-</code></pre></div><p>查看与FTP相关的SELinux域策略</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">getsebool -a <span class="p">|</span> grep ftp
-</code></pre></div><p>修改SELinux策略，-P永久生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">setsebool -P <span class="nv">ftpd_full_access</span><span class="o">=</span>on
-</code></pre></div><p>允许firewall通过ftp协议</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>ftp
-</code></pre></div><p>重新加载firewall策略生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --reload
-</code></pre></div><p>现在可以使用的本地账户，来登录ftp服务，但为了服务器的安全性，ftp服务默认禁止了大多本地系统用户的登录。如果想要使用root用户登录，删除ftp用户黑名单<code>ftpusers</code>和<code>user_list</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup>中的root即可。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span></code></pre></div><p>加入开机自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> vsftpd
+</span></span></code></pre></div><p>查看与FTP相关的SELinux域策略</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">getsebool -a <span class="p">|</span> grep ftp
+</span></span></code></pre></div><p>修改SELinux策略，-P永久生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">setsebool -P <span class="nv">ftpd_full_access</span><span class="o">=</span>on
+</span></span></code></pre></div><p>允许firewall通过ftp协议</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>ftp
+</span></span></code></pre></div><p>重新加载firewall策略生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><p>现在可以使用的本地账户，来登录ftp服务，但为了服务器的安全性，ftp服务默认禁止了大多本地系统用户的登录。如果想要使用root用户登录，删除ftp用户黑名单<code>ftpusers</code>和<code>user_list</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup>中的root即可。</p>
 <p>当然也可以创建一个不允许登录系统的账户，给ftp登录专用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">useradd -s /sbin/nologin <span class="nb">test</span>
-</code></pre></div><h3 id="配置虚拟用户模式"><a href="#配置虚拟用户模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置虚拟用户模式" class="headings">配置虚拟用户模式</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">useradd -s /sbin/nologin <span class="nb">test</span>
+</span></span></code></pre></div><h3 id="配置虚拟用户模式"><a href="#配置虚拟用户模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:配置虚拟用户模式" class="headings">配置虚拟用户模式</a></h3>
 <p>安装vsftpd软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install vsftpd
-</code></pre></div><p>新建虚拟用户账号密码文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/vsftpd/
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim vuser.list
-test1
-pwd@test1
-test2
-pwd@test2
-</code></pre></div><p><font color=red><em>注：奇数为用户名，偶数用户密码</em></font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install vsftpd
+</span></span></code></pre></div><p>新建虚拟用户账号密码文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc/vsftpd/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim vuser.list
+</span></span><span class="line"><span class="cl">test1
+</span></span><span class="line"><span class="cl">pwd@test1
+</span></span><span class="line"><span class="cl">test2
+</span></span><span class="line"><span class="cl">pwd@test2
+</span></span></code></pre></div><p><font color=red><em>注：奇数为用户名，偶数用户密码</em></font></p>
 <p>使用哈希（hash）算法转换成数据库文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">db_load -T -t <span class="nb">hash</span> -f vuser.list vuser.db
-</code></pre></div><p>降低此文件的权限</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">600</span> vuser.db
-</code></pre></div><p>#建议删除明文信息文件（可选，怕忘密码可以不删）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rm -rf vuser.list
-</code></pre></div><p>创建virtual本地用户用于和虚拟用户的映射，指定家目录，不允许该用户登录系统</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">useradd -d /var/ftproot -s /sbin/nologin virtual
-</code></pre></div><p><font color=red><em>注：指定的家目录为/var/ftproot（上面的操作将设置此为ftp登录后默认进入的目录）</em></font></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">db_load -T -t <span class="nb">hash</span> -f vuser.list vuser.db
+</span></span></code></pre></div><p>降低此文件的权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">600</span> vuser.db
+</span></span></code></pre></div><p>#建议删除明文信息文件（可选，怕忘密码可以不删）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf vuser.list
+</span></span></code></pre></div><p>创建virtual本地用户用于和虚拟用户的映射，指定家目录，不允许该用户登录系统</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">useradd -d /var/ftproot -s /sbin/nologin virtual
+</span></span></code></pre></div><p><font color=red><em>注：指定的家目录为/var/ftproot（上面的操作将设置此为ftp登录后默认进入的目录）</em></font></p>
 <p>查看新生成的目录权限，为700</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls -ld /var/ftproot/
-drwx------. <span class="m">2</span> virtual virtual <span class="m">62</span> Oct <span class="m">19</span> 10:44 /var/ftproot/
-</code></pre></div><p>强制提升目录权限为755</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">chmod -Rf <span class="m">755</span> /var/ftproot/
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls -ld /var/ftproot/
-drwxr-xr-x. <span class="m">2</span> virtual virtual <span class="m">62</span> Oct <span class="m">19</span> 15:17 /var/ftproot/
-</code></pre></div><p>建立支持虚拟用户的PAM<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">[2]</a></sup>文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/pam.d/vsftpd.vu
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">auth       required     pam_userdb.so <span class="nv">db</span><span class="o">=</span>/etc/vsftpd/vuser
-account    required     pam_userdb.so <span class="nv">db</span><span class="o">=</span>/etc/vsftpd/vuser
-</code></pre></div><p>备份原配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
-</code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>创建虚拟用户权限目录</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkdir /etc/vsftpd/vusers_dir
-<span class="nb">cd</span> /etc/vsftpd/vusers_dir
-</code></pre></div><p>不给予test1权限，test1只拥有默认的查看和下载权限</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">touch test1
-</code></pre></div><p>给与test2所有权限，test2能够上传、下载、删除等</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim test2
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">anon_upload_enable</span><span class="o">=</span>YES
-<span class="nv">anon_mkdir_write_enable</span><span class="o">=</span>YES
-<span class="nv">anon_other_write_enable</span><span class="o">=</span>YES
-</code></pre></div><p>编辑配置文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/vsftpd/vsftpd.conf
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">anonymous_enable</span><span class="o">=</span>NO
-<span class="nv">local_enable</span><span class="o">=</span>YES
-<span class="nv">write_enable</span><span class="o">=</span>YES
-<span class="nv">guest_enable</span><span class="o">=</span>YES
-<span class="nv">guest_username</span><span class="o">=</span>virtual
-<span class="nv">allow_writeable_chroot</span><span class="o">=</span>YES
-<span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
-<span class="nv">dirmessage_enable</span><span class="o">=</span>YES
-<span class="nv">xferlog_enable</span><span class="o">=</span>YES
-<span class="nv">connect_from_port_20</span><span class="o">=</span>YES
-<span class="nv">xferlog_std_format</span><span class="o">=</span>YES
-<span class="nv">listen</span><span class="o">=</span>NO
-<span class="nv">listen_ipv6</span><span class="o">=</span>YES
-<span class="nv">pam_service_name</span><span class="o">=</span>vsftpd.vu
-<span class="nv">userlist_enable</span><span class="o">=</span>YES
-<span class="nv">user_config_dir</span><span class="o">=</span>/etc/vsftpd/vusers_dir
-</code></pre></div><p>利用PAM文件进行认证时使用的参数以及作用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -ld /var/ftproot/
+</span></span><span class="line"><span class="cl">drwx------. <span class="m">2</span> virtual virtual <span class="m">62</span> Oct <span class="m">19</span> 10:44 /var/ftproot/
+</span></span></code></pre></div><p>强制提升目录权限为755</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod -Rf <span class="m">755</span> /var/ftproot/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -ld /var/ftproot/
+</span></span><span class="line"><span class="cl">drwxr-xr-x. <span class="m">2</span> virtual virtual <span class="m">62</span> Oct <span class="m">19</span> 15:17 /var/ftproot/
+</span></span></code></pre></div><p>建立支持虚拟用户的PAM<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">[2]</a></sup>文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/pam.d/vsftpd.vu
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">auth       required     pam_userdb.so <span class="nv">db</span><span class="o">=</span>/etc/vsftpd/vuser
+</span></span><span class="line"><span class="cl">account    required     pam_userdb.so <span class="nv">db</span><span class="o">=</span>/etc/vsftpd/vuser
+</span></span></code></pre></div><p>备份原配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
+</span></span></code></pre></div><p>过滤#开头的行，生成新的配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">grep -v <span class="s2">&#34;#&#34;</span> /etc/vsftpd/vsftpd.conf.bak &gt; /etc/vsftpd/vsftpd.conf
+</span></span></code></pre></div><p>创建虚拟用户权限目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir /etc/vsftpd/vusers_dir
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /etc/vsftpd/vusers_dir
+</span></span></code></pre></div><p>不给予test1权限，test1只拥有默认的查看和下载权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">touch test1
+</span></span></code></pre></div><p>给与test2所有权限，test2能够上传、下载、删除等</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim test2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">anon_upload_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">anon_mkdir_write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">anon_other_write_enable</span><span class="o">=</span>YES
+</span></span></code></pre></div><p>编辑配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/vsftpd/vsftpd.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">anonymous_enable</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="nv">local_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">write_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">guest_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">guest_username</span><span class="o">=</span>virtual
+</span></span><span class="line"><span class="cl"><span class="nv">allow_writeable_chroot</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">local_umask</span><span class="o">=</span><span class="m">022</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dirmessage_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">xferlog_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">connect_from_port_20</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">xferlog_std_format</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">listen</span><span class="o">=</span>NO
+</span></span><span class="line"><span class="cl"><span class="nv">listen_ipv6</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">pam_service_name</span><span class="o">=</span>vsftpd.vu
+</span></span><span class="line"><span class="cl"><span class="nv">userlist_enable</span><span class="o">=</span>YES
+</span></span><span class="line"><span class="cl"><span class="nv">user_config_dir</span><span class="o">=</span>/etc/vsftpd/vusers_dir
+</span></span></code></pre></div><p>利用PAM文件进行认证时使用的参数以及作用</p>
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -641,81 +641,81 @@ account    required     pam_userdb.so <span class="nv">db</span><span class="o">
 </tbody>
 </table></div>
 <p>重启服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart vsftpd
-</code></pre></div><p>加入开机自启</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> vsftpd
-</code></pre></div><p>查看与FTP相关的SELinux域策略</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">getsebool -a <span class="p">|</span> grep ftp
-</code></pre></div><p>修改SELinux策略，-P永久生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">setsebool -P <span class="nv">ftpd_full_access</span><span class="o">=</span>on
-</code></pre></div><p>允许firewall通过ftp协议</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>ftp
-</code></pre></div><p>重新加载firewall策略生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --reload
-</code></pre></div><h3 id="连接测试"><a href="#连接测试" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:连接测试" class="headings">连接测试</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart vsftpd
+</span></span></code></pre></div><p>加入开机自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> vsftpd
+</span></span></code></pre></div><p>查看与FTP相关的SELinux域策略</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">getsebool -a <span class="p">|</span> grep ftp
+</span></span></code></pre></div><p>修改SELinux策略，-P永久生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">setsebool -P <span class="nv">ftpd_full_access</span><span class="o">=</span>on
+</span></span></code></pre></div><p>允许firewall通过ftp协议</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --permanent --zone<span class="o">=</span>public --add-service<span class="o">=</span>ftp
+</span></span></code></pre></div><p>重新加载firewall策略生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><h3 id="连接测试"><a href="#连接测试" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:连接测试" class="headings">连接测试</a></h3>
 <ul>
 <li>test1只有下载权限</li>
 <li>test2拥有所有权限</li>
 </ul>
 <p>安装lftp客户端工具，连接测试</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install lftp
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#lftp的简易使用</span>
-lftp &lt;FTP服务器IP&gt; -u &lt;用户名&gt;	<span class="c1">#登录FTP服务</span>
-lftp&gt; ls						<span class="c1">#列表显示当前所有内容</span>
-lftp&gt; <span class="nb">cd</span> xxx					<span class="c1">#进入指定目录</span>
-lftp&gt; get xxx					<span class="c1">#下载指定文件或目录到当前位置</span>
-lftp&gt; put xxx					<span class="c1">#上传指定文件或目录到FTP</span>
-</code></pre></div><p>FTP目录放入一个文件，测试使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;hiahia&#34;</span> &gt; /var/ftproot/lookup.txt
-</code></pre></div><p>使用test1用户登录测试</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lftp 192.168.88.133 -u test1</span>
-Password:                   
-lftp test1@192.168.88.133:~&gt; ls
--rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
-lftp test1@192.168.88.133:/&gt; get lookup.txt 		<span class="c1">#能下载文件</span>
-<span class="m">7</span> bytes transferred
-lftp test1@192.168.88.133:/&gt; mkdir test1			<span class="c1">#无法创建目录</span>
-mkdir: Access failed: <span class="m">550</span> Permission denied. <span class="o">(</span>test1<span class="o">)</span>
-lftp test1@192.168.88.133:/&gt; ls
--rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
-lftp test1@192.168.88.133:/&gt; rm lookup.txt 			<span class="c1">#无法删除文件</span>
-rm: Access failed: <span class="m">550</span> Permission denied. <span class="o">(</span>lookup.txt<span class="o">)</span>
-lftp test1@192.168.88.133:/&gt; <span class="nb">exit</span>
-
-<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># ls			#查看下载到本地的文件，测试完毕无异常</span>
-anaconda-ks.cfg  lookup.txt
-<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat lookup.txt</span>
-hiahia
-<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># rm -rf lookup.txt</span>
-</code></pre></div><p>使用test2用户登录测试</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lftp 192.168.88.133 -u test2</span>
-Password:                       
-lftp test2@192.168.88.133:~&gt; ls
--rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
-lftp test2@192.168.88.133:/&gt; get lookup.txt 			<span class="c1">#能下载文件</span>
-<span class="m">7</span> bytes transferred
-lftp test2@192.168.88.133:/&gt; put /etc/vsftpd/vsftpd.conf			<span class="c1">#能上传文件</span>
-<span class="m">338</span> bytes transferred
-lftp test2@192.168.88.133:/&gt; ls
--rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
--rw-------    <span class="m">1</span> <span class="m">1000</span>     <span class="m">1000</span>          <span class="m">338</span> Oct <span class="m">19</span> 07:43 vsftpd.conf
-lftp test2@192.168.88.133:/&gt; mkdir test2			<span class="c1">#能创建目录</span>
-mkdir ok, <span class="sb">`</span>test2<span class="s1">&#39; created
-</span><span class="s1">lftp test2@192.168.88.133:/&gt; ls
-</span><span class="s1">-rw-r--r--    1 0        0               7 Oct 19 07:22 lookup.txt
-</span><span class="s1">drwx------    2 1000     1000            6 Oct 19 07:43 test2
-</span><span class="s1">-rw-------    1 1000     1000          338 Oct 19 07:43 vsftpd.conf
-</span><span class="s1">lftp test2@192.168.88.133:/&gt; rm lookup.txt 			#能删除文件
-</span><span class="s1">rm ok, `lookup.txt&#39;</span> removed
-lftp test2@192.168.88.133:/&gt; ls
-drwx------    <span class="m">2</span> <span class="m">1000</span>     <span class="m">1000</span>            <span class="m">6</span> Oct <span class="m">19</span> 07:43 test2
--rw-------    <span class="m">1</span> <span class="m">1000</span>     <span class="m">1000</span>          <span class="m">338</span> Oct <span class="m">19</span> 07:43 vsftpd.conf
-lftp test2@192.168.88.133:/&gt; <span class="nb">exit</span>
-<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># ls 			#查看下载到本地的文件，测试完毕无异常</span>
-anaconda-ks.cfg  lookup.txt
-<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat lookup.txt</span>
-hiahia
-</code></pre></div><p>Vsftpd服务程序登陆后所在目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install lftp
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#lftp的简易使用</span>
+</span></span><span class="line"><span class="cl">lftp &lt;FTP服务器IP&gt; -u &lt;用户名&gt;	<span class="c1">#登录FTP服务</span>
+</span></span><span class="line"><span class="cl">lftp&gt; ls						<span class="c1">#列表显示当前所有内容</span>
+</span></span><span class="line"><span class="cl">lftp&gt; <span class="nb">cd</span> xxx					<span class="c1">#进入指定目录</span>
+</span></span><span class="line"><span class="cl">lftp&gt; get xxx					<span class="c1">#下载指定文件或目录到当前位置</span>
+</span></span><span class="line"><span class="cl">lftp&gt; put xxx					<span class="c1">#上传指定文件或目录到FTP</span>
+</span></span></code></pre></div><p>FTP目录放入一个文件，测试使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;hiahia&#34;</span> &gt; /var/ftproot/lookup.txt
+</span></span></code></pre></div><p>使用test1用户登录测试</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lftp 192.168.88.133 -u test1</span>
+</span></span><span class="line"><span class="cl">Password:                   
+</span></span><span class="line"><span class="cl">lftp test1@192.168.88.133:~&gt; ls
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
+</span></span><span class="line"><span class="cl">lftp test1@192.168.88.133:/&gt; get lookup.txt 		<span class="c1">#能下载文件</span>
+</span></span><span class="line"><span class="cl"><span class="m">7</span> bytes transferred
+</span></span><span class="line"><span class="cl">lftp test1@192.168.88.133:/&gt; mkdir test1			<span class="c1">#无法创建目录</span>
+</span></span><span class="line"><span class="cl">mkdir: Access failed: <span class="m">550</span> Permission denied. <span class="o">(</span>test1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lftp test1@192.168.88.133:/&gt; ls
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
+</span></span><span class="line"><span class="cl">lftp test1@192.168.88.133:/&gt; rm lookup.txt 			<span class="c1">#无法删除文件</span>
+</span></span><span class="line"><span class="cl">rm: Access failed: <span class="m">550</span> Permission denied. <span class="o">(</span>lookup.txt<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lftp test1@192.168.88.133:/&gt; <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># ls			#查看下载到本地的文件，测试完毕无异常</span>
+</span></span><span class="line"><span class="cl">anaconda-ks.cfg  lookup.txt
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat lookup.txt</span>
+</span></span><span class="line"><span class="cl">hiahia
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># rm -rf lookup.txt</span>
+</span></span></code></pre></div><p>使用test2用户登录测试</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># lftp 192.168.88.133 -u test2</span>
+</span></span><span class="line"><span class="cl">Password:                       
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:~&gt; ls
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:/&gt; get lookup.txt 			<span class="c1">#能下载文件</span>
+</span></span><span class="line"><span class="cl"><span class="m">7</span> bytes transferred
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:/&gt; put /etc/vsftpd/vsftpd.conf			<span class="c1">#能上传文件</span>
+</span></span><span class="line"><span class="cl"><span class="m">338</span> bytes transferred
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:/&gt; ls
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> <span class="m">0</span>        <span class="m">0</span>               <span class="m">7</span> Oct <span class="m">19</span> 07:22 lookup.txt
+</span></span><span class="line"><span class="cl">-rw-------    <span class="m">1</span> <span class="m">1000</span>     <span class="m">1000</span>          <span class="m">338</span> Oct <span class="m">19</span> 07:43 vsftpd.conf
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:/&gt; mkdir test2			<span class="c1">#能创建目录</span>
+</span></span><span class="line"><span class="cl">mkdir ok, <span class="sb">`</span>test2<span class="s1">&#39; created
+</span></span></span><span class="line"><span class="cl"><span class="s1">lftp test2@192.168.88.133:/&gt; ls
+</span></span></span><span class="line"><span class="cl"><span class="s1">-rw-r--r--    1 0        0               7 Oct 19 07:22 lookup.txt
+</span></span></span><span class="line"><span class="cl"><span class="s1">drwx------    2 1000     1000            6 Oct 19 07:43 test2
+</span></span></span><span class="line"><span class="cl"><span class="s1">-rw-------    1 1000     1000          338 Oct 19 07:43 vsftpd.conf
+</span></span></span><span class="line"><span class="cl"><span class="s1">lftp test2@192.168.88.133:/&gt; rm lookup.txt 			#能删除文件
+</span></span></span><span class="line"><span class="cl"><span class="s1">rm ok, `lookup.txt&#39;</span> removed
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:/&gt; ls
+</span></span><span class="line"><span class="cl">drwx------    <span class="m">2</span> <span class="m">1000</span>     <span class="m">1000</span>            <span class="m">6</span> Oct <span class="m">19</span> 07:43 test2
+</span></span><span class="line"><span class="cl">-rw-------    <span class="m">1</span> <span class="m">1000</span>     <span class="m">1000</span>          <span class="m">338</span> Oct <span class="m">19</span> 07:43 vsftpd.conf
+</span></span><span class="line"><span class="cl">lftp test2@192.168.88.133:/&gt; <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># ls 			#查看下载到本地的文件，测试完毕无异常</span>
+</span></span><span class="line"><span class="cl">anaconda-ks.cfg  lookup.txt
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat lookup.txt</span>
+</span></span><span class="line"><span class="cl">hiahia
+</span></span></code></pre></div><p>Vsftpd服务程序登陆后所在目录</p>
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -744,52 +744,52 @@ hiahia
 <p>TFTP，不需要客户端的权限认证，减少了带宽和系统的消耗。它的功能较少，甚至不能遍历目录，安全性也不如FTP。但因此在传输琐碎（Trivial）小文件时，效率更高。</p>
 <h3 id="安装tftp"><a href="#安装tftp" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装tftp" class="headings">安装TFTP</a></h3>
 <p>来安装体验一下，<strong>tftp-server</strong> 提供服务程序 | <strong>tftp</strong>是用于连接的客户端工具 | <strong>xinetd</strong><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">[3]</a></sup>是管理程序的服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install tftp-server tftp xinetd
-</code></pre></div><p>安装TFTP软件包后，还需要再xinetd服务程序中将其开启，再RHEL 8 系统中，tftp所对应的配置文件默认不存在，需要根据示例文件（/usr/share/doc/xinetd/sample.conf）自行创建。把底下的配置直接复制进去就OK</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vim /etc/xinetd.d/tftp
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">service tftp
-<span class="o">{</span>
-        <span class="nv">socket_type</span>             <span class="o">=</span> dgram
-        <span class="nv">protocol</span>                <span class="o">=</span> udp
-        <span class="nb">wait</span>                    <span class="o">=</span> yes
-        <span class="nv">user</span>                    <span class="o">=</span> root
-        <span class="nv">server</span>                  <span class="o">=</span> /usr/sbin/in.tftpd
-        <span class="nv">server_args</span>             <span class="o">=</span> -s /var/lib/tftpboot
-        <span class="nv">disable</span>                 <span class="o">=</span> no
-        <span class="nv">per_source</span>              <span class="o">=</span> <span class="m">11</span>
-        <span class="nv">cps</span>                     <span class="o">=</span> <span class="m">100</span> <span class="m">2</span>
-        <span class="nv">flags</span>                   <span class="o">=</span> IPv4
-<span class="o">}</span>
-</code></pre></div><p>重启服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart tftp
-</code></pre></div><p>开启自启</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> tftp
-</code></pre></div><p>重启xinetd管理服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl restart xinetd
-</code></pre></div><p>开启自启</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> xinetd
-</code></pre></div><p>允许firewall通过udp/69</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --zone<span class="o">=</span>public --permanent --add-port<span class="o">=</span>69/udp
-</code></pre></div><p>重新加载firewall策略生效</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">firewall-cmd --reload
-</code></pre></div><h3 id="连接测试-1"><a href="#连接测试-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:连接测试-1" class="headings">连接测试</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install tftp-server tftp xinetd
+</span></span></code></pre></div><p>安装TFTP软件包后，还需要再xinetd服务程序中将其开启，再RHEL 8 系统中，tftp所对应的配置文件默认不存在，需要根据示例文件（/usr/share/doc/xinetd/sample.conf）自行创建。把底下的配置直接复制进去就OK</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/xinetd.d/tftp
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">service tftp
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">socket_type</span>             <span class="o">=</span> dgram
+</span></span><span class="line"><span class="cl">        <span class="nv">protocol</span>                <span class="o">=</span> udp
+</span></span><span class="line"><span class="cl">        <span class="nb">wait</span>                    <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">        <span class="nv">user</span>                    <span class="o">=</span> root
+</span></span><span class="line"><span class="cl">        <span class="nv">server</span>                  <span class="o">=</span> /usr/sbin/in.tftpd
+</span></span><span class="line"><span class="cl">        <span class="nv">server_args</span>             <span class="o">=</span> -s /var/lib/tftpboot
+</span></span><span class="line"><span class="cl">        <span class="nv">disable</span>                 <span class="o">=</span> no
+</span></span><span class="line"><span class="cl">        <span class="nv">per_source</span>              <span class="o">=</span> <span class="m">11</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">cps</span>                     <span class="o">=</span> <span class="m">100</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">flags</span>                   <span class="o">=</span> IPv4
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>重启服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart tftp
+</span></span></code></pre></div><p>开启自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> tftp
+</span></span></code></pre></div><p>重启xinetd管理服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl restart xinetd
+</span></span></code></pre></div><p>开启自启</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> xinetd
+</span></span></code></pre></div><p>允许firewall通过udp/69</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --zone<span class="o">=</span>public --permanent --add-port<span class="o">=</span>69/udp
+</span></span></code></pre></div><p>重新加载firewall策略生效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><h3 id="连接测试-1"><a href="#连接测试-1" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:连接测试-1" class="headings">连接测试</a></h3>
 <p>新建测试文件，供下载</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;keke&#34;</span> &gt;&gt; /var/lib/tftpboot/nn
-</code></pre></div><p>TFTP的根目录为**/var/lib/tftpboot**，使用tftp客户端尝试连接</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># tftp 192.168.88.133</span>
-
-tftp&gt; ls
-
-?Invalid <span class="nb">command</span> <span class="o">(</span>无法遍历目录<span class="o">)</span>
-
-tftp&gt; get nn
-
-tftp&gt; quit
-
-<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat nn</span>
-
-keke
-</code></pre></div><p>tftp命令中可用的参数以及作用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;keke&#34;</span> &gt;&gt; /var/lib/tftpboot/nn
+</span></span></code></pre></div><p>TFTP的根目录为**/var/lib/tftpboot**，使用tftp客户端尝试连接</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># tftp 192.168.88.133</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tftp&gt; ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?Invalid <span class="nb">command</span> <span class="o">(</span>无法遍历目录<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tftp&gt; get nn
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tftp&gt; quit
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat nn</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">keke
+</span></span></code></pre></div><p>tftp命令中可用的参数以及作用</p>
 <div class="table-container"><table>
 <thead>
 <tr>
@@ -836,20 +836,21 @@ keke
 </tr>
 </tbody>
 </table></div>
-<section class="footnotes" role="doc-endnotes">
+<hr>
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p> 这里为什么需要两个同样的文件来禁用登录功能呢，玄机在与<code>user_list</code>上面的一段注释。如果主配置文件中的 &quot;userlist_deny=YES&quot; 则 <code>user_list</code>文件变为黑名单，不允许用户登录（此为默认值）。如果主配置文件中的 “userlist_deny=NO” 则<code>user_list</code>变为白名单，将允许名单内的用户登录。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>PAM（可插拔认证模块）是一种认证机制，通过一些动态链接库和统一的API把系统提供的服务与认证方式分开，使得系统管理员可以根据需求灵活调整服务程序的不同认证方式。通俗来讲，PAM是一组安全机制的模块，系统管理员可以用来轻易地调整服务程序的认证方式，而不必对应用程序进行任何修改。PAM采取了分层设计（应用程序层、应用接口层、鉴别模块层）的思想&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>在Linux系统中，TFTP服务是xinetd服务程序来管理的。xinetd服务可以用来管理多种轻量级的网络服务，而且具有强大的日志功能。它专门用于控制那些比较小的应用程序的开启和关闭，有点类似带有独立开关的插线板，想要开启哪个服务，就编辑对应的xinetd配置文件的开关参数。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
 </li>
 </ol>
-</section>
+</div>
 
             </div>
 

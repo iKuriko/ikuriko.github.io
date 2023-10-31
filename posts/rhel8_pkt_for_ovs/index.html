@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.87.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.120.1"><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -18,7 +18,7 @@
 
     
     
-        <script src="/js/meme.min.8cbe976441b5181abfd3093c9beee209b19cdbb1fa77c48d225a83ba81fa3fb1.js"></script>
+        <script src="/js/meme.min.1343c21422ddd723ef2bde0b482ea241020c7d5c128b72528dd13d375565510b.js"></script>
 
     
 
@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-11-23T16:25:50+08:00",
-        "dateModified": "2022-03-18T17:52:09+08:00",
+        "dateModified": "2023-03-28T11:51:09+08:00",
         "url": "https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/",
         "headline": "RHEL8 Packaging for OpenvSwitch",
         "description": "在 CentOS8 上构建 OpenvSwitch 软件包",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-11-23T16:25:50&#43;08:00" />
-    <meta property="article:modified_time" content="2022-03-18T17:52:09&#43;08:00" />
+    <meta property="article:modified_time" content="2023-03-28T11:51:09&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -248,98 +248,98 @@
 </nav><div class="post-body e-content">
                 <h2 id="preparation"><a href="#preparation" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:preparation" class="headings">Preparation</a></h2>
 <p>操作的系统环境：CentOS 8.4.2105</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/redhat-release 
-CentOS Linux release 8.4.2105
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">uname -r
-4.18.0-348.el8.x86_64
-</code></pre></div><p>Ovs软件包版本：openvswitch-2.16.1.tar.gz</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://www.openvswitch.org/releases/openvswitch-2.16.1.tar.gz
-</code></pre></div><p>官网下载地址：https://www.openvswitch.org/releases/openvswitch-2.16.1.tar.gz</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/redhat-release 
+</span></span><span class="line"><span class="cl">CentOS Linux release 8.4.2105
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">uname -r
+</span></span><span class="line"><span class="cl">4.18.0-348.el8.x86_64
+</span></span></code></pre></div><p>Ovs软件包版本：openvswitch-2.16.1.tar.gz</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://www.openvswitch.org/releases/openvswitch-2.16.1.tar.gz
+</span></span></code></pre></div><p>官网下载地址：https://www.openvswitch.org/releases/openvswitch-2.16.1.tar.gz</p>
 <h2 id="build-requirements"><a href="#build-requirements" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:build-requirements" class="headings">Build Requirements</a></h2>
 <p>安装 RPM 工具和通用构建依赖项</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install @<span class="s1">&#39;Development Tools&#39;</span> rpm-build dnf-plugins-core
-</code></pre></div><p>解压软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tar -zxvf openvswitch-2.16.1.tar.gz -C /usr/local/
-<span class="nb">cd</span> openvswitch-2.16.1/
-</code></pre></div><p>安装 Open vSwitch 特定的构建依赖项。依赖项在 SPEC 文件中列出，首先需要将 VERSION 标记替换为有效的 SPEC。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sed -e <span class="s1">&#39;s/@VERSION@/0.0.1/&#39;</span> rhel/openvswitch-fedora.spec.in  &gt; /tmp/ovs.spec
-</code></pre></div><p>启用powertools源，安装构建依赖的额外软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf --enablerepo<span class="o">=</span>powertools install python3-sphinx groff
-</code></pre></div><p>安装 Open vSwitch 特定的构建依赖项。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf builddep /tmp/ovs.spec
-</code></pre></div><h2 id="bootstraping"><a href="#bootstraping" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:bootstraping" class="headings">Bootstraping</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install @<span class="s1">&#39;Development Tools&#39;</span> rpm-build dnf-plugins-core
+</span></span></code></pre></div><p>解压软件包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -zxvf openvswitch-2.16.1.tar.gz -C /usr/local/
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> openvswitch-2.16.1/
+</span></span></code></pre></div><p>安装 Open vSwitch 特定的构建依赖项。依赖项在 SPEC 文件中列出，首先需要将 VERSION 标记替换为有效的 SPEC。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -e <span class="s1">&#39;s/@VERSION@/0.0.1/&#39;</span> rhel/openvswitch-fedora.spec.in  &gt; /tmp/ovs.spec
+</span></span></code></pre></div><p>启用powertools源，安装构建依赖的额外软件包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf --enablerepo<span class="o">=</span>PowerTools install python3-sphinx groff
+</span></span></code></pre></div><p>安装 Open vSwitch 特定的构建依赖项。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf builddep /tmp/ovs.spec
+</span></span></code></pre></div><h2 id="bootstraping"><a href="#bootstraping" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:bootstraping" class="headings">Bootstraping</a></h2>
 <p>初始化，如果下载的是完整的tar包则不需要执行此命令，反之使用Git上的源代码来构建则需使用此命令以生成“configure”配置脚本</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./boot.sh
-</code></pre></div><h2 id="configuring"><a href="#configuring" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:configuring" class="headings">Configuring</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./boot.sh
+</span></span></code></pre></div><h2 id="configuring"><a href="#configuring" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:configuring" class="headings">Configuring</a></h2>
 <p>进入软件包解压的目录</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> openvswitch-2.16.1/
-</code></pre></div><p>使用默认配置<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">./configure
-</code></pre></div><h2 id="building"><a href="#building" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:building" class="headings">Building</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> openvswitch-2.16.1/
+</span></span></code></pre></div><p>使用默认配置<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./configure
+</span></span></code></pre></div><h2 id="building"><a href="#building" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:building" class="headings">Building</a></h2>
 <p>构建Open vSwitch 用户空间 RPM</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make rpm-fedora
-</code></pre></div><p>在openvswitch包中启用 DPDK 支持</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf install dpdk-devel numactl-devel -y
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dnf --enablerepo<span class="o">=</span>powertools install libpcap-devel libbpf-devel
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make rpm-fedora <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s2">&#34;--with dpdk --without check&#34;</span>
-</code></pre></div><p>在openvswitch包中启用 AF_XDP 支持</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make rpm-fedora <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s2">&#34;--with afxdp --without check&#34;</span>
-</code></pre></div><p>让上述命令自动运行 Open vSwitch 单元测试（可选）</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make rpm-fedora <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s2">&#34;--with check&#34;</span>
-</code></pre></div><p>为当前运行的内核版本构建Open vSwitch 内核模块</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make rpm-fedora-kmod
-</code></pre></div><p>为其他内核版本构建Open vSwitch 内核模块，可以通过kversion宏指定所需的内核版本</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make rpm-fedora-kmod <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s1">&#39;-D &#34;kversion 4.3.4-300.fc23.x86_64&#34;&#39;</span>
-</code></pre></div><p>新生成的RPM包的位置</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ls /usr/local/openvswitch/rpm/rpmbuild/RPMS/x86_64/
-network-scripts-openvswitch-2.16.1-1.el8.x86_64.rpm  openvswitch-debugsource-2.16.1-1.el8.x86_64.rpm  openvswitch-kmod-2.16.1-1.el8.x86_64.rpm
-openvswitch-2.16.1-1.el8.x86_64.rpm                  openvswitch-devel-2.16.1-1.el8.x86_64.rpm
-openvswitch-debuginfo-2.16.1-1.el8.x86_64.rpm        openvswitch-ipsec-2.16.1-1.el8.x86_64.rpm
-</code></pre></div><p>各个RPM包的作用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">network-scripts-openvswitch-2.16.1-1.el8.x86_64
-<span class="c1"># 网络脚本，开放 vSwitch 传统网络服务支持，这提供了用于传统网络服务的 ifup 和 ifdown 脚本。</span>
-
-openvswitch-2.16.1-1.el8.x86_64
-<span class="c1"># ovs 软件包本体，打开 vSwitch 守护进程/数据库/实用程序，Open vSwitch 提供标准的网络桥接功能并支持 OpenFlow 协议，以实现对流量的远程逐流控制。</span>
-
-openvswitch-debuginfo-2.16.1-1.el8.x86_64
-<span class="c1"># ovs 调试信息，这个包提供了包 openvswitch 的调试信息。在开发使用此包的应用程序或调试此包时，调试信息很有用。</span>
-
-openvswitch-debugsource-2.16.1-1.el8.x86_64
-<span class="c1"># ovs 调试源，此包为包 openvswitch 提供调试源。在开发使用此包的应用程序或调试此包时，调试源非常有用。</span>
-
-openvswitch-devel-2.16.1-1.el8.x86_64
-<span class="c1"># ovs 开发环境包，Open vSwitch OpenFlow 开发包（库、头文件），这提供了构建外部应用程序所需的静态库、libopenswitch.a 和 openvswitch 头文件。</span>
-
-openvswitch-ipsec-2.16.1-1.el8.x86_64
-<span class="c1"># ovs 对 vSwitch IPsec 隧道的支持，该软件包为 OVS 隧道提供 IPsec 隧道支持。</span>
-
-openvswitch-kmod-2.16.1-1.el8.x86_64
-<span class="c1"># ovs 的内核模块，这个包内含有 ovs 内核模块。</span>
-</code></pre></div><p>打包构建完成的RPM软件包</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tar -zcvf openvswitch-2.16.1-centos8.tar.gz /usr/local/openvswitch/rpm/rpmbuild/RPMS/x86_64/
-
-ll -h
--rw-r--r--. <span class="m">1</span> root root 9.6M 11月 <span class="m">23</span> 16:11 openvswitch-2.16.1-centos8.tar.gz
-</code></pre></div><h2 id="installing"><a href="#installing" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:installing" class="headings">Installing</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make rpm-fedora
+</span></span></code></pre></div><p>在openvswitch包中启用 DPDK 支持</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf install dpdk-devel numactl-devel -y
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf --enablerepo<span class="o">=</span>PowerTools install libpcap-devel libbpf-devel
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make rpm-fedora <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s2">&#34;--with dpdk --without check&#34;</span>
+</span></span></code></pre></div><p>在openvswitch包中启用 AF_XDP 支持</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make rpm-fedora <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s2">&#34;--with afxdp --without check&#34;</span>
+</span></span></code></pre></div><p>让上述命令自动运行 Open vSwitch 单元测试（可选）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make rpm-fedora <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s2">&#34;--with check&#34;</span>
+</span></span></code></pre></div><p>为当前运行的内核版本构建Open vSwitch 内核模块</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make rpm-fedora-kmod
+</span></span></code></pre></div><p>为其他内核版本构建Open vSwitch 内核模块，可以通过kversion宏指定所需的内核版本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make rpm-fedora-kmod <span class="nv">RPMBUILD_OPT</span><span class="o">=</span><span class="s1">&#39;-D &#34;kversion 4.3.4-300.fc23.x86_64&#34;&#39;</span>
+</span></span></code></pre></div><p>新生成的RPM包的位置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls /usr/local/openvswitch/rpm/rpmbuild/RPMS/x86_64/
+</span></span><span class="line"><span class="cl">network-scripts-openvswitch-2.16.1-1.el8.x86_64.rpm  openvswitch-debugsource-2.16.1-1.el8.x86_64.rpm  openvswitch-kmod-2.16.1-1.el8.x86_64.rpm
+</span></span><span class="line"><span class="cl">openvswitch-2.16.1-1.el8.x86_64.rpm                  openvswitch-devel-2.16.1-1.el8.x86_64.rpm
+</span></span><span class="line"><span class="cl">openvswitch-debuginfo-2.16.1-1.el8.x86_64.rpm        openvswitch-ipsec-2.16.1-1.el8.x86_64.rpm
+</span></span></code></pre></div><p>各个RPM包的作用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">network-scripts-openvswitch-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># 网络脚本，开放 vSwitch 传统网络服务支持，这提供了用于传统网络服务的 ifup 和 ifdown 脚本。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">openvswitch-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># ovs 软件包本体，打开 vSwitch 守护进程/数据库/实用程序，Open vSwitch 提供标准的网络桥接功能并支持 OpenFlow 协议，以实现对流量的远程逐流控制。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">openvswitch-debuginfo-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># ovs 调试信息，这个包提供了包 openvswitch 的调试信息。在开发使用此包的应用程序或调试此包时，调试信息很有用。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">openvswitch-debugsource-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># ovs 调试源，此包为包 openvswitch 提供调试源。在开发使用此包的应用程序或调试此包时，调试源非常有用。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">openvswitch-devel-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># ovs 开发环境包，Open vSwitch OpenFlow 开发包（库、头文件），这提供了构建外部应用程序所需的静态库、libopenswitch.a 和 openvswitch 头文件。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">openvswitch-ipsec-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># ovs 对 vSwitch IPsec 隧道的支持，该软件包为 OVS 隧道提供 IPsec 隧道支持。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">openvswitch-kmod-2.16.1-1.el8.x86_64
+</span></span><span class="line"><span class="cl"><span class="c1"># ovs 的内核模块，这个包内含有 ovs 内核模块。</span>
+</span></span></code></pre></div><p>打包构建完成的RPM软件包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -zcvf openvswitch-2.16.1-centos8.tar.gz /usr/local/openvswitch/rpm/rpmbuild/RPMS/x86_64/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ll -h
+</span></span><span class="line"><span class="cl">-rw-r--r--. <span class="m">1</span> root root 9.6M 11月 <span class="m">23</span> 16:11 openvswitch-2.16.1-centos8.tar.gz
+</span></span></code></pre></div><h2 id="installing"><a href="#installing" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:installing" class="headings">Installing</a></h2>
 <p>安装软件包的步骤</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">tar -zxvf openvswitch-2.16.1-centos-8.tar.gz
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> openvswitch-2.16.1-centos-8/
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">yum localinstall openvswitch-2.16.1-1.el8.x86_64.rpm openvswitch-devel-2.16.1-1.el8.x86_64.rpm
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl start openvswitch
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">systemctl <span class="nb">enable</span> openvswitch
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tar -zxvf openvswitch-2.16.1-centos-8.tar.gz
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> openvswitch-2.16.1-centos-8/
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum localinstall openvswitch-2.16.1-1.el8.x86_64.rpm openvswitch-devel-2.16.1-1.el8.x86_64.rpm
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start openvswitch
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> openvswitch
+</span></span></code></pre></div><hr>
 <p>References &amp; Resources</p>
 <p><a href="https://docs.openvswitch.org/en/latest/intro/install/fedora/?highlight=build%20openvswitch" target="_blank" rel="noopener">Fedora, RHEL 7.x Packaging for Open vSwitch</a></p>
 <p><a href="https://cbs.centos.org/koji/buildinfo?buildID=30269" target="_blank" rel="noopener">Information for build openvswitch-2.12.0-1.1.el8</a></p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>一般情况下，使用默认配置即可，详情见官方文档：https://docs.openvswitch.org/en/latest/intro/install/general/#configuring&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
 </li>
 </ol>
-</section>
+</div>
 
             </div>
 
