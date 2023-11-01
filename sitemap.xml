@@ -3,28 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ikuriko.github.io/tags/centos-linux/</loc>
-    <lastmod>2023-11-01T15:17:29+08:00</lastmod>
+    <lastmod>2023-11-01T15:47:46+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2023-11-01T15:41:49+08:00</lastmod>
+    <lastmod>2023-11-01T16:05:32+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/linux_bond/</loc>
     <lastmod>2023-11-01T15:17:29+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/network-tools/</loc>
-    <lastmod>2023-11-01T15:17:29+08:00</lastmod>
+    <lastmod>2023-11-01T15:47:46+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/</loc>
-    <lastmod>2023-11-01T15:41:49+08:00</lastmod>
+    <lastmod>2023-11-01T16:05:32+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/</loc>
-    <lastmod>2023-11-01T15:41:49+08:00</lastmod>
+    <lastmod>2023-11-01T16:05:32+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/firewalld/</loc>
     <lastmod>2022-12-30T15:53:58+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/linux-services/</loc>
-    <lastmod>2023-02-21T16:13:17+08:00</lastmod>
+    <lastmod>2023-11-01T15:47:46+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/cetnos7_pppoe/</loc>
     <lastmod>2022-12-30T10:59:47+08:00</lastmod>
@@ -48,7 +48,7 @@
     <lastmod>2022-03-31T14:45:22+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/iptables/</loc>
-    <lastmod>2022-12-30T14:35:17+08:00</lastmod>
+    <lastmod>2023-11-01T15:47:46+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/iperf/</loc>
     <lastmod>2023-02-23T10:42:03+08:00</lastmod>
@@ -93,7 +93,7 @@
     <lastmod>2022-03-31T14:50:17+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/other/</loc>
-    <lastmod>2023-11-01T15:41:49+08:00</lastmod>
+    <lastmod>2023-11-01T16:05:32+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos7_vnc/</loc>
     <lastmod>2022-03-31T14:34:00+08:00</lastmod>
@@ -137,11 +137,8 @@
     <loc>https://ikuriko.github.io/posts/hugo&#43;githubpages/</loc>
     <lastmod>2022-03-31T14:57:58+08:00</lastmod>
   </url><url>
-    <loc>https://ikuriko.github.io/tags/hello-world/</loc>
-    <lastmod>2023-11-01T15:41:49+08:00</lastmod>
-  </url><url>
     <loc>https://ikuriko.github.io/posts/hello_world/</loc>
-    <lastmod>2023-11-01T15:41:49+08:00</lastmod>
+    <lastmod>2023-11-01T16:05:32+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/about/</loc>
     <lastmod>2023-11-01T15:22:53+08:00</lastmod>
