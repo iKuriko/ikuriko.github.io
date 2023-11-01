@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2023-11-01T15:05:10&#43;08:00</updated>
+    <updated>2023-11-01T15:18:05&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Linux Link Aggregation</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_bond/" />
             <id>https://ikuriko.github.io/posts/linux_bond/</id>
-            <updated>2023-11-01T15:04:01&#43;08:00</updated>
+            <updated>2023-11-01T15:17:29&#43;08:00</updated>
             <published>2023-10-31T11:06:02&#43;08:00</published>
             <author>
                     <name>ikuriko</name>

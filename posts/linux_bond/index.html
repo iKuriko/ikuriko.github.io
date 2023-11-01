@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2023-10-31T11:06:02+08:00",
-        "dateModified": "2023-11-01T15:04:01+08:00",
+        "dateModified": "2023-11-01T15:17:29+08:00",
         "url": "https://ikuriko.github.io/posts/linux_bond/",
         "headline": "Linux Link Aggregation",
         "description": "Linux通过bond\u0026Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2023-10-31T11:06:02&#43;08:00" />
-    <meta property="article:modified_time" content="2023-11-01T15:04:01&#43;08:00" />
+    <meta property="article:modified_time" content="2023-11-01T15:17:29&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -305,8 +305,8 @@
 </span></span></code></pre></div><p><strong>加载bonding模块</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">modprobe bonding		//加载模块
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsmod <span class="p">|</span> grep bonding	//查看是否加载成功
-</span></span></code></pre></div><pre tabindex="0"><code>echo &#34;modprobe bonding&#34; &gt;&gt; /etc/rc.local    //加入开机自启 
-</code></pre><p><strong>重启网络服务</strong>(rhel6.5)</p>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;modprobe bonding&#34;</span> &gt;&gt; /etc/rc.local    //加入开机自启 
+</span></span></code></pre></div><p><strong>重启网络服务</strong>(rhel6.5)</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/init.d/network restart
 </span></span></code></pre></div><p><strong>查看bond状态</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /proc/net/bonding/bond0
@@ -419,20 +419,20 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con add <span class="nb">type</span> team-slave con-name team0-port1 ifname ens32 master team0
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con add <span class="nb">type</span> team-slave con-name team0-port2 ifname ens33 master team0
 </span></span></code></pre></div><p>JSON语法格式如下（使用<code>nmtui</code>进行配置时需要手动输入）</p>
-<pre tabindex="0"><code>‘{“runner”：{“name”：“METHOD”}}’
-</code></pre><p>为组接口配置IP地址、网关、DNS等参数</p>
-<pre tabindex="0"><code>nmcli con mod team0 ipv4.addresses &#34;192.168.100.100/24&#34;
-</code></pre><pre tabindex="0"><code>nmcli con mod team0 ipv4.gateway &#34;192.168.100.1&#34;
-</code></pre><pre tabindex="0"><code>nmcli con mod team0 ipv4.dns &#34;192.168.100.1&#34;
-</code></pre><pre tabindex="0"><code>nmcli con mod team0 ipv4.method manual
-</code></pre><pre tabindex="0"><code>nmcli con up team0-port1
-</code></pre><pre tabindex="0"><code>nmcli con up team0-port2
-</code></pre><pre tabindex="0"><code>nmcli con up team0
-</code></pre><p>查看组接口状态</p>
-<pre tabindex="0"><code>teamdctl team0 state
-</code></pre><p>列出team0中的端口</p>
-<pre tabindex="0"><code>teamnl team0 ports
-</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">‘<span class="o">{</span>“runner”：<span class="o">{</span>“name”：“METHOD”<span class="o">}}</span>’
+</span></span></code></pre></div><p>为组接口配置IP地址、网关、DNS等参数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con mod team0 ipv4.addresses <span class="s2">&#34;192.168.100.100/24&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con mod team0 ipv4.gateway <span class="s2">&#34;192.168.100.1&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con mod team0 ipv4.dns <span class="s2">&#34;192.168.100.1&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con mod team0 ipv4.method manual
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con up team0-port1
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con up team0-port2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con up team0
+</span></span></code></pre></div><p>查看组接口状态</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">teamdctl team0 state
+</span></span></code></pre></div><p>列出team0中的端口</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">teamnl team0 ports
+</span></span></code></pre></div>
             </div>
 
             
