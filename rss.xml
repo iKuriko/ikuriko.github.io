@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 31 Oct 2023 11:25:10 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 01 Nov 2023 15:04:21 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
         
             <item>
-                <title>Linux_Bond</title>
+                <title>Linux Link Aggregation</title>
                 <link>https://ikuriko.github.io/posts/linux_bond/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_bond/</guid>
                 <pubDate>Tue, 31 Oct 2023 11:06:02 &#43;0800</pubDate>
@@ -37,7 +37,7 @@
                     <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-                <description></description>
+                <description>Linux通过bond&amp;Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的</description>
                 
                 
                 
@@ -46,6 +46,20 @@
                     
                         
                     
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
                         
                     
                 
@@ -181,7 +195,7 @@
             </item>
         
             <item>
-                <title>SSH NOPASSWD</title>
+                <title>SSH No Password</title>
                 <link>https://ikuriko.github.io/posts/ssh_nopasswd/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ssh_nopasswd/</guid>
                 <pubDate>Fri, 15 Apr 2022 17:27:16 &#43;0800</pubDate>

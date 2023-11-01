@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>Linux_Bond | ikuriko</title>
+    <title>Linux Link Aggregation | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="lazy" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="Linux通过bond&amp;Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2023-10-31T11:06:02+08:00",
-        "dateModified": "2023-10-31T11:06:02+08:00",
+        "dateModified": "2023-11-01T15:04:01+08:00",
         "url": "https://ikuriko.github.io/posts/linux_bond/",
-        "headline": "Linux_Bond",
-        "description": "lazy",
+        "headline": "Linux Link Aggregation",
+        "description": "Linux通过bond\u0026Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  0 ,
+        "wordCount":  4036 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -98,14 +98,14 @@
 
 
 
-<meta property="og:title" content="Linux_Bond" />
-<meta property="og:description" content="lazy" />
+<meta property="og:title" content="Linux Link Aggregation" />
+<meta property="og:description" content="Linux通过bond&amp;Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的" />
 <meta property="og:url" content="https://ikuriko.github.io/posts/linux_bond/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2023-10-31T11:06:02&#43;08:00" />
-    <meta property="article:modified_time" content="2023-10-31T11:06:02&#43;08:00" />
+    <meta property="article:modified_time" content="2023-11-01T15:04:01&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -205,11 +205,12 @@
 
         <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
 
-            <h1 class="post-title p-name">Linux_Bond</h1>
+            <h1 class="post-title p-name">Linux Link Aggregation</h1>
 
             
 
             
+                <div class="post-description p-summary">Linux通过bond&amp;Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的</div>
                 
             
 
@@ -235,8 +236,203 @@
 
             
 
-            <nav class="contents"></nav><div class="post-body e-content">
-                
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:链路聚合实现方式" href="#链路聚合实现方式">链路聚合实现方式</a></li>
+    <li><a id="contents:bond-模式" href="#bond-模式">Bond 模式</a></li>
+    <li><a id="contents:bond-配置案例rhel-6" href="#bond-配置案例rhel-6">Bond 配置案例(rhel 6)</a></li>
+    <li><a id="contents:七种bond模式说明" href="#七种bond模式说明">七种bond模式说明</a></li>
+    <li><a id="contents:team-模式" href="#team-模式">Team 模式</a></li>
+    <li><a id="contents:team-配置案例rhel-7" href="#team-配置案例rhel-7">Team 配置案例(rhel 7)</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h2 id="链路聚合实现方式"><a href="#链路聚合实现方式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:链路聚合实现方式" class="headings">链路聚合实现方式</a></h2>
+<p>RHEL6 之前的方式使用 bond 方式，最多支持添加两块网卡</p>
+<p>RHEL7.3 之后使用 Team 方式，最多支持添加八块网卡。建议使用Team，但也同时兼容bond模式</p>
+<h2 id="bond-模式"><a href="#bond-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:bond-模式" class="headings">Bond 模式</a></h2>
+<p>bond mode共有七种bond0、bond1……bond6</p>
+<p><strong>常用的有三种</strong></p>
+<p>mode=0：轮询策略，有自动备援，需要交换机支持并配置链路聚合。</p>
+<p>mode=1：主备策略，其中的一条线若断线，其他线路将会自动备援。</p>
+<p>mode=6：适配器传输负载均衡，有自动备援，无需交换机支持和配置。</p>
+<h2 id="bond-配置案例rhel-6"><a href="#bond-配置案例rhel-6" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:bond-配置案例rhel-6" class="headings">Bond 配置案例(rhel 6)</a></h2>
+<p>物理网口：eth0、eth1</p>
+<p>虚拟网口：bond0</p>
+<p><strong>配置bond</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/sysconfig/network-scripts/ifcfg-bond0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">DEVICE</span><span class="o">=</span>bond0
+</span></span><span class="line"><span class="cl"><span class="nv">BOOTPROTO</span><span class="o">=</span>none
+</span></span><span class="line"><span class="cl"><span class="nv">ONBOOT</span><span class="o">=</span>yes
+</span></span><span class="line"><span class="cl"><span class="nv">IPADDR</span><span class="o">=</span>192.168.1.101
+</span></span><span class="line"><span class="cl"><span class="nv">NETMASK</span><span class="o">=</span>255.255.255.0
+</span></span><span class="line"><span class="cl"><span class="nv">NETWORK</span><span class="o">=</span>192.168.1.0
+</span></span><span class="line"><span class="cl"><span class="nv">BROADCAST</span><span class="o">=</span>192.168.1.255    //BROADCAST广播地址
+</span></span><span class="line"><span class="cl"><span class="nv">USERCTL</span><span class="o">=</span>no      //是否允许非root用户控制
+</span></span><span class="line"><span class="cl"><span class="nv">BONDING_OPTS</span><span class="o">=</span><span class="s2">&#34;mode=1 miimon=100&#34;</span>		//mode：bond的模式,miimon：监测相应的时间，这里是100ms
+</span></span></code></pre></div><p><strong>配置eth0、eth1</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/sysconfig/network-scripts/ifcfg-eth0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">DEVICE</span><span class="o">=</span>eth0
+</span></span><span class="line"><span class="cl"><span class="nv">ONBOOT</span><span class="o">=</span>yes
+</span></span><span class="line"><span class="cl"><span class="nv">NM_CONTROLLED</span><span class="o">=</span>no
+</span></span><span class="line"><span class="cl"><span class="nv">BOOTPROTO</span><span class="o">=</span>none
+</span></span><span class="line"><span class="cl"><span class="nv">MASTER</span><span class="o">=</span>bond0
+</span></span><span class="line"><span class="cl"><span class="nv">SLAVE</span><span class="o">=</span>yes
+</span></span><span class="line"><span class="cl"><span class="nv">USERCTL</span><span class="o">=</span>no
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/sysconfig/network-scripts/ifcfg-eth1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">DEVICE</span><span class="o">=</span>eth1
+</span></span><span class="line"><span class="cl"><span class="nv">ONBOOT</span><span class="o">=</span>yes
+</span></span><span class="line"><span class="cl"><span class="nv">NM_CONTROLLED</span><span class="o">=</span>no
+</span></span><span class="line"><span class="cl"><span class="nv">BOOTPROTO</span><span class="o">=</span>none
+</span></span><span class="line"><span class="cl"><span class="nv">MASTER</span><span class="o">=</span>bond0
+</span></span><span class="line"><span class="cl"><span class="nv">SLAVE</span><span class="o">=</span>yes
+</span></span><span class="line"><span class="cl"><span class="nv">USERCTL</span><span class="o">=</span>no
+</span></span></code></pre></div><p><strong>修改modprobe相关设定文件，并加载bonding模块</strong>(rhel 6.5)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/modprobe.d/bonding.conf
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> bond0 bonding
+</span></span><span class="line"><span class="cl"><span class="c1">#options bond0 max_bonds=2 miimon=200 mode=1	//如果在网卡配置文件中添加过bond选项，可忽略</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#alias bond1 bonding</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#options bond1 max_bonds=2 miimon=200 mode=1	//如果在网卡配置文件中添加过bond选项，可忽略</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#选项：</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#miimon：监视网络链接的频度，单位是毫秒，我们设置的是200毫秒。</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#max_bonds：配置的bond口个数</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#mode：bond模式，主要有以下几种，在一般的实际应用中，0和1用的比较多，</span>
+</span></span></code></pre></div><p><strong>加载bonding模块</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">modprobe bonding		//加载模块
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lsmod <span class="p">|</span> grep bonding	//查看是否加载成功
+</span></span></code></pre></div><pre tabindex="0"><code>echo &#34;modprobe bonding&#34; &gt;&gt; /etc/rc.local    //加入开机自启 
+</code></pre><p><strong>重启网络服务</strong>(rhel6.5)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/init.d/network restart
+</span></span></code></pre></div><p><strong>查看bond状态</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /proc/net/bonding/bond0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Ethernet Channel Bonding Driver: v3.7.1 <span class="o">(</span>April 27, 2011<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Bonding Mode: fault-tolerance <span class="o">(</span>active-backup<span class="o">)</span>	//**active-backup<span class="o">(</span>主备<span class="o">)</span>模式**
+</span></span><span class="line"><span class="cl">Primary Slave: None
+</span></span><span class="line"><span class="cl">Currently Active Slave: eth1	//**active状态的网口是eth1**
+</span></span><span class="line"><span class="cl">MII Status: up
+</span></span><span class="line"><span class="cl">MII Polling Interval <span class="o">(</span>ms<span class="o">)</span>: <span class="m">100</span>
+</span></span><span class="line"><span class="cl">Up Delay <span class="o">(</span>ms<span class="o">)</span>: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Down Delay <span class="o">(</span>ms<span class="o">)</span>: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Slave Interface: eth0
+</span></span><span class="line"><span class="cl">MII Status: up
+</span></span><span class="line"><span class="cl">Speed: <span class="m">1000</span> Mbps
+</span></span><span class="line"><span class="cl">Duplex: full
+</span></span><span class="line"><span class="cl">Link Failure Count: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Permanent HW addr: 00:0c:29:8a:f3:88
+</span></span><span class="line"><span class="cl">Slave queue ID: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Slave Interface: eth1
+</span></span><span class="line"><span class="cl">MII Status: up
+</span></span><span class="line"><span class="cl">Speed: <span class="m">1000</span> Mbps
+</span></span><span class="line"><span class="cl">Duplex: full
+</span></span><span class="line"><span class="cl">Link Failure Count: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Permanent HW addr: 00:0c:29:8a:f3:92
+</span></span><span class="line"><span class="cl">Slave queue ID: <span class="m">0</span>
+</span></span></code></pre></div><p><strong>任意关掉一个网口，看看网络是否仍然连通</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ifdown eth0
+</span></span></code></pre></div><p><strong>处于active状态下时eth0、eth1、bond1的物理地址都会相同，这样是为了避免上位交换机发生混乱。</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ifconfig <span class="p">|</span> grep HWaddr
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bond0     Link encap:Ethernet  HWaddr 00:0C:29:8A:F3:88  
+</span></span><span class="line"><span class="cl">eth0      Link encap:Ethernet  HWaddr 00:0C:29:8A:F3:88  
+</span></span><span class="line"><span class="cl">eth1      Link encap:Ethernet  HWaddr 00:0C:29:8A:F3:88 
+</span></span></code></pre></div><h2 id="七种bond模式说明"><a href="#七种bond模式说明" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:七种bond模式说明" class="headings">七种bond模式说明</a></h2>
+<p><strong>第一种模式：mod=0 ，即：(balance-rr) Round-robin policy（平衡轮循环策略）</strong></p>
+<p>链路负载均衡，增加带宽，支持容错，一条链路故障会自动切换正常链路，交换机需要配置聚合口（port channel）。</p>
+<p>特点：传输数据包顺序是依次传输（即：第1个包走eth0，下一个包就走eth1….一直循环下去，直到最后一个传输完毕），此模式提供负载平衡和容错能力；但是我们知道如果一个连接或者会话的数据包从不同的接口发出的话，中途再经过不同的链路，在客户端很有可能会出现数据包无序到达的问题，而无序到达的数据包需要重新要求被发送，这样网络的吞吐量就会下降</p>
+<p><strong>第二种模式：mod=1，即： (active-backup) Active-backup policy（主-备策略）</strong></p>
+<p>主备模式，只有一块网卡是active，另一块是备用的standby，所有流量都在active链路上处理，交换机配置的是捆绑的话将不能工作，因为交换机往两块网卡发包，有一半包是丢弃的。</p>
+<p>特点：只有一个设备处于活动状态，当一个宕掉另一个马上由备份转换为主设备。mac地址是外部可见得，从外面看来，bond的MAC地址是唯一的，以避免switch(交换机)发生混乱。此模式只提供了容错能力；由此可见此算法的优点是可以提供高网络连接的可用性，但是它的资源利用率较低，只有一个接口处于工作状态，在有 N 个网络接口的情况下，资源利用率为1/N</p>
+<p><strong>第三种模式：mod=2，即：(balance-xor) XOR policy（平衡XOR策略）</strong></p>
+<p>表示XOR Hash负载分担，和交换机的聚合强制不协商方式配合。（需要xmit_hash_policy，需要交换机配置port channel）</p>
+<p>特点：基于指定的传输HASH策略传输数据包。缺省的策略是：(源MAC地址 XOR 目标MAC地址) % slave数量。其他的传输策略可以通过xmit_hash_policy选项指定，此模式提供负载平衡和容错能力</p>
+<p><strong>第四种模式：mod=3，即：broadcast（广播策略）</strong></p>
+<p>表示所有包从所有网络接口发出，这个不均衡，只有冗余机制，但过于浪费资源。此模式适用于金融行业，因为他们需要高可靠性的网络，不允许出现任何问题。需要和交换机的聚合强制不协商方式配合。</p>
+<p>特点：在每个slave接口上传输每个数据包，此模式提供了容错能力</p>
+<p><strong>第五种模式：mod=4，即：(802.3ad) IEEE 802.3ad Dynamic link aggregation（IEEE 802.3ad 动态链接聚合）</strong></p>
+<p>表示支持802.3ad协议，和交换机的聚合LACP方式配合（需要xmit_hash_policy）标准要求所有设备在聚合操作时，要在同样的速率和双工模式，而且，和除了balance-rr模式外的其它bonding负载均衡模式一样，任何连接都不能使用多于一个接口的带宽。</p>
+<p>特点：创建一个聚合组，它们共享同样的速率和双工设定。根据802.3ad规范将多个slave工作在同一个激活的聚合体下。</p>
+<p>外出流量的slave选举是基于传输hash策略，该策略可以通过xmit_hash_policy选项从缺省的XOR策略改变到其他策略。需要注意的 是，并不是所有的传输策略都是802.3ad适应的，尤其考虑到在802.3ad标准43.2.4章节提及的包乱序问题。不同的实现可能会有不同的适应 性。</p>
+<p>必要条件：</p>
+<p>条件1：ethtool支持获取每个slave的速率和双工设定</p>
+<p>条件2：switch(交换机)支持IEEE 802.3ad Dynamic link aggregation</p>
+<p>条件3：大多数switch(交换机)需要经过特定配置才能支持802.3ad模式</p>
+<p><strong>第六种模式：mod=5，即：(balance-tlb) Adaptive transmit load balancing（适配器传输负载均衡）</strong></p>
+<p>根据每个slave的负载情况选择slave进行发送，接收时使用当前轮到的slave。该模式要求slave接口的网络设备驱动有某种ethtool支持；而且ARP监控不可用。</p>
+<p>特点：不需要任何特别的switch(交换机)支持的通道bonding。在每个slave上根据当前的负载（根据速度计算）分配外出流量。如果正在接受数据的slave出故障了，另一个slave接管失败的slave的MAC地址。</p>
+<p>该模式的必要条件：ethtool支持获取每个slave的速率</p>
+<p><strong>第七种模式：mod=6，即：(balance-alb) Adaptive load balancing（适配器适应性负载均衡）</strong></p>
+<p>在mod5的tlb基础上增加了rlb(接收负载均衡receive load balance)，不需要任何switch(交换机)的支持。接收负载均衡是通过ARP协商实现的.</p>
+<p>特点：该模式包含了balance-tlb模式，同时加上针对IPV4流量的接收负载均衡(receive load balance, rlb)，而且不需要任何switch(交换机)的支持。接收负载均衡是通过ARP协商实现的。bonding驱动截获本机发送的ARP应答，并把源硬件地址改写为bond中某个slave的唯一硬件地址，从而使得不同的对端使用不同的硬件地址进行通信。</p>
+<p>来自服务器端的接收流量也会被均衡。当本机发送ARP请求时，bonding驱动把对端的IP信息从ARP包中复制并保存下来。当ARP应答从对端到达 时，bonding驱动把它的硬件地址提取出来，并发起一个ARP应答给bond中的某个slave。使用ARP协商进行负载均衡的一个问题是：每次广播 ARP请求时都会使用bond的硬件地址，因此对端学习到这个硬件地址后，接收流量将会全部流向当前的slave。这个问题可以通过给所有的对端发送更新 （ARP应答）来解决，应答中包含他们独一无二的硬件地址，从而导致流量重新分布。当新的slave加入到bond中时，或者某个未激活的slave重新 激活时，接收流量也要重新分布。接收的负载被顺序地分布（round robin）在bond中最高速的slave上</p>
+<p>当某个链路被重新接上，或者一个新的slave加入到bond中，接收流量在所有当前激活的slave中全部重新分配，通过使用指定的MAC地址给每个 client发起ARP应答。下面介绍的updelay参数必须被设置为某个大于等于switch(交换机)转发延时的值，从而保证发往对端的ARP应答 不会被switch(交换机)阻截。</p>
+<p>必要条件：</p>
+<p>条件1：ethtool支持获取每个slave的速率；</p>
+<p>条件2：底层驱动支持设置某个设备的硬件地址，从而使得总是有个slave(curr_active_slave)使用bond的硬件地址，同时保证每个bond 中的slave都有一个唯一的硬件地址。如果curr_active_slave出故障，它的硬件地址将会被新选出来的 curr_active_slave接管</p>
+<p>mod=6与mod=0的区别：mod=6，先把eth0流量占满，再占eth1，….ethX；而mod=0的话，会发现2个口的流量都很稳定，基本一样的带宽。而mod=6，会发现第一个口流量很高，第2个口只占了小部分流量</p>
+<h2 id="team-模式"><a href="#team-模式" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:team-模式" class="headings">Team 模式</a></h2>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>broadcast</td>
+<td>广播容错，设备通过所有端口传输数据包</td>
+</tr>
+<tr>
+<td>roundrobin</td>
+<td>负载轮询，以轮循的模式传输所有端口的包</td>
+</tr>
+<tr>
+<td>activebackup</td>
+<td>主备模式，这是一个故障迁移程序，监控链接更改并选择活动的端口进行传输</td>
+</tr>
+<tr>
+<td>loadbalance</td>
+<td>负载均衡，监控流量并使用哈希函数以尝试在选择传输端口的时候达到完美均衡</td>
+</tr>
+<tr>
+<td>lacp</td>
+<td>链路聚合控制协议，需要交换机支持</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="team-配置案例rhel-7"><a href="#team-配置案例rhel-7" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:team-配置案例rhel-7" class="headings">Team 配置案例(rhel 7)</a></h2>
+<p>Team 需要 NetworkManager 支持</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum -y install NetworkManager
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start NetworkManager <span class="o">&amp;&amp;</span> systemctl <span class="nb">enable</span> NetworkManager
+</span></span></code></pre></div><p>可以通过使用<code>nmtui</code>命令进入图形化界面进行配置，也可以使用命令行<code>nmcli</code>进行配置，配置逻辑基本相同</p>
+<p>创建组接口</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con add <span class="nb">type</span> team con-name team0 ifname team0 config <span class="s1">&#39;{&#34;runner&#34;:{&#34;name&#34;:&#34;roundrobin&#34;}}&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con add <span class="nb">type</span> team-slave con-name team0-port1 ifname ens32 master team0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli con add <span class="nb">type</span> team-slave con-name team0-port2 ifname ens33 master team0
+</span></span></code></pre></div><p>JSON语法格式如下（使用<code>nmtui</code>进行配置时需要手动输入）</p>
+<pre tabindex="0"><code>‘{“runner”：{“name”：“METHOD”}}’
+</code></pre><p>为组接口配置IP地址、网关、DNS等参数</p>
+<pre tabindex="0"><code>nmcli con mod team0 ipv4.addresses &#34;192.168.100.100/24&#34;
+</code></pre><pre tabindex="0"><code>nmcli con mod team0 ipv4.gateway &#34;192.168.100.1&#34;
+</code></pre><pre tabindex="0"><code>nmcli con mod team0 ipv4.dns &#34;192.168.100.1&#34;
+</code></pre><pre tabindex="0"><code>nmcli con mod team0 ipv4.method manual
+</code></pre><pre tabindex="0"><code>nmcli con up team0-port1
+</code></pre><pre tabindex="0"><code>nmcli con up team0-port2
+</code></pre><pre tabindex="0"><code>nmcli con up team0
+</code></pre><p>查看组接口状态</p>
+<pre tabindex="0"><code>teamdctl team0 state
+</code></pre><p>列出team0中的端口</p>
+<pre tabindex="0"><code>teamnl team0 ports
+</code></pre>
             </div>
 
             
@@ -263,11 +459,33 @@
 
         
     
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/network-tools/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Network tools</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/centos-linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS Linux</a>
+                
+            
+        </div>
+    
 
 
 
         
     <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/network-tools/" rel="tag" class="post-tag-link">#network-tools</a> <a href="/tags/centos-linux/" rel="tag" class="post-tag-link">#centos-linux</a></div>
         
         
         

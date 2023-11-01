@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2023-10-31T11:25:10&#43;08:00</updated>
+    <updated>2023-11-01T15:04:21&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -17,17 +17,17 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
         <entry>
-            <title type="text">Linux_Bond</title>
+            <title type="text">Linux Link Aggregation</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_bond/" />
             <id>https://ikuriko.github.io/posts/linux_bond/</id>
-            <updated>2023-10-31T11:06:02&#43;08:00</updated>
+            <updated>2023-11-01T15:04:01&#43;08:00</updated>
             <published>2023-10-31T11:06:02&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"></summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux通过bond&amp;Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的</summary>
             
             
             
@@ -36,6 +36,20 @@
                 
                     
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/network-tools/" term="Network tools" label="Network tools" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
                     
                 
             
@@ -177,10 +191,10 @@
         </entry>
     
         <entry>
-            <title type="text">SSH NOPASSWD</title>
+            <title type="text">SSH No Password</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ssh_nopasswd/" />
             <id>https://ikuriko.github.io/posts/ssh_nopasswd/</id>
-            <updated>2022-04-15T18:07:01&#43;08:00</updated>
+            <updated>2023-10-31T11:29:59&#43;08:00</updated>
             <published>2022-04-15T17:27:16&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
