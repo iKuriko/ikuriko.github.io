@@ -23,10 +23,47 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 02 Nov 2023 17:56:35 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 07 Nov 2023 16:53:13 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>Dig</title>
+                <link>https://ikuriko.github.io/posts/dig/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/dig/</guid>
+                <pubDate>Tue, 07 Nov 2023 16:21:11 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>非常好用的DNS查询工具</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/network-tools/">Network tools</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>Linux Link Aggregation</title>

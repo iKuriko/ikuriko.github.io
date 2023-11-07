@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2023-11-02T17:56:35&#43;08:00</updated>
+    <updated>2023-11-07T16:53:13&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,45 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
+        <entry>
+            <title type="text">Dig</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/dig/" />
+            <id>https://ikuriko.github.io/posts/dig/</id>
+            <updated>2023-11-07T16:50:50&#43;08:00</updated>
+            <published>2023-11-07T16:21:11&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">非常好用的DNS查询工具</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/network-tools/" term="Network tools" label="Network tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Linux Link Aggregation</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_bond/" />
