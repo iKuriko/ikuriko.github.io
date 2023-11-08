@@ -3,22 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ikuriko.github.io/tags/centos-linux/</loc>
-    <lastmod>2023-11-07T16:50:50+08:00</lastmod>
+    <lastmod>2023-11-08T15:43:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/dig/</loc>
     <lastmod>2023-11-07T16:50:50+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2023-11-07T16:50:50+08:00</lastmod>
+    <lastmod>2023-11-08T15:43:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/network-tools/</loc>
     <lastmod>2023-11-07T16:50:50+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/</loc>
-    <lastmod>2023-11-07T16:50:50+08:00</lastmod>
+    <lastmod>2023-11-08T15:43:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/</loc>
-    <lastmod>2023-11-07T16:50:50+08:00</lastmod>
+    <lastmod>2023-11-08T15:43:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/linux_bond/</loc>
     <lastmod>2023-11-01T15:17:29+08:00</lastmod>
@@ -93,10 +93,7 @@
     <lastmod>2023-02-21T16:13:17+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos_chinese/</loc>
-    <lastmod>2022-03-31T14:50:17+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/tags/other/</loc>
-    <lastmod>2023-11-02T17:56:15+08:00</lastmod>
+    <lastmod>2023-11-08T15:42:59+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos7_vnc/</loc>
     <lastmod>2022-03-31T14:34:00+08:00</lastmod>
@@ -104,8 +101,8 @@
     <loc>https://ikuriko.github.io/posts/nmcli/</loc>
     <lastmod>2022-04-07T17:06:58+08:00</lastmod>
   </url><url>
-    <loc>https://ikuriko.github.io/posts/linux_hot_add_disk/</loc>
-    <lastmod>2022-03-31T14:49:08+08:00</lastmod>
+    <loc>https://ikuriko.github.io/posts/centos_hot_add_disk/</loc>
+    <lastmod>2023-11-08T15:43:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/ansible/</loc>
     <lastmod>2022-04-20T16:40:04+08:00</lastmod>
@@ -127,6 +124,9 @@
   </url><url>
     <loc>https://ikuriko.github.io/posts/cad/</loc>
     <lastmod>2022-03-31T14:49:59+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/tags/other/</loc>
+    <lastmod>2023-11-02T17:56:15+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/vim/</loc>
     <lastmod>2022-03-31T14:49:18+08:00</lastmod>

@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 07 Nov 2023 16:53:13 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 08 Nov 2023 15:44:01 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -830,12 +830,6 @@
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
                                 
                             
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
-                                
-                            
                         
                     
                 
@@ -917,8 +911,8 @@
         
             <item>
                 <title>CentOS Hot addition Disk</title>
-                <link>https://ikuriko.github.io/posts/linux_hot_add_disk/</link>
-                <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_hot_add_disk/</guid>
+                <link>https://ikuriko.github.io/posts/centos_hot_add_disk/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_hot_add_disk/</guid>
                 <pubDate>Mon, 01 Nov 2021 17:41:41 &#43;0800</pubDate>
                 
                     <author>ikuriko@qq.com (ikuriko)</author>
@@ -939,12 +933,6 @@
                                 
                                 
                                     <category domain="https://ikuriko.github.io/tags/centos-linux/">CentOS Linux</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
                                 
                             
                         
