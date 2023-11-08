@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2023-11-07T16:21:11+08:00",
-        "dateModified": "2023-11-07T16:50:50+08:00",
+        "dateModified": "2023-11-08T16:29:18+08:00",
         "url": "https://ikuriko.github.io/posts/dig/",
         "headline": "Dig",
         "description": "非常好用的DNS查询工具",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1157 ,
+        "wordCount":  1158 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -91,8 +91,8 @@
 
 <meta name="twitter:card" content="summary" />
 
-<meta name="twitter:site" content="@callousmaster" />
-<meta name="twitter:creator" content="@callousmaster" />
+<meta name="twitter:site" content="@akur1ko" />
+<meta name="twitter:creator" content="@akur1ko" />
 
     
 
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2023-11-07T16:21:11&#43;08:00" />
-    <meta property="article:modified_time" content="2023-11-07T16:50:50&#43;08:00" />
+    <meta property="article:modified_time" content="2023-11-08T16:29:18&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -238,32 +238,32 @@
 
             <nav class="contents"></nav><div class="post-body e-content">
                 <p><strong>dig 命令由 bind-utils 软件包提供</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install bind-utils
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install bind-utils -y
 </span></span></code></pre></div><p><strong>使用dig查询某个域名</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dig www.baidu.com
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#dig www.baidu.com</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; www.baidu.com
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> global options: +cmd
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Got answer:
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> -&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span class="m">14229</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> flags: qr rd ra<span class="p">;</span> QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: <span class="m">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> OPT PSEUDOSECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span> EDNS: version: 0, flags:<span class="p">;</span> udp: <span class="m">512</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> QUESTION SECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span>www.baidu.com.			IN	A
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> ANSWER SECTION:
-</span></span><span class="line"><span class="cl">www.baidu.com.		125	IN	CNAME	www.a.shifen.com.
-</span></span><span class="line"><span class="cl">www.a.shifen.com.	124	IN	A	180.101.50.242
-</span></span><span class="line"><span class="cl">www.a.shifen.com.	124	IN	A	180.101.50.188
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Query time: <span class="m">25</span> msec
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> SERVER: 114.114.114.114#53<span class="o">(</span>114.114.114.114<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> WHEN: 二 11月 <span class="m">07</span> 16:23:37 CST <span class="m">2023</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> MSG SIZE  rcvd: <span class="m">104</span>
-</span></span></code></pre></div><p><strong>dig 命令默认的输出信息比较丰富，大概可以分为 5 个部分。</strong></p>
+</span></span></code></pre></div><pre tabindex="0"><code>#dig www.baidu.com
+
+; &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; www.baidu.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 14229
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;www.baidu.com.			IN	A
+
+;; ANSWER SECTION:
+www.baidu.com.		125	IN	CNAME	www.a.shifen.com.
+www.a.shifen.com.	124	IN	A	180.101.50.242
+www.a.shifen.com.	124	IN	A	180.101.50.188
+
+;; Query time: 25 msec
+;; SERVER: 114.114.114.114#53(114.114.114.114)
+;; WHEN: 二 11月 07 16:23:37 CST 2023
+;; MSG SIZE  rcvd: 104
+</code></pre><p><strong>dig 命令默认的输出信息比较丰富，大概可以分为 5 个部分。</strong></p>
 <p>第一部分显示 dig 命令的版本和输入的参数。</p>
 <p>第二部分显示服务返回的一些技术详情，比较重要的是 status。如果 status 的值为 NOERROR 则说明本次查询成功结束。</p>
 <p>第三部分中的 &quot;QUESTION SECTION&quot; 显示我们要查询的域名。</p>
@@ -311,123 +311,123 @@
 </table></div>
 <p><strong>查询某个类型的记录</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dig www.baidu.com CNAME
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#dig www.baidu.com CNAME</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; www.baidu.com CNAME
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> global options: +cmd
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Got answer:
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> -&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span class="m">49689</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> flags: qr rd ra<span class="p">;</span> QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: <span class="m">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> OPT PSEUDOSECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span> EDNS: version: 0, flags:<span class="p">;</span> udp: <span class="m">512</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> QUESTION SECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span>www.baidu.com.			IN	CNAME
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> ANSWER SECTION:
-</span></span><span class="line"><span class="cl">www.baidu.com.		848	IN	CNAME	www.a.shifen.com.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Query time: <span class="m">20</span> msec
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> SERVER: 114.114.114.114#53<span class="o">(</span>114.114.114.114<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> WHEN: 二 11月 <span class="m">07</span> 16:34:54 CST <span class="m">2023</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> MSG SIZE  rcvd: <span class="m">72</span>
-</span></span></code></pre></div><p>从指定的DNS服务器上查询</p>
+</span></span></code></pre></div><pre tabindex="0"><code>#dig www.baidu.com CNAME
+
+; &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; www.baidu.com CNAME
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 49689
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;www.baidu.com.			IN	CNAME
+
+;; ANSWER SECTION:
+www.baidu.com.		848	IN	CNAME	www.a.shifen.com.
+
+;; Query time: 20 msec
+;; SERVER: 114.114.114.114#53(114.114.114.114)
+;; WHEN: 二 11月 07 16:34:54 CST 2023
+;; MSG SIZE  rcvd: 72
+</code></pre><p>从指定的DNS服务器上查询</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dig @223.5.5.5 www.baidu.com
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#dig @223.5.5.5 www.baidu.com</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; @223.5.5.5 www.baidu.com
-</span></span><span class="line"><span class="cl"><span class="p">;</span> <span class="o">(</span><span class="m">1</span> server found<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> global options: +cmd
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Got answer:
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> -&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span class="m">58549</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> flags: qr rd ra<span class="p">;</span> QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: <span class="m">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> OPT PSEUDOSECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span> EDNS: version: 0, flags:<span class="p">;</span> udp: <span class="m">1408</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> QUESTION SECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span>www.baidu.com.			IN	A
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> ANSWER SECTION:
-</span></span><span class="line"><span class="cl">www.baidu.com.		24	IN	CNAME	www.a.shifen.com.
-</span></span><span class="line"><span class="cl">www.a.shifen.com.	24	IN	A	110.242.68.3
-</span></span><span class="line"><span class="cl">www.a.shifen.com.	24	IN	A	110.242.68.4
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Query time: <span class="m">4</span> msec
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> SERVER: 223.5.5.5#53<span class="o">(</span>223.5.5.5<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> WHEN: 二 11月 <span class="m">07</span> 16:38:09 CST <span class="m">2023</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> MSG SIZE  rcvd: <span class="m">101</span>
-</span></span></code></pre></div><p><strong>反向解析域名</strong></p>
+</span></span></code></pre></div><pre tabindex="0"><code>#dig @223.5.5.5 www.baidu.com
+
+; &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; @223.5.5.5 www.baidu.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 58549
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1408
+;; QUESTION SECTION:
+;www.baidu.com.			IN	A
+
+;; ANSWER SECTION:
+www.baidu.com.		24	IN	CNAME	www.a.shifen.com.
+www.a.shifen.com.	24	IN	A	110.242.68.3
+www.a.shifen.com.	24	IN	A	110.242.68.4
+
+;; Query time: 4 msec
+;; SERVER: 223.5.5.5#53(223.5.5.5)
+;; WHEN: 二 11月 07 16:38:09 CST 2023
+;; MSG SIZE  rcvd: 101
+</code></pre><p><strong>反向解析域名</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dig -x 223.5.5.5 +short
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># dig -x 223.5.5.5 +short</span>
-</span></span><span class="line"><span class="cl">public1.alidns.com.
-</span></span></code></pre></div><p>详细输出</p>
+</span></span></code></pre></div><pre tabindex="0"><code># dig -x 223.5.5.5 +short
+public1.alidns.com.
+</code></pre><p>详细输出</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dig -x 223.5.5.5
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># dig -x 223.5.5.5</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; -x 223.5.5.5
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> global options: +cmd
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Got answer:
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> -&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span class="m">38486</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> flags: qr rd ra<span class="p">;</span> QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: <span class="m">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> OPT PSEUDOSECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span> EDNS: version: 0, flags:<span class="p">;</span> udp: <span class="m">512</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> QUESTION SECTION:
-</span></span><span class="line"><span class="cl"><span class="p">;</span>5.5.5.223.in-addr.arpa.		IN	PTR
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> ANSWER SECTION:
-</span></span><span class="line"><span class="cl">5.5.5.223.in-addr.arpa.	1402	IN	PTR	public1.alidns.com.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Query time: <span class="m">27</span> msec
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> SERVER: 114.114.114.114#53<span class="o">(</span>114.114.114.114<span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> WHEN: 二 11月 <span class="m">07</span> 16:44:10 CST <span class="m">2023</span>
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> MSG SIZE  rcvd: <span class="m">83</span>
-</span></span></code></pre></div><p><strong>跟踪整个DNS查询过程</strong></p>
+</span></span></code></pre></div><pre tabindex="0"><code># dig -x 223.5.5.5
+
+; &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; -x 223.5.5.5
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 38486
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;5.5.5.223.in-addr.arpa.		IN	PTR
+
+;; ANSWER SECTION:
+5.5.5.223.in-addr.arpa.	1402	IN	PTR	public1.alidns.com.
+
+;; Query time: 27 msec
+;; SERVER: 114.114.114.114#53(114.114.114.114)
+;; WHEN: 二 11月 07 16:44:10 CST 2023
+;; MSG SIZE  rcvd: 83
+</code></pre><p><strong>跟踪整个DNS查询过程</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dig +trace www.baidu.com
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># dig +trace www.baidu.com</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">;</span> &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; +trace www.baidu.com
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> global options: +cmd
-</span></span><span class="line"><span class="cl">.			364	IN	NS	i.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	h.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	a.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	l.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	e.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	b.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	d.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	f.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	g.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	c.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	k.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	j.root-servers.net.
-</span></span><span class="line"><span class="cl">.			364	IN	NS	m.root-servers.net.
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Received <span class="m">251</span> bytes from 114.114.114.114#53<span class="o">(</span>114.114.114.114<span class="o">)</span> in <span class="m">22</span> ms
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	a.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	b.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	c.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	d.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	e.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	f.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	g.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	h.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	i.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	j.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	k.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	l.gtld-servers.net.
-</span></span><span class="line"><span class="cl">com.			172800	IN	NS	m.gtld-servers.net.
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Received <span class="m">1173</span> bytes from 199.9.14.201#53<span class="o">(</span>b.root-servers.net<span class="o">)</span> in <span class="m">153</span> ms
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">baidu.com.		172800	IN	NS	ns2.baidu.com.
-</span></span><span class="line"><span class="cl">baidu.com.		172800	IN	NS	ns3.baidu.com.
-</span></span><span class="line"><span class="cl">baidu.com.		172800	IN	NS	ns4.baidu.com.
-</span></span><span class="line"><span class="cl">baidu.com.		172800	IN	NS	ns1.baidu.com.
-</span></span><span class="line"><span class="cl">baidu.com.		172800	IN	NS	ns7.baidu.com.
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Received <span class="m">849</span> bytes from 192.48.79.30#53<span class="o">(</span>j.gtld-servers.net<span class="o">)</span> in <span class="m">179</span> ms
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">www.baidu.com.		1200	IN	CNAME	www.a.shifen.com.
-</span></span><span class="line"><span class="cl"><span class="p">;;</span> Received <span class="m">100</span> bytes from 36.155.132.78#53<span class="o">(</span>ns3.baidu.com<span class="o">)</span> in <span class="m">23</span> ms
-</span></span></code></pre></div>
+</span></span></code></pre></div><pre tabindex="0"><code># dig +trace www.baidu.com
+
+; &lt;&lt;&gt;&gt; DiG 9.11.26-RedHat-9.11.26-6.el8 &lt;&lt;&gt;&gt; +trace www.baidu.com
+;; global options: +cmd
+.			364	IN	NS	i.root-servers.net.
+.			364	IN	NS	h.root-servers.net.
+.			364	IN	NS	a.root-servers.net.
+.			364	IN	NS	l.root-servers.net.
+.			364	IN	NS	e.root-servers.net.
+.			364	IN	NS	b.root-servers.net.
+.			364	IN	NS	d.root-servers.net.
+.			364	IN	NS	f.root-servers.net.
+.			364	IN	NS	g.root-servers.net.
+.			364	IN	NS	c.root-servers.net.
+.			364	IN	NS	k.root-servers.net.
+.			364	IN	NS	j.root-servers.net.
+.			364	IN	NS	m.root-servers.net.
+;; Received 251 bytes from 114.114.114.114#53(114.114.114.114) in 22 ms
+
+com.			172800	IN	NS	a.gtld-servers.net.
+com.			172800	IN	NS	b.gtld-servers.net.
+com.			172800	IN	NS	c.gtld-servers.net.
+com.			172800	IN	NS	d.gtld-servers.net.
+com.			172800	IN	NS	e.gtld-servers.net.
+com.			172800	IN	NS	f.gtld-servers.net.
+com.			172800	IN	NS	g.gtld-servers.net.
+com.			172800	IN	NS	h.gtld-servers.net.
+com.			172800	IN	NS	i.gtld-servers.net.
+com.			172800	IN	NS	j.gtld-servers.net.
+com.			172800	IN	NS	k.gtld-servers.net.
+com.			172800	IN	NS	l.gtld-servers.net.
+com.			172800	IN	NS	m.gtld-servers.net.
+;; Received 1173 bytes from 199.9.14.201#53(b.root-servers.net) in 153 ms
+
+baidu.com.		172800	IN	NS	ns2.baidu.com.
+baidu.com.		172800	IN	NS	ns3.baidu.com.
+baidu.com.		172800	IN	NS	ns4.baidu.com.
+baidu.com.		172800	IN	NS	ns1.baidu.com.
+baidu.com.		172800	IN	NS	ns7.baidu.com.
+;; Received 849 bytes from 192.48.79.30#53(j.gtld-servers.net) in 179 ms
+
+www.baidu.com.		1200	IN	CNAME	www.a.shifen.com.
+;; Received 100 bytes from 36.155.132.78#53(ns3.baidu.com) in 23 ms
+</code></pre>
             </div>
 
             

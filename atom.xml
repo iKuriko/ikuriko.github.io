@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2023-11-08T15:44:01&#43;08:00</updated>
+    <updated>2023-11-08T16:48:18&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Dig</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/dig/" />
             <id>https://ikuriko.github.io/posts/dig/</id>
-            <updated>2023-11-07T16:50:50&#43;08:00</updated>
+            <updated>2023-11-08T16:29:18&#43;08:00</updated>
             <published>2023-11-07T16:21:11&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -143,7 +143,7 @@
             <title type="text">CetnOS7 PPPoE Server</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cetnos7_pppoe/" />
             <id>https://ikuriko.github.io/posts/cetnos7_pppoe/</id>
-            <updated>2022-12-30T10:59:47&#43;08:00</updated>
+            <updated>2023-11-08T16:31:52&#43;08:00</updated>
             <published>2022-12-30T10:29:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1247,14 +1247,14 @@
             <title type="text">Hello world</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hello_world/" />
             <id>https://ikuriko.github.io/posts/hello_world/</id>
-            <updated>2023-11-02T17:56:15&#43;08:00</updated>
+            <updated>2023-11-08T16:48:00&#43;08:00</updated>
             <published>2021-09-02T16:55:55&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Test page</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Test page Image &amp;lt;img src=&amp;#34;/images/hello-world.jpg&amp;#34; alt=&amp;#34;图片宽度50%&amp;#34; style=&amp;#34;width:50%&amp;#34; /&amp;gt; ![hello-world.jpg](/images/hello-world.jpg) Form……</summary>
             
             
             
