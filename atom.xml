@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2023-11-08T16:48:18&#43;08:00</updated>
+    <updated>2025-01-17T16:28:31&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,72 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
+        <entry>
+            <title type="text">Strongswan VPN</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/strongswan/" />
+            <id>https://ikuriko.github.io/posts/strongswan/</id>
+            <updated>2025-01-17T16:24:28&#43;08:00</updated>
+            <published>2025-01-16T17:51:41&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 下的 IKEv2/IPSEC VPN</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Acme.sh Aliyun</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/acme.sh/" />
+            <id>https://ikuriko.github.io/posts/acme.sh/</id>
+            <updated>2025-01-17T15:42:05&#43;08:00</updated>
+            <published>2025-01-16T17:27:49&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用 acme.sh 为阿里云域名申请免费的 ssl 证书</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/other/" term="Other" label="Other" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">Dig</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/dig/" />
@@ -461,7 +527,7 @@
             <title type="text">OpenVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvpn/" />
             <id>https://ikuriko.github.io/posts/openvpn/</id>
-            <updated>2022-10-14T15:51:23&#43;08:00</updated>
+            <updated>2024-03-22T11:20:47&#43;08:00</updated>
             <published>2022-03-18T11:27:46&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
