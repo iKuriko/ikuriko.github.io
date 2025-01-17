@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2025-01-17T16:28:31&#43;08:00</updated>
+    <updated>2025-01-17T17:55:59&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -17,11 +17,101 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
         <entry>
+            <title type="text">TC</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tc/" />
+            <id>https://ikuriko.github.io/posts/tc/</id>
+            <updated>2025-01-17T17:32:26&#43;08:00</updated>
+            <published>2025-01-17T16:58:12&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">使用 wondershaper 工具对 Linux 下的网络接口限速</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/network-tools/" term="Network tools" label="Network tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">FRR</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/frr/" />
+            <id>https://ikuriko.github.io/posts/frr/</id>
+            <updated>2025-01-17T17:55:49&#43;08:00</updated>
+            <published>2025-01-17T16:53:19&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">FRRouting 是 Linux 上一款开源的路由模拟器工具，它能使你的 Linux 主机变身为思科路由器</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/centos-linux/" term="CentOS Linux" label="CentOS Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/network-tools/" term="Network tools" label="Network tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">Strongswan VPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/strongswan/" />
             <id>https://ikuriko.github.io/posts/strongswan/</id>
-            <updated>2025-01-17T16:24:28&#43;08:00</updated>
-            <published>2025-01-16T17:51:41&#43;08:00</published>
+            <updated>2025-01-17T16:35:38&#43;08:00</updated>
+            <published>2024-12-20T17:51:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
@@ -53,8 +143,8 @@
             <title type="text">Acme.sh Aliyun</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/acme.sh/" />
             <id>https://ikuriko.github.io/posts/acme.sh/</id>
-            <updated>2025-01-17T15:42:05&#43;08:00</updated>
-            <published>2025-01-16T17:27:49&#43;08:00</published>
+            <updated>2025-01-17T16:35:21&#43;08:00</updated>
+            <published>2024-12-16T17:27:49&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>

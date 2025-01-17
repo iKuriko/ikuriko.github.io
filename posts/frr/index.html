@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.120.1"><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>FRR | ikuriko</title>
+
+    <link rel="stylesheet" href="/css/meme.min.744c3bda27090f0c08cc43b01d35f12e6f481759600dd9f8a1190de9e9bb12a2.css"/>
+
+    
+    
+        <script src="/js/meme.min.1343c21422ddd723ef2bde0b482ea241020c7d5c128b72528dd13d375565510b.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
+
+    <meta name="author" content="ikuriko" /><meta name="description" content="FRRouting 是 Linux 上一款开源的路由模拟器工具，它能使你的 Linux 主机变身为思科路由器" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ikuriko" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ikuriko" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://ikuriko.github.io/posts/frr/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2025-01-17T16:53:19+08:00",
+        "dateModified": "2025-01-17T17:55:49+08:00",
+        "url": "https://ikuriko.github.io/posts/frr/",
+        "headline": "FRR",
+        "description": "FRRouting 是 Linux 上一款开源的路由模拟器工具，它能使你的 Linux 主机变身为思科路由器",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  1122 ,
+        "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Mosi Meta",
+            "email": "ikuriko@qq.com",
+            "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+            "url": "https://ikuriko.github.io",
+            "name": "ikuriko"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ikuriko",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ikuriko.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://ikuriko.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://ikuriko.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@akur1ko" />
+<meta name="twitter:creator" content="@akur1ko" />
+
+    
+
+
+
+<meta property="og:title" content="FRR" />
+<meta property="og:description" content="FRRouting 是 Linux 上一款开源的路由模拟器工具，它能使你的 Linux 主机变身为思科路由器" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/frr/" />
+<meta property="og:site_name" content="ikuriko" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2025-01-17T16:53:19&#43;08:00" />
+    <meta property="article:modified_time" content="2025-01-17T17:55:49&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">ikuriko</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Tech</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/life/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Life</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">Tag</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon about"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">About</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">FRR</h1>
+
+            
+
+            
+                <div class="post-description p-summary">FRRouting 是 Linux 上一款开源的路由模拟器工具，它能使你的 Linux 主机变身为思科路由器</div>
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:安装" href="#安装">安装</a></li>
+    <li><a id="contents:升级" href="#升级">升级</a></li>
+    <li><a id="contents:启动" href="#启动">启动</a></li>
+    <li><a id="contents:常用命令" href="#常用命令">常用命令</a>
+      <ol>
+        <li><a id="contents:vtysh进入模拟器命令行" href="#vtysh进入模拟器命令行">#vtysh		#进入模拟器命令行</a></li>
+      </ol>
+    </li>
+    <li><a id="contents:is-is" href="#is-is">#IS-IS</a></li>
+    <li><a id="contents:bgp" href="#bgp">#BGP</a>
+      <ol>
+        <li><a id="contents:weightbgp属性" href="#weightbgp属性">#weight（BGP属性）</a></li>
+        <li><a id="contents:route-mapbgp属性" href="#route-mapbgp属性">#route-map（BGP属性）</a></li>
+        <li><a id="contents:ip-prefix-listbgp属性" href="#ip-prefix-listbgp属性">#ip prefix-list（BGP属性）</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h2 id="安装"><a href="#安装" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:安装" class="headings">安装</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装软件源</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FRRVER</span><span class="o">=</span><span class="s2">&#34;frr-stable&#34;</span>
+</span></span><span class="line"><span class="cl">curl -O https://rpm.frrouting.org/repo/<span class="nv">$FRRVER</span>-repo-1-0.el8.noarch.rpm
+</span></span><span class="line"><span class="cl">yum install -y ./<span class="nv">$FRRVER</span>*
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装frr</span>
+</span></span><span class="line"><span class="cl">yum install -y frr frr-pythontools
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#卸载软件源</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#yum remove -y frr-stable-repo</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#rm /etc/yum.repos.d/frr-stable-repo-1-0.el8.noarch.rpm</span>
+</span></span></code></pre></div><h2 id="升级"><a href="#升级" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:升级" class="headings">升级</a></h2>
+<p>CentOS8.5.2111 版本需要安装最新的 lib 库以支持安装最新版本的frr</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装lib库</span>
+</span></span><span class="line"><span class="cl">wget https://dl.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/j/json-c-devel-0.13.1-3.el8.x86_64.rpm
+</span></span><span class="line"><span class="cl">wget https://dl.rockylinux.org/pub/rocky/8/Devel/x86_64/os/Packages/j/json-c-0.13.1-3.el8.x86_64.rpm
+</span></span><span class="line"><span class="cl">yum -y localinstall json-c-0.13.1-3.el8.x86_64.rpm json-c-devel-0.13.1-3.el8.x86_64.rpm
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装frr</span>
+</span></span><span class="line"><span class="cl">yum update -y frr frr-pythontools
+</span></span></code></pre></div><h2 id="启动"><a href="#启动" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:启动" class="headings">启动</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#启动 frr 对各种路由协议和名字空间的支持</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/bgpd=no/bgpd=yes/g&#34;</span> /etc/frr/daemons
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/isisd=no/isisd=yes/g&#34;</span> /etc/frr/daemons
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/bfdd=no/bfdd=yes/g&#34;</span> /etc/frr/daemons
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/isisd=no/isisd=yes/g&#34;</span> /etc/frr/daemons
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/ospfd=no/ospfd=yes/g&#34;</span> /etc/frr/daemons
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/-A 127.0.0.1 -s 90000000/-A 127.0.0.1 -n -s 90000000/g&#34;</span> /etc/frr/daemons
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/##watchfrr_options=\&#34;--netns\&#34;/watchfrr_options=\&#34;--netns\&#34;/g&#34;</span> /etc/frr/daemons
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start frr     <span class="c1">#启动服务</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> frr    <span class="c1">#开机自启</span>
+</span></span></code></pre></div><h2 id="常用命令"><a href="#常用命令" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:常用命令" class="headings">常用命令</a></h2>
+<h3 id="vtysh进入模拟器命令行"><a href="#vtysh进入模拟器命令行" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:vtysh进入模拟器命令行" class="headings">#vtysh		#进入模拟器命令行</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">configure terminal 					  			<span class="c1">#进入全局配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show running-config    							<span class="c1">#查看所有配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show ip route     								<span class="c1">#查看路由表</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show ip route vrf vrf1    						<span class="c1">#查看vrf1路由表</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ip route 115.115.115.0/24 12.1.1.2 vrf vrf1     <span class="c1">#宣告路由vrf1的路由（全局模式静态路由）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">end                                             <span class="c1">#回到特权模式</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">touch /etc/frr/frr.conf							<span class="c1">#创建保存配置的文件（如有需要）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">copy /etc/frr/frr.conf running-config			<span class="c1">#加载配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">copy running-config startup-config <span class="p">&amp;</span> w		    <span class="c1">#保存配置</span>
+</span></span></code></pre></div><h2 id="is-is"><a href="#is-is" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:is-is" class="headings">#IS-IS</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">router isis vrf1 vrf vrf1    					<span class="c1">#在vrf1 下启用isis，命名为vrf1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">net 49.0001.1111.1111.1111.1111.00    			<span class="c1">#配置NSAP地址，区域号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">lsp-mtu <span class="m">1400</span>    								<span class="c1">#配置lsp-mtu</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>    										<span class="c1">#退出vrf1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">interface gretap1 vrf vrf1   		 			<span class="c1">#进入到命名空间vrf1的gretap1接口下</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ip route isis vrf1    							<span class="c1">#启用isis功能</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">isis metric <span class="m">80</span>    								<span class="c1">#配置优先级，默认vPE-vPE的不设置metric,vPE-cPE的设置metric</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">redistribute ipv4 static level-1    			<span class="c1">#isis重定向级别1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">redistribute ipv4 static level-2    			<span class="c1">#isis重定向级别2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show isis vrf vrf1 route    					<span class="c1">#查看vrf1的isis路由表</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show isis vrf vrf1 neighbor    					<span class="c1">#查看vrf1的邻居关系表</span>
+</span></span></code></pre></div><h2 id="bgp"><a href="#bgp" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:bgp" class="headings">#BGP</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">router bgp 64931								<span class="c1">#启用bgp AS号：64931</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">no bgp ebgp-requires-policy 					<span class="c1">#关闭EBGP需要策略连接（如果不关闭，EBGP邻居之间由于没有策略不允许连接）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 100.0.10.1 remote-as <span class="m">64939</span>      		<span class="c1">#指定邻居IP和AS号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 100.0.10.1 bfd							<span class="c1">#对邻居启用BFD，需要在cat /etc/frr/daemons开启BFD的支持</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 100.0.10.1 shutdown					<span class="c1">#关闭邻居</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">address-family ipv4 unicast						<span class="c1">#IPv4单播地址簇</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">network 10.80.0.0/16							<span class="c1">#宣告网络，发布路由给邻居</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">redistribute connected							<span class="c1">#重定向发布直连网段到BGP</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">redistribute static								<span class="c1">#重定向发布静态路由到BGP（这里的静态指手动在交换机模式下配置的路由，名字空间里的路由是kernel路由）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">redistribute static								<span class="c1">#重定向发布内核路由到BGP</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 192.0.0.26 next-hop-self				<span class="c1">#邻居的下一跳指向自己（IBGP邻居需要配置此条）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">exit-address-family								<span class="c1">#退出</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show ip bgp vrf ns1 summary					    <span class="c1">#查看bgp邻居状态</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">show ip bgp vrf ns1							    <span class="c1">#查看bgp路由</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ip bgp neighbors 198.18.224.214					<span class="c1">#查看bgp邻居详细信息</span>
+</span></span></code></pre></div><h3 id="weightbgp属性"><a href="#weightbgp属性" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:weightbgp属性" class="headings">#weight（BGP属性）</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">configure terminal
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">router bgp <span class="m">64931</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 100.0.10.1 remote-as <span class="m">64930</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">address-family ipv4 unicast
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 100.0.10.1 weight 120					<span class="c1">#给邻居设置weight(权重值)。默认权重为0，权重越大，路由越优先</span>
+</span></span></code></pre></div><h3 id="route-mapbgp属性"><a href="#route-mapbgp属性" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:route-mapbgp属性" class="headings">#route-map（BGP属性）</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">configure terminal
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">route-map routemap1 permit 10				    <span class="c1">#创建routemap规则为允许</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> as-path prepend <span class="m">64901</span> <span class="m">64902</span> 64903			<span class="c1">#设置as-path，在已有的路径后面追加三个as</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">router bgp <span class="m">64931</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">address-family ipv4 unicast
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 100.0.10.1 route-map routemap1 out		<span class="c1">#应用route-map给邻居，动作为out，意思是出方向策略</span>
+</span></span></code></pre></div><h3 id="ip-prefix-listbgp属性"><a href="#ip-prefix-listbgp属性" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ip-prefix-listbgp属性" class="headings">#ip prefix-list（BGP属性）</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">configure terminal
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ip prefix-list prefixlist1 seq <span class="m">5</span> permit 198.18.1.0/24	<span class="c1">#创建ip prefix-list 允许网段198.18.1.0/24通过</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ip prefix-list prefixlist1 seq <span class="m">10</span> deny any				<span class="c1">#拒绝其他所有网段</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">router bgp <span class="m">64931</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">address-family ipv4 unicast
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">neighbor 198.18.1.2 prefix-list prefixlist1 out			<span class="c1">#应用ip prefix-list给邻居，动作为out，意思是出方向策略</span>
+</span></span></code></pre></div>
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+    
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/centos-linux/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>CentOS Linux</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/linux-services/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Linux services</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/network-tools/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Network tools</a>
+                
+            
+        </div>
+    
+
+
+
+        
+    <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/centos-linux/" rel="tag" class="post-tag-link">#centos-linux</a> <a href="/tags/linux-services/" rel="tag" class="post-tag-link">#linux-services</a> <a href="/tags/network-tools/" rel="tag" class="post-tag-link">#network-tools</a></div>
+        
+        
+        
+            
+        
+    </footer>
+
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/tc/" rel="prev">&lt; TC</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/strongswan/" rel="next">Strongswan VPN &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2025&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;ikuriko</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+            
+
+            
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>
