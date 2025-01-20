@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2025-01-17T16:58:12+08:00",
-        "dateModified": "2025-01-20T10:49:25+08:00",
+        "dateModified": "2025-01-20T11:04:49+08:00",
         "url": "https://ikuriko.github.io/posts/tc/",
         "headline": "TC",
         "description": "使用 wondershaper 工具对 Linux 下的网络接口限速",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  252 ,
+        "wordCount":  253 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2025-01-17T16:58:12&#43;08:00" />
-    <meta property="article:modified_time" content="2025-01-20T10:49:25&#43;08:00" />
+    <meta property="article:modified_time" content="2025-01-20T11:04:49&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -243,19 +243,25 @@
   </ol>
 </nav><div class="post-body e-content">
                 <h2 id="网络接口限速"><a href="#网络接口限速" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:网络接口限速" class="headings">网络接口限速</a></h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install iproute-tc						<span class="c1">#安装依赖软件包（基于tc命令实现）</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/magnific0/wondershaper.git     <span class="c1">#下载 wondershaper 软件包</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s /root/wondershaper-master/wondershaper /usr/local/sbin/wondershaper	<span class="c1">#添加快捷软链</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装依赖软件包（基于tc命令实现）</span>
+</span></span><span class="line"><span class="cl">yum install iproute-tc						
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#下载 wondershaper 软件包</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/magnific0/wondershaper.git     
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#添加快捷软链接</span>
+</span></span><span class="line"><span class="cl">ln -s /root/wondershaper-master/wondershaper /usr/local/sbin/wondershaper	
 </span></span></code></pre></div><p>添加限速策略</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wondershaper -a 接口名 -d 下载带宽 -u 上传带宽			<span class="c1">#-a（接口）、-d(下载) 、-u（上传） 单位（kb）</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#-a（接口）、-d(下载) 、-u（上传） 单位（kb）</span>
+</span></span><span class="line"><span class="cl">wondershaper -a 接口名 -d 下载带宽 -u 上传带宽			
 </span></span></code></pre></div><p>查看限速策略</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wondershaper -s -a 接口名
 </span></span></code></pre></div><p>删除限速策略</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wondershaper -c -a 接口名
 </span></span></code></pre></div><p>使用示例</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wondershaper -a enp1s0 -d <span class="m">20480</span> -u <span class="m">20480</span>    <span class="c1">#对enp1s0接口的下载带宽进行限速，限速为20MB</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#对enp1s0接口的下载带宽进行限速，限速为20MB</span>
+</span></span><span class="line"><span class="cl">wondershaper -a enp1s0 -d <span class="m">20480</span> -u <span class="m">20480</span>    
 </span></span></code></pre></div><h2 id="模拟时延和丢包率"><a href="#模拟时延和丢包率" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:模拟时延和丢包率" class="headings">模拟时延和丢包率</a></h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install iproute-tc kernel-modules-extra -y    <span class="c1">#安装依赖软件包</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装依赖软件包</span>
+</span></span><span class="line"><span class="cl">yum install iproute-tc kernel-modules-extra -y    
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#模拟网卡延迟（100ms为设定值，20ms为浮动值）</span>
 </span></span><span class="line"><span class="cl">tc qdisc add dev enp2s0 root netem delay 100ms 20ms
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#模拟网卡丢包率（25%）</span>
