@@ -23,10 +23,47 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 23 Jan 2025 17:42:22 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 18 Feb 2025 11:58:16 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
+        
+            <item>
+                <title>L2TP/IPsecVPN</title>
+                <link>https://ikuriko.github.io/posts/l2tp_ipsecvpn/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/l2tp_ipsecvpn/</guid>
+                <pubDate>Tue, 18 Feb 2025 09:36:22 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/linux-services/">Linux services</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>TC</title>
@@ -91,7 +128,7 @@
             </item>
         
             <item>
-                <title>Strongswan VPN</title>
+                <title>StrongswanVPN</title>
                 <link>https://ikuriko.github.io/posts/strongswan/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/strongswan/</guid>
                 <pubDate>Fri, 20 Dec 2024 17:51:41 &#43;0800</pubDate>
@@ -128,7 +165,7 @@
             </item>
         
             <item>
-                <title>Acme.sh Aliyun</title>
+                <title>Acme.sh aliyun</title>
                 <link>https://ikuriko.github.io/posts/acme.sh/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/acme.sh/</guid>
                 <pubDate>Mon, 16 Dec 2024 17:27:49 &#43;0800</pubDate>

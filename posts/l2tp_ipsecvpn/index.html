@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.120.1"><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>L2TP/IPsecVPN | ikuriko</title>
+
+    <link rel="stylesheet" href="/css/meme.min.90b3f920f3bb2746bcdfc871d1b3d2dec6d81a94ee70cc7b3416f6d088007fac.css"/>
+
+    
+    
+        <script src="/js/meme.min.1343c21422ddd723ef2bde0b482ea241020c7d5c128b72528dd13d375565510b.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
+
+    <meta name="author" content="ikuriko" /><meta name="description" content="Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ikuriko" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ikuriko" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://ikuriko.github.io/posts/l2tp_ipsecvpn/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2025-02-18T09:36:22+08:00",
+        "dateModified": "2025-02-18T11:56:24+08:00",
+        "url": "https://ikuriko.github.io/posts/l2tp_ipsecvpn/",
+        "headline": "L2TP/IPsecVPN",
+        "description": "Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  2387 ,
+        "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "Mosi Meta",
+            "email": "ikuriko@qq.com",
+            "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
+            "url": "https://ikuriko.github.io",
+            "name": "ikuriko"
+        },
+        "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
+        "publisher": {
+            "@type": "Organization",
+            "name": "ikuriko",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ikuriko.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://ikuriko.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://ikuriko.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@akur1ko" />
+<meta name="twitter:creator" content="@akur1ko" />
+
+    
+
+
+
+<meta property="og:title" content="L2TP/IPsecVPN" />
+<meta property="og:description" content="Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/l2tp_ipsecvpn/" />
+<meta property="og:site_name" content="ikuriko" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2025-02-18T09:36:22&#43;08:00" />
+    <meta property="article:modified_time" content="2025-02-18T11:56:24&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">ikuriko</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">Tech</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">Tag</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon about"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">About</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">L2TP/IPsecVPN</h1>
+
+            
+
+            
+                <div class="post-description p-summary">Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。</div>
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li>
+      <ol>
+        <li><a id="contents:一安装依赖包" href="#一安装依赖包">一、安装依赖包</a></li>
+        <li><a id="contents:二配置ipseclibreswan" href="#二配置ipseclibreswan">二、配置IPSec（Libreswan）</a></li>
+        <li><a id="contents:三配置l2tpxl2tpd" href="#三配置l2tpxl2tpd">三、配置L2TP（xl2tpd）</a></li>
+        <li><a id="contents:四配置用户认证" href="#四配置用户认证">四、配置用户认证</a></li>
+        <li><a id="contents:五启动服务" href="#五启动服务">五、启动服务</a></li>
+        <li><a id="contents:六客户端连接参数" href="#六客户端连接参数">六、客户端连接参数</a></li>
+        <li><a id="contents:七测试连接" href="#七测试连接">七、测试连接</a></li>
+        <li><a id="contents:八常见问题排查" href="#八常见问题排查">八、常见问题排查</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav><div class="post-body e-content">
+                <h3 id="一安装依赖包"><a href="#一安装依赖包" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:一安装依赖包" class="headings">一、安装依赖包</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yum install -y epel-release
+</span></span><span class="line"><span class="cl">yum install -y libreswan xl2tpd ppp
+</span></span></code></pre></div><h3 id="二配置ipseclibreswan"><a href="#二配置ipseclibreswan" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:二配置ipseclibreswan" class="headings">二、配置IPSec（Libreswan）</a></h3>
+<p><strong>1. 修改<code>/etc/ipsec.conf</code></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/ipsec.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">version 2.0
+</span></span><span class="line"><span class="cl">config setup
+</span></span><span class="line"><span class="cl">    <span class="nv">virtual_private</span><span class="o">=</span>%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12
+</span></span><span class="line"><span class="cl">    <span class="nv">protostack</span><span class="o">=</span>netkey
+</span></span><span class="line"><span class="cl">    <span class="nv">interfaces</span><span class="o">=</span>%defaultroute
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">conn L2TP-PSK
+</span></span><span class="line"><span class="cl">    <span class="nv">authby</span><span class="o">=</span>secret
+</span></span><span class="line"><span class="cl">    <span class="nv">pfs</span><span class="o">=</span>no
+</span></span><span class="line"><span class="cl">    <span class="nv">auto</span><span class="o">=</span>add
+</span></span><span class="line"><span class="cl">    <span class="nv">keyingtries</span><span class="o">=</span><span class="m">3</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">rekey</span><span class="o">=</span>no
+</span></span><span class="line"><span class="cl">    <span class="nv">ikelifetime</span><span class="o">=</span>8h
+</span></span><span class="line"><span class="cl">    <span class="nv">keylife</span><span class="o">=</span>1h
+</span></span><span class="line"><span class="cl">    <span class="nv">type</span><span class="o">=</span>transport
+</span></span><span class="line"><span class="cl">    <span class="nv">left</span><span class="o">=</span>%defaultroute
+</span></span><span class="line"><span class="cl">    <span class="nv">leftprotoport</span><span class="o">=</span>17/1701
+</span></span><span class="line"><span class="cl">    <span class="nv">right</span><span class="o">=</span>%any
+</span></span><span class="line"><span class="cl">    <span class="nv">rightprotoport</span><span class="o">=</span>17/%any
+</span></span><span class="line"><span class="cl">    <span class="nv">dpddelay</span><span class="o">=</span><span class="m">30</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">dpdtimeout</span><span class="o">=</span><span class="m">120</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">dpdaction</span><span class="o">=</span>clear
+</span></span></code></pre></div><p><strong>2. 设置预共享密钥</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">openssl rand -base64 <span class="m">16</span>  <span class="c1"># 生成一个16字节的随机字符串，可以把16改为32，加强密钥安全性</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/ipsec.secrets
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">%any  %any  : PSK <span class="s2">&#34;YOUR_KEY（刚才生成的预共享密钥）&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">600</span> /etc/ipsec.secrets
+</span></span></code></pre></div><h3 id="三配置l2tpxl2tpd"><a href="#三配置l2tpxl2tpd" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:三配置l2tpxl2tpd" class="headings">三、配置L2TP（xl2tpd）</a></h3>
+<p><strong>1. 修改<code>/etc/xl2tpd/xl2tpd.conf</code></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/xl2tpd/xl2tpd.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>global<span class="o">]</span>
+</span></span><span class="line"><span class="cl">ipsec <span class="nv">saref</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">listen-addr <span class="o">=</span> &lt;服务器IP&gt;    <span class="c1">#替换为服务器接入IP地址</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#port = 1701</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>lns default<span class="o">]</span>
+</span></span><span class="line"><span class="cl">ip <span class="nv">range</span> <span class="o">=</span> 100.88.88.2-100.88.88.254
+</span></span><span class="line"><span class="cl"><span class="nb">local</span> <span class="nv">ip</span> <span class="o">=</span> 100.88.88.1
+</span></span><span class="line"><span class="cl">require <span class="nv">chap</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">refuse <span class="nv">pap</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">require <span class="nv">authentication</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">ppp <span class="nv">debug</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nv">pppoptfile</span> <span class="o">=</span> /etc/ppp/options.xl2tpd
+</span></span><span class="line"><span class="cl">length <span class="nv">bit</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">EOF
+</span></span></code></pre></div><p><strong>2. 配置PPP选项</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/ppp/options.xl2tpd
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">require-mschap-v2
+</span></span><span class="line"><span class="cl">ms-dns 8.8.8.8    <span class="c1"># 为客户端分发DNS</span>
+</span></span><span class="line"><span class="cl">ms-dns 8.8.4.4
+</span></span><span class="line"><span class="cl">asyncmap <span class="m">0</span>
+</span></span><span class="line"><span class="cl">auth
+</span></span><span class="line"><span class="cl">crtscts
+</span></span><span class="line"><span class="cl">lock
+</span></span><span class="line"><span class="cl">hide-password
+</span></span><span class="line"><span class="cl">modem
+</span></span><span class="line"><span class="cl">debug
+</span></span><span class="line"><span class="cl">name l2tpd
+</span></span><span class="line"><span class="cl">proxyarp
+</span></span><span class="line"><span class="cl">lcp-echo-interval <span class="m">30</span>
+</span></span><span class="line"><span class="cl">lcp-echo-failure <span class="m">4</span>
+</span></span><span class="line"><span class="cl">mtu <span class="m">1400</span>
+</span></span><span class="line"><span class="cl">mru <span class="m">1400</span>
+</span></span><span class="line"><span class="cl">nobsdcomp
+</span></span><span class="line"><span class="cl">defaultroute    <span class="c1"># 为客户端分发默认网关</span>
+</span></span></code></pre></div><h3 id="四配置用户认证"><a href="#四配置用户认证" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:四配置用户认证" class="headings">四、配置用户认证</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/ppp/chap-secrets
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 格式：用户名 服务类型 密码 分配IP</span>
+</span></span><span class="line"><span class="cl">vpnuser1  *  <span class="s2">&#34;Passw0rd@123&#34;</span>  *
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">600</span> /etc/ppp/chap-secrets
+</span></span></code></pre></div><h3 id="五启动服务"><a href="#五启动服务" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:五启动服务" class="headings">五、启动服务</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> --now ipsec xl2tpd
+</span></span></code></pre></div><blockquote>
+<p>注意：实际部署时请替换所有<code>&lt;服务器IP&gt;</code>和<code>YOUR_KEY</code>为真实值，建议使用更复杂的密码组合。生产环境建议启用firewalld并仅开放必要端口（UDP 500/4500/1701）。</p>
+</blockquote>
+<h3 id="六客户端连接参数"><a href="#六客户端连接参数" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:六客户端连接参数" class="headings">六、客户端连接参数</a></h3>
+<ul>
+<li>服务器IP：服务器IP</li>
+<li>预共享密钥：YOUR_KEY</li>
+<li>用户名/密码：vpnuser1/Passw0rd@123</li>
+<li>客户端将获得：
+<ul>
+<li>IP地址：100.88.88.2-254</li>
+<li>默认网关：100.88.88.1（通过VPN隧道）</li>
+<li>DNS：8.8.8.8 和 8.8.4.4</li>
+</ul>
+</li>
+</ul>
+<h3 id="七测试连接"><a href="#七测试连接" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:七测试连接" class="headings">七、测试连接</a></h3>
+<p><strong>1. Windows 10/11 配置步骤</strong></p>
+<p><strong>打开VPN设置</strong></p>
+<ul>
+<li>点击任务栏右下角的网络图标（Wi-Fi/以太网）。</li>
+<li>选择 <strong>&quot;网络和Internet设置&quot;</strong>。</li>
+<li>在左侧菜单中选择 <strong>&quot;VPN&quot;</strong>。</li>
+<li>点击 <strong>&quot;添加VPN连接&quot;</strong>。</li>
+</ul>
+<p><strong>填写VPN连接信息</strong></p>
+<ul>
+<li><strong>VPN提供商</strong>：选择 <strong>&quot;Windows (内置)&quot;</strong>。</li>
+<li><strong>连接名称</strong>：任意命名（例如：MyL2TPVPN）。</li>
+<li><strong>服务器名称或地址</strong>：填写您的L2TP服务器公网IP地址。</li>
+<li><strong>VPN类型</strong>：选择 <strong>&quot;使用预共享密钥的L2TP/IPSec&quot;</strong>。</li>
+<li><strong>预共享密钥</strong>：填写您在服务器上设置的预共享密钥（<code>YOUR_KEY</code>）。</li>
+<li><strong>登录信息的类型</strong>：选择 <strong>&quot;用户名和密码&quot;</strong>。</li>
+<li><strong>用户名</strong>：填写您在服务器上设置的用户名（例如：<code>vpnuser1</code>）。</li>
+<li><strong>密码</strong>：填写您在服务器上设置的密码（例如：<code>Passw0rd@123</code>）。</li>
+<li>勾选 <strong>&quot;记住我的登录信息&quot;</strong>（可选）。</li>
+<li>点击 <strong>&quot;保存&quot;</strong>。</li>
+</ul>
+<p><strong>修改VPN连接属性</strong></p>
+<ul>
+<li>在VPN连接列表中，找到刚刚创建的VPN连接。</li>
+<li>点击 <strong>&quot;高级选项&quot;</strong>。</li>
+<li>在 <strong>&quot;VPN属性&quot;</strong> 中，确保以下设置：
+<ul>
+<li><strong>类型</strong>：L2TP/IPSec with 预共享密钥。</li>
+<li><strong>数据加密</strong>：可选（默认即可）。</li>
+<li><strong>身份验证</strong>：CHAP 和 MS-CHAP v2。</li>
+</ul>
+</li>
+<li>点击 <strong>&quot;确定&quot;</strong> 保存。</li>
+</ul>
+<p><strong>连接VPN</strong></p>
+<ul>
+<li>返回VPN连接列表。</li>
+<li>点击刚刚创建的VPN连接，然后点击 <strong>&quot;连接&quot;</strong>。</li>
+<li>如果一切配置正确，VPN连接将成功建立。</li>
+</ul>
+<hr>
+<p><strong>2. Windows 7/8 配置步骤</strong></p>
+<p><strong>打开网络和共享中心</strong></p>
+<ul>
+<li>点击任务栏右下角的网络图标。</li>
+<li>选择 <strong>&quot;打开网络和共享中心&quot;</strong>。</li>
+</ul>
+<p><strong>创建新的VPN连接</strong></p>
+<ul>
+<li>点击 <strong>&quot;设置新的连接或网络&quot;</strong>。</li>
+<li>选择 <strong>&quot;连接到工作区&quot;</strong>，然后点击 <strong>&quot;下一步&quot;</strong>。</li>
+<li>选择 <strong>&quot;使用我的Internet连接 (VPN)&quot;</strong>。</li>
+</ul>
+<p><strong>填写VPN连接信息</strong></p>
+<ul>
+<li><strong>Internet地址</strong>：填写您的L2TP服务器公网IP地址。</li>
+<li><strong>目标名称</strong>：任意命名（例如：MyL2TPVPN）。</li>
+<li>勾选 <strong>&quot;现在不连接，仅进行设置以便稍后连接&quot;</strong>（可选）。</li>
+<li>点击 <strong>&quot;下一步&quot;</strong>。</li>
+</ul>
+<p><strong>填写登录信息</strong></p>
+<ul>
+<li><strong>用户名</strong>：填写您在服务器上设置的用户名（例如：<code>vpnuser1</code>）。</li>
+<li><strong>密码</strong>：填写您在服务器上设置的密码（例如：<code>Passw0rd@123</code>）。</li>
+<li>勾选 <strong>&quot;记住此密码&quot;</strong>（可选）。</li>
+<li>点击 <strong>&quot;创建&quot;</strong>。</li>
+</ul>
+<p><strong>修改VPN连接属性</strong></p>
+<ul>
+<li>返回 <strong>&quot;网络和共享中心&quot;</strong>。</li>
+<li>点击左侧的 <strong>&quot;更改适配器设置&quot;</strong>。</li>
+<li>找到刚刚创建的VPN连接，右键点击并选择 <strong>&quot;属性&quot;</strong>。</li>
+<li>在 <strong>&quot;安全&quot;</strong> 选项卡中：
+<ul>
+<li><strong>VPN类型</strong>：选择 <strong>&quot;使用IPSec的第2层隧道协议 (L2TP/IPSec)&quot;</strong>。</li>
+<li><strong>数据加密</strong>：可选（默认即可）。</li>
+<li><strong>身份验证</strong>：勾选 <strong>&quot;Microsoft CHAP 版本 2 (MS-CHAP v2)&quot;</strong>。</li>
+</ul>
+</li>
+<li>点击 <strong>&quot;高级设置&quot;</strong>：
+<ul>
+<li>选择 <strong>&quot;使用预共享密钥进行身份验证&quot;</strong>。</li>
+<li>填写您在服务器上设置的预共享密钥（<code>YOUR_KEY</code>）。</li>
+<li>点击 <strong>&quot;确定&quot;</strong>。</li>
+</ul>
+</li>
+<li>点击 <strong>&quot;确定&quot;</strong> 保存。</li>
+</ul>
+<p><strong>连接VPN</strong></p>
+<ul>
+<li>返回 <strong>&quot;网络和共享中心&quot;</strong>。</li>
+<li>点击左侧的 <strong>&quot;连接到网络&quot;</strong>。</li>
+<li>选择刚刚创建的VPN连接，点击 <strong>&quot;连接&quot;</strong>。</li>
+<li>如果一切配置正确，VPN连接将成功建立。</li>
+</ul>
+<p><strong>3. 连接成功后，打开命令提示符（<code>cmd</code>）。</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ipconfig    <span class="c1"># 确认是否获取到服务器分配的IP地址（例如：`100.88.88.x`）。</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ping 100.88.88.1  <span class="c1"># 服务器隧道IP</span>
+</span></span><span class="line"><span class="cl">ping 8.8.8.8      <span class="c1"># 测试DNS</span>
+</span></span></code></pre></div><h3 id="八常见问题排查"><a href="#八常见问题排查" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:八常见问题排查" class="headings">八、常见问题排查</a></h3>
+<p><strong>1. 检查服务状态：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ipsec verify
+</span></span></code></pre></div><p><strong>问题1：</strong>
+Disable /proc/sys/net/ipv4/conf/*/send_redirects or NETKEY will act on or cause sending of bogus ICMP redirects!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#解决方法：</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> iface in /proc/sys/net/ipv4/conf/*/send_redirects<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="m">0</span> &gt; <span class="nv">$iface</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><p><strong>问题2：</strong>
+Disable /proc/sys/net/ipv4/conf/*/accept_redirects or NETKEY will act on or cause sending of bogus ICMP redirects!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#解决方法：</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> iface in /proc/sys/net/ipv4/conf/*/accept_redirects<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="m">0</span> &gt; <span class="nv">$iface</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl status ipsec xl2tpd
+</span></span></code></pre></div><p><strong>2. 查看日志：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tail -f /var/log/messages
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">journalctl -u ipsec
+</span></span></code></pre></div><p><strong>3. 抓包排查：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tcpdump -i eth0 udp port <span class="m">500</span> or port <span class="m">4500</span>
+</span></span></code></pre></div><p><strong>4. 注意事项：</strong></p>
+<ul>
+<li>确保服务器的IPSec服务已启动。</li>
+<li>检查预共享密钥是否正确。</li>
+<li>确保防火墙关闭或UDP 500和4500端口在服务器防火墙中已开放。</li>
+<li>检查连接使用的用户名和密码是否正确。</li>
+<li>确保服务器上的<code>/etc/ppp/chap-secrets</code>文件配置正确。</li>
+<li>确保服务器已启用IP转发并配置了正确的SNAT规则。</li>
+<li>检查客户端是否获取了正确的默认网关和DNS。</li>
+</ul>
+
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+    
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/vpn/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>VPN</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/linux-services/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Linux services</a>
+                
+            
+        </div>
+    
+
+
+
+        
+    <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/vpn/" rel="tag" class="post-tag-link">#vpn</a> <a href="/tags/linux-services/" rel="tag" class="post-tag-link">#linux-services</a></div>
+        
+        
+        
+            
+        
+    </footer>
+
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/tc/" rel="next">TC &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2021–2025&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;ikuriko</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+            
+
+            
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+
+    </body>
+</html>

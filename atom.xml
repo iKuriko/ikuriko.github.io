@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2025-01-23T17:42:22&#43;08:00</updated>
+    <updated>2025-02-18T11:58:16&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,45 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
+        <entry>
+            <title type="text">L2TP/IPsecVPN</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/l2tp_ipsecvpn/" />
+            <id>https://ikuriko.github.io/posts/l2tp_ipsecvpn/</id>
+            <updated>2025-02-18T11:56:24&#43;08:00</updated>
+            <published>2025-02-18T09:36:22&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/vpn/" term="VPN" label="VPN" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">TC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tc/" />
@@ -83,10 +122,10 @@
         </entry>
     
         <entry>
-            <title type="text">Strongswan VPN</title>
+            <title type="text">StrongswanVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/strongswan/" />
             <id>https://ikuriko.github.io/posts/strongswan/</id>
-            <updated>2025-01-22T10:10:22&#43;08:00</updated>
+            <updated>2025-02-18T10:12:06&#43;08:00</updated>
             <published>2024-12-20T17:51:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -122,10 +161,10 @@
         </entry>
     
         <entry>
-            <title type="text">Acme.sh Aliyun</title>
+            <title type="text">Acme.sh aliyun</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/acme.sh/" />
             <id>https://ikuriko.github.io/posts/acme.sh/</id>
-            <updated>2025-01-22T10:15:53&#43;08:00</updated>
+            <updated>2025-02-18T10:13:21&#43;08:00</updated>
             <published>2024-12-16T17:27:49&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
