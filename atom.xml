@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2025-02-18T12:01:06&#43;08:00</updated>
+    <updated>2025-02-18T12:03:44&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">L2TP/IPsecVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/l2tp_ipsecvpn/" />
             <id>https://ikuriko.github.io/posts/l2tp_ipsecvpn/</id>
-            <updated>2025-02-18T12:00:07&#43;08:00</updated>
+            <updated>2025-02-18T12:03:27&#43;08:00</updated>
             <published>2025-02-18T09:36:22&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -122,10 +122,10 @@
         </entry>
     
         <entry>
-            <title type="text">StrongswanVPN</title>
+            <title type="text">strongSwanVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/strongswan/" />
             <id>https://ikuriko.github.io/posts/strongswan/</id>
-            <updated>2025-02-18T10:12:06&#43;08:00</updated>
+            <updated>2025-02-18T12:03:33&#43;08:00</updated>
             <published>2024-12-20T17:51:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
