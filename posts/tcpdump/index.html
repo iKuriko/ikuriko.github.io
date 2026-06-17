@@ -54,13 +54,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-10-11T17:30:36+08:00",
-        "dateModified": "2025-01-22T10:10:42+08:00",
+        "dateModified": "2026-06-17T17:33:27+08:00",
         "url": "https://ikuriko.github.io/posts/tcpdump/",
         "headline": "Tcpdump",
         "description": "Linux 下软件包分析工具 Tcpdump 的常用命令",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  771 ,
+        "wordCount":  935 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-10-11T17:30:36&#43;08:00" />
-    <meta property="article:modified_time" content="2025-01-22T10:10:42&#43;08:00" />
+    <meta property="article:modified_time" content="2026-06-17T17:33:27&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -257,7 +257,7 @@
 </tr>
 <tr>
 <td>-n</td>
-<td>不会解析主机名</td>
+<td>不进行主机名和端口号的反向解析，直接显示 IP 地址和数字端口，加快抓包速度并避免 DNS 干扰</td>
 </tr>
 <tr>
 <td>-nn</td>
@@ -289,7 +289,7 @@
 </tr>
 <tr>
 <td>-v</td>
-<td>详细使用 (-v) 或 (-vv) 会增加输出中显示更详细信息，通常会显示更多协议特定的信息</td>
+<td>详细使用 (-v) 或 (-vv) 或 (-vvv) 会增加输出中显示更详细信息，通常会显示更多协议特定的信息</td>
 </tr>
 <tr>
 <td>-A</td>
@@ -297,7 +297,7 @@
 </tr>
 <tr>
 <td>-X</td>
-<td>同时显示十六进制输出和 <code>ascii</code> 字符串</td>
+<td>同时显示十六进制输出和 <code>ascii</code> 字符串，详细使用 (-XX)  包括链路层头部（如以太网帧头），比 <code>-X</code>（仅打印 IP 层以上数据）更底层</td>
 </tr>
 <tr>
 <td>host</td>
@@ -351,6 +351,10 @@
 <td>proto</td>
 <td>指定抓取的协议号，如：抓取UDP流量时，写作 proto 17</td>
 </tr>
+<tr>
+<td>-Q</td>
+<td><code>-Q in</code> 或 <code>-Q out</code> 可以过滤入站或出站的数据包</td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="常用命令示例"><a href="#常用命令示例" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:常用命令示例" class="headings">常用命令示例</a></h2>
@@ -376,7 +380,11 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tcpdump -nr ens33.cap tcp port <span class="m">22</span>
 </span></span></code></pre></div><p>提取 HTTP 请求的 URL（如果服务不在80 端口，则需要指定端口）</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tcpdump -s <span class="m">0</span> -v -n -l <span class="p">|</span> egrep -i <span class="s2">&#34;POST /|GET /|Host:&#34;</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>只捕获接收（入站） 方向的数据包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tcpdump -i enp1s0 -Q in
+</span></span></code></pre></div><p>极尽详细地显示该网卡的每一个 ICMP 包的完整二进制内容和协议字段，且所有地址都以数字形式展示</p>
+<pre tabindex="0"><code>tcpdump -i enp1s0 icmp -XX -vvv -n 
+</code></pre>
             </div>
 
             
