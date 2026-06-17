@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2025-03-11T17:11:25&#43;08:00</updated>
+    <updated>2026-06-17T15:58:10&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -17,10 +17,43 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
         <entry>
+            <title type="text">Rsyslog</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rsyslog/" />
+            <id>https://ikuriko.github.io/posts/rsyslog/</id>
+            <updated>2026-06-17T15:57:19&#43;08:00</updated>
+            <published>2026-05-19T10:06:57&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">收集本地日志上传至中心服务器或作为中心日志服务器接收远程日志</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
             <title type="text">L2TP/IPsecVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/l2tp_ipsecvpn/" />
             <id>https://ikuriko.github.io/posts/l2tp_ipsecvpn/</id>
-            <updated>2025-02-18T12:59:27&#43;08:00</updated>
+            <updated>2025-02-18T12:59:28&#43;08:00</updated>
             <published>2025-02-18T09:36:22&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -59,7 +92,7 @@
             <title type="text">TC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tc/" />
             <id>https://ikuriko.github.io/posts/tc/</id>
-            <updated>2025-01-22T10:10:35&#43;08:00</updated>
+            <updated>2025-01-22T10:10:36&#43;08:00</updated>
             <published>2025-01-17T16:58:12&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -92,7 +125,7 @@
             <title type="text">FRR</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/frr/" />
             <id>https://ikuriko.github.io/posts/frr/</id>
-            <updated>2025-01-22T10:05:49&#43;08:00</updated>
+            <updated>2025-01-22T10:05:50&#43;08:00</updated>
             <published>2025-01-17T16:53:19&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -122,10 +155,10 @@
         </entry>
     
         <entry>
-            <title type="text">strongSwanVPN</title>
+            <title type="text">StrongSwanVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/strongswan/" />
             <id>https://ikuriko.github.io/posts/strongswan/</id>
-            <updated>2025-02-18T12:03:33&#43;08:00</updated>
+            <updated>2026-06-17T15:17:26&#43;08:00</updated>
             <published>2024-12-20T17:51:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -164,7 +197,7 @@
             <title type="text">Acme.sh aliyun</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/acme.sh/" />
             <id>https://ikuriko.github.io/posts/acme.sh/</id>
-            <updated>2025-02-18T10:13:21&#43;08:00</updated>
+            <updated>2025-02-18T10:13:22&#43;08:00</updated>
             <published>2024-12-16T17:27:49&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -197,7 +230,7 @@
             <title type="text">Dig</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/dig/" />
             <id>https://ikuriko.github.io/posts/dig/</id>
-            <updated>2025-01-22T10:04:15&#43;08:00</updated>
+            <updated>2025-01-22T10:04:16&#43;08:00</updated>
             <published>2023-11-07T16:21:11&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -230,7 +263,7 @@
             <title type="text">Linux Link Aggregation</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_bond/" />
             <id>https://ikuriko.github.io/posts/linux_bond/</id>
-            <updated>2025-01-22T10:14:16&#43;08:00</updated>
+            <updated>2025-01-22T10:14:18&#43;08:00</updated>
             <published>2023-10-31T11:06:02&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -263,7 +296,7 @@
             <title type="text">Firewalld</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/firewalld/" />
             <id>https://ikuriko.github.io/posts/firewalld/</id>
-            <updated>2025-01-22T10:05:40&#43;08:00</updated>
+            <updated>2025-01-22T10:05:42&#43;08:00</updated>
             <published>2022-12-30T14:22:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -294,9 +327,9 @@
     
         <entry>
             <title type="text">CetnOS7 PPPoE Server</title>
-            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cetnos7_pppoe/" />
-            <id>https://ikuriko.github.io/posts/cetnos7_pppoe/</id>
-            <updated>2025-01-22T10:03:38&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_pppoe/" />
+            <id>https://ikuriko.github.io/posts/centos7_pppoe/</id>
+            <updated>2025-01-22T10:03:40&#43;08:00</updated>
             <published>2022-12-30T10:29:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -335,7 +368,7 @@
             <title type="text">OpenvSwitch</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvswitch/" />
             <id>https://ikuriko.github.io/posts/openvswitch/</id>
-            <updated>2025-01-22T10:10:04&#43;08:00</updated>
+            <updated>2025-01-22T10:10:06&#43;08:00</updated>
             <published>2022-10-14T15:50:53&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -366,9 +399,9 @@
     
         <entry>
             <title type="text">SSH No Password</title>
-            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ssh_nopasswd/" />
-            <id>https://ikuriko.github.io/posts/ssh_nopasswd/</id>
-            <updated>2025-01-22T10:10:14&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/sshnopasswd/" />
+            <id>https://ikuriko.github.io/posts/sshnopasswd/</id>
+            <updated>2025-01-22T10:10:16&#43;08:00</updated>
             <published>2022-04-15T17:27:16&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -401,7 +434,7 @@
             <title type="text">Iproute2</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iproute2/" />
             <id>https://ikuriko.github.io/posts/iproute2/</id>
-            <updated>2025-01-22T10:07:30&#43;08:00</updated>
+            <updated>2025-01-22T10:07:32&#43;08:00</updated>
             <published>2022-04-02T14:23:55&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -434,7 +467,7 @@
             <title type="text">Iftop</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iftop/" />
             <id>https://ikuriko.github.io/posts/iftop/</id>
-            <updated>2025-01-22T10:07:16&#43;08:00</updated>
+            <updated>2025-01-22T10:07:18&#43;08:00</updated>
             <published>2022-03-31T11:39:01&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -467,7 +500,7 @@
             <title type="text">Yum</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/yum/" />
             <id>https://ikuriko.github.io/posts/yum/</id>
-            <updated>2025-01-22T10:11:45&#43;08:00</updated>
+            <updated>2025-01-22T10:11:46&#43;08:00</updated>
             <published>2022-03-30T14:48:31&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -500,7 +533,7 @@
             <title type="text">Iptables</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iptables/" />
             <id>https://ikuriko.github.io/posts/iptables/</id>
-            <updated>2025-01-22T10:14:37&#43;08:00</updated>
+            <updated>2025-01-22T10:14:38&#43;08:00</updated>
             <published>2022-03-28T11:23:42&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -533,7 +566,7 @@
             <title type="text">Iperf</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iperf/" />
             <id>https://ikuriko.github.io/posts/iperf/</id>
-            <updated>2025-01-22T10:07:23&#43;08:00</updated>
+            <updated>2025-01-22T10:07:24&#43;08:00</updated>
             <published>2022-03-25T11:38:58&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -566,7 +599,7 @@
             <title type="text">OpenVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/openvpn/" />
             <id>https://ikuriko.github.io/posts/openvpn/</id>
-            <updated>2025-01-22T10:09:00&#43;08:00</updated>
+            <updated>2025-01-22T10:09:02&#43;08:00</updated>
             <published>2022-03-18T11:27:46&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -605,7 +638,7 @@
             <title type="text">CentOS8 PPPoE 4G</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe/</id>
-            <updated>2025-01-22T10:03:16&#43;08:00</updated>
+            <updated>2025-01-22T10:03:18&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -644,7 +677,7 @@
             <title type="text">Network NameSpace</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/namespace/" />
             <id>https://ikuriko.github.io/posts/namespace/</id>
-            <updated>2025-01-22T10:08:45&#43;08:00</updated>
+            <updated>2025-01-22T10:08:46&#43;08:00</updated>
             <published>2022-02-22T14:50:30&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -677,7 +710,7 @@
             <title type="text">WireGuard</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/wireguard/" />
             <id>https://ikuriko.github.io/posts/wireguard/</id>
-            <updated>2025-01-22T10:10:55&#43;08:00</updated>
+            <updated>2025-01-22T10:10:56&#43;08:00</updated>
             <published>2021-12-31T10:06:44&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -716,7 +749,7 @@
             <title type="text">CentOS8 NTP</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2025-01-22T10:01:29&#43;08:00</updated>
+            <updated>2025-01-22T10:01:30&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -749,7 +782,7 @@
             <title type="text">RHEL8 Packaging for OpenvSwitch</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/" />
             <id>https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</id>
-            <updated>2025-01-22T10:09:31&#43;08:00</updated>
+            <updated>2025-01-22T10:09:32&#43;08:00</updated>
             <published>2021-11-23T16:25:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -782,7 +815,7 @@
             <title type="text">CentOS7 SQLServer2017</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_sqlserver/" />
             <id>https://ikuriko.github.io/posts/centos7_sqlserver/</id>
-            <updated>2025-01-22T10:01:21&#43;08:00</updated>
+            <updated>2025-01-22T10:01:22&#43;08:00</updated>
             <published>2021-11-18T11:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -815,7 +848,7 @@
             <title type="text">Linux Troubleshooting Commands</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_tro_com/" />
             <id>https://ikuriko.github.io/posts/linux_tro_com/</id>
-            <updated>2025-01-22T10:08:36&#43;08:00</updated>
+            <updated>2025-01-22T10:08:38&#43;08:00</updated>
             <published>2021-11-16T11:01:07&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -848,7 +881,7 @@
             <title type="text">KVM</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/kvm/" />
             <id>https://ikuriko.github.io/posts/kvm/</id>
-            <updated>2025-01-22T10:08:20&#43;08:00</updated>
+            <updated>2025-01-22T10:08:22&#43;08:00</updated>
             <published>2021-11-10T16:36:54&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -881,7 +914,7 @@
             <title type="text">CentOS Chinese</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_chinese/" />
             <id>https://ikuriko.github.io/posts/centos_chinese/</id>
-            <updated>2025-01-22T10:02:11&#43;08:00</updated>
+            <updated>2025-01-22T10:02:12&#43;08:00</updated>
             <published>2021-11-05T10:34:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -914,7 +947,7 @@
             <title type="text">CentOS7 VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_vnc/" />
             <id>https://ikuriko.github.io/posts/centos7_vnc/</id>
-            <updated>2025-01-22T10:01:25&#43;08:00</updated>
+            <updated>2025-01-22T10:01:26&#43;08:00</updated>
             <published>2021-11-03T17:38:40&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -947,7 +980,7 @@
             <title type="text">Nmcli</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/nmcli/" />
             <id>https://ikuriko.github.io/posts/nmcli/</id>
-            <updated>2025-01-22T10:08:52&#43;08:00</updated>
+            <updated>2025-01-22T10:08:54&#43;08:00</updated>
             <published>2021-11-02T14:37:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -980,7 +1013,7 @@
             <title type="text">CentOS Hot addition Disk</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_hot_add_disk/" />
             <id>https://ikuriko.github.io/posts/centos_hot_add_disk/</id>
-            <updated>2025-01-22T10:02:31&#43;08:00</updated>
+            <updated>2025-01-22T10:02:32&#43;08:00</updated>
             <published>2021-11-01T17:41:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1013,7 +1046,7 @@
             <title type="text">Ansible</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ansible/" />
             <id>https://ikuriko.github.io/posts/ansible/</id>
-            <updated>2025-01-22T10:01:11&#43;08:00</updated>
+            <updated>2025-01-22T10:01:12&#43;08:00</updated>
             <published>2021-10-29T11:50:51&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1046,7 +1079,7 @@
             <title type="text">Vsftpd</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vsftpd/" />
             <id>https://ikuriko.github.io/posts/vsftpd/</id>
-            <updated>2025-01-22T10:10:50&#43;08:00</updated>
+            <updated>2025-01-22T10:10:52&#43;08:00</updated>
             <published>2021-10-14T15:16:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1079,7 +1112,7 @@
             <title type="text">Tcpdump</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/tcpdump/" />
             <id>https://ikuriko.github.io/posts/tcpdump/</id>
-            <updated>2025-01-22T10:10:41&#43;08:00</updated>
+            <updated>2025-01-22T10:10:42&#43;08:00</updated>
             <published>2021-10-11T17:30:36&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1112,7 +1145,7 @@
             <title type="text">CAD</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/cad/" />
             <id>https://ikuriko.github.io/posts/cad/</id>
-            <updated>2025-01-22T10:01:17&#43;08:00</updated>
+            <updated>2025-01-22T10:01:18&#43;08:00</updated>
             <published>2021-09-23T15:57:29&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1145,7 +1178,7 @@
             <title type="text">Vim</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vim/" />
             <id>https://ikuriko.github.io/posts/vim/</id>
-            <updated>2025-01-22T10:11:57&#43;08:00</updated>
+            <updated>2025-01-22T10:11:58&#43;08:00</updated>
             <published>2021-09-09T16:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1178,7 +1211,7 @@
             <title type="text">Javaweb Dev Env</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/javaweb_dev_env/" />
             <id>https://ikuriko.github.io/posts/javaweb_dev_env/</id>
-            <updated>2025-01-22T10:08:01&#43;08:00</updated>
+            <updated>2025-01-22T10:08:02&#43;08:00</updated>
             <published>2021-09-09T16:53:45&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1211,7 +1244,7 @@
             <title type="text">Hugo&#43;GithubPages</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hugo&#43;githubpages/" />
             <id>https://ikuriko.github.io/posts/hugo&#43;githubpages/</id>
-            <updated>2025-01-22T10:07:06&#43;08:00</updated>
+            <updated>2025-01-22T10:07:08&#43;08:00</updated>
             <published>2021-09-07T14:20:48&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1244,7 +1277,7 @@
             <title type="text">Hello world</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/hello_world/" />
             <id>https://ikuriko.github.io/posts/hello_world/</id>
-            <updated>2025-01-22T10:07:05&#43;08:00</updated>
+            <updated>2025-01-22T10:07:06&#43;08:00</updated>
             <published>2021-09-02T16:55:55&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
