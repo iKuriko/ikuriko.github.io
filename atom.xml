@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2026-06-17T17:33:31&#43;08:00</updated>
+    <updated>2026-06-17T17:49:10&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">CentOS8 WIFI</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_ap/" />
             <id>https://ikuriko.github.io/posts/centos_ap/</id>
-            <updated>2026-06-17T16:27:31&#43;08:00</updated>
+            <updated>2026-06-17T17:45:42&#43;08:00</updated>
             <published>2026-06-17T16:02:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -53,7 +53,7 @@
             <title type="text">Rsyslog</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rsyslog/" />
             <id>https://ikuriko.github.io/posts/rsyslog/</id>
-            <updated>2026-06-17T15:57:19&#43;08:00</updated>
+            <updated>2026-06-17T17:45:12&#43;08:00</updated>
             <published>2026-05-19T10:06:57&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -108,6 +108,39 @@
                             
                             
                                 <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Switch Port Mirroring</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/switch_port_mirroring/" />
+            <id>https://ikuriko.github.io/posts/switch_port_mirroring/</id>
+            <updated>2026-06-17T17:49:05&#43;08:00</updated>
+            <published>2026-03-10T17:38:19&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在交换机上将目标端口的流量复制到观察端口，以达到不影响业务的情况下也能进行数据包分析</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/other/" term="Other" label="Other" />
                             
                         
                     
@@ -362,7 +395,7 @@
             <title type="text">Linux Bond&amp;Team</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_bond/" />
             <id>https://ikuriko.github.io/posts/linux_bond/</id>
-            <updated>2026-06-17T17:23:00&#43;08:00</updated>
+            <updated>2026-06-17T17:45:08&#43;08:00</updated>
             <published>2023-10-31T11:06:02&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
