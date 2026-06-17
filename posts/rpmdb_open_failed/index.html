@@ -12,7 +12,7 @@
     
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <title>ikuriko</title>
+    <title>Rpmdb open failed | ikuriko</title>
 
     <link rel="stylesheet" href="/css/meme.min.90b3f920f3bb2746bcdfc871d1b3d2dec6d81a94ee70cc7b3416f6d088007fac.css"/>
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&amp;display=swap" /></noscript>
 
-    <meta name="author" content="ikuriko" /><meta name="description" content="lazy" />
+    <meta name="author" content="ikuriko" /><meta name="description" content="rpm 被玩坏时，报错问题解决" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
@@ -37,28 +37,30 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="ikuriko" />
-    <meta name="msapplication-starturl" content="" />
+    <meta name="msapplication-starturl" content="../../" />
     <meta name="msapplication-TileColor" content="#fff" />
-    <meta name="msapplication-TileImage" content="icons/mstile-150x150.png" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
     <link rel="manifest" href="/manifest.json" />
 
     
-    <link rel="alternate" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" title="ikuriko" />
-    <link rel="alternate" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" title="ikuriko" />
     
 
     
-    <link rel="canonical" href="https://ikuriko.github.io/" />
+    <link rel="canonical" href="https://ikuriko.github.io/posts/rpmdb_open_failed/" />
     
 
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "datePublished": "2021-09-21T00:00:00+00:00",
+        "@type": "BlogPosting",
+        "datePublished": "2026-02-12T16:42:54+08:00",
         "dateModified": "2026-06-17T17:24:49+08:00",
-        "url": "https://ikuriko.github.io/",
-        "description": "lazy",
+        "url": "https://ikuriko.github.io/posts/rpmdb_open_failed/",
+        "headline": "Rpmdb open failed",
+        "description": "rpm 被玩坏时，报错问题解决",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  100 ,
         "image": "https://ikuriko.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -69,7 +71,19 @@
             "name": "ikuriko"
         },
         "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
-        "name": "ikuriko"
+        "publisher": {
+            "@type": "Organization",
+            "name": "ikuriko",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ikuriko.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://ikuriko.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://ikuriko.github.io/"
+        }
     }
 </script>
 
@@ -84,12 +98,17 @@
 
 
 
-<meta property="og:title" content="ikuriko" />
-<meta property="og:description" content="lazy" />
-<meta property="og:url" content="https://ikuriko.github.io/" />
+<meta property="og:title" content="Rpmdb open failed" />
+<meta property="og:description" content="rpm 被玩坏时，报错问题解决" />
+<meta property="og:url" content="https://ikuriko.github.io/posts/rpmdb_open_failed/" />
 <meta property="og:site_name" content="ikuriko" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-02-12T16:42:54&#43;08:00" />
+    <meta property="article:modified_time" content="2026-06-17T17:24:49&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
 
 
     
@@ -174,30 +193,154 @@
 
             
             
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">Rpmdb open failed</h1>
+
+            
+
+            
+                <div class="post-description p-summary">rpm 被玩坏时，报错问题解决</div>
+                
+            
+
+            
+                
+
+<div class="post-meta">
     
     
-        <main class="home">
-    <div class="poetry">
+    
+    
         
-            <p>业精于勤，</p>
         
-            <p>荒于嬉；</p>
         
-            <p>行成于思，</p>
+            
         
-            <p>毁于随。</p>
+    
+    
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents"></nav><div class="post-body e-content">
+                <p>rpm报错现象如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">…………
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">error: rpmdb: BDB0113 Thread/process 65218/139733911608192 failed: BDB1507 Thread died in Berkeley DB library
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">error: db5 error<span class="o">(</span>-30973<span class="o">)</span> from dbenv-&gt;failchk: BDB0087 DB_RUNRECOVERY: Fatal error, run database recovery
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">error: cannot open Packages index using db5 -  <span class="o">(</span>-30973<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">error: cannot open Packages database in /var/lib/rpm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Error: Error: rpmdb open failed
+</span></span></code></pre></div><p>删除 rpm 数据库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /var/lib/rpm
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -f __db.*  
+</span></span></code></pre></div><p>新建 rpm 数据库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rpm --rebuilddb
+</span></span></code></pre></div><p>刷新仓库元数据</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dnf update --refresh
+</span></span></code></pre></div><p>删除所有yum缓存</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -r /var/cache/dnf
+</span></span></code></pre></div>
+            </div>
+
+            
+
+
+        </article>
+
         
+
+        
+
+
+        
+
+
+        
+
+
+        
+    
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="/tags/other/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Other</a>
+                
+            
+        </div>
+    
+
+
+
+        
+    <footer class="minimal-footer">
+        
+            <div class="post-tag"><a href="/tags/other/" rel="tag" class="post-tag-link">#other</a></div>
+        
+        
+        
+            
+        
+    </footer>
+
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+                <li class="post-nav-prev">
+                    <a href="/posts/deepseek_model_deploy/" rel="prev">&lt; Deepseek Model Deploy</a>
+                </li>
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/l2tp_ipsecvpn/" rel="next">L2TP/IPsecVPN &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
     </div>
-    
 </main>
 
-    
-    
-    
-    
-    
-    
-    
 
             
     <div id="back-to-top" class="back-to-top">

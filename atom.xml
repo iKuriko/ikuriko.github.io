@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2026-06-17T16:41:11&#43;08:00</updated>
+    <updated>2026-06-17T17:24:51&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -75,6 +75,72 @@
                             
                             
                                 <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Deepseek Model Deploy</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/deepseek_model_deploy/" />
+            <id>https://ikuriko.github.io/posts/deepseek_model_deploy/</id>
+            <updated>2026-06-17T17:22:45&#43;08:00</updated>
+            <published>2026-04-10T16:57:02&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">在 GB200 服务器上拉起 deepseek 大模型</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Rpmdb open failed</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rpmdb_open_failed/" />
+            <id>https://ikuriko.github.io/posts/rpmdb_open_failed/</id>
+            <updated>2026-06-17T17:24:49&#43;08:00</updated>
+            <published>2026-02-12T16:42:54&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">rpm 被玩坏时，报错问题解决</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/other/" term="Other" label="Other" />
                             
                         
                     
@@ -293,17 +359,17 @@
         </entry>
     
         <entry>
-            <title type="text">Linux Link Aggregation</title>
+            <title type="text">Linux Bond&amp;Team</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/linux_bond/" />
             <id>https://ikuriko.github.io/posts/linux_bond/</id>
-            <updated>2026-06-17T16:41:06&#43;08:00</updated>
+            <updated>2026-06-17T17:23:00&#43;08:00</updated>
             <published>2023-10-31T11:06:02&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux通过bond&amp;Team，可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux通过bond&amp;Team 可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的</summary>
             
             
             
