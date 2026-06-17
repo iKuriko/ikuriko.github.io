@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2026-06-17T16:25:07&#43;08:00</updated>
+    <updated>2026-06-17T16:27:37&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -17,10 +17,10 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
         <entry>
-            <title type="text">Centos WIFI</title>
+            <title type="text">CentOS8 WIFI</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_ap/" />
             <id>https://ikuriko.github.io/posts/centos_ap/</id>
-            <updated>2026-06-17T16:25:02&#43;08:00</updated>
+            <updated>2026-06-17T16:27:31&#43;08:00</updated>
             <published>2026-06-17T16:02:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
