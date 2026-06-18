@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Thu, 18 Jun 2026 12:00:42 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 18 Jun 2026 14:52:41 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -964,7 +964,7 @@
             </item>
         
             <item>
-                <title>Linux Troubleshooting Commands</title>
+                <title>Linux Troubleshooting</title>
                 <link>https://ikuriko.github.io/posts/linux_tro_com/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_tro_com/</guid>
                 <pubDate>Tue, 16 Nov 2021 11:01:07 &#43;0800</pubDate>
