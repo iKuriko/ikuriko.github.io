@@ -6,16 +6,16 @@
     <lastmod>2026-06-30T15:51:25+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2026-06-30T17:27:25+08:00</lastmod>
+    <lastmod>2026-06-30T17:34:42+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/</loc>
-    <lastmod>2026-06-30T17:27:25+08:00</lastmod>
+    <lastmod>2026-06-30T17:34:42+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/</loc>
-    <lastmod>2026-06-30T17:27:25+08:00</lastmod>
+    <lastmod>2026-06-30T17:34:42+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/tools/</loc>
-    <lastmod>2026-06-30T17:27:25+08:00</lastmod>
+    <lastmod>2026-06-30T17:34:42+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/gpu_tro_com/</loc>
     <lastmod>2026-06-18T14:52:28+08:00</lastmod>
@@ -27,7 +27,7 @@
     <lastmod>2026-06-30T17:24:50+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/services/</loc>
-    <lastmod>2026-06-30T17:24:50+08:00</lastmod>
+    <lastmod>2026-06-30T17:33:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/rsyslog/</loc>
     <lastmod>2026-06-30T17:23:29+08:00</lastmod>
@@ -48,13 +48,13 @@
     <lastmod>2026-06-30T17:23:12+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/vpn/</loc>
-    <lastmod>2026-06-30T17:23:12+08:00</lastmod>
+    <lastmod>2026-06-30T17:29:39+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/tc/</loc>
     <lastmod>2025-01-22T10:10:36+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/frr/</loc>
-    <lastmod>2025-01-22T10:05:50+08:00</lastmod>
+    <lastmod>2026-06-30T17:32:18+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/strongswan/</loc>
     <lastmod>2026-06-30T17:19:25+08:00</lastmod>
@@ -69,13 +69,13 @@
     <lastmod>2026-06-17T17:45:08+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/firewalld/</loc>
-    <lastmod>2025-01-22T10:05:42+08:00</lastmod>
+    <lastmod>2026-06-30T17:32:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos7_pppoe/</loc>
     <lastmod>2026-06-30T17:22:58+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/pppoe/</loc>
-    <lastmod>2026-06-30T17:22:58+08:00</lastmod>
+    <lastmod>2026-06-30T17:31:23+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/openvswitch/</loc>
     <lastmod>2025-01-22T10:10:06+08:00</lastmod>
@@ -96,19 +96,16 @@
     <lastmod>2025-01-22T10:11:46+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/iptables/</loc>
-    <lastmod>2026-06-30T16:02:05+08:00</lastmod>
+    <lastmod>2026-06-30T17:32:52+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/iperf/</loc>
     <lastmod>2025-01-22T10:07:24+08:00</lastmod>
   </url><url>
-    <loc>https://ikuriko.github.io/tags/linux-services/</loc>
-    <lastmod>2025-01-22T10:09:02+08:00</lastmod>
-  </url><url>
     <loc>https://ikuriko.github.io/posts/openvpn/</loc>
-    <lastmod>2025-01-22T10:09:02+08:00</lastmod>
+    <lastmod>2026-06-30T17:29:39+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos8_pppoe/</loc>
-    <lastmod>2026-06-30T17:22:42+08:00</lastmod>
+    <lastmod>2026-06-30T17:31:23+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/namespace/</loc>
     <lastmod>2025-01-22T10:08:46+08:00</lastmod>
@@ -117,7 +114,7 @@
     <lastmod>2026-06-30T17:22:21+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos8_ntp/</loc>
-    <lastmod>2026-06-30T17:27:15+08:00</lastmod>
+    <lastmod>2026-06-30T17:33:15+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</loc>
     <lastmod>2025-01-22T10:09:32+08:00</lastmod>
@@ -129,7 +126,7 @@
     <lastmod>2026-06-18T14:51:26+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/kvm/</loc>
-    <lastmod>2026-06-30T17:27:25+08:00</lastmod>
+    <lastmod>2026-06-30T17:33:38+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos_chinese/</loc>
     <lastmod>2025-01-22T10:02:12+08:00</lastmod>
@@ -144,7 +141,7 @@
     <lastmod>2025-01-22T10:02:32+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/ansible/</loc>
-    <lastmod>2026-06-30T17:27:21+08:00</lastmod>
+    <lastmod>2026-06-30T17:34:42+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/vsftpd/</loc>
     <lastmod>2026-06-30T17:19:35+08:00</lastmod>
