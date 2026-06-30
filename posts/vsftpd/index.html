@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2021-10-14T15:16:25+08:00",
-        "dateModified": "2025-01-22T10:10:52+08:00",
+        "dateModified": "2026-06-30T17:19:35+08:00",
         "url": "https://ikuriko.github.io/posts/vsftpd/",
         "headline": "Vsftpd",
         "description": "Vsftpd 解决了在多样设备之间，使用加密方式安全传输文件的问题",
@@ -103,7 +103,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://ikuriko.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2021-10-14T15:16:25&#43;08:00" />
-    <meta property="article:modified_time" content="2025-01-22T10:10:52&#43;08:00" />
+    <meta property="article:modified_time" content="2026-06-30T17:19:35&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -834,7 +834,7 @@
 <hr>
 <ol>
 <li id="fn:1">
-<p> 这里为什么需要两个同样的文件来禁用登录功能呢，玄机在与<code>user_list</code>上面的一段注释。如果主配置文件中的 &quot;userlist_deny=YES&quot; 则 <code>user_list</code>文件变为黑名单，不允许用户登录（此为默认值）。如果主配置文件中的 “userlist_deny=NO” 则<code>user_list</code>变为白名单，将允许名单内的用户登录。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
+<p>这里为什么需要两个同样的文件来禁用登录功能呢，玄机在与<code>user_list</code>上面的一段注释。如果主配置文件中的 &quot;userlist_deny=YES&quot; 则 <code>user_list</code>文件变为黑名单，不允许用户登录（此为默认值）。如果主配置文件中的 “userlist_deny=NO” 则<code>user_list</code>变为白名单，将允许名单内的用户登录。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
 </li>
 <li id="fn:2">
 <p>PAM（可插拔认证模块）是一种认证机制，通过一些动态链接库和统一的API把系统提供的服务与认证方式分开，使得系统管理员可以根据需求灵活调整服务程序的不同认证方式。通俗来讲，PAM是一组安全机制的模块，系统管理员可以用来轻易地调整服务程序的认证方式，而不必对应用程序进行任何修改。PAM采取了分层设计（应用程序层、应用接口层、鉴别模块层）的思想&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="icon footnote-icon"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg></a></p>
@@ -878,7 +878,7 @@
                 
                 
                     
-                    <a href="/tags/linux-services/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Linux services</a>
+                    <a href="/tags/services/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>Services</a>
                 
             
         </div>
@@ -889,7 +889,7 @@
         
     <footer class="minimal-footer">
         
-            <div class="post-tag"><a href="/tags/linux-services/" rel="tag" class="post-tag-link">#linux-services</a></div>
+            <div class="post-tag"><a href="/tags/services/" rel="tag" class="post-tag-link">#services</a></div>
         
         
         

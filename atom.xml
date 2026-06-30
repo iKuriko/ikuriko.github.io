@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2026-06-30T16:10:38&#43;08:00</updated>
+    <updated>2026-06-30T17:27:56&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -83,17 +83,17 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS8 WIFI</title>
+            <title type="text">CentOS8 AP</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos_ap/" />
             <id>https://ikuriko.github.io/posts/centos_ap/</id>
-            <updated>2026-06-17T17:50:58&#43;08:00</updated>
+            <updated>2026-06-30T17:24:50&#43;08:00</updated>
             <published>2026-06-17T16:02:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
                     <uri>https://ikuriko.github.io</uri>
                     <email>ikuriko@qq.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 服务器化身 WIFI Server</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Linux 化身 WIFI 路由器</summary>
             
             
             
@@ -107,7 +107,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
@@ -119,7 +119,7 @@
             <title type="text">Rsyslog</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/rsyslog/" />
             <id>https://ikuriko.github.io/posts/rsyslog/</id>
-            <updated>2026-06-17T17:45:12&#43;08:00</updated>
+            <updated>2026-06-30T17:23:29&#43;08:00</updated>
             <published>2026-05-19T10:06:57&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -140,7 +140,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
@@ -152,7 +152,7 @@
             <title type="text">Deepseek Model Deploy</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/deepseek_model_deploy/" />
             <id>https://ikuriko.github.io/posts/deepseek_model_deploy/</id>
-            <updated>2026-06-17T17:22:45&#43;08:00</updated>
+            <updated>2026-06-30T17:17:09&#43;08:00</updated>
             <published>2026-04-10T16:57:02&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -173,7 +173,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
+                                <category scheme="https://ikuriko.github.io/tags/gpuops/" term="GPUOps" label="GPUOps" />
                             
                         
                     
@@ -251,7 +251,7 @@
             <title type="text">L2TP/IPsecVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/l2tp_ipsecvpn/" />
             <id>https://ikuriko.github.io/posts/l2tp_ipsecvpn/</id>
-            <updated>2025-02-18T12:59:28&#43;08:00</updated>
+            <updated>2026-06-30T17:23:12&#43;08:00</updated>
             <published>2025-02-18T09:36:22&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -278,7 +278,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
@@ -356,7 +356,7 @@
             <title type="text">StrongSwanVPN</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/strongswan/" />
             <id>https://ikuriko.github.io/posts/strongswan/</id>
-            <updated>2026-06-17T15:17:26&#43;08:00</updated>
+            <updated>2026-06-30T17:19:25&#43;08:00</updated>
             <published>2024-12-20T17:51:41&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -377,7 +377,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                             
@@ -527,7 +527,7 @@
             <title type="text">CetnOS7 PPPoE Server</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_pppoe/" />
             <id>https://ikuriko.github.io/posts/centos7_pppoe/</id>
-            <updated>2025-01-22T10:03:40&#43;08:00</updated>
+            <updated>2026-06-30T17:22:58&#43;08:00</updated>
             <published>2022-12-30T10:29:28&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -548,7 +548,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                             
@@ -596,10 +596,10 @@
         </entry>
     
         <entry>
-            <title type="text">SSH No Password</title>
+            <title type="text">SSH noPassword</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/sshnopasswd/" />
             <id>https://ikuriko.github.io/posts/sshnopasswd/</id>
-            <updated>2025-01-22T10:10:16&#43;08:00</updated>
+            <updated>2026-06-30T17:26:46&#43;08:00</updated>
             <published>2022-04-15T17:27:16&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -833,10 +833,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS8 PPPoE 4G</title>
+            <title type="text">CentOS8 PPPoE Server 4G</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_pppoe/" />
             <id>https://ikuriko.github.io/posts/centos8_pppoe/</id>
-            <updated>2025-01-22T10:03:18&#43;08:00</updated>
+            <updated>2026-06-30T17:22:42&#43;08:00</updated>
             <published>2022-03-09T11:44:50&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -857,7 +857,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                             
@@ -908,7 +908,7 @@
             <title type="text">WireGuard</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/wireguard/" />
             <id>https://ikuriko.github.io/posts/wireguard/</id>
-            <updated>2025-01-22T10:10:56&#43;08:00</updated>
+            <updated>2026-06-30T17:22:21&#43;08:00</updated>
             <published>2021-12-31T10:06:44&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -935,7 +935,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
@@ -947,7 +947,7 @@
             <title type="text">CentOS8 NTP</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos8_ntp/" />
             <id>https://ikuriko.github.io/posts/centos8_ntp/</id>
-            <updated>2025-01-22T10:01:30&#43;08:00</updated>
+            <updated>2026-06-30T17:27:15&#43;08:00</updated>
             <published>2021-12-24T14:28:17&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -968,7 +968,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
                             
                         
                     
@@ -1010,10 +1010,10 @@
         </entry>
     
         <entry>
-            <title type="text">CentOS7 SQLServer2017</title>
+            <title type="text">CentOS7 SqlServer</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_sqlserver/" />
             <id>https://ikuriko.github.io/posts/centos7_sqlserver/</id>
-            <updated>2025-01-22T10:01:22&#43;08:00</updated>
+            <updated>2026-06-30T17:21:22&#43;08:00</updated>
             <published>2021-11-18T11:56:06&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1034,7 +1034,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
@@ -1079,7 +1079,7 @@
             <title type="text">KVM</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/kvm/" />
             <id>https://ikuriko.github.io/posts/kvm/</id>
-            <updated>2025-01-22T10:08:22&#43;08:00</updated>
+            <updated>2026-06-30T17:27:25&#43;08:00</updated>
             <published>2021-11-10T16:36:54&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1100,7 +1100,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
                             
                         
                     
@@ -1145,7 +1145,7 @@
             <title type="text">CentOS7 VNC</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/centos7_vnc/" />
             <id>https://ikuriko.github.io/posts/centos7_vnc/</id>
-            <updated>2025-01-22T10:01:26&#43;08:00</updated>
+            <updated>2026-06-30T17:20:12&#43;08:00</updated>
             <published>2021-11-03T17:38:40&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1166,7 +1166,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
@@ -1244,7 +1244,7 @@
             <title type="text">Ansible</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ansible/" />
             <id>https://ikuriko.github.io/posts/ansible/</id>
-            <updated>2025-01-22T10:01:12&#43;08:00</updated>
+            <updated>2026-06-30T17:27:21&#43;08:00</updated>
             <published>2021-10-29T11:50:51&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1265,7 +1265,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
                             
                         
                     
@@ -1277,7 +1277,7 @@
             <title type="text">Vsftpd</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/vsftpd/" />
             <id>https://ikuriko.github.io/posts/vsftpd/</id>
-            <updated>2025-01-22T10:10:52&#43;08:00</updated>
+            <updated>2026-06-30T17:19:35&#43;08:00</updated>
             <published>2021-10-14T15:16:25&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
@@ -1298,7 +1298,7 @@
                             
                             
                             
-                                <category scheme="https://ikuriko.github.io/tags/linux-services/" term="Linux services" label="Linux services" />
+                                <category scheme="https://ikuriko.github.io/tags/services/" term="Services" label="Services" />
                             
                         
                     
