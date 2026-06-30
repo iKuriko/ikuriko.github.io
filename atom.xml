@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2026-06-18T14:52:41&#43;08:00</updated>
+    <updated>2026-06-30T15:45:47&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -16,6 +16,39 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.120.1">Hugo</generator>
+        <entry>
+            <title type="text">Domain-based Policy Routing</title>
+            <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/domain_based_policy_routing/" />
+            <id>https://ikuriko.github.io/posts/domain_based_policy_routing/</id>
+            <updated>2026-06-30T15:45:38&#43;08:00</updated>
+            <published>2026-06-30T14:35:30&#43;08:00</published>
+            <author>
+                    <name>ikuriko</name>
+                    <uri>https://ikuriko.github.io</uri>
+                    <email>ikuriko@qq.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">基于域名的策略路由是将 dnsmasq（DNS 解析与 ipset 填充）、ipset（IP 集合管理）、iptables（流量标记）和 iproute2（策略路由）这四个成熟的组件创造性地组合在一起的经典范例</summary>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://ikuriko.github.io/tags/tools/" term="Tools" label="Tools" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">GPU Troubleshooting</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/gpu_tro_com/" />
@@ -698,7 +731,7 @@
             <title type="text">Iptables</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/iptables/" />
             <id>https://ikuriko.github.io/posts/iptables/</id>
-            <updated>2025-01-22T10:14:38&#43;08:00</updated>
+            <updated>2026-06-30T15:12:53&#43;08:00</updated>
             <published>2022-03-28T11:23:42&#43;08:00</published>
             <author>
                     <name>ikuriko</name>

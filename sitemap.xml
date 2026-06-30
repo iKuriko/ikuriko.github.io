@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ikuriko.github.io/posts/domain_based_policy_routing/</loc>
+    <lastmod>2026-06-30T15:45:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/</loc>
+    <lastmod>2026-06-30T15:45:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/posts/</loc>
+    <lastmod>2026-06-30T15:45:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/tags/</loc>
+    <lastmod>2026-06-30T15:45:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/tags/tools/</loc>
+    <lastmod>2026-06-30T15:45:38+08:00</lastmod>
+  </url><url>
     <loc>https://ikuriko.github.io/posts/gpu_tro_com/</loc>
     <lastmod>2026-06-18T14:52:28+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/gpuops/</loc>
-    <lastmod>2026-06-18T14:52:28+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2026-06-18T14:52:28+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/posts/</loc>
-    <lastmod>2026-06-18T14:52:28+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/tags/</loc>
     <lastmod>2026-06-18T14:52:28+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/centos_ap/</loc>
@@ -28,9 +34,6 @@
   </url><url>
     <loc>https://ikuriko.github.io/posts/deepseek_model_deploy/</loc>
     <lastmod>2026-06-17T17:22:45+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/tags/tools/</loc>
-    <lastmod>2026-06-18T14:51:26+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/other/</loc>
     <lastmod>2026-06-17T17:49:05+08:00</lastmod>
@@ -93,7 +96,7 @@
     <lastmod>2025-01-22T10:11:46+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/iptables/</loc>
-    <lastmod>2025-01-22T10:14:38+08:00</lastmod>
+    <lastmod>2026-06-30T15:12:53+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/iperf/</loc>
     <lastmod>2025-01-22T10:07:24+08:00</lastmod>
