@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">ikuriko</title>
     <subtitle type="html">lazy</subtitle>
-    <updated>2026-06-30T17:34:49&#43;08:00</updated>
+    <updated>2026-06-30T17:40:22&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Domain-based Policy Routing</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/domain_based_policy_routing/" />
             <id>https://ikuriko.github.io/posts/domain_based_policy_routing/</id>
-            <updated>2026-06-30T15:51:25&#43;08:00</updated>
+            <updated>2026-06-30T17:40:11&#43;08:00</updated>
             <published>2026-06-30T14:35:30&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
