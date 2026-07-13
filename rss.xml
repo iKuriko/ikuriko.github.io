@@ -15,15 +15,15 @@
             <language>zh-CN</language>
         
         
-            <managingEditor>ikuriko@qq.com (kuriko)</managingEditor>
+            <managingEditor>ikuriko@qq.com (ikuriko)</managingEditor>
         
         
-            <webMaster>ikuriko@qq.com (kuriko)</webMaster>
+            <webMaster>ikuriko@qq.com (ikuriko)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 13 Jul 2026 09:55:18 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 13 Jul 2026 10:32:16 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -34,7 +34,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ptp/</guid>
                 <pubDate>Tue, 07 Jul 2026 14:09:54 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>PTP，Precision Time Protocol（精确时间协议）是在计算机网络中实现亚微秒级甚至纳秒级高精度时钟同步的协议，协议编号为IEEE 1588</description>
@@ -65,7 +65,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/domain_based_policy_routing/</guid>
                 <pubDate>Tue, 30 Jun 2026 14:35:30 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>基于域名的策略路由是将 dnsmasq（DNS 解析与 ipset 填充）、ipset（IP 集合管理）、iptables（流量标记）和 iproute2（策略路由）这四个成熟的组件创造性地组合在一起的经典范例</description>
@@ -96,7 +96,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/gpu_tro_com/</guid>
                 <pubDate>Thu, 18 Jun 2026 11:11:19 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>记录一些 GPU 检查命令</description>
@@ -127,7 +127,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_ap/</guid>
                 <pubDate>Wed, 17 Jun 2026 16:02:06 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Linux 化身 WIFI 路由器</description>
@@ -158,7 +158,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rsyslog/</guid>
                 <pubDate>Tue, 19 May 2026 10:06:57 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>收集本地日志上传至中心服务器或作为中心日志服务器接收远程日志</description>
@@ -189,7 +189,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/deepseek_model_deploy/</guid>
                 <pubDate>Fri, 10 Apr 2026 16:57:02 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在 GB200 服务器上拉起 deepseek 大模型</description>
@@ -220,7 +220,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/switch_port_mirroring/</guid>
                 <pubDate>Tue, 10 Mar 2026 17:38:19 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在交换机上将目标端口的流量复制到观察端口，以达到不影响业务的情况下也能进行数据包分析</description>
@@ -251,7 +251,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rpmdb_open_failed/</guid>
                 <pubDate>Thu, 12 Feb 2026 16:42:54 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>rpm 被玩坏时，报错问题解决</description>
@@ -282,7 +282,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/l2tp_ipsecvpn/</guid>
                 <pubDate>Tue, 18 Feb 2025 09:36:22 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Linux 下的 L2TP（Layer 2 Tunneling Protocol）通常与 IPsec 结合使用以提供加密和安全性。</description>
@@ -319,7 +319,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tc/</guid>
                 <pubDate>Fri, 17 Jan 2025 16:58:12 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>使用 wondershaper 工具对 Linux 下的网络接口限速</description>
@@ -350,7 +350,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/frr/</guid>
                 <pubDate>Fri, 17 Jan 2025 16:53:19 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>FRRouting 是 Linux 上一款开源的路由模拟器工具，它能使你的 Linux 主机变身为思科路由器</description>
@@ -387,7 +387,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/strongswan/</guid>
                 <pubDate>Fri, 20 Dec 2024 17:51:41 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Linux 下的 IKEv2/IPSEC VPN</description>
@@ -424,7 +424,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/acme.sh/</guid>
                 <pubDate>Mon, 16 Dec 2024 17:27:49 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>使用 acme.sh 为阿里云域名申请免费的 ssl 证书</description>
@@ -455,7 +455,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/dig/</guid>
                 <pubDate>Tue, 07 Nov 2023 16:21:11 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>非常好用的DNS查询工具</description>
@@ -486,7 +486,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_bond/</guid>
                 <pubDate>Tue, 31 Oct 2023 11:06:02 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Linux通过bond&amp;Team 可以很容易实现网口冗余，负载均衡，实现高可用高可靠的目的</description>
@@ -517,7 +517,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/firewalld/</guid>
                 <pubDate>Fri, 30 Dec 2022 14:22:06 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Firewalld是基于区域(zone)的防火墙规则管理工具</description>
@@ -554,7 +554,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_pppoe/</guid>
                 <pubDate>Fri, 30 Dec 2022 10:29:28 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在CentOS7上搭建PPPoE Server</description>
@@ -591,7 +591,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/openvswitch/</guid>
                 <pubDate>Fri, 14 Oct 2022 15:50:53 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>虚拟交换机软件,主要用于虚拟机VM环境,支持Xen/XenServer,KVM以及VirtualBox多种虚拟化技术</description>
@@ -622,7 +622,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/sshnopasswd/</guid>
                 <pubDate>Fri, 15 Apr 2022 17:27:16 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>生成 ssh 密钥对，实现客户端到服务器的免密 ssh 用户登录</description>
@@ -653,7 +653,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iproute2/</guid>
                 <pubDate>Sat, 02 Apr 2022 14:23:55 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Iproute2 是 Linux 下强大的网络配置工具，用来显示或配置 Linux 主机的路由、网络设备、策略路由和隧道等功能。</description>
@@ -684,7 +684,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iftop/</guid>
                 <pubDate>Thu, 31 Mar 2022 11:39:01 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>iftop 可以监控 Linux 网卡的实时流量，查看数据流向、IP地址和端口等信息。</description>
@@ -715,7 +715,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/yum/</guid>
                 <pubDate>Wed, 30 Mar 2022 14:48:31 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>YUM 是基于RPM包的软件包管理工具，能自动解决 RPM 包复杂的依赖关系，并且一次性安装所有依赖的软件包</description>
@@ -746,7 +746,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iptables/</guid>
                 <pubDate>Mon, 28 Mar 2022 11:23:42 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>netfilter/iptables 是 Linux 内核集成的IP信息包过滤系统，有利于在 Linux 系统上更好的控制IP信息包过滤和防火墙配置</description>
@@ -783,7 +783,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iperf/</guid>
                 <pubDate>Fri, 25 Mar 2022 11:38:58 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>iperf 是一个网络性能测试工具。可以测试最大TCP和UDP的带宽性能，具有多种参数，可以根据需要进行调整，可以报告带宽、延迟抖动和数据包丢失。</description>
@@ -814,7 +814,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/openvpn/</guid>
                 <pubDate>Fri, 18 Mar 2022 11:27:46 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在 CentOS8 上部署 OVPN ，实现使用账号密码的客户端登录和代理上网</description>
@@ -851,7 +851,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_pppoe/</guid>
                 <pubDate>Wed, 09 Mar 2022 11:44:50 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>使用Huawei ME906s 4G模块PPPE拨号上网</description>
@@ -888,7 +888,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/namespace/</guid>
                 <pubDate>Tue, 22 Feb 2022 14:50:30 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Namespace是 Linux 内核中隔离资源的一种特性，是 Linux 实现网络虚拟化的重要功能，能够创建多个隔离的网络空间，各自拥有独自的网络栈信息</description>
@@ -919,7 +919,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/wireguard/</guid>
                 <pubDate>Fri, 31 Dec 2021 10:06:44 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>WireGuard 是一个简单、快速且安全的开源VPN软件</description>
@@ -956,7 +956,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_ntp/</guid>
                 <pubDate>Fri, 24 Dec 2021 14:28:17 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>CentOS 系统安装过程中，会有选择时区的步骤。如果时区设置有误，可能导致系统时间与本地时间不同步。使得一些应用程序的时间戳发生错乱，出现各种报错。</description>
@@ -993,7 +993,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</guid>
                 <pubDate>Tue, 23 Nov 2021 16:25:50 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在 CentOS8 上构建 OpenvSwitch 软件包</description>
@@ -1024,7 +1024,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_sqlserver/</guid>
                 <pubDate>Thu, 18 Nov 2021 11:56:06 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在CentoOS上安装sqlserver，首先下载微软官方提供的在线yum源，安装mssql-server软件包，然后根据需要安装sqlserver的命令行工具或远程客户端进行连接</description>
@@ -1055,7 +1055,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_tro_com/</guid>
                 <pubDate>Tue, 16 Nov 2021 11:01:07 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在常见的 Linux 发行版本下，排查故障的常用命令</description>
@@ -1086,7 +1086,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/kvm/</guid>
                 <pubDate>Wed, 10 Nov 2021 16:36:54 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>KVM是x86架构且硬件支持虚拟化技术（如 intel VT 或 AMD-V）的 Linux 虚拟化解决方案。</description>
@@ -1123,7 +1123,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_chinese/</guid>
                 <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>为 CentOS 系统安装中文语言支持</description>
@@ -1154,7 +1154,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_vnc/</guid>
                 <pubDate>Wed, 03 Nov 2021 17:38:40 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>在 CentOS7 上安装VNC进行远程桌面连接</description>
@@ -1185,7 +1185,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Nmcli 由 网络管理器 NetworkManager 软件包提供，是新一代的网络管理工具</description>
@@ -1216,7 +1216,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_hot_add_disk/</guid>
                 <pubDate>Mon, 01 Nov 2021 17:41:41 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>安装了 CentOS Linux 发行版的服务器正在运行，并且无法进行关机操作时，下面的命令可以扫描到新插入的硬盘</description>
@@ -1247,7 +1247,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ansible/</guid>
                 <pubDate>Fri, 29 Oct 2021 11:50:51 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Ansible 是目前运维自动化工具中最简单、容易上手的一款优秀软件，能够用来管理各种资源，批量部署应用程序等。</description>
@@ -1278,7 +1278,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vsftpd/</guid>
                 <pubDate>Thu, 14 Oct 2021 15:16:25 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Vsftpd 解决了在多样设备之间，使用加密方式安全传输文件的问题</description>
@@ -1309,7 +1309,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tcpdump/</guid>
                 <pubDate>Mon, 11 Oct 2021 17:30:36 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Linux 下软件包分析工具 Tcpdump 的常用命令</description>
@@ -1340,7 +1340,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/cad/</guid>
                 <pubDate>Thu, 23 Sep 2021 15:57:29 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>记录绘制 2D 平面图常用的CAD快捷命令</description>
@@ -1371,7 +1371,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vim/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:56:06 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Vim编辑神器的常用快捷命令收集</description>
@@ -1402,7 +1402,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/javaweb_dev_env/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:53:45 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>为 Javaweb 开发项目搭建基础环境，全部软件使用源码包手动安装</description>
@@ -1433,7 +1433,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hugo&#43;githubpages/</guid>
                 <pubDate>Tue, 07 Sep 2021 14:20:48 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>本文为此站点的构建方式</description>
@@ -1464,7 +1464,7 @@
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hello_world/</guid>
                 <pubDate>Thu, 02 Sep 2021 16:55:55 &#43;0800</pubDate>
                 
-                    <author>ikuriko@qq.com (kuriko)</author>
+                    <author>ikuriko@qq.com (ikuriko)</author>
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 <description>Test page Image &amp;lt;img src=&amp;#34;/images/hello-world.jpg&amp;#34; alt=&amp;#34;图片宽度50%&amp;#34; style=&amp;#34;width:50%&amp;#34; /&amp;gt; ![hello-world.jpg](/images/hello-world.jpg) Form……</description>
