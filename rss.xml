@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 13 Jul 2026 10:32:16 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 15 Jul 2026 11:13:16 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
         
             <item>
-                <title>PTP</title>
+                <title>PTP 精确时间同步</title>
                 <link>https://ikuriko.github.io/posts/ptp/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ptp/</guid>
                 <pubDate>Tue, 07 Jul 2026 14:09:54 &#43;0800</pubDate>
@@ -60,7 +60,7 @@
             </item>
         
             <item>
-                <title>Domain-based Policy Routing</title>
+                <title>基于域名分流的策略路由配置</title>
                 <link>https://ikuriko.github.io/posts/domain_based_policy_routing/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/domain_based_policy_routing/</guid>
                 <pubDate>Tue, 30 Jun 2026 14:35:30 &#43;0800</pubDate>
@@ -91,7 +91,7 @@
             </item>
         
             <item>
-                <title>GPU Troubleshooting</title>
+                <title>GPU 常见故障排查</title>
                 <link>https://ikuriko.github.io/posts/gpu_tro_com/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/gpu_tro_com/</guid>
                 <pubDate>Thu, 18 Jun 2026 11:11:19 &#43;0800</pubDate>
@@ -122,7 +122,7 @@
             </item>
         
             <item>
-                <title>CentOS8 AP</title>
+                <title>CentOS 8 无线AP搭建</title>
                 <link>https://ikuriko.github.io/posts/centos_ap/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_ap/</guid>
                 <pubDate>Wed, 17 Jun 2026 16:02:06 &#43;0800</pubDate>
@@ -153,7 +153,7 @@
             </item>
         
             <item>
-                <title>Rsyslog</title>
+                <title>Rsyslog 日志集中收集配置</title>
                 <link>https://ikuriko.github.io/posts/rsyslog/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rsyslog/</guid>
                 <pubDate>Tue, 19 May 2026 10:06:57 &#43;0800</pubDate>
@@ -184,7 +184,7 @@
             </item>
         
             <item>
-                <title>Deepseek Model Deploy</title>
+                <title>DeepSeek 本地大模型部署</title>
                 <link>https://ikuriko.github.io/posts/deepseek_model_deploy/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/deepseek_model_deploy/</guid>
                 <pubDate>Fri, 10 Apr 2026 16:57:02 &#43;0800</pubDate>
@@ -215,7 +215,7 @@
             </item>
         
             <item>
-                <title>Switch Port Mirroring</title>
+                <title>交换机端口镜像配置</title>
                 <link>https://ikuriko.github.io/posts/switch_port_mirroring/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/switch_port_mirroring/</guid>
                 <pubDate>Tue, 10 Mar 2026 17:38:19 &#43;0800</pubDate>
@@ -246,7 +246,7 @@
             </item>
         
             <item>
-                <title>Rpmdb open failed</title>
+                <title>修复 RPM 数据库损坏错误</title>
                 <link>https://ikuriko.github.io/posts/rpmdb_open_failed/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rpmdb_open_failed/</guid>
                 <pubDate>Thu, 12 Feb 2026 16:42:54 &#43;0800</pubDate>
@@ -277,7 +277,7 @@
             </item>
         
             <item>
-                <title>L2TP/IPsecVPN</title>
+                <title>L2TP/IPsec VPN 服务搭建</title>
                 <link>https://ikuriko.github.io/posts/l2tp_ipsecvpn/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/l2tp_ipsecvpn/</guid>
                 <pubDate>Tue, 18 Feb 2025 09:36:22 &#43;0800</pubDate>
@@ -314,7 +314,7 @@
             </item>
         
             <item>
-                <title>TC</title>
+                <title>TC 流量限速与整形</title>
                 <link>https://ikuriko.github.io/posts/tc/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tc/</guid>
                 <pubDate>Fri, 17 Jan 2025 16:58:12 &#43;0800</pubDate>
@@ -345,7 +345,7 @@
             </item>
         
             <item>
-                <title>FRR</title>
+                <title>FRR 动态路由配置</title>
                 <link>https://ikuriko.github.io/posts/frr/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/frr/</guid>
                 <pubDate>Fri, 17 Jan 2025 16:53:19 &#43;0800</pubDate>
@@ -382,7 +382,7 @@
             </item>
         
             <item>
-                <title>StrongSwanVPN</title>
+                <title>StrongSwan IPsec VPN 搭建</title>
                 <link>https://ikuriko.github.io/posts/strongswan/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/strongswan/</guid>
                 <pubDate>Fri, 20 Dec 2024 17:51:41 &#43;0800</pubDate>
@@ -419,7 +419,7 @@
             </item>
         
             <item>
-                <title>Acme.sh aliyun</title>
+                <title>Acme.sh 阿里云DNS申请 SSL 证书</title>
                 <link>https://ikuriko.github.io/posts/acme.sh/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/acme.sh/</guid>
                 <pubDate>Mon, 16 Dec 2024 17:27:49 &#43;0800</pubDate>
@@ -450,7 +450,7 @@
             </item>
         
             <item>
-                <title>Dig</title>
+                <title>Dig 域名解析排查</title>
                 <link>https://ikuriko.github.io/posts/dig/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/dig/</guid>
                 <pubDate>Tue, 07 Nov 2023 16:21:11 &#43;0800</pubDate>
@@ -481,7 +481,7 @@
             </item>
         
             <item>
-                <title>Linux Bond&amp;Team</title>
+                <title>网卡 Bond/Team 链路聚合</title>
                 <link>https://ikuriko.github.io/posts/linux_bond/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_bond/</guid>
                 <pubDate>Tue, 31 Oct 2023 11:06:02 &#43;0800</pubDate>
@@ -512,7 +512,7 @@
             </item>
         
             <item>
-                <title>Firewalld</title>
+                <title>Firewalld 防火墙策略配置</title>
                 <link>https://ikuriko.github.io/posts/firewalld/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/firewalld/</guid>
                 <pubDate>Fri, 30 Dec 2022 14:22:06 &#43;0800</pubDate>
@@ -549,7 +549,7 @@
             </item>
         
             <item>
-                <title>CetnOS7 PPPoE Server</title>
+                <title>CentOS 7 PPPoE 服务器搭建</title>
                 <link>https://ikuriko.github.io/posts/centos7_pppoe/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_pppoe/</guid>
                 <pubDate>Fri, 30 Dec 2022 10:29:28 &#43;0800</pubDate>
@@ -586,7 +586,7 @@
             </item>
         
             <item>
-                <title>OpenvSwitch</title>
+                <title>Open vSwitch 虚拟交换机配置</title>
                 <link>https://ikuriko.github.io/posts/openvswitch/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/openvswitch/</guid>
                 <pubDate>Fri, 14 Oct 2022 15:50:53 &#43;0800</pubDate>
@@ -617,7 +617,7 @@
             </item>
         
             <item>
-                <title>SSH noPassword</title>
+                <title>SSH 免密登录配置</title>
                 <link>https://ikuriko.github.io/posts/sshnopasswd/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/sshnopasswd/</guid>
                 <pubDate>Fri, 15 Apr 2022 17:27:16 &#43;0800</pubDate>
@@ -648,7 +648,7 @@
             </item>
         
             <item>
-                <title>Iproute2</title>
+                <title>Iproute2 网络配置命令</title>
                 <link>https://ikuriko.github.io/posts/iproute2/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iproute2/</guid>
                 <pubDate>Sat, 02 Apr 2022 14:23:55 &#43;0800</pubDate>
@@ -679,7 +679,7 @@
             </item>
         
             <item>
-                <title>Iftop</title>
+                <title>Iftop 实时流量监控</title>
                 <link>https://ikuriko.github.io/posts/iftop/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iftop/</guid>
                 <pubDate>Thu, 31 Mar 2022 11:39:01 &#43;0800</pubDate>
@@ -710,7 +710,7 @@
             </item>
         
             <item>
-                <title>Yum</title>
+                <title>Yum 软件包管理与使用</title>
                 <link>https://ikuriko.github.io/posts/yum/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/yum/</guid>
                 <pubDate>Wed, 30 Mar 2022 14:48:31 &#43;0800</pubDate>
@@ -741,7 +741,7 @@
             </item>
         
             <item>
-                <title>Iptables</title>
+                <title>Iptables 防火墙与 NAT</title>
                 <link>https://ikuriko.github.io/posts/iptables/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iptables/</guid>
                 <pubDate>Mon, 28 Mar 2022 11:23:42 &#43;0800</pubDate>
@@ -778,7 +778,7 @@
             </item>
         
             <item>
-                <title>Iperf</title>
+                <title>Iperf 网络带宽测试</title>
                 <link>https://ikuriko.github.io/posts/iperf/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/iperf/</guid>
                 <pubDate>Fri, 25 Mar 2022 11:38:58 &#43;0800</pubDate>
@@ -809,7 +809,7 @@
             </item>
         
             <item>
-                <title>OpenVPN</title>
+                <title>OpenVPN 服务搭建</title>
                 <link>https://ikuriko.github.io/posts/openvpn/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/openvpn/</guid>
                 <pubDate>Fri, 18 Mar 2022 11:27:46 &#43;0800</pubDate>
@@ -846,7 +846,7 @@
             </item>
         
             <item>
-                <title>CentOS8 PPPoE 4G</title>
+                <title>CentOS 8 4G模块PPPoE拨号</title>
                 <link>https://ikuriko.github.io/posts/centos8_pppoe/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_pppoe/</guid>
                 <pubDate>Wed, 09 Mar 2022 11:44:50 &#43;0800</pubDate>
@@ -883,7 +883,7 @@
             </item>
         
             <item>
-                <title>Network NameSpace</title>
+                <title>网络命名空间 (Netns) 配置</title>
                 <link>https://ikuriko.github.io/posts/namespace/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/namespace/</guid>
                 <pubDate>Tue, 22 Feb 2022 14:50:30 &#43;0800</pubDate>
@@ -914,7 +914,7 @@
             </item>
         
             <item>
-                <title>WireGuard</title>
+                <title>WireGuard VPN 搭建</title>
                 <link>https://ikuriko.github.io/posts/wireguard/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/wireguard/</guid>
                 <pubDate>Fri, 31 Dec 2021 10:06:44 &#43;0800</pubDate>
@@ -951,7 +951,7 @@
             </item>
         
             <item>
-                <title>CentOS8 NTP</title>
+                <title>CentOS 8 NTP 时间同步</title>
                 <link>https://ikuriko.github.io/posts/centos8_ntp/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos8_ntp/</guid>
                 <pubDate>Fri, 24 Dec 2021 14:28:17 &#43;0800</pubDate>
@@ -988,7 +988,7 @@
             </item>
         
             <item>
-                <title>RHEL8 Packaging for OpenvSwitch</title>
+                <title>RHEL 8 打包 Open vSwitch</title>
                 <link>https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rhel8_pkt_for_ovs/</guid>
                 <pubDate>Tue, 23 Nov 2021 16:25:50 &#43;0800</pubDate>
@@ -1019,7 +1019,7 @@
             </item>
         
             <item>
-                <title>CentOS7 SqlServer</title>
+                <title>CentOS 7 安装 SQL Server</title>
                 <link>https://ikuriko.github.io/posts/centos7_sqlserver/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_sqlserver/</guid>
                 <pubDate>Thu, 18 Nov 2021 11:56:06 &#43;0800</pubDate>
@@ -1050,7 +1050,7 @@
             </item>
         
             <item>
-                <title>Linux Troubleshooting</title>
+                <title>Linux 系统常见故障排查</title>
                 <link>https://ikuriko.github.io/posts/linux_tro_com/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/linux_tro_com/</guid>
                 <pubDate>Tue, 16 Nov 2021 11:01:07 &#43;0800</pubDate>
@@ -1081,7 +1081,7 @@
             </item>
         
             <item>
-                <title>KVM</title>
+                <title>KVM 虚拟化配置与管理</title>
                 <link>https://ikuriko.github.io/posts/kvm/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/kvm/</guid>
                 <pubDate>Wed, 10 Nov 2021 16:36:54 &#43;0800</pubDate>
@@ -1118,7 +1118,7 @@
             </item>
         
             <item>
-                <title>CentOS Chinese</title>
+                <title>CentOS 中文环境配置</title>
                 <link>https://ikuriko.github.io/posts/centos_chinese/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_chinese/</guid>
                 <pubDate>Fri, 05 Nov 2021 10:34:28 &#43;0800</pubDate>
@@ -1149,7 +1149,7 @@
             </item>
         
             <item>
-                <title>CentOS7 VNC</title>
+                <title>CentOS 7 VNC 远程桌面</title>
                 <link>https://ikuriko.github.io/posts/centos7_vnc/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos7_vnc/</guid>
                 <pubDate>Wed, 03 Nov 2021 17:38:40 &#43;0800</pubDate>
@@ -1180,7 +1180,7 @@
             </item>
         
             <item>
-                <title>Nmcli</title>
+                <title>Nmcli 网络连接管理</title>
                 <link>https://ikuriko.github.io/posts/nmcli/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/nmcli/</guid>
                 <pubDate>Tue, 02 Nov 2021 14:37:25 &#43;0800</pubDate>
@@ -1211,7 +1211,7 @@
             </item>
         
             <item>
-                <title>CentOS Hot addition Disk</title>
+                <title>CentOS 磁盘热添加</title>
                 <link>https://ikuriko.github.io/posts/centos_hot_add_disk/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/centos_hot_add_disk/</guid>
                 <pubDate>Mon, 01 Nov 2021 17:41:41 &#43;0800</pubDate>
@@ -1242,7 +1242,7 @@
             </item>
         
             <item>
-                <title>Ansible</title>
+                <title>Ansible 自动化部署与 Playbook 示例</title>
                 <link>https://ikuriko.github.io/posts/ansible/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/ansible/</guid>
                 <pubDate>Fri, 29 Oct 2021 11:50:51 &#43;0800</pubDate>
@@ -1273,7 +1273,7 @@
             </item>
         
             <item>
-                <title>Vsftpd</title>
+                <title>Vsftpd FTP 服务搭建</title>
                 <link>https://ikuriko.github.io/posts/vsftpd/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vsftpd/</guid>
                 <pubDate>Thu, 14 Oct 2021 15:16:25 &#43;0800</pubDate>
@@ -1304,7 +1304,7 @@
             </item>
         
             <item>
-                <title>Tcpdump</title>
+                <title>Tcpdump 网络抓包分析工具</title>
                 <link>https://ikuriko.github.io/posts/tcpdump/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/tcpdump/</guid>
                 <pubDate>Mon, 11 Oct 2021 17:30:36 &#43;0800</pubDate>
@@ -1335,7 +1335,7 @@
             </item>
         
             <item>
-                <title>CAD</title>
+                <title>CAD 快捷命令</title>
                 <link>https://ikuriko.github.io/posts/cad/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/cad/</guid>
                 <pubDate>Thu, 23 Sep 2021 15:57:29 &#43;0800</pubDate>
@@ -1366,7 +1366,7 @@
             </item>
         
             <item>
-                <title>Vim</title>
+                <title>Vim 编辑命令</title>
                 <link>https://ikuriko.github.io/posts/vim/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/vim/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:56:06 &#43;0800</pubDate>
@@ -1397,7 +1397,7 @@
             </item>
         
             <item>
-                <title>Javaweb Dev Env</title>
+                <title>Java Web 开发环境搭建</title>
                 <link>https://ikuriko.github.io/posts/javaweb_dev_env/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/javaweb_dev_env/</guid>
                 <pubDate>Thu, 09 Sep 2021 16:53:45 &#43;0800</pubDate>
@@ -1428,7 +1428,7 @@
             </item>
         
             <item>
-                <title>Hugo&#43;GithubPages</title>
+                <title>Hugo &#43; GitHub Pages 搭建博客</title>
                 <link>https://ikuriko.github.io/posts/hugo&#43;githubpages/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/hugo&#43;githubpages/</guid>
                 <pubDate>Tue, 07 Sep 2021 14:20:48 &#43;0800</pubDate>
