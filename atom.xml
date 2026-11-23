@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">iKuriko&#39;s Tech Blog</title>
     <subtitle type="html">分享Linux运维、网络架构与VPN实战中的思考与笔记</subtitle>
-    <updated>2026-11-23T12:51:20&#43;08:00</updated>
+    <updated>2026-11-23T13:50:39&#43;08:00</updated>
     <id>https://ikuriko.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ikuriko.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ikuriko.github.io/atom.xml" />
@@ -53,7 +53,7 @@
             <title type="text">Ntopng 流量监控</title>
             <link rel="alternate" type="text/html" href="https://ikuriko.github.io/posts/ntopng/" />
             <id>https://ikuriko.github.io/posts/ntopng/</id>
-            <updated>2026-11-23T12:44:21&#43;08:00</updated>
+            <updated>2026-11-23T13:50:08&#43;08:00</updated>
             <published>2026-07-28T11:31:57&#43;08:00</published>
             <author>
                     <name>ikuriko</name>
