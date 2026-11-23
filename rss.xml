@@ -23,13 +23,13 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 23 Nov 2026 11:10:40 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 23 Nov 2026 11:14:24 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
         
             <item>
-                <title>Rocky Linux 8.10 打包 Open vSwitch 3.7.1</title>
+                <title>Rocky Linux 8.10 打包 OpenvSwitch</title>
                 <link>https://ikuriko.github.io/posts/rocky8_pkt_for_ovs/</link>
                 <guid isPermaLink="true">https://ikuriko.github.io/posts/rocky8_pkt_for_ovs/</guid>
                 <pubDate>Mon, 23 Nov 2026 10:15:22 &#43;0800</pubDate>
