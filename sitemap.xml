@@ -3,19 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ikuriko.github.io/</loc>
-    <lastmod>2026-11-02T15:16:19+08:00</lastmod>
+    <lastmod>2026-11-23T10:17:40+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/tags/openvswitch/</loc>
+    <lastmod>2026-11-23T10:17:40+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/</loc>
-    <lastmod>2026-11-02T15:16:19+08:00</lastmod>
+    <lastmod>2026-11-23T10:17:40+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/posts/rocky8_pkt_for_ovs/</loc>
+    <lastmod>2026-11-23T10:17:40+08:00</lastmod>
+  </url><url>
+    <loc>https://ikuriko.github.io/tags/</loc>
+    <lastmod>2026-11-23T10:17:40+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/ptp/</loc>
     <lastmod>2026-07-15T11:07:24+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/services/</loc>
     <lastmod>2026-07-15T11:12:27+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/tags/</loc>
-    <lastmod>2026-11-02T15:16:19+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/tags/tools/</loc>
     <lastmod>2026-11-02T15:16:19+08:00</lastmod>
@@ -82,9 +88,6 @@
   </url><url>
     <loc>https://ikuriko.github.io/posts/openvswitch/</loc>
     <lastmod>2026-07-15T11:01:26+08:00</lastmod>
-  </url><url>
-    <loc>https://ikuriko.github.io/tags/openvswitch/</loc>
-    <lastmod>2026-07-15T11:03:55+08:00</lastmod>
   </url><url>
     <loc>https://ikuriko.github.io/posts/sshnopasswd/</loc>
     <lastmod>2026-07-15T11:01:37+08:00</lastmod>
