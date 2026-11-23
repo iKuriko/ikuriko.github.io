@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 23 Nov 2026 11:14:24 &#43;0800</lastBuildDate>
+        <lastBuildDate>Mon, 23 Nov 2026 12:51:20 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ikuriko.github.io/rss.xml" />
         
@@ -51,7 +51,38 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/openvswitch/">OpenvSwitch</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
+                                
+                            
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Ntopng 流量监控</title>
+                <link>https://ikuriko.github.io/posts/ntopng/</link>
+                <guid isPermaLink="true">https://ikuriko.github.io/posts/ntopng/</guid>
+                <pubDate>Tue, 28 Jul 2026 11:31:57 &#43;0800</pubDate>
+                
+                    <author>ikuriko@qq.com (ikuriko)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                <description>在 CentOS8 上部署 ntopng ，实现性能网络流量监控与底层调优</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -82,7 +113,13 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -113,7 +150,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -175,7 +212,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -206,7 +243,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -268,7 +305,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -299,7 +336,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -330,13 +367,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -367,7 +398,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -398,13 +429,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -435,13 +460,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -472,7 +491,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -503,7 +522,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -534,7 +553,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -565,13 +584,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -602,13 +615,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/pppoe/">PPPOE</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -639,7 +646,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/openvswitch/">OpenvSwitch</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -670,7 +677,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -701,7 +708,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -732,7 +739,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -763,7 +770,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -794,13 +801,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -831,7 +832,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -862,13 +863,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -899,13 +894,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/pppoe/">PPPOE</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -936,7 +925,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -967,13 +956,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/vpn/">VPN</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/netsec/">NetSec</category>
                                 
                             
                         
@@ -1004,13 +987,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1041,7 +1018,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/openvswitch/">OpenvSwitch</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -1072,7 +1049,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1103,7 +1080,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1134,13 +1111,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1171,7 +1142,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1202,7 +1173,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1233,7 +1204,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -1264,7 +1235,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1295,7 +1266,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1326,7 +1297,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/services/">Services</category>
+                                    <category domain="https://ikuriko.github.io/tags/linuxops/">LinuxOps</category>
                                 
                             
                         
@@ -1357,7 +1328,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/networking/">Networking</category>
                                 
                             
                         
@@ -1388,7 +1359,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/devnotes/">DevNotes</category>
                                 
                             
                         
@@ -1419,7 +1390,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/tools/">Tools</category>
+                                    <category domain="https://ikuriko.github.io/tags/devnotes/">DevNotes</category>
                                 
                             
                         
@@ -1450,7 +1421,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/other/">Other</category>
+                                    <category domain="https://ikuriko.github.io/tags/devnotes/">DevNotes</category>
                                 
                             
                         
@@ -1481,7 +1452,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/hugo/">Hugo</category>
+                                    <category domain="https://ikuriko.github.io/tags/devnotes/">DevNotes</category>
                                 
                             
                         
@@ -1512,7 +1483,7 @@
                                 
                                 
                                 
-                                    <category domain="https://ikuriko.github.io/tags/hugo/">Hugo</category>
+                                    <category domain="https://ikuriko.github.io/tags/devnotes/">DevNotes</category>
                                 
                             
                         
